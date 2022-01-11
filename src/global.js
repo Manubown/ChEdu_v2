@@ -48,10 +48,12 @@ class Global extends React.Component {
 
     /*Getter*/
     getWindowHeight = () => {
+        this.setWindowHeight()
         return this.windowHeight
     }
 
     getWindowWidth = () => {
+        this.setWindowWidth
         return this.windowWidth
     }
     
@@ -156,4 +158,4 @@ var g = new Global(
 )
 
 /*global Variable*/
-global.g = g;
+//global.g = g;
