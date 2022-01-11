@@ -1,6 +1,5 @@
 /* React standart imports*/
 import * as React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
 
 /*Navigator*/
 import {NavigationContainer} from '@react-navigation/native';
