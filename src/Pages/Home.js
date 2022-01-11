@@ -2,7 +2,6 @@ import * as React from 'react';
 import {View, Text, Animated, StyleSheet} from 'react-native';
 
 /*global*/
-import global from '../global';
 
 const width = 0;
 
@@ -113,6 +112,7 @@ export default class Home extends React.Component {
   /*handleSlide end*/
 
   render() {
+    console.log(global.g.getWindowHeight())
     let {
       xTabAnalysis,
       translateX,
