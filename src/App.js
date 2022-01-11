@@ -13,7 +13,9 @@ const Stack = createNativeStackNavigator();
 const AppNavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator></Stack.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="Options" component={testPage} title="Test Page" />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
@@ -26,5 +28,13 @@ const styles = StyleSheet.create({
     height: 100,
   },
 });
+
+const testPage = () => {
+  return (
+    <View>
+      <Text>Test</Text>
+    </View>
+  );
+};
 
 export default AppNavigation;
