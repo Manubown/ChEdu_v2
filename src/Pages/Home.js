@@ -1,9 +1,8 @@
 import * as React from 'react';
-import {View, Text, Animated, StyleSheet} from 'react-native';
+import {View, Text, Animated} from 'react-native';
 
 /*global*/
 
-const width = 0;
 
 export default class Home extends React.Component {
   state = {
@@ -13,7 +12,7 @@ export default class Home extends React.Component {
     xTabAnalysis: 0,
     translateX: new Animated.Value(0),
     translateXTabLearnToPlay: new Animated.Value(0),
-    translateXTabOnline: new Animated.Value(width),
+    translateXTabOnline: new Animated.Value(global.g.getWindowWidth()),
     translateYChessboard: -1000,
   };
 
@@ -34,7 +33,7 @@ export default class Home extends React.Component {
     if (active === 1) {
       Animated.parallel([
         Animated.spring(translateXTabOne, {
-          toValue: -width,
+          toValue: -global.g.getWindowWidth(),
           duration: 100,
         }).start(),
         Animated.spring(translateXTabTwo, {
@@ -42,22 +41,22 @@ export default class Home extends React.Component {
           duration: 100,
         }).start(),
         Animated.spring(translateXTabThree, {
-          toValue: width,
+          toValue: global.g.getWindowWidth(),
           duration: 100,
         }).start(),
         Animated.spring(translateXTabFour, {
-          toValue: width * 2,
+          toValue: global.g.getWindowWidth() * 2,
           duration: 100,
         }).start(),
       ]);
     } else if (active === 2) {
       Animated.parallel([
         Animated.spring(translateXTabOne, {
-          toValue: -width * 2,
+          toValue: -global.g.getWindowWidth() * 2,
           duration: 100,
         }).start(),
         Animated.spring(translateXTabTwo, {
-          toValue: -width,
+          toValue: -global.g.getWindowWidth(),
           duration: 100,
         }).start(),
         Animated.spring(translateXTabThree, {
@@ -65,22 +64,22 @@ export default class Home extends React.Component {
           duration: 100,
         }).start(),
         Animated.spring(translateXTabFour, {
-          toValue: width,
+          toValue: global.g.getWindowWidth(),
           duration: 100,
         }).start(),
       ]);
     } else if (active === 3) {
       Animated.parallel([
         Animated.spring(translateXTabOne, {
-          toValue: -width * 3,
+          toValue: -global.g.getWindowWidth() * 3,
           duration: 100,
         }).start(),
         Animated.spring(translateXTabTwo, {
-          toValue: -width * 2,
+          toValue: -global.g.getWindowWidth() * 2,
           duration: 100,
         }).start(),
         Animated.spring(translateXTabThree, {
-          toValue: -width,
+          toValue: -global.g.getWindowWidth(),
           duration: 100,
         }).start(),
         Animated.spring(translateXTabFour, {
@@ -95,15 +94,15 @@ export default class Home extends React.Component {
           duration: 100,
         }).start(),
         Animated.spring(translateXTabTwo, {
-          toValue: width,
+          toValue: global.g.getWindowWidth(),
           duration: 100,
         }).start(),
         Animated.spring(translateXTabThree, {
-          toValue: width * 2,
+          toValue: global.g.getWindowWidth() * 2,
           duration: 100,
         }).start(),
         Animated.spring(translateXTabFour, {
-          toValue: width * 3,
+          toValue: global.g.getWindowWidth() * 3,
           duration: 100,
         }).start(),
       ]);
@@ -112,7 +111,6 @@ export default class Home extends React.Component {
   /*handleSlide end*/
 
   render() {
-    console.log(global.g.getWindowHeight())
     let {
       xTabAnalysis,
       translateX,
@@ -125,10 +123,11 @@ export default class Home extends React.Component {
       translateYOnline,
       translateYChessboard,
     } = this.state;
-
+    console.log(global.g.getBackgroundColor())
     return (
-      <View /*style = {global.g.getWindowHeight(), global.g.getWindowWidth()}*/>
-        <Text>Hello World!</Text>
+      <View style = {global.g.getWindowHeight(), global.g.getWindowWidth(), {backgroundColor: global.g.getBackgroundColor()}}>
+        {/*Topbar*/}
+        {global.g.getTopbar()}
       </View>
     );
   }

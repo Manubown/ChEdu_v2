@@ -1,7 +1,6 @@
 /* React standart imports*/
 import React, { } from "react";
 import {
-    StyleSheet,
     Text,
     View,
     Button,
@@ -48,12 +47,10 @@ class Global extends React.Component {
 
     /*Getter*/
     getWindowHeight = () => {
-        this.setWindowHeight()
         return this.windowHeight
     }
 
     getWindowWidth = () => {
-        this.setWindowWidth
         return this.windowWidth
     }
     
@@ -73,6 +70,14 @@ class Global extends React.Component {
         return this.darkmode.switchValue
     }
 
+    getBackgroundColor = () => {
+        return this.darkmode.backgroundColor
+    }
+
+    getSunMoon = () => {
+        return this.darkmode.sunMoon
+    }
+
     /*Setter*/
     setWindowHeight = () => {
         this.windowHeight = Dimensions.get("window").height
@@ -82,11 +87,10 @@ class Global extends React.Component {
         this.windowWidth = Dimensions.get("window").width
     }
 
-    setDarkmode = () => {
-        this.setSwitchValue()
-        if(this.getSwitchValue == true){
+    setDarkmode = (switchValue) => {
+        if(switchValue == true){
             this.darkmode = {
-                switchValue: true, 
+                switchValue: this.setSwitchValue(false), 
                 backgroundColor: "black", 
                 switchLogin: loginPictureWhite, 
                 switchRegister: registerPictureWhite, 
@@ -98,7 +102,7 @@ class Global extends React.Component {
         }
         else{
             this.darkmode = {
-                switchValue: false, 
+                switchValue: this.setSwitchValue(true), 
                 backgroundColor: "white", 
                 switchLogin: loginPictureBlack, 
                 switchRegister: registerPictureBlack, 
@@ -110,10 +114,39 @@ class Global extends React.Component {
         }
     }
 
-    setSwitchValue = () => {
-        this.darkmode.switchValue = (this.getSwitchValue()) ? false : true
+    setSwitchValue = (bool) => {
+        
+        this.darkmode.switchValue = bool;
     }
 
+    /*Standards*/
+    getTopbar = () => {
+        return (
+            /*Topbar*/
+            <View style = {{
+                marginBottom: 10,
+                flexDirection: "row",
+                alignContent: "center",
+                alignItems: "center",
+                height: g.getWindowHeight() / 14,
+            }}>
+                <View style = {{
+                    position: "absolute",
+                    right: 0,
+                    flexDirection: "row",
+                }}>
+                    <Switch
+                        value={g.getSwitchValue()}
+                        onValueChange={() =>
+                            g.setDarkmode(g.getSwitchValue()),
+                            console.log(g.getDarkmode()) 
+                        }
+                    />
+                    <Text>{global.g.getSunMoon()}</Text>
+                </View>
+            </View>
+        )
+    }
     
 }
 
@@ -159,4 +192,20 @@ var g = new Global(
 
 /*global Variable*/
 global.g = g;
-//global.g = g;
+
+/*Styles*/
+/*const styles = StyleSheet.create({
+    Topbar: {
+        marginBottom: 10,
+        flexDirection: "row",
+        alignContent: "center",
+        alignItems: "center",
+        height: global.g.getwindowHeight() / 14,
+    },
+
+    RightSwitch: {
+        position: "absolute",
+        right: 0,
+        flexDirection: "row",
+    },
+})*/
