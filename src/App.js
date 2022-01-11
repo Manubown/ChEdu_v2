@@ -7,6 +7,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 /*Pages*/
+import Home from "./Pages/Home"
 
 const Stack = createNativeStackNavigator();
 
@@ -14,26 +15,9 @@ const AppNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Options" component={testPage} title="Test Page" />
+        <Stack.Screen name="Home" component={Home} options={{title: "Test Page"}} />
       </Stack.Navigator>
     </NavigationContainer>
-  );
-};
-
-const styles = StyleSheet.create({
-  Main: {
-    flexGrow: 1,
-    backgroundColor: 'red',
-    width: 100,
-    height: 100,
-  },
-});
-
-const testPage = () => {
-  return (
-    <View>
-      <Text>Test</Text>
-    </View>
   );
 };
 
