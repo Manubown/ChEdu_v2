@@ -8,6 +8,10 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 /*Pages*/
 import Home from './Pages/Home';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
+import User from './Pages/User';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +22,25 @@ const AppNavigation = () => {
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{title: 'Test Page'}}
+          options={{title: 'Home'}}
+        />
+
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{title: 'Login'}}
+        />
+
+        <Stack.Screen
+          name="Register"
+          component={Register}
+          options={{title: 'Register'}}
+        />
+
+        <Stack.Screen
+          name="User"
+          component={User}
+          options={{title: 'User'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
