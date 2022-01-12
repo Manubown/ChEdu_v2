@@ -218,7 +218,7 @@ export default class Home extends React.Component {
             {/*Start Game Button*/}
             <ImageBackground
               style={styles.StartGameButtonShadow}
-              source={global.g.getPictures.cheduLogo}
+              source={global.g.getChessBoardImage()}
               resizeMode="cover"
             >
               <TouchableOpacity
@@ -232,7 +232,7 @@ export default class Home extends React.Component {
                   }}
                 >
                   <Image
-                    source={global.g.getPictures.cheduLogo}
+                    source={global.g.getStartArrow()}
                     style={{
                       width: (global.g.getWindowWidth() / 10) * 1,
                       height: (global.g.getWindowWidth() / 10) * 1,

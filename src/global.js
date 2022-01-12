@@ -16,7 +16,7 @@ import twoKings from "./Pictures/two_kings.jpg";
 import openingConcepts from "./Pictures/opening_concepts.jpg";
 import chessBasics from "./Pictures/chess_basics.jpg";
 import strategyConcepts from "./Pictures/strategy_concepts.jpg";
-import expertModus from "./Pictures/expert_modus.jpg";
+import expertMode from "./Pictures/expert_modus.jpg";
 import textbookCheckmates from "./Pictures/textbook_checkmates.jpg";
 import comingSoon from "./Pictures/coming_soon.jpg";
 import loginPictureBlack from "./Pictures/login.png";
@@ -79,7 +79,82 @@ class Global extends React.Component {
     getPictures = () => {
         return this.pictures
     }
+
+    getCheduLogo = () => {
+        return this.pictures.cheduLogo
+    }
     
+    getTwoKings = () => {
+        return this.pictures.getTwoKings
+    }
+
+    getOpeningConcepts = () => {
+        return this.pictures.openingConcepts
+    }
+
+    getChessBasics = () => {
+        return this.pictures.chessBasics
+    }
+
+    getStrategyConcepts = () => {
+        return this.pictures.strategyConcepts
+    }
+
+    getExpertMode = () => {
+        return this.pictures.expertMode
+    }
+
+    getTextbookCheckmates = () => {
+        return this.pictures.textbookCheckmates
+    }
+
+    getComingSoon = () => {
+        return this.pictures.comingSoon
+    }
+
+    getLoginPictureBlack = () => {
+        return this.pictures.loginPictureBlack
+    }
+
+    getLoginPictureWhite = () => {
+        return this.pictures.loginPictureWhite
+    }
+
+    getRegisterPictureBlack = () => {
+        return this.pictures.registerPictureBlack
+    }
+
+    getRegisterPictureWhite = () => {
+        return this.pictures.registerPictureWhite
+    }
+
+    getUserPictureBlack = () => {
+        return this.pictures.userPictureBlack
+    }
+
+    getUserPictureWhite = () => {
+        return this.pictures.userPictureWhite
+    }
+
+    getBlackSeparator = () => {
+        return this.pictures.blackSeparator
+    }
+
+    getWhiteSeparator = () => {
+        return this.pictures.whiteSeparator
+    }
+
+    getChessBoardImage = () => {
+        return this.pictures.chessBoardImage
+    }
+
+    getChessPosterChessBoard = () => {
+        return this.pictures.posterChessBoard
+    }
+
+    getStartArrow = () => {
+        return this.pictures.startArrow
+    }
     /*Pictures end*/
 
     /*UserStats*/
@@ -248,7 +323,7 @@ var g = new Global(
         openingConcepts: openingConcepts,
         chessBasics: chessBasics,
         strategyConcepts: strategyConcepts,
-        expertModus: expertModus,
+        expertMode: expertMode,
         textbookCheckmates: textbookCheckmates,
         comingSoon: comingSoon,
         loginPictureBlack: loginPictureBlack,
