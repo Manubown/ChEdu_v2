@@ -70,8 +70,28 @@ class Global extends React.Component {
         return this.darkmode.backgroundColor
     }
 
+    getSwitchLogin = () => {
+        return this.darkmode.switchLogin
+    }
+
+    getSwitchRegister = () => {
+        return this.darkmode.switchRegister
+    }
+
+    getSwitchUser = () => {
+        return this.darkmode.switchUser
+    }
+
     getSunMoon = () => {
         return this.darkmode.sunMoon
+    }
+
+    getTextColor = () => {
+        return this.darkmode.textColor
+    }
+
+    getSeparator = () => {
+        return this.darkmode.separator
     }
     /*Darkmode end*/
 
@@ -196,6 +216,7 @@ class Global extends React.Component {
     /*UserStats end*/
 
 /*Setter*/
+    /*Window*/
     setWindowHeight = () => {
         this.windowHeight = Dimensions.get("window").height
     }
@@ -204,6 +225,7 @@ class Global extends React.Component {
         this.windowWidth = Dimensions.get("window").width
     }
 
+    /*Darkmode*/
     setDarkmode = (switchValue) => {
         if(switchValue == true){
             this.darkmode = {
