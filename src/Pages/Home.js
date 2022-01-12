@@ -1,7 +1,9 @@
+/* React standart imports*/
 import * as React from 'react';
-import {View, Text, Animated} from 'react-native';
+import {View, Text, Animated, Image, ImageBackground, TouchableOpacity} from 'react-native';
 
-/*global*/
+/*styles*/
+import styles from "../styles";
 
 
 export default class Home extends React.Component {
@@ -123,11 +125,142 @@ export default class Home extends React.Component {
       translateYOnline,
       translateYChessboard,
     } = this.state;
-    console.log(global.g.getBackgroundColor())
     return (
       <View style = {global.g.getWindowHeight(), global.g.getWindowWidth(), {backgroundColor: global.g.getBackgroundColor()}}>
         {/*Topbar*/}
         {global.g.getTopbar()}
+
+        {/*SideBar*/}
+        <View style = {styles.SideBar}>
+          {global.g.getLogo()}
+
+          {/*Statistic + Start Button*/}
+          <View>
+            {/*Statistics*/}
+            <View style={({ flexDirection: "row" }, styles.Stats)}>
+              <View style={styles.StatsShadow}>
+                <View style={styles.TopBoxStats}>
+                  <Text style={{ fontSize: global.g.getWindowWidth() / 30, color: "black" }}>
+                    Statistics
+                  </Text>
+                  <Image />
+                </View>
+                <View style={{ flexDirection: "row", fontSize: global.g.getWindowWidth() / 80 }}>
+                  <View
+                    style={{
+                      flexDirection: "column",
+                      width: global.g.getWindowWidth() / 10,
+                      height: global.g.getWindowHeight() / 10,
+                      textAlign: "right",
+                    }}
+                  >
+                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      Username:{" "}
+                    </Text>
+                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      Elo:{" "}
+                    </Text>
+                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      Played Games:{" "}
+                    </Text>
+                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      Won Games:{" "}
+                    </Text>
+                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      Lost Games:{" "}
+                    </Text>
+                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      Local Games:{" "}
+                    </Text>
+                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      Online Games:{" "}
+                    </Text>
+                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      Play Time:{" "}
+                    </Text>
+                  </View>
+                  <View
+                    style={{
+                      flexDirection: "column",
+                      width: global.g.getWindowWidth() / 10,
+                      textAlign: "left",
+                    }}
+                  >
+                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      {}
+                    </Text>
+                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      {}
+                    </Text>
+                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      {}
+                    </Text>
+                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      {}
+                    </Text>
+                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      {}
+                    </Text>
+                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      {}
+                    </Text>
+                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      {}
+                    </Text>
+                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      {}
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+
+            {/*Start Game Button*/}
+            <ImageBackground
+              style={styles.StartGameButtonShadow}
+              source={global.g.getPictures.cheduLogo}
+              resizeMode="cover"
+            >
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate("ChessBoard")}
+              >
+                <View
+                  style={{
+                    backgroundColor: "white",
+                    width: (global.g.getWindowWidth() / 10) * 1,
+                    height: (global.g.getWindowWidth() / 10) * 1,
+                  }}
+                >
+                  <Image
+                    source={global.g.getPictures.cheduLogo}
+                    style={{
+                      width: (global.g.getWindowWidth() / 10) * 1,
+                      height: (global.g.getWindowWidth() / 10) * 1,
+                    }}
+                  />
+                </View>
+              </TouchableOpacity>
+              <View
+                style={{
+                  backgroundColor: "rgba(52, 52, 52, 0.8)",
+                  borderTopRightRadius: 20,
+                  borderBottomRightRadius: 20,
+                }}
+              >
+                <Text
+                  style={{
+                    fontSize: global.g.getWindowWidth() / 50,
+                    color: "white",
+                    margin: 10,
+                    textAlign: "center",
+                  }}
+                >
+                  Start Game!
+                </Text>
+              </View>
+            </ImageBackground>
+          </View>
+        </View>
       </View>
     );
   }

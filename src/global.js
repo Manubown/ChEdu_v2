@@ -3,11 +3,8 @@ import React, { } from "react";
 import {
     Text,
     View,
-    Button,
     Image,
     TouchableOpacity,
-    Animated,
-    ScrollView,
     Dimensions,
     Switch,
     ImageBackground,
@@ -34,6 +31,10 @@ import chessBoardImage from "./Pictures/chessBoard.png";
 import posterChessBoard from "./Pictures/Poster_Schachbrett.png";
 import startArrow from "./Pictures/right-arrow.jpeg";
 
+/*styles*/
+import styles from "./styles";
+import { NavigationContainer } from "@react-navigation/native";
+
 class Global extends React.Component {
     /*ctor*/
     constructor(windowHeight, windowWidth, darkmode, userStats, pictures) {
@@ -45,7 +46,8 @@ class Global extends React.Component {
         this.pictures = pictures;
     }
 
-    /*Getter*/
+/*Getter*/
+    /*Window*/
     getWindowHeight = () => {
         return this.windowHeight
     }
@@ -53,19 +55,13 @@ class Global extends React.Component {
     getWindowWidth = () => {
         return this.windowWidth
     }
+    /*Window end*/
     
+    /*Darkmode*/
     getDarkmode = () => {
         return this.darkmode
     }
 
-    getUserStats = () => {
-        return this.userStats
-    }
-
-    getPictures = () => {
-        return this.getPictures
-    }
-    
     getSwitchValue = () => {
         return this.darkmode.switchValue
     }
@@ -77,8 +73,54 @@ class Global extends React.Component {
     getSunMoon = () => {
         return this.darkmode.sunMoon
     }
+    /*Darkmode end*/
 
-    /*Setter*/
+    /*Pictures*/
+    getPictures = () => {
+        return this.pictures
+    }
+    
+    /*Pictures end*/
+
+    /*UserStats*/
+    getUsername = () => {
+        return this.userStats.username
+    }
+
+    getElo = () => {
+        return this.userStats.elo
+    }
+
+    getPlayedGames = () => {
+        return this.userStats.playedGames
+    }
+
+    getWonGames = () => {
+        return this.userStats.wonGames
+    }
+
+    getLostGames = () => {
+        return this.userStats.lostGames
+    }
+
+    getLocalGames = () => {
+        return this.userStats.localGames
+    }
+
+    getOnlineGames = () => {
+        return this.userStats.onlineGames
+    }
+
+    getLostGames = () => {
+        return this.userStats.lostGames
+    }
+
+    getPlayTime = () => {
+        return this.userStats.playTime
+    }
+    /*UserStats end*/
+
+/*Setter*/
     setWindowHeight = () => {
         this.windowHeight = Dimensions.get("window").height
     }
@@ -119,22 +161,12 @@ class Global extends React.Component {
         this.darkmode.switchValue = bool;
     }
 
-    /*Standards*/
+/*Standards*/
     getTopbar = () => {
         return (
             /*Topbar*/
-            <View style = {{
-                marginBottom: 10,
-                flexDirection: "row",
-                alignContent: "center",
-                alignItems: "center",
-                height: g.getWindowHeight() / 14,
-            }}>
-                <View style = {{
-                    position: "absolute",
-                    right: 0,
-                    flexDirection: "row",
-                }}>
+            <View style = {styles.Topbar}>
+                <View style = {styles.RightSwitch}>
                     <Switch
                         value={g.getSwitchValue()}
                         onValueChange={() =>
@@ -144,6 +176,42 @@ class Global extends React.Component {
                     />
                     <Text>{global.g.getSunMoon()}</Text>
                 </View>
+            </View>
+        )
+    }
+
+    /*Logo*/
+    getLogo = () => {
+        return(
+            <View style={({ flexDirection: "row" }, styles.Column)}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate("Homepage")}>
+                    <View style={styles.BaseShadow}>
+                        <View style={styles.TopBoxLogo}>
+                        <View style={{}}>
+                            <View
+                            style={{
+                                justifyContent: "center",
+                                flexDirection: "row",
+                            }}
+                            >
+                                <Text style={styles.CheduBlue}>Ch</Text>
+                                <Text style={styles.CheduDarkBlue}>Edu</Text>
+                            </View>
+                            <Text style={styles.LearnToPlayText}>
+                                Learn to play chess!
+                            </Text>
+                        </View>
+                        {<Image source={cheduLogo} style={styles.Logo} />}
+                        </View>
+
+                        <Text style={styles.LearnToPlayText2}>
+                            Learn to play Chess!
+                        </Text>
+                        <Text style={styles.EasiestWay}>
+                            The easiest way to work your way up to get better at chess!
+                        </Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         )
     }
@@ -165,7 +233,14 @@ var g = new Global(
         separator: blackSeparator
     },
     {
-
+        username: "Michael",
+        elo: 1000,
+        playedGames: 0,
+        wonGames: 0,
+        lostGames: 0,
+        localGames: 0,
+        onlineGames: 0,
+        playTime: 0
     },
     {
         cheduLogo: cheduLogo,
@@ -192,20 +267,3 @@ var g = new Global(
 
 /*global Variable*/
 global.g = g;
-
-/*Styles*/
-/*const styles = StyleSheet.create({
-    Topbar: {
-        marginBottom: 10,
-        flexDirection: "row",
-        alignContent: "center",
-        alignItems: "center",
-        height: global.g.getwindowHeight() / 14,
-    },
-
-    RightSwitch: {
-        position: "absolute",
-        right: 0,
-        flexDirection: "row",
-    },
-})*/
