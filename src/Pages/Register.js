@@ -72,7 +72,7 @@ export default class Register extends React.Component {
                                         this.state.Password,
                                         this.state.Email
                                     );
-                                    this.props.navigation.navigate("Homepage");
+                                    this.props.navigation.navigate("Home");
                                 }}
                                 title="Register"
                             />

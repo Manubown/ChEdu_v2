@@ -281,7 +281,7 @@ class Global extends React.Component {
     getLogo = () => {
         return(
             <View style={({ flexDirection: "row" }, styles.Column)}>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate("Homepage")}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate("Home")}>
                     <View style={styles.BaseShadow}>
                         <View style={styles.TopBoxLogo}>
                         <View style={{}}>

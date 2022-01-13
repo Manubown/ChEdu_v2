@@ -59,7 +59,7 @@ export default class Login extends React.Component {
                                 style={styles.Buttons}
                                 onPress={() => {
                                 RequestLogin(this.state.Username, this.state.Password);
-                                this.props.navigation.navigate("Homepage");
+                                this.props.navigation.navigate("Home");
                                 }}
                                 title="Login"
                             />
