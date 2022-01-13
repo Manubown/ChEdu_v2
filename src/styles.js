@@ -295,7 +295,11 @@ const styles = StyleSheet.create({
     padding: 5,
     color: "white",
     textAlign: "center"
-  }
+  },
+  
+  Input: {
+    margin: 20,
+  },
 });
 
 export default styles;
