@@ -95,6 +95,47 @@ class Global extends React.Component {
     }
     /*Darkmode end*/
 
+    /*UserStats*/
+    getUserStats = () => {
+        return this.userStats
+    }
+    getUsername = () => {
+        return this.userStats.username
+    }
+
+    getElo = () => {
+        return this.userStats.elo
+    }
+
+    getPlayedGames = () => {
+        return this.userStats.playedGames
+    }
+
+    getWonGames = () => {
+        return this.userStats.wonGames
+    }
+
+    getLostGames = () => {
+        return this.userStats.lostGames
+    }
+
+    getLocalGames = () => {
+        return this.userStats.localGames
+    }
+
+    getOnlineGames = () => {
+        return this.userStats.onlineGames
+    }
+
+    getLostGames = () => {
+        return this.userStats.lostGames
+    }
+
+    getPlayTime = () => {
+        return this.userStats.playTime
+    }
+    /*UserStats end*/
+
     /*Pictures*/
     getPictures = () => {
         return this.pictures
@@ -176,44 +217,6 @@ class Global extends React.Component {
         return this.pictures.startArrow
     }
     /*Pictures end*/
-
-    /*UserStats*/
-    getUsername = () => {
-        return this.userStats.username
-    }
-
-    getElo = () => {
-        return this.userStats.elo
-    }
-
-    getPlayedGames = () => {
-        return this.userStats.playedGames
-    }
-
-    getWonGames = () => {
-        return this.userStats.wonGames
-    }
-
-    getLostGames = () => {
-        return this.userStats.lostGames
-    }
-
-    getLocalGames = () => {
-        return this.userStats.localGames
-    }
-
-    getOnlineGames = () => {
-        return this.userStats.onlineGames
-    }
-
-    getLostGames = () => {
-        return this.userStats.lostGames
-    }
-
-    getPlayTime = () => {
-        return this.userStats.playTime
-    }
-    /*UserStats end*/
 
 /*Setter*/
     /*Window*/
