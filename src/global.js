@@ -1,5 +1,5 @@
 /* React standart imports*/
-import React, { } from "react";
+import React, {  } from "react";
 import {
     Text,
     View,
@@ -226,11 +226,7 @@ class Global extends React.Component {
 
 /*Standards*/
 
-    handleSwitchBackground = () =>{
-        const [isSwitchOn, setIsSwitchOn] = React.useState(false);          
-        const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
-        return <Switch value={isSwitchOn} onValueChange={onToggleSwitch} />;
-    }
+    
     /*Logo*/
     getLogo = () => {
         return(

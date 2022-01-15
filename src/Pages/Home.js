@@ -134,7 +134,7 @@ export default class Home extends React.Component {
   /*handleSlide end*/
 
   handleSwitchBackground = () =>{
-    const [isSwitchOn, setIsSwitchOn] = useState(0);          
+    const [isSwitchOn, setIsSwitchOn] = useState(false);          
     const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
     return <Switch value={isSwitchOn} onValueChange={onToggleSwitch()} />;
   }
