@@ -220,66 +220,17 @@ class Global extends React.Component {
 
 /*Setter*/
     /*Window*/
-    setWindowHeight = () => {
-        this.windowHeight = Dimensions.get("window").height
-    }
-
-    setWindowWidth = () => {
-        this.windowWidth = Dimensions.get("window").width
-    }
-
-    /*Darkmode*/
-    setDarkmode = (switchValue) => {
-        if(switchValue == true){
-            this.darkmode = {
-                switchValue: this.setSwitchValue(false), 
-                backgroundColor: "black", 
-                switchLogin: loginPictureWhite, 
-                switchRegister: registerPictureWhite, 
-                switchUser: userPictureWhite, 
-                sunMoon: "🌙", 
-                textColor: "white", 
-                separator: whiteSeparator
-            }
-        }
-        else{
-            this.darkmode = {
-                switchValue: this.setSwitchValue(true), 
-                backgroundColor: "white", 
-                switchLogin: loginPictureBlack, 
-                switchRegister: registerPictureBlack, 
-                switchUser: userPictureBlack, 
-                sunMoon: "☀️", 
-                textColor: "black", 
-                separator: blackSeparator
-            }
-        }
-    }
-
-    setSwitchValue = (bool) => {
-        
-        this.darkmode.switchValue = bool;
+    setSwitchValue = (switchValue) => {
+        this.darkmode.switchValue = switchValue;
     }
 
 /*Standards*/
-    getTopbar = () => {
-        return (
-            /*Topbar*/
-            <View style = {styles.Topbar}>
-                <View style = {styles.RightSwitch}>
-                    <Switch
-                        value={g.getSwitchValue()}
-                        onValueChange={() =>
-                            g.setDarkmode(g.getSwitchValue()),
-                            console.log(g.getDarkmode()) 
-                        }
-                    />
-                    <Text>{global.g.getSunMoon()}</Text>
-                </View>
-            </View>
-        )
-    }
 
+    handleSwitchBackground = () =>{
+        const [isSwitchOn, setIsSwitchOn] = React.useState(false);          
+        const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
+        return <Switch value={isSwitchOn} onValueChange={onToggleSwitch} />;
+    }
     /*Logo*/
     getLogo = () => {
         return(

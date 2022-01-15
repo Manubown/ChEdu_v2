@@ -1,6 +1,6 @@
 /* React standart imports*/
-import * as React from 'react';
-import {View, Text, Animated, Image, ImageBackground, TouchableOpacity, ScrollView} from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, Animated, Image, ImageBackground, TouchableOpacity, ScrollView, Switch} from 'react-native';
 
 /*styles*/
 import styles from "../styles";
@@ -21,7 +21,23 @@ export default class Home extends React.Component {
     translateYLearnToPlay: -1000,
     translateYOnline: -1000,
     translateYChessboard: -1000,
+    switchValue: false,
   };
+
+  /*componontDidMount*/
+  componentDidMount(){
+    this.updateValuesStats();
+    this.props.navigation.addListener("focus", () => {
+      this.updateValuesStats();      
+    });
+  }
+
+  /*updateValuesStats*/
+  updateValuesStats = () => {
+    this.setState({
+      switchValue: global.g.getSwitchValue()
+    })
+  }
 
   /*handleSlide*/
   handleSlide = type => {
@@ -117,6 +133,12 @@ export default class Home extends React.Component {
   };
   /*handleSlide end*/
 
+  handleSwitchBackground = () =>{
+    const [isSwitchOn, setIsSwitchOn] = useState(0);          
+    const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
+    return <Switch value={isSwitchOn} onValueChange={onToggleSwitch()} />;
+  }
+
   render() {
     let {
       xTabLearnToPlay,
@@ -132,11 +154,18 @@ export default class Home extends React.Component {
       translateYLearnToPlay,
       translateYOnline,
       translateYChessboard,
+      switchValue
     } = this.state;
+
     return (
       <View style = {global.g.getWindowHeight(), global.g.getWindowWidth(), {backgroundColor: global.g.getBackgroundColor()}}>
         {/*Topbar*/}
-        {global.g.getTopbar()}
+        <View style = {styles.Topbar}>
+            <View style = {styles.RightSwitch}>
+                {this.handleSwitchBackground()}
+                <Text>{global.g.getSunMoon()}</Text>
+            </View>
+        </View>
 
         {/*SideBar*/}
         <View style = {styles.SideBar}>
