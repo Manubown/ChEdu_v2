@@ -66,6 +66,10 @@ class Global extends React.Component {
     return this.darkmode.switchValue;
   };
 
+  setSwitchValue = value => {
+    this.darkmode.switchValue = value;
+  };
+
   getBackgroundColor = () => {
     return this.darkmode.backgroundColor;
   };

@@ -5,6 +5,7 @@ import {Title} from 'react-native-paper';
 
 /*styles*/
 import styles from '../styles';
+import {HandleSwitchBackground} from './Switcher';
 
 //API Communication
 //import { RequestLogin } from "../Connection/ApiCommunication";
@@ -19,7 +20,7 @@ export default class Login extends React.Component {
           {backgroundColor: global.g.getBackgroundColor()})
         }>
         {/*Topbar*/}
-        {global.g.getTopbar()}
+        <HandleSwitchBackground />
 
         {/*SideBar*/}
         <View style={styles.SideBar}>
