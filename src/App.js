@@ -12,18 +12,13 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import User from './Pages/User';
 
-
 const Stack = createNativeStackNavigator();
 
 const AppNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{title: 'Home'}}
-        />
+        <Stack.Screen name="Home" component={Home} options={{title: 'Home'}} />
 
         <Stack.Screen
           name="Login"
@@ -37,11 +32,7 @@ const AppNavigation = () => {
           options={{title: 'Register'}}
         />
 
-        <Stack.Screen
-          name="User"
-          component={User}
-          options={{title: 'User'}}
-        />
+        <Stack.Screen name="User" component={User} options={{title: 'User'}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

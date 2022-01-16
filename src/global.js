@@ -1,316 +1,310 @@
 /* React standart imports*/
-import React, {  } from "react";
+import React from 'react';
 import {
-    Text,
-    View,
-    Image,
-    TouchableOpacity,
-    Dimensions,
-    Switch,
-    ImageBackground,
-} from "react-native";
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Dimensions,
+  Switch,
+  ImageBackground,
+} from 'react-native';
 
 /*Pictures*/
-import cheduLogo from "./Pictures/Logo.png";
-import twoKings from "./Pictures/two_kings.jpg";
-import openingConcepts from "./Pictures/opening_concepts.jpg";
-import chessBasics from "./Pictures/chess_basics.jpg";
-import strategyConcepts from "./Pictures/strategy_concepts.jpg";
-import expertMode from "./Pictures/expert_modus.jpg";
-import textbookCheckmates from "./Pictures/textbook_checkmates.jpg";
-import comingSoon from "./Pictures/coming_soon.jpg";
-import loginPictureBlack from "./Pictures/login.png";
-import loginPictureWhite from "./Pictures/login_white.png";
-import registerPictureBlack from "./Pictures/register.png";
-import registerPictureWhite from "./Pictures/register_white.png";
-import userPictureBlack from "./Pictures/user.png";
-import userPictureWhite from "./Pictures/user_white.png";
-import blackSeparator from "./Pictures/black_separator.png";
-import whiteSeparator from "./Pictures/white_separator.png";
-import chessBoardImage from "./Pictures/chessBoard.png";
-import posterChessBoard from "./Pictures/Poster_Schachbrett.png";
-import startArrow from "./Pictures/right-arrow.jpeg";
+import cheduLogo from './Pictures/Logo.png';
+import twoKings from './Pictures/two_kings.jpg';
+import openingConcepts from './Pictures/opening_concepts.jpg';
+import chessBasics from './Pictures/chess_basics.jpg';
+import strategyConcepts from './Pictures/strategy_concepts.jpg';
+import expertMode from './Pictures/expert_modus.jpg';
+import textbookCheckmates from './Pictures/textbook_checkmates.jpg';
+import comingSoon from './Pictures/coming_soon.jpg';
+import loginPictureBlack from './Pictures/login.png';
+import loginPictureWhite from './Pictures/login_white.png';
+import registerPictureBlack from './Pictures/register.png';
+import registerPictureWhite from './Pictures/register_white.png';
+import userPictureBlack from './Pictures/user.png';
+import userPictureWhite from './Pictures/user_white.png';
+import blackSeparator from './Pictures/black_separator.png';
+import whiteSeparator from './Pictures/white_separator.png';
+import chessBoardImage from './Pictures/chessBoard.png';
+import posterChessBoard from './Pictures/Poster_Schachbrett.png';
+import startArrow from './Pictures/right-arrow.jpeg';
 
 /*styles*/
-import styles from "./styles";
-import { NavigationContainer } from "@react-navigation/native";
+import styles from './styles';
+import {NavigationContainer} from '@react-navigation/native';
 
 class Global extends React.Component {
-    /*ctor*/
-    constructor(windowHeight, windowWidth, darkmode, userStats, pictures) {
-        super();
-        this.windowHeight = windowHeight;
-        this.windowWidth = windowWidth;
-        this.darkmode = darkmode;
-        this.userStats = userStats;
-        this.pictures = pictures;
-    }
+  /*ctor*/
+  constructor(windowHeight, windowWidth, darkmode, userStats, pictures) {
+    super();
+    this.windowHeight = windowHeight;
+    this.windowWidth = windowWidth;
+    this.darkmode = darkmode;
+    this.userStats = userStats;
+    this.pictures = pictures;
+  }
 
-/*Getter*/
-    /*Window*/
-    getWindowHeight = () => {
-        return this.windowHeight
-    }
+  /*Getter*/
+  /*Window*/
+  getWindowHeight = () => {
+    return this.windowHeight;
+  };
 
-    getWindowWidth = () => {
-        return this.windowWidth
-    }
-    /*Window end*/
-    
-    /*Darkmode*/
-    getDarkmode = () => {
-        return this.darkmode
-    }
+  getWindowWidth = () => {
+    return this.windowWidth;
+  };
+  /*Window end*/
 
-    getSwitchValue = () => {
-        return this.darkmode.switchValue
-    }
+  /*Darkmode*/
+  getDarkmode = () => {
+    return this.darkmode;
+  };
 
-    getBackgroundColor = () => {
-        return this.darkmode.backgroundColor
-    }
+  getSwitchValue = () => {
+    return this.darkmode.switchValue;
+  };
 
-    getSwitchLogin = () => {
-        return this.darkmode.switchLogin
-    }
+  getBackgroundColor = () => {
+    return this.darkmode.backgroundColor;
+  };
 
-    getSwitchRegister = () => {
-        return this.darkmode.switchRegister
-    }
+  getSwitchLogin = () => {
+    return this.darkmode.switchLogin;
+  };
 
-    getSwitchUser = () => {
-        return this.darkmode.switchUser
-    }
+  getSwitchRegister = () => {
+    return this.darkmode.switchRegister;
+  };
 
-    getSunMoon = () => {
-        return this.darkmode.sunMoon
-    }
+  getSwitchUser = () => {
+    return this.darkmode.switchUser;
+  };
 
-    getTextColor = () => {
-        return this.darkmode.textColor
-    }
+  getSunMoon = () => {
+    return this.darkmode.sunMoon;
+  };
 
-    getSeparator = () => {
-        return this.darkmode.separator
-    }
-    /*Darkmode end*/
+  getTextColor = () => {
+    return this.darkmode.textColor;
+  };
 
-    /*UserStats*/
-    getUserStats = () => {
-        return this.userStats
-    }
-    getUsername = () => {
-        return this.userStats.username
-    }
+  getSeparator = () => {
+    return this.darkmode.separator;
+  };
+  /*Darkmode end*/
 
-    getElo = () => {
-        return this.userStats.elo
-    }
+  /*UserStats*/
+  getUserStats = () => {
+    return this.userStats;
+  };
+  getUsername = () => {
+    return this.userStats.username;
+  };
 
-    getPlayedGames = () => {
-        return this.userStats.playedGames
-    }
+  getElo = () => {
+    return this.userStats.elo;
+  };
 
-    getWonGames = () => {
-        return this.userStats.wonGames
-    }
+  getPlayedGames = () => {
+    return this.userStats.playedGames;
+  };
 
-    getLostGames = () => {
-        return this.userStats.lostGames
-    }
+  getWonGames = () => {
+    return this.userStats.wonGames;
+  };
 
-    getLocalGames = () => {
-        return this.userStats.localGames
-    }
+  getLostGames = () => {
+    return this.userStats.lostGames;
+  };
 
-    getOnlineGames = () => {
-        return this.userStats.onlineGames
-    }
+  getLocalGames = () => {
+    return this.userStats.localGames;
+  };
 
-    getLostGames = () => {
-        return this.userStats.lostGames
-    }
+  getOnlineGames = () => {
+    return this.userStats.onlineGames;
+  };
 
-    getPlayTime = () => {
-        return this.userStats.playTime
-    }
-    /*UserStats end*/
+  getLostGames = () => {
+    return this.userStats.lostGames;
+  };
 
-    /*Pictures*/
-    getPictures = () => {
-        return this.pictures
-    }
+  getPlayTime = () => {
+    return this.userStats.playTime;
+  };
+  /*UserStats end*/
 
-    getCheduLogo = () => {
-        return this.pictures.cheduLogo
-    }
-    
-    getTwoKings = () => {
-        return this.pictures.getTwoKings
-    }
+  /*Pictures*/
+  getPictures = () => {
+    return this.pictures;
+  };
 
-    getOpeningConcepts = () => {
-        return this.pictures.openingConcepts
-    }
+  getCheduLogo = () => {
+    return this.pictures.cheduLogo;
+  };
 
-    getChessBasics = () => {
-        return this.pictures.chessBasics
-    }
+  getTwoKings = () => {
+    return this.pictures.getTwoKings;
+  };
 
-    getStrategyConcepts = () => {
-        return this.pictures.strategyConcepts
-    }
+  getOpeningConcepts = () => {
+    return this.pictures.openingConcepts;
+  };
 
-    getExpertMode = () => {
-        return this.pictures.expertMode
-    }
+  getChessBasics = () => {
+    return this.pictures.chessBasics;
+  };
 
-    getTextbookCheckmates = () => {
-        return this.pictures.textbookCheckmates
-    }
+  getStrategyConcepts = () => {
+    return this.pictures.strategyConcepts;
+  };
 
-    getComingSoon = () => {
-        return this.pictures.comingSoon
-    }
+  getExpertMode = () => {
+    return this.pictures.expertMode;
+  };
 
-    getLoginPictureBlack = () => {
-        return this.pictures.loginPictureBlack
-    }
+  getTextbookCheckmates = () => {
+    return this.pictures.textbookCheckmates;
+  };
 
-    getLoginPictureWhite = () => {
-        return this.pictures.loginPictureWhite
-    }
+  getComingSoon = () => {
+    return this.pictures.comingSoon;
+  };
 
-    getRegisterPictureBlack = () => {
-        return this.pictures.registerPictureBlack
-    }
+  getLoginPictureBlack = () => {
+    return this.pictures.loginPictureBlack;
+  };
 
-    getRegisterPictureWhite = () => {
-        return this.pictures.registerPictureWhite
-    }
+  getLoginPictureWhite = () => {
+    return this.pictures.loginPictureWhite;
+  };
 
-    getUserPictureBlack = () => {
-        return this.pictures.userPictureBlack
-    }
+  getRegisterPictureBlack = () => {
+    return this.pictures.registerPictureBlack;
+  };
 
-    getUserPictureWhite = () => {
-        return this.pictures.userPictureWhite
-    }
+  getRegisterPictureWhite = () => {
+    return this.pictures.registerPictureWhite;
+  };
 
-    getBlackSeparator = () => {
-        return this.pictures.blackSeparator
-    }
+  getUserPictureBlack = () => {
+    return this.pictures.userPictureBlack;
+  };
 
-    getWhiteSeparator = () => {
-        return this.pictures.whiteSeparator
-    }
+  getUserPictureWhite = () => {
+    return this.pictures.userPictureWhite;
+  };
 
-    getChessBoardImage = () => {
-        return this.pictures.chessBoardImage
-    }
+  getBlackSeparator = () => {
+    return this.pictures.blackSeparator;
+  };
 
-    getChessPosterChessBoard = () => {
-        return this.pictures.posterChessBoard
-    }
+  getWhiteSeparator = () => {
+    return this.pictures.whiteSeparator;
+  };
 
-    getStartArrow = () => {
-        return this.pictures.startArrow
-    }
-    /*Pictures end*/
+  getChessBoardImage = () => {
+    return this.pictures.chessBoardImage;
+  };
 
-/*Setter*/
-    /*Window*/
-    setSwitchValue = (switchValue) => {
-        this.darkmode.switchValue = switchValue;
-    }
+  getChessPosterChessBoard = () => {
+    return this.pictures.posterChessBoard;
+  };
 
-/*Standards*/
+  getStartArrow = () => {
+    return this.pictures.startArrow;
+  };
+  /*Pictures end*/
 
-    
-    /*Logo*/
-    getLogo = () => {
-        return(
-            <View style={({ flexDirection: "row" }, styles.Column)}>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate("Home")}>
-                    <View style={styles.BaseShadow}>
-                        <View style={styles.TopBoxLogo}>
-                        <View style={{}}>
-                            <View
-                            style={{
-                                justifyContent: "center",
-                                flexDirection: "row",
-                            }}
-                            >
-                                <Text style={styles.CheduBlue}>Ch</Text>
-                                <Text style={styles.CheduDarkBlue}>Edu</Text>
-                            </View>
-                            <Text style={styles.LearnToPlayText}>
-                                Learn to play chess!
-                            </Text>
-                        </View>
-                        {<Image source={cheduLogo} style={styles.Logo} />}
-                        </View>
+  /*Setter*/
+  /*Window*/
+  setSwitchValue = switchValue => {
+    this.darkmode.switchValue = switchValue;
+  };
 
-                        <Text style={styles.LearnToPlayText2}>
-                            Learn to play Chess!
-                        </Text>
-                        <Text style={styles.EasiestWay}>
-                            The easiest way to work your way up to get better at chess!
-                        </Text>
-                    </View>
-                </TouchableOpacity>
+  /*Standards*/
+
+  /*Logo*/
+  getLogo = () => {
+    return (
+      <View style={({flexDirection: 'row'}, styles.Column)}>
+        <TouchableOpacity
+          onPress={() => this.props.navigation.navigate('Home')}>
+          <View style={styles.BaseShadow}>
+            <View style={styles.TopBoxLogo}>
+              <View style={{}}>
+                <View
+                  style={{
+                    justifyContent: 'center',
+                    flexDirection: 'row',
+                  }}>
+                  <Text style={styles.CheduBlue}>Ch</Text>
+                  <Text style={styles.CheduDarkBlue}>Edu</Text>
+                </View>
+                <Text style={styles.LearnToPlayText}>Learn to play chess!</Text>
+              </View>
+              {<Image source={cheduLogo} style={styles.Logo} />}
             </View>
-        )
-    }
-    
+
+            <Text style={styles.LearnToPlayText2}>Learn to play Chess!</Text>
+            <Text style={styles.EasiestWay}>
+              The easiest way to work your way up to get better at chess!
+            </Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+    );
+  };
 }
 
 //Global Object
 var g = new Global(
-    Dimensions.get("window").height, 
-    Dimensions.get("window").width, 
-    {
-        switchValue: false, 
-        backgroundColor: "white", 
-        switchLogin: loginPictureBlack, 
-        switchRegister: registerPictureBlack, 
-        switchUser: userPictureBlack, 
-        sunMoon: "☀️", 
-        textColor: "black", 
-        separator: blackSeparator
-    },
-    {
-        username: "Michael",
-        elo: 1000,
-        playedGames: 0,
-        wonGames: 0,
-        lostGames: 0,
-        localGames: 0,
-        onlineGames: 0,
-        playTime: 0
-    },
-    {
-        cheduLogo: cheduLogo,
-        twoKings: twoKings,
-        openingConcepts: openingConcepts,
-        chessBasics: chessBasics,
-        strategyConcepts: strategyConcepts,
-        expertMode: expertMode,
-        textbookCheckmates: textbookCheckmates,
-        comingSoon: comingSoon,
-        loginPictureBlack: loginPictureBlack,
-        loginPictureWhite: loginPictureWhite,
-        registerPictureBlack: registerPictureBlack,
-        registerPictureWhite: registerPictureWhite,
-        userPictureBlack: userPictureBlack,
-        userPictureWhite: userPictureWhite,
-        blackSeparator: blackSeparator,
-        whiteSeparator: whiteSeparator,
-        chessBoardImage: chessBoardImage,
-        posterChessBoard: posterChessBoard,
-        startArrow: startArrow
-    }
-)
+  Dimensions.get('window').height,
+  Dimensions.get('window').width,
+  {
+    switchValue: false,
+    backgroundColor: 'white',
+    switchLogin: loginPictureBlack,
+    switchRegister: registerPictureBlack,
+    switchUser: userPictureBlack,
+    sunMoon: '☀️',
+    textColor: 'black',
+    separator: blackSeparator,
+  },
+  {
+    username: 'Michael',
+    elo: 1000,
+    playedGames: 0,
+    wonGames: 0,
+    lostGames: 0,
+    localGames: 0,
+    onlineGames: 0,
+    playTime: 0,
+  },
+  {
+    cheduLogo: cheduLogo,
+    twoKings: twoKings,
+    openingConcepts: openingConcepts,
+    chessBasics: chessBasics,
+    strategyConcepts: strategyConcepts,
+    expertMode: expertMode,
+    textbookCheckmates: textbookCheckmates,
+    comingSoon: comingSoon,
+    loginPictureBlack: loginPictureBlack,
+    loginPictureWhite: loginPictureWhite,
+    registerPictureBlack: registerPictureBlack,
+    registerPictureWhite: registerPictureWhite,
+    userPictureBlack: userPictureBlack,
+    userPictureWhite: userPictureWhite,
+    blackSeparator: blackSeparator,
+    whiteSeparator: whiteSeparator,
+    chessBoardImage: chessBoardImage,
+    posterChessBoard: posterChessBoard,
+    startArrow: startArrow,
+  },
+);
 
 /*global Variable*/
 global.g = g;

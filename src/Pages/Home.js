@@ -1,10 +1,20 @@
 /* React standart imports*/
 import React, {useState} from 'react';
-import {View, Text, Animated, Image, ImageBackground, TouchableOpacity, ScrollView, Switch} from 'react-native';
+import {
+  View,
+  Text,
+  Animated,
+  Image,
+  ImageBackground,
+  TouchableOpacity,
+  ScrollView,
+  Switch,
+} from 'react-native';
 
 /*styles*/
-import styles from "../styles";
+import styles from '../styles';
 
+import {HandleSwitchBackground} from './Switcher';
 
 export default class Home extends React.Component {
   state = {
@@ -25,19 +35,19 @@ export default class Home extends React.Component {
   };
 
   /*componontDidMount*/
-  componentDidMount(){
+  componentDidMount() {
     this.updateValuesStats();
-    this.props.navigation.addListener("focus", () => {
-      this.updateValuesStats();      
+    this.props.navigation.addListener('focus', () => {
+      this.updateValuesStats();
     });
   }
 
   /*updateValuesStats*/
   updateValuesStats = () => {
     this.setState({
-      switchValue: global.g.getSwitchValue()
-    })
-  }
+      switchValue: global.g.getSwitchValue(),
+    });
+  };
 
   /*handleSlide*/
   handleSlide = type => {
@@ -133,12 +143,6 @@ export default class Home extends React.Component {
   };
   /*handleSlide end*/
 
-  handleSwitchBackground = () =>{
-    const [isSwitchOn, setIsSwitchOn] = useState(false);          
-    const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
-    return <Switch value={isSwitchOn} onValueChange={onToggleSwitch()} />;
-  }
-
   render() {
     let {
       xTabLearnToPlay,
@@ -154,97 +158,172 @@ export default class Home extends React.Component {
       translateYLearnToPlay,
       translateYOnline,
       translateYChessboard,
-      switchValue
+      switchValue,
     } = this.state;
 
     return (
-      <View style = {global.g.getWindowHeight(), global.g.getWindowWidth(), {backgroundColor: global.g.getBackgroundColor()}}>
+      <View
+        style={
+          (global.g.getWindowHeight(),
+          global.g.getWindowWidth(),
+          {backgroundColor: global.g.getBackgroundColor()})
+        }>
         {/*Topbar*/}
-        <View style = {styles.Topbar}>
-            <View style = {styles.RightSwitch}>
-                {this.handleSwitchBackground()}
-                <Text>{global.g.getSunMoon()}</Text>
-            </View>
+        <View style={styles.Topbar}>
+          <View style={styles.RightSwitch}>
+            <HandleSwitchBackground />
+            <Text>{global.g.getSunMoon()}</Text>
+          </View>
         </View>
 
         {/*SideBar*/}
-        <View style = {styles.SideBar}>
+        <View style={styles.SideBar}>
           {global.g.getLogo()}
 
           {/*Statistic + Start Button*/}
           <View>
             {/*Statistics*/}
-            <View style={({ flexDirection: "row" }, styles.Stats)}>
+            <View style={({flexDirection: 'row'}, styles.Stats)}>
               <View style={styles.StatsShadow}>
                 <View style={styles.TopBoxStats}>
-                  <Text style={{ fontSize: global.g.getWindowWidth() / 30, color: "black" }}>
+                  <Text
+                    style={{
+                      fontSize: global.g.getWindowWidth() / 30,
+                      color: 'black',
+                    }}>
                     Statistics
                   </Text>
                   <Image />
                 </View>
-                <View style={{ flexDirection: "row", fontSize: global.g.getWindowWidth() / 80 }}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    fontSize: global.g.getWindowWidth() / 80,
+                  }}>
                   <View
                     style={{
-                      flexDirection: "column",
+                      flexDirection: 'column',
                       width: global.g.getWindowWidth() / 10,
                       height: global.g.getWindowHeight() / 10,
-                      textAlign: "right",
-                    }}
-                  >
-                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
-                      Username:{" "}
+                      textAlign: 'right',
+                    }}>
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 80,
+                        color: 'white',
+                      }}>
+                      Username:{' '}
                     </Text>
-                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
-                      Elo:{" "}
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 80,
+                        color: 'white',
+                      }}>
+                      Elo:{' '}
                     </Text>
-                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
-                      Played Games:{" "}
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 80,
+                        color: 'white',
+                      }}>
+                      Played Games:{' '}
                     </Text>
-                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
-                      Won Games:{" "}
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 80,
+                        color: 'white',
+                      }}>
+                      Won Games:{' '}
                     </Text>
-                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
-                      Lost Games:{" "}
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 80,
+                        color: 'white',
+                      }}>
+                      Lost Games:{' '}
                     </Text>
-                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
-                      Local Games:{" "}
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 80,
+                        color: 'white',
+                      }}>
+                      Local Games:{' '}
                     </Text>
-                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
-                      Online Games:{" "}
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 80,
+                        color: 'white',
+                      }}>
+                      Online Games:{' '}
                     </Text>
-                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
-                      Play Time:{" "}
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 80,
+                        color: 'white',
+                      }}>
+                      Play Time:{' '}
                     </Text>
                   </View>
                   <View
                     style={{
-                      flexDirection: "column",
+                      flexDirection: 'column',
                       width: global.g.getWindowWidth() / 10,
-                      textAlign: "left",
-                    }}
-                  >
-                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                      textAlign: 'left',
+                    }}>
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 80,
+                        color: 'white',
+                      }}>
                       {}
                     </Text>
-                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 80,
+                        color: 'white',
+                      }}>
                       {}
                     </Text>
-                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 80,
+                        color: 'white',
+                      }}>
                       {}
                     </Text>
-                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 80,
+                        color: 'white',
+                      }}>
                       {}
                     </Text>
-                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 80,
+                        color: 'white',
+                      }}>
                       {}
                     </Text>
-                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 80,
+                        color: 'white',
+                      }}>
                       {}
                     </Text>
-                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 80,
+                        color: 'white',
+                      }}>
                       {}
                     </Text>
-                    <Text style={{ fontSize: global.g.getWindowWidth() / 80, color: "white" }}>
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 80,
+                        color: 'white',
+                      }}>
                       {}
                     </Text>
                   </View>
@@ -256,18 +335,17 @@ export default class Home extends React.Component {
             <ImageBackground
               style={styles.StartGameButtonShadow}
               source={global.g.getChessBoardImage()}
-              resizeMode="cover"
-            >
+              resizeMode="cover">
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate(/*"ChessBoard"*/)}
-              >
+                onPress={() =>
+                  this.props.navigation.navigate(/*"ChessBoard"*/)
+                }>
                 <View
                   style={{
-                    backgroundColor: "white",
+                    backgroundColor: 'white',
                     width: (global.g.getWindowWidth() / 10) * 1,
                     height: (global.g.getWindowWidth() / 10) * 1,
-                  }}
-                >
+                  }}>
                   <Image
                     source={global.g.getStartArrow()}
                     style={{
@@ -279,19 +357,17 @@ export default class Home extends React.Component {
               </TouchableOpacity>
               <View
                 style={{
-                  backgroundColor: "rgba(52, 52, 52, 0.8)",
+                  backgroundColor: 'rgba(52, 52, 52, 0.8)',
                   borderTopRightRadius: 20,
                   borderBottomRightRadius: 20,
-                }}
-              >
+                }}>
                 <Text
                   style={{
                     fontSize: global.g.getWindowWidth() / 50,
-                    color: "white",
+                    color: 'white',
                     margin: 10,
-                    textAlign: "center",
-                  }}
-                >
+                    textAlign: 'center',
+                  }}>
                   Start Game!
                 </Text>
               </View>
@@ -300,80 +376,82 @@ export default class Home extends React.Component {
 
           {/*Menu*/}
           <View>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate("Login")}>
-              <View style = {({ 
-                backgroundColor: global.g.getBackgroundColor() }, 
-                styles.MenuShadow)}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Login')}>
+              <View
+                style={
+                  ({
+                    backgroundColor: global.g.getBackgroundColor(),
+                  },
+                  styles.MenuShadow)
+                }>
                 <Image
-                  source = {global.g.getSwitchLogin()}
-                  style = {{
+                  source={global.g.getSwitchLogin()}
+                  style={{
                     width: (global.g.getWindowWidth() / 10) * 0.8,
                     height: (global.g.getWindowWidth() / 10) * 0.8,
-                    color: "white"
+                    color: 'white',
                   }}
                 />
               </View>
               <Text
-                style = {{
-                  textAlign: "center",
-                  fontWeight: "bold",
-                  color: global.g.getTextColor()
-                }}
-              >
+                style={{
+                  textAlign: 'center',
+                  fontWeight: 'bold',
+                  color: global.g.getTextColor(),
+                }}>
                 Login
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Register')}>
               <View
                 style={
-                  ({ backgroundColor: global.g.getBackgroundColor() },
+                  ({backgroundColor: global.g.getBackgroundColor()},
                   styles.MenuShadow)
-                }
-              >
+                }>
                 <Image
                   source={global.g.getSwitchRegister()}
                   style={{
                     width: (global.g.getWindowWidth() / 10) * 0.8,
                     height: (global.g.getWindowWidth() / 10) * 0.8,
-                    color: "white",
+                    color: 'white',
                   }}
-                />      
+                />
               </View>
               <Text
                 style={{
-                  textAlign: "center",
-                  fontWeight: "bold",
+                  textAlign: 'center',
+                  fontWeight: 'bold',
                   color: global.g.getTextColor(),
-                }}
-              >
+                }}>
                 Register
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => this.props.navigation.navigate("User")}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('User')}>
               <View
                 style={
-                  ({ backgroundColor: global.g.getBackgroundColor() },
+                  ({backgroundColor: global.g.getBackgroundColor()},
                   styles.MenuShadow)
-                }
-              >
+                }>
                 <Image
                   source={global.g.getSwitchUser()}
                   style={{
                     width: (global.g.getWindowWidth() / 10) * 0.8,
                     height: (global.g.getWindowWidth() / 10) * 0.8,
-                    color: "white",
+                    color: 'white',
                   }}
-                />      
+                />
               </View>
               <Text
                 style={{
-                  textAlign: "center",
-                  fontWeight: "bold",
+                  textAlign: 'center',
+                  fontWeight: 'bold',
                   color: global.g.getTextColor(),
-                }}
-              >
+                }}>
                 User
               </Text>
             </TouchableOpacity>
@@ -383,44 +461,40 @@ export default class Home extends React.Component {
         {/*Video*/}
         <View
           style={{
-            alignItems: "center",
-          }}
-        >
+            alignItems: 'center',
+          }}>
           <Text>Video</Text>
         </View>
 
         {/*Content*/}
-        <View style={{ flex: 1 }}>
+        <View style={{flex: 1}}>
           {/*Scroll Bar*/}
           <View
             style={{
-              width: "90%",
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
-          >
+              width: '90%',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            }}>
             <View
               style={{
-                flexDirection: "row",
+                flexDirection: 'row',
                 marginTop: 60,
                 marginBottom: 20,
                 height: 36,
-                position: "relative",
+                position: 'relative',
                 backgroundColor: global.g.getBackgroundColor(),
-              }}
-            >
-
+              }}>
               {/*Animated.View Settings*/}
               <Animated.View
                 style={{
-                  position: "absolute",
-                  width: "25%",
-                  height: "100%",
+                  position: 'absolute',
+                  width: '25%',
+                  height: '100%',
                   top: 0,
                   left: 0,
-                  backgroundColor: "#007aff",
+                  backgroundColor: '#007aff',
                   borderRadius: 4,
-                  transform: [{ translateX }],
+                  transform: [{translateX}],
                 }}
               />
 
@@ -428,23 +502,24 @@ export default class Home extends React.Component {
               <TouchableOpacity
                 style={{
                   flex: 1,
-                  justifyContent: "center",
-                  alignItems: "center",
+                  justifyContent: 'center',
+                  alignItems: 'center',
                   borderWidth: 1,
-                  borderColor: "#007aff",
+                  borderColor: '#007aff',
                   borderRadius: 4,
                   borderRightWidth: 0,
                   borderTopRightRadius: 0,
                   borderBottomRightRadius: 0,
                 }}
-                onLayout={(event) =>
-                  this.setState({ xTabLearnToPlay: event.nativeEvent.layout.x })
+                onLayout={event =>
+                  this.setState({xTabLearnToPlay: event.nativeEvent.layout.x})
                 }
                 onPress={() =>
-                  this.setState({ active: 0 }, () => this.handleSlide(xTabLearnToPlay))
-                }
-              >
-                <Text style={{ color: active === 0 ? "#fff" : "#007aff" }}>
+                  this.setState({active: 0}, () =>
+                    this.handleSlide(xTabLearnToPlay),
+                  )
+                }>
+                <Text style={{color: active === 0 ? '#fff' : '#007aff'}}>
                   Learn to play
                 </Text>
               </TouchableOpacity>
@@ -453,24 +528,23 @@ export default class Home extends React.Component {
               <TouchableOpacity
                 style={{
                   flex: 1,
-                  justifyContent: "center",
-                  alignItems: "center",
+                  justifyContent: 'center',
+                  alignItems: 'center',
                   borderWidth: 1,
-                  borderColor: "#007aff",
+                  borderColor: '#007aff',
 
                   borderLeftWidth: 0,
                   borderRightWidth: 0,
                   borderTopLeftRadius: 0,
                   borderBottomLeftRadius: 0,
                 }}
-                onLayout={(event) =>
-                  this.setState({ xTabOnline: event.nativeEvent.layout.x })
+                onLayout={event =>
+                  this.setState({xTabOnline: event.nativeEvent.layout.x})
                 }
                 onPress={() =>
-                  this.setState({ active: 1 }, () => this.handleSlide(xTabOnline))
-                }
-              >
-                <Text style={{ color: active === 1 ? "#fff" : "#007aff" }}>
+                  this.setState({active: 1}, () => this.handleSlide(xTabOnline))
+                }>
+                <Text style={{color: active === 1 ? '#fff' : '#007aff'}}>
                   Online
                 </Text>
               </TouchableOpacity>
@@ -479,26 +553,25 @@ export default class Home extends React.Component {
               <TouchableOpacity
                 style={{
                   flex: 1,
-                  justifyContent: "center",
-                  alignItems: "center",
+                  justifyContent: 'center',
+                  alignItems: 'center',
                   borderWidth: 1,
-                  borderColor: "#007aff",
+                  borderColor: '#007aff',
 
                   borderLeftWidth: 0,
                   borderRightWidth: 0,
                   borderTopLeftRadius: 0,
                   borderBottomLeftRadius: 0,
                 }}
-                onLayout={(event) =>
-                  this.setState({ xTabChessBoard: event.nativeEvent.layout.x })
+                onLayout={event =>
+                  this.setState({xTabChessBoard: event.nativeEvent.layout.x})
                 }
                 onPress={() =>
-                  this.setState({ active: 2 }, () =>
-                    this.handleSlide(xTabChessBoard)
+                  this.setState({active: 2}, () =>
+                    this.handleSlide(xTabChessBoard),
                   )
-                }
-              >
-                <Text style={{ color: active === 2 ? "#fff" : "#007aff" }}>
+                }>
+                <Text style={{color: active === 2 ? '#fff' : '#007aff'}}>
                   ChessBoard
                 </Text>
               </TouchableOpacity>
@@ -507,23 +580,24 @@ export default class Home extends React.Component {
               <TouchableOpacity
                 style={{
                   flex: 1,
-                  justifyContent: "center",
-                  alignItems: "center",
+                  justifyContent: 'center',
+                  alignItems: 'center',
                   borderWidth: 1,
-                  borderColor: "#007aff",
+                  borderColor: '#007aff',
                   borderRadius: 4,
                   borderLeftWidth: 0,
                   borderTopLeftRadius: 0,
                   borderBottomLeftRadius: 0,
                 }}
-                onLayout={(event) =>
-                  this.setState({ xTabAnalysis: event.nativeEvent.layout.x })
+                onLayout={event =>
+                  this.setState({xTabAnalysis: event.nativeEvent.layout.x})
                 }
                 onPress={() =>
-                  this.setState({ active: 3 }, () => this.handleSlide(xTabAnalysis))
-                }
-              >
-                <Text style={{ color: active === 3 ? "#fff" : "#007aff" }}>
+                  this.setState({active: 3}, () =>
+                    this.handleSlide(xTabAnalysis),
+                  )
+                }>
+                <Text style={{color: active === 3 ? '#fff' : '#007aff'}}>
                   Analysis
                 </Text>
               </TouchableOpacity>
@@ -535,51 +609,47 @@ export default class Home extends React.Component {
             {/*Learn to play*/}
             <Animated.View
               style={{
-                justifyContent: "center",
-                alignItems: "center",
-                transform: [{ translateX: translateXTabLearnToPlay }],
+                justifyContent: 'center',
+                alignItems: 'center',
+                transform: [{translateX: translateXTabLearnToPlay}],
               }}
-              onLayout={(event) =>
-                this.setState({ translateYLearnToPlay: event.nativeEvent.layout.height })
-              }
-            >
-              <View style={{ marginTop: 20, marginLeft: 0 }}>
+              onLayout={event =>
+                this.setState({
+                  translateYLearnToPlay: event.nativeEvent.layout.height,
+                })
+              }>
+              <View style={{marginTop: 20, marginLeft: 0}}>
                 <ImageBackground
                   source={global.g.getChessPosterChessBoard()}
-                  style={styles.Poster_Schachbrett}
-                >
-                  <View style={{ alignItems: "center" }}>
+                  style={styles.Poster_Schachbrett}>
+                  <View style={{alignItems: 'center'}}>
                     <Text
                       style={{
                         fontSize: global.g.getWindowWidth() / 25,
-                        fontWeight: "bold",
-                        textAlign: "center",
-                      }}
-                    >
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                      }}>
                       You want to learn chess, get better and beyond?
                     </Text>
                     <Text
                       style={{
                         fontSize: global.g.getWindowWidth() / 20,
-                        fontWeight: "bold",
-                        textAlign: "center",
-                      }}
-                    >
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                      }}>
                       THIS IS YOUR PLACE TO START!
                     </Text>
                     <TouchableOpacity
                       onPress={() =>
-                        this.props.navigation.navigate("LearnToPlay")
-                      }
-                    >
+                        this.props.navigation.navigate('LearnToPlay')
+                      }>
                       <Text
                         style={{
                           fontSize: global.g.getWindowWidth() / 40,
-                          fontWeight: "bold",
-                          textAlign: "center",
-                          color: "#007aff",
-                        }}
-                      >
+                          fontWeight: 'bold',
+                          textAlign: 'center',
+                          color: '#007aff',
+                        }}>
                         Start here!
                       </Text>
                     </TouchableOpacity>
@@ -594,26 +664,23 @@ export default class Home extends React.Component {
                   }}
                 />
 
-                <View style={{ flexDirection: "row" }}>
+                <View style={{flexDirection: 'row'}}>
                   {/*Chess Basics*/}
                   <ImageBackground
                     source={global.g.getChessBasics()}
-                    style={styles.Opening_Concepts}
-                  >
+                    style={styles.Opening_Concepts}>
                     <View
                       style={{
-                        backgroundColor: "rgba(52, 52, 52, 0.8)",
+                        backgroundColor: 'rgba(52, 52, 52, 0.8)',
                         borderRadius: 20,
-                      }}
-                    >
+                      }}>
                       <Text
                         style={{
                           fontSize: global.g.getWindowWidth() / 50,
-                          color: "white",
+                          color: 'white',
                           margin: 10,
-                          textAlign: "center",
-                        }}
-                      >
+                          textAlign: 'center',
+                        }}>
                         Chess basics
                       </Text>
                     </View>
@@ -622,22 +689,19 @@ export default class Home extends React.Component {
                   {/*Strategic Conncepts*/}
                   <ImageBackground
                     source={global.g.getStrategyConcepts()}
-                    style={styles.Opening_Concepts}
-                  >
+                    style={styles.Opening_Concepts}>
                     <View
                       style={{
-                        backgroundColor: "rgba(52, 52, 52, 0.8)",
+                        backgroundColor: 'rgba(52, 52, 52, 0.8)',
                         borderRadius: 20,
-                      }}
-                    >
+                      }}>
                       <Text
                         style={{
                           fontSize: global.g.getWindowWidth() / 50,
-                          color: "white",
+                          color: 'white',
                           margin: 10,
-                          textAlign: "center",
-                        }}
-                      >
+                          textAlign: 'center',
+                        }}>
                         Strategic Concepts
                       </Text>
                     </View>
@@ -646,22 +710,19 @@ export default class Home extends React.Component {
                   {/*Opening Concepts*/}
                   <ImageBackground
                     source={global.g.getOpeningConcepts()}
-                    style={styles.Opening_Concepts}
-                  >
+                    style={styles.Opening_Concepts}>
                     <View
                       style={{
-                        backgroundColor: "rgba(52, 52, 52, 0.8)",
+                        backgroundColor: 'rgba(52, 52, 52, 0.8)',
                         borderRadius: 20,
-                      }}
-                    >
+                      }}>
                       <Text
                         style={{
                           fontSize: global.g.getWindowWidth() / 50,
-                          color: "white",
+                          color: 'white',
                           margin: 10,
-                          textAlign: "center",
-                        }}
-                      >
+                          textAlign: 'center',
+                        }}>
                         Opening Concepts
                       </Text>
                     </View>
@@ -676,26 +737,23 @@ export default class Home extends React.Component {
                   }}
                 />
 
-                <View style={{ flexDirection: "row" }}>
+                <View style={{flexDirection: 'row'}}>
                   {/*Expert Mode*/}
                   <ImageBackground
                     source={global.g.getExpertMode()}
-                    style={styles.Opening_Concepts}
-                  >
+                    style={styles.Opening_Concepts}>
                     <View
                       style={{
-                        backgroundColor: "rgba(52, 52, 52, 0.8)",
+                        backgroundColor: 'rgba(52, 52, 52, 0.8)',
                         borderRadius: 20,
-                      }}
-                    >
+                      }}>
                       <Text
                         style={{
                           fontSize: global.g.getWindowWidth() / 50,
-                          color: "white",
+                          color: 'white',
                           margin: 10,
-                          textAlign: "center",
-                        }}
-                      >
+                          textAlign: 'center',
+                        }}>
                         Expert Mode
                       </Text>
                     </View>
@@ -704,22 +762,19 @@ export default class Home extends React.Component {
                   {/*Textbook Checkmates*/}
                   <ImageBackground
                     source={global.g.getTextbookCheckmates()}
-                    style={styles.Opening_Concepts}
-                  >
+                    style={styles.Opening_Concepts}>
                     <View
                       style={{
-                        backgroundColor: "rgba(52, 52, 52, 0.8)",
+                        backgroundColor: 'rgba(52, 52, 52, 0.8)',
                         borderRadius: 20,
-                      }}
-                    >
+                      }}>
                       <Text
                         style={{
                           fontSize: global.g.getWindowWidth() / 50,
-                          color: "white",
+                          color: 'white',
                           margin: 10,
-                          textAlign: "center",
-                        }}
-                      >
+                          textAlign: 'center',
+                        }}>
                         Textbook Checkmates
                       </Text>
                     </View>
@@ -728,14 +783,12 @@ export default class Home extends React.Component {
                   {/*Platzhalter*/}
                   <ImageBackground
                     source={global.g.getComingSoon()}
-                    style={styles.Opening_Concepts}
-                  >
+                    style={styles.Opening_Concepts}>
                     <View
                       style={{
-                        backgroundColor: "rgba(52, 52, 52, 0.8)",
+                        backgroundColor: 'rgba(52, 52, 52, 0.8)',
                         borderRadius: 20,
-                      }}
-                    ></View>
+                      }}></View>
                   </ImageBackground>
                 </View>
               </View>
@@ -744,8 +797,8 @@ export default class Home extends React.Component {
             {/*Online*/}
             <Animated.View
               style={{
-                justifyContent: "center",
-                alignItems: "center",
+                justifyContent: 'center',
+                alignItems: 'center',
                 //Transform, damit die Position von oben koriigiert wird hier eben -translateY
                 transform: [
                   {
@@ -756,12 +809,11 @@ export default class Home extends React.Component {
                   },
                 ],
               }}
-              onLayout={(event) =>
+              onLayout={event =>
                 this.setState({
                   translateYOnline: event.nativeEvent.layout.height,
                 })
-              }
-            >
+              }>
               <Text>Tab Two</Text>
               <Text>Tab Two</Text>
               <Text>Tab Two</Text>
@@ -780,10 +832,10 @@ export default class Home extends React.Component {
               <Text>Tab Two</Text>
               <Text>Tab Two</Text>
 
-              <View style={{ marginTop: 20 }}>
+              <View style={{marginTop: 20}}>
                 <Image
                   source={global.g.getTwoKings()}
-                  style={{ width: 30, height: 30, borderRadius: 15 }}
+                  style={{width: 30, height: 30, borderRadius: 15}}
                 />
               </View>
             </Animated.View>
@@ -791,8 +843,8 @@ export default class Home extends React.Component {
             {/*Chessboard*/}
             <Animated.View
               style={{
-                justifyContent: "center",
-                alignItems: "center",
+                justifyContent: 'center',
+                alignItems: 'center',
                 //TODO: Transform
                 transform: [
                   {
@@ -803,36 +855,37 @@ export default class Home extends React.Component {
                   },
                 ],
               }}
-              onLayout={(event) =>
+              onLayout={event =>
                 this.setState({
                   translateYChessboard: event.nativeEvent.layout.height,
                 })
-              }
-            >
+              }>
               <Text>ddd</Text>
             </Animated.View>
 
             {/*Analysis*/}
             <Animated.View
               style={{
-                justifyContent: "center",
-                alignItems: "center",
+                justifyContent: 'center',
+                alignItems: 'center',
                 //Transform TODO
                 transform: [
                   {
                     translateX: translateXTabAnalysis,
                   },
                   {
-                    translateY: -translateYLearnToPlay - translateYOnline - translateYChessboard,
+                    translateY:
+                      -translateYLearnToPlay -
+                      translateYOnline -
+                      translateYChessboard,
                   },
                 ],
-              }}
-            >
+              }}>
               <Text>Tab Four</Text>
-              <View style={{ marginTop: 20 }}>
+              <View style={{marginTop: 20}}>
                 <Image
                   source={global.g.getTwoKings()}
-                  style={{ width: 30, height: 30, borderRadius: 15 }}
+                  style={{width: 30, height: 30, borderRadius: 15}}
                 />
               </View>
             </Animated.View>
