@@ -11,6 +11,7 @@ import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import User from './Pages/User';
+import Chessboard from './Pages/Chessboards/Chessboard';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,12 @@ const AppNavigation = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} options={{title: 'Home'}} />
+
+        <Stack.Screen
+          name="Chessboard"
+          component={Chessboard}
+          options={{title: 'Chessboard'}}
+        />
 
         <Stack.Screen
           name="Login"

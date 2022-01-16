@@ -171,7 +171,7 @@ export default class Home extends React.Component {
         {/*Topbar*/}
         <View style={styles.Topbar}>
           <View style={styles.RightSwitch}>
-            <HandleSwitchBackground />
+            
             <Text>{global.g.getSunMoon()}</Text>
           </View>
         </View>
@@ -338,7 +338,7 @@ export default class Home extends React.Component {
               resizeMode="cover">
               <TouchableOpacity
                 onPress={() =>
-                  this.props.navigation.navigate(/*"ChessBoard"*/)
+                  this.props.navigation.navigate("Chessboard")
                 }>
                 <View
                   style={{
