@@ -1,6 +1,6 @@
 /* React standart imports*/
 import * as React from 'react';
-import {Text, View, Button, TextInput} from 'react-native';
+import {Text, View, Button, TextInput, TouchableOpacity} from 'react-native';
 import {Title} from 'react-native-paper';
 
 /*styles*/
@@ -25,7 +25,13 @@ export default class Login extends React.Component {
         {/*SideBar*/}
         <View style={styles.SideBar}>
           {/*Logo*/}
-          {global.g.getLogo()}
+          <TouchableOpacity
+          onPress={() => {
+            //RequestLogin(this.state.Username, this.state.Password);
+            this.props.navigation.navigate('Home');
+          }}>
+            {global.g.getLogo()}
+          </TouchableOpacity>
         </View>
 
         {/*Content*/}

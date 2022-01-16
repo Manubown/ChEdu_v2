@@ -1,10 +1,11 @@
 /* React standart imports*/
 import * as React from 'react';
-import {Text, View, Button, TextInput} from 'react-native';
+import {Text, View, Button, TextInput, TouchableOpacity} from 'react-native';
 import {Title} from 'react-native-paper';
 
 /*styles*/
 import styles from '../styles';
+import {HandleSwitchBackground} from './Switcher';
 
 //API Communication
 //import { RequestLogin } from "../Connection/ApiCommunication";
@@ -19,12 +20,18 @@ export default class Register extends React.Component {
           {backgroundColor: global.g.getBackgroundColor()})
         }>
         {/*Topbar*/}
-        {global.g.getTopbar()}
+        <HandleSwitchBackground />
 
         {/*SideBar*/}
         <View style={styles.SideBar}>
           {/*Logo*/}
-          {global.g.getLogo()}
+          <TouchableOpacity
+          onPress={() => {
+            //RequestLogin(this.state.Username, this.state.Password);
+            this.props.navigation.navigate('Home');
+          }}>
+            {global.g.getLogo()}
+          </TouchableOpacity>
         </View>
 
         {/*Content*/}

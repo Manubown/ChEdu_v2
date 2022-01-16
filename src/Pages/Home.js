@@ -178,7 +178,14 @@ export default class Home extends React.Component {
 
         {/*SideBar*/}
         <View style={styles.SideBar}>
-          {global.g.getLogo()}
+          {/*Logo*/}
+          <TouchableOpacity
+            onPress={() => {
+              //RequestLogin(this.state.Username, this.state.Password);
+              this.props.navigation.navigate('Home');
+            }}>
+              {global.g.getLogo()}
+            </TouchableOpacity>
 
           {/*Statistic + Start Button*/}
           <View>
@@ -436,7 +443,7 @@ export default class Home extends React.Component {
                   styles.MenuShadow)
                 }>
                 <Image
-                  source={global.g.getSwitchUser()}
+                  source={global.g.getUserPicture()}
                   style={{
                     width: (global.g.getWindowWidth() / 10) * 0.8,
                     height: (global.g.getWindowWidth() / 10) * 0.8,

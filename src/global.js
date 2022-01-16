@@ -4,10 +4,7 @@ import {
   Text,
   View,
   Image,
-  TouchableOpacity,
   Dimensions,
-  Switch,
-  ImageBackground,
 } from 'react-native';
 
 /*Pictures*/
@@ -23,8 +20,7 @@ import loginPictureBlack from './Pictures/login.png';
 import loginPictureWhite from './Pictures/login_white.png';
 import registerPictureBlack from './Pictures/register.png';
 import registerPictureWhite from './Pictures/register_white.png';
-import userPictureBlack from './Pictures/user.png';
-import userPictureWhite from './Pictures/user_white.png';
+import userPicture from './Pictures/user.png';
 import blackSeparator from './Pictures/black_separator.png';
 import whiteSeparator from './Pictures/white_separator.png';
 import chessBoardImage from './Pictures/chessBoard.png';
@@ -46,7 +42,7 @@ class Global extends React.Component {
     this.pictures = pictures;
   }
 
-  /*Getter*/
+/*Getter*/
   /*Window*/
   getWindowHeight = () => {
     return this.windowHeight;
@@ -64,10 +60,6 @@ class Global extends React.Component {
 
   getSwitchValue = () => {
     return this.darkmode.switchValue;
-  };
-
-  setSwitchValue = value => {
-    this.darkmode.switchValue = value;
   };
 
   getBackgroundColor = () => {
@@ -193,12 +185,8 @@ class Global extends React.Component {
     return this.pictures.registerPictureWhite;
   };
 
-  getUserPictureBlack = () => {
-    return this.pictures.userPictureBlack;
-  };
-
-  getUserPictureWhite = () => {
-    return this.pictures.userPictureWhite;
+  getUserPicture = () => {
+    return this.pictures.userPicture;
   };
 
   getBlackSeparator = () => {
@@ -222,42 +210,64 @@ class Global extends React.Component {
   };
   /*Pictures end*/
 
-  /*Setter*/
-  /*Window*/
-  setSwitchValue = switchValue => {
-    this.darkmode.switchValue = switchValue;
+/*Setter*/
+  /*Darkmode*/
+  setSwitchValue = value => {
+    this.darkmode.switchValue = value;
   };
 
-  /*Standards*/
+  setBackgroundColor = value => {
+    this.darkmode.backgroundColor = value;
+  };
 
+  setSwitchLogin = value => {
+    this.darkmode.switchLogin = value;
+  };
+
+  setSwitchRegister = value => {
+    this.darkmode.switchRegister = value;
+  };
+
+  setSunMoon = value => {
+    this.darkmode.sunMoon = value;
+  };
+
+  setTextColor = value => {
+    this.darkmode.textColor = value;
+  };
+
+  setSeparator = value => {
+    this.darkmode.separator = value;
+  };
+  /*Darkmode end*/
+  
+
+/*Standards*/
   /*Logo*/
   getLogo = () => {
     return (
       <View style={({flexDirection: 'row'}, styles.Column)}>
-        <TouchableOpacity
-          onPress={() => this.props.navigation.navigate('Home')}>
-          <View style={styles.BaseShadow}>
-            <View style={styles.TopBoxLogo}>
-              <View style={{}}>
-                <View
-                  style={{
-                    justifyContent: 'center',
-                    flexDirection: 'row',
-                  }}>
-                  <Text style={styles.CheduBlue}>Ch</Text>
-                  <Text style={styles.CheduDarkBlue}>Edu</Text>
-                </View>
-                <Text style={styles.LearnToPlayText}>Learn to play chess!</Text>
+        <View style={styles.BaseShadow}>
+          <View style={styles.TopBoxLogo}>
+            <View style={{}}>
+              <View
+                style={{
+                  justifyContent: 'center',
+                  flexDirection: 'row',
+                }}>
+                <Text style={styles.CheduBlue}>Ch</Text>
+                <Text style={styles.CheduDarkBlue}>Edu</Text>
               </View>
-              {<Image source={cheduLogo} style={styles.Logo} />}
+              <Text style={styles.LearnToPlayText}>Learn to play chess!</Text>
             </View>
-
-            <Text style={styles.LearnToPlayText2}>Learn to play Chess!</Text>
-            <Text style={styles.EasiestWay}>
-              The easiest way to work your way up to get better at chess!
-            </Text>
+            {<Image source={cheduLogo} style={styles.Logo} />}
           </View>
-        </TouchableOpacity>
+
+          <Text style={styles.LearnToPlayText2}>Learn to play Chess!</Text>
+          <Text style={styles.EasiestWay}>
+            The easiest way to work your way up to get better at chess!
+          </Text>
+        </View>
       </View>
     );
   };
@@ -272,7 +282,7 @@ var g = new Global(
     backgroundColor: 'white',
     switchLogin: loginPictureBlack,
     switchRegister: registerPictureBlack,
-    switchUser: userPictureBlack,
+    switchUser: userPicture,
     sunMoon: '☀️',
     textColor: 'black',
     separator: blackSeparator,
@@ -300,8 +310,7 @@ var g = new Global(
     loginPictureWhite: loginPictureWhite,
     registerPictureBlack: registerPictureBlack,
     registerPictureWhite: registerPictureWhite,
-    userPictureBlack: userPictureBlack,
-    userPictureWhite: userPictureWhite,
+    userPicture: userPicture,
     blackSeparator: blackSeparator,
     whiteSeparator: whiteSeparator,
     chessBoardImage: chessBoardImage,
