@@ -19,13 +19,6 @@ export default class Register extends React.Component {
           global.g.getWindowHeight(),
           {backgroundColor: global.g.getBackgroundColor()})
         }>
-        {/*Topbar*/}
-        <View style={styles.Topbar}>
-          <View style={styles.RightSwitch}>
-            <HandleSwitchBackground />
-            <Text>{global.g.getSunMoon()}</Text>
-          </View>
-        </View>
 
         {/*SideBar*/}
         <View style={styles.SideBar}>
