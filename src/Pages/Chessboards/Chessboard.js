@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Dimensions } from "react-native";
+import { Dimensions, View } from "react-native";
 import PropTypes from "prop-types";
 import * as Chess from "chess.js"; // import Chess from  "chess.js"(default) if recieving an error about new Chess() not being a constructor
 import { RightCircleTwoTone, LeftCircleTwoTone } from "@ant-design/icons";
@@ -174,7 +174,11 @@ class HumanVsHuman extends Component {
 }
 export default function CheduChessBoard() {
   return (
-    <div>
+    <View style = {
+      (global.g.getWindowWidth(),
+      global.g.getWindowHeight(),
+      {backgroundColor: global.g.getBackgroundColor()})
+    }>
       <HumanVsHuman>
         {({
           position,
@@ -207,7 +211,7 @@ export default function CheduChessBoard() {
 
         )}
       </HumanVsHuman>
-    </div>
+    </View>
   );
 }
 

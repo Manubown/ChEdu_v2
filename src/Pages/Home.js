@@ -823,7 +823,7 @@ export default class Home extends React.Component {
                   translateYOnline: event.nativeEvent.layout.height,
                 })
               }>
-              <Text>Tab Two</Text>
+              <Text >Tab Two</Text>
               <Text>Tab Two</Text>
               <Text>Tab Two</Text>
               <Text>Tab Two</Text>
