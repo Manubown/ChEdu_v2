@@ -5,7 +5,7 @@ import {Title} from 'react-native-paper';
 
 /*styles*/
 import styles from '../styles';
-import {HandleSwitchBackground} from './Switcher';
+import {HandleSwitchBackground} from '../global';
 
 //API Communication
 //import { RequestLogin } from "../Connection/ApiCommunication";
@@ -20,7 +20,12 @@ export default class Register extends React.Component {
           {backgroundColor: global.g.getBackgroundColor()})
         }>
         {/*Topbar*/}
-        <HandleSwitchBackground />
+        <View style={styles.Topbar}>
+          <View style={styles.RightSwitch}>
+            <HandleSwitchBackground />
+            <Text>{global.g.getSunMoon()}</Text>
+          </View>
+        </View>
 
         {/*SideBar*/}
         <View style={styles.SideBar}>

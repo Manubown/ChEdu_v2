@@ -14,7 +14,7 @@ import {
 /*styles*/
 import styles from '../styles';
 
-import {HandleSwitchBackground} from './Switcher';
+import {HandleSwitchBackground} from '../global';
 
 export default class Home extends React.Component {
   state = {
