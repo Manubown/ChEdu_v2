@@ -11,6 +11,25 @@ import {HandleSwitchBackground} from '../global';
 //import { RequestLogin } from "../Connection/ApiCommunication";
 
 export default class Login extends React.Component {
+  /*componontDidMount*/
+  componentDidMount() {
+    this.updateValuesStats();
+    this.props.navigation.addListener('focus', () => {
+      this.updateValuesStats();
+    });
+
+    addEventListener('change', () => {
+      this.updateValuesStats();
+    });
+  }
+
+  /*updateValuesStats*/
+  updateValuesStats = () => {
+    this.setState({
+      switchValue: global.g.getSwitchValue(),
+    });
+  };
+
   render() {
     return (
       <View
@@ -19,22 +38,14 @@ export default class Login extends React.Component {
           global.g.getWindowHeight(),
           {backgroundColor: global.g.getBackgroundColor()})
         }>
-        {/*Topbar*/}
-        <View style={styles.Topbar}>
-          <View style={styles.RightSwitch}>
-            <HandleSwitchBackground />
-            <Text>{global.g.getSunMoon()}</Text>
-          </View>
-        </View>
-
         {/*SideBar*/}
         <View style={styles.SideBar}>
           {/*Logo*/}
           <TouchableOpacity
-          onPress={() => {
-            //RequestLogin(this.state.Username, this.state.Password);
-            this.props.navigation.navigate('Home');
-          }}>
+            onPress={() => {
+              //RequestLogin(this.state.Username, this.state.Password);
+              this.props.navigation.navigate('Home');
+            }}>
             {global.g.getLogo()}
           </TouchableOpacity>
         </View>

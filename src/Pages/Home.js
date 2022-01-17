@@ -31,13 +31,17 @@ export default class Home extends React.Component {
     translateYLearnToPlay: -1000,
     translateYOnline: -1000,
     translateYChessboard: -1000,
-    switchValue: false,
   };
 
   /*componontDidMount*/
   componentDidMount() {
     this.updateValuesStats();
+
     this.props.navigation.addListener('focus', () => {
+      this.updateValuesStats();
+    });
+
+    addEventListener('change', () => {
       this.updateValuesStats();
     });
   }
@@ -184,8 +188,8 @@ export default class Home extends React.Component {
               //RequestLogin(this.state.Username, this.state.Password);
               this.props.navigation.navigate('Home');
             }}>
-              {global.g.getLogo()}
-            </TouchableOpacity>
+            {global.g.getLogo()}
+          </TouchableOpacity>
 
           {/*Statistic + Start Button*/}
           <View>

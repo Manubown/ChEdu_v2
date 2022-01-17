@@ -1,12 +1,6 @@
 /* React standart imports*/
 import React from 'react';
-import {
-  Text,
-  View,
-  Image,
-  Dimensions,
-  Switch
-} from 'react-native';
+import {Text, View, Image, Dimensions, Switch} from 'react-native';
 
 /*Pictures*/
 import cheduLogo from './Pictures/Logo.png';
@@ -32,6 +26,10 @@ import startArrow from './Pictures/right-arrow.jpeg';
 import styles from './styles';
 import {NavigationContainer} from '@react-navigation/native';
 
+/*Pages */
+import Home from './Pages/Home';
+import Login from './Pages/Login';
+
 class Global extends React.Component {
   /*ctor*/
   constructor(windowHeight, windowWidth, darkmode, userStats, pictures) {
@@ -43,7 +41,7 @@ class Global extends React.Component {
     this.pictures = pictures;
   }
 
-/*Getter*/
+  /*Getter*/
   /*Window*/
   getWindowHeight = () => {
     return this.windowHeight;
@@ -211,7 +209,7 @@ class Global extends React.Component {
   };
   /*Pictures end*/
 
-/*Setter*/
+  /*Setter*/
   /*Darkmode*/
   setSwitchValue = value => {
     this.darkmode.switchValue = value;
@@ -241,9 +239,8 @@ class Global extends React.Component {
     this.darkmode.separator = value;
   };
   /*Darkmode end*/
-  
 
-/*Standards*/
+  /*Standards*/
   /*Logo*/
   getLogo = () => {
     return (
@@ -276,23 +273,31 @@ class Global extends React.Component {
 
 /*HandleSwitch*/
 export function HandleSwitchBackground() {
+  console.log('HandleSwitchBackgroundEvent');
+
+  /*Update Pages*/
+  Home.updateValuesStats;
+  Login.updateValuesStats;
+
   const [isSwitchOn, setIsSwitchOn] = React.useState(global.g.getSwitchValue());
 
   if (isSwitchOn === true) {
+    console.log('Switch ON');
     global.g.setSwitchValue(true);
-    global.g.setBackgroundColor("#121212");
+    global.g.setBackgroundColor('#121212');
     global.g.setSwitchLogin(global.g.getLoginPictureWhite());
     global.g.setSwitchRegister(global.g.getRegisterPictureWhite());
-    global.g.setSunMoon("🌙");
-    global.g.setTextColor("white");
+    global.g.setSunMoon('🌙');
+    global.g.setTextColor('white');
     global.g.setSeparator(global.g.getWhiteSeparator());
   } else if (isSwitchOn === false) {
+    console.log('Switch OFF');
     global.g.setSwitchValue(false);
-    global.g.setBackgroundColor("white");
+    global.g.setBackgroundColor('white');
     global.g.setSwitchLogin(global.g.getLoginPictureBlack());
     global.g.setSwitchRegister(global.g.getRegisterPictureBlack());
-    global.g.setSunMoon("☀️");
-    global.g.setTextColor("balck");
+    global.g.setSunMoon('☀️');
+    global.g.setTextColor('balck');
     global.g.setSeparator(global.g.getBlackSeparator());
   }
 
@@ -305,7 +310,6 @@ export function HandleSwitchBackground() {
     />
   );
 }
-
 
 //Global Object
 var g = new Global(
