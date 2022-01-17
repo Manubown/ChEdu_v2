@@ -57,7 +57,10 @@ export default class Login extends React.Component {
               <Title style={{color: global.g.getTextColor()}}>Login</Title>
               <Text style={{color: global.g.getTextColor()}}>Username</Text>
               <TextInput
-                style={styles.Input}
+                style={{
+                  margin: 20,
+                  color: global.g.getTextColor()
+                }}
                 onChangeText={Username => {
                   this.setState({Username});
                 }}
@@ -66,7 +69,10 @@ export default class Login extends React.Component {
               />
               <Text style={{color: global.g.getTextColor()}}>Password</Text>
               <TextInput
-                style={styles.Input}
+                style={{
+                  margin: 20,
+                  color: global.g.getTextColor()
+                }}
                 onChangeText={Password => {
                   this.setState({Password});
                 }}
@@ -83,6 +89,11 @@ export default class Login extends React.Component {
               />
             </View>
           </View>
+        </View>
+
+        {/*Darkmode*/}
+        <View style = {{height: global.g.getWindowHeight()/2}}>
+          
         </View>
       </View>
     );

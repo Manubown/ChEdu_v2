@@ -294,10 +294,6 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
   },
-
-  Input: {
-    margin: 20,
-  },
 });
 
 export default styles;

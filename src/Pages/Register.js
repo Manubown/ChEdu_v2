@@ -39,7 +39,10 @@ export default class Register extends React.Component {
               <Title style={{color: global.g.getTextColor()}}>Register</Title>
               <Text style={{color: global.g.getTextColor()}}>Username</Text>
               <TextInput
-                style={styles.Input}
+                style={{
+                  margin: 20,
+                  color: global.g.getTextColor()
+                }}
                 onChangeText={Username => {
                   this.setState({Username});
                 }}
@@ -48,7 +51,10 @@ export default class Register extends React.Component {
               />
               <Text style={{color: global.g.getTextColor()}}>Email</Text>
               <TextInput
-                style={styles.Input}
+                style={{
+                  margin: 20,
+                  color: global.g.getTextColor()
+                }}
                 onChangeText={Email => {
                   this.setState({Email});
                 }}
@@ -57,7 +63,10 @@ export default class Register extends React.Component {
               />
               <Text style={{color: global.g.getTextColor()}}>Password</Text>
               <TextInput
-                style={styles.Input}
+                style={{
+                  margin: 20,
+                  color: global.g.getTextColor()
+                }}
                 onChangeText={Password => {
                   this.setState({Password});
                 }}
@@ -74,6 +83,11 @@ export default class Register extends React.Component {
               />
             </View>
           </View>
+        </View>
+
+        {/*Darkmode fix*/}
+        <View style = {{height: global.g.getWindowHeight()/2}}>
+          
         </View>
       </View>
     );
