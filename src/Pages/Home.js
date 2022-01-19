@@ -669,7 +669,7 @@ export default class Home extends React.Component {
                 <Image
                   source={global.g.getSeparator()}
                   style={{
-                    height: global.g.getWindowWidth() / 10,
+                    height: global.g.getWindowWidth() / 8,
                   }}
                 />
 
@@ -742,7 +742,7 @@ export default class Home extends React.Component {
                 <Image
                   source={global.g.getSeparator()}
                   style={{
-                    height: global.g.getWindowWidth() / 10,
+                    height: global.g.getWindowWidth() / 8,
                   }}
                 />
 
