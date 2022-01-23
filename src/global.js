@@ -32,7 +32,7 @@ import Login from './Pages/Login';
 
 class Global extends React.Component {
   /*ctor*/
-  constructor(windowHeight, windowWidth, darkmode, userStats, pictures, fen, pgn) {
+  constructor(windowHeight, windowWidth, darkmode, userStats, pictures, fen, bgn) {
     super();
     this.windowHeight = windowHeight;
     this.windowWidth = windowWidth;
@@ -40,7 +40,7 @@ class Global extends React.Component {
     this.userStats = userStats;
     this.pictures = pictures;
     this.fen = fen;
-    this.pgn = pgn;
+    this.bgn = bgn;
   }
 
   /*Getter*/
@@ -277,11 +277,11 @@ class Global extends React.Component {
   }
   /*fen end*/
 
-  /*pgn*/
+  /*bgn*/
   getFIDE2021_Game6 = () => {
-    return this.pgn.Carlsen.FIDE2021_Game6;
+    return this.bgn.Carlsen.FIDE2021_Game6;
   }
-  /*pgn end*/
+  /*bgn end*/
 
   /*Setter*/
   /*Darkmode*/
@@ -492,7 +492,7 @@ var g = new Global(
   {
     Carlsen:
     {
-      FIDE2021_Game6: 'd2:d4,g8:f6,g1:f3,d7:d5,g2:g3,e7:e6,f1:g2,f8:e7,e1:g1'
+      FIDE2021_Game6: 'd2:d4,g8:f6,g1:f3,d7:d5,g2:g3,e7:e6,f1:g2,f8:e7,e1:g1,e8:g8,b2:b3,c7:c5,d4:c5,e7:c5,c2:c4,d5:c4,d1:c2,d8:e7,b1:d2,b8:c6,d2:c4,b7:b5,c4:e5,c6:b4,c2:b2,c8:b7,a2:a3,b4:c6,e5:d3,c5:b6,c1:g5,f8:d8'
     }
   }
 );

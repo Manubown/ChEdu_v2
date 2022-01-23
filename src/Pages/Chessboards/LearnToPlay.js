@@ -27,6 +27,9 @@ class HumanVsHuman extends Component {
     square: '',
     // array of past game moves
     history: [], //pgn
+    // chessboard moves bgn
+    chessboardMoves: '',
+    moveIndex: 0,
   };
 
   componentDidMount() {
@@ -35,6 +38,7 @@ class HumanVsHuman extends Component {
     //this.state.fen übergeben für Logik
   }
 
+  // UPDATE GAME FEN //
   updateGameFEN = FEN => {
     console.log('updateGame:');
 
@@ -51,33 +55,79 @@ class HumanVsHuman extends Component {
     this.setState({position: this.game.position, fen: this.game.fen()});
   };
 
-  updateGameMove = moves => {
+  nextMove = () => {
+    console.log('**********************');
+    //moveIndex++;
+    if (this.state.chessboardMoves.split(',').length > this.state.moveIndex) {
+      console.log('TRUE');
+      const currentMoveIndex = this.state.moveIndex++;
+      console.log('Current Move Idnex: ' + currentMoveIndex);
+      this.setState({moveIndex: currentMoveIndex});
+    }
+    console.log(this.state.moveIndex);
+    this.updateGameMove(this.state.chessboardMoves, this.state.moveIndex);
+  };
+  lastMove = () => {
+    console.log('**********************');
+    //moveIndex--;
+    if (this.state.moveIndex > 0) {
+      console.log('TRUE');
+      const currentMoveIndex = this.state.moveIndex--;
+      console.log('Current Move Idnex: ' + currentMoveIndex);
+      this.setState({moveIndex: currentMoveIndex});
+    }
+    console.log(this.state.moveIndex);
+    this.updateGameMove(this.state.chessboardMoves, this.state.moveIndex);
+  };
+  // UPDATE GAME MOVE //
+  updateGameMove = (moves, moveIndex) => {
     console.log('updateGame:');
 
+    this.setState({chessboardMoves: moves, moveIndex: moveIndex});
     /////// SET NEW POSITION ///////
 
+    console.log('Chessboard moves: ' + this.state.chessboardMoves);
+    console.log('Chessboard moveIndex: ' + this.state.moveIndex);
     //// SET NEW POSITION ////
     this.game = new Chess();
     this.setState({position: this.game.position, fen: this.game.fen()});
 
     // Split into moves //
     const element = moves.split(',');
+
     //// GET POSITIONS FROM ARRAY ////
 
     console.log(moves);
+    console.log('moveIndex: ' + moveIndex);
 
     // BownMoveNotation //
 
-    Array.prototype.forEach.call(element, move => {
-      console.log('Move: ');
+    if (moveIndex == undefined) {
+      console.log('Move index is Null');
+      this.setState({moveIndex: element.length});
+      Array.prototype.forEach.call(element, move => {
+        console.log('Move: ');
 
-      // Split into positions //
-      const movePosition = move.split(':');
+        // Split into positions //
+        const movePosition = move.split(':');
 
-      console.log('From: ' + movePosition[0] + 'to:' + movePosition[1]);
+        console.log('From: ' + movePosition[0] + 'to:' + movePosition[1]);
 
-      this.game.move({from: movePosition[0], to: movePosition[1]});
-    });
+        this.game.move({from: movePosition[0], to: movePosition[1]});
+      });
+    } else {
+      console.log('Move index is not null');
+      for (let index = 0; index < moveIndex; index++) {
+        console.log('Move: ');
+
+        // Split into positions //
+        const movePosition = element[index].split(':');
+
+        console.log('From: ' + movePosition[0] + 'to:' + movePosition[1]);
+
+        this.game.move({from: movePosition[0], to: movePosition[1]});
+      }
+    }
 
     //// SET NEW POSITIONS TO BOARD ////
     this.setState({position: this.game.position, fen: this.game.fen()});
@@ -167,6 +217,8 @@ class HumanVsHuman extends Component {
     }
     */
   };
+
+  //
 
   // keep clicked square style and remove hint squares
   removeHighlightSquare = () => {
@@ -309,6 +361,8 @@ class HumanVsHuman extends Component {
       onSquareRightClick: this.onSquareRightClick,
       updateGameMove: this.updateGameMove,
       updateGameFEN: this.updateGameFEN,
+      nextMove: this.nextMove,
+      lastMove: this.lastMove,
     });
   }
 }
@@ -506,7 +560,9 @@ export default class LearnToPlay extends React.Component{
                 onSquareClick,
                 onSquareRightClick,
                 updateGameMove,
-                updateGameFEN
+                updateGameFEN,
+                nextMove,
+                lastMove,
                 }) => (
                 <View>
                     <Chessboard
@@ -525,6 +581,7 @@ export default class LearnToPlay extends React.Component{
                         onDragOverSquare={onDragOverSquare}
                         onSquareClick={onSquareClick}
                         onSquareRightClick={onSquareRightClick}
+                        orientation="white"
                     />
 
                     <View
@@ -775,7 +832,31 @@ export default class LearnToPlay extends React.Component{
                             })
                         }
                         >
-                            <Text>Tab Four</Text>
+                          <TouchableOpacity
+                            style={{width: 100, height: 100}}
+                            onPress={() => {
+                              //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                              updateGameMove(global.g.getFIDE2021_Game6(),0);
+                            }}>
+                            <Text>FIDE 2021 Game 6</Text>
+                          </TouchableOpacity>
+
+                          <TouchableOpacity
+                            style={{width: 100, height: 100}}
+                            onPress={() => {
+                              //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                              nextMove();
+                            }}>
+                            <Text>Next move</Text>
+                          </TouchableOpacity>
+                          <TouchableOpacity
+                            style={{width: 100, height: 100}}
+                            onPress={() => {
+                              //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                              lastMove();
+                            }}>
+                            <Text>Last Move</Text>
+                          </TouchableOpacity>
                         </Animated.View>
                         
                         {/*Textbook Checkmates*/}
