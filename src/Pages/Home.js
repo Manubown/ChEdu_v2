@@ -46,6 +46,8 @@ export default class Home extends React.Component {
     });
   }
 
+  componentWillUnmount() {}
+
   /*updateValuesStats*/
   updateValuesStats = () => {
     this.setState({
