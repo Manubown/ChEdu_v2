@@ -419,29 +419,37 @@ export default class ChessBoard extends React.Component {
                 />
               </View>
 
+              {/*Tools*/}
+              <View style={{ flexDirection: "row", alignSelf: "center" }}>
+                <TouchableOpacity
+                    style={{width: 100, height: 100}}
+                    onPress={() => {
+                      //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                      lastMove();
+                    }}>
+                    <LeftCircleTwoTone 
+                      twoToneColor={"#185a5c"} 
+                    />
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={{width: 100, height: 100}}
+                    onPress={() => {
+                      //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                      nextMove();
+                    }}>
+                    <RightCircleTwoTone 
+                      twoToneColor={"#185a5c"}
+                    />
+                  </TouchableOpacity>
+                </View>
+
               <TouchableOpacity
                 style={{width: 100, height: 100}}
                 onPress={() => {
                   //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
                   updateGameMove(global.g.getFIDE2021_Game6(),0);
                 }}>
-                <Text>FIDE 2021 Game 6</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{width: 100, height: 100}}
-                onPress={() => {
-                  //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                  nextMove();
-                }}>
-                <Text>Next move</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{width: 100, height: 100}}
-                onPress={() => {
-                  //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                  lastMove();
-                }}>
-                <Text>Last Move</Text>
+                <Text>Testgame</Text>
               </TouchableOpacity>
             </View>
           )}
