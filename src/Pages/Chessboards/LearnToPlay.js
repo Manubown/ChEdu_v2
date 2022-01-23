@@ -871,7 +871,7 @@ export default class LearnToPlay extends React.Component{
                             })
                         }
                         >
-                            <Text>Tab One</Text>
+                            <Text style = {{color: global.g.getTextColor()}}>Tab One</Text>
                         </Animated.View>
                         
                         {/*Strategic Concepts*/}
@@ -895,7 +895,7 @@ export default class LearnToPlay extends React.Component{
                             })
                         }
                         >
-                            <Text>Tab Two</Text>
+                            <Text style = {{color: global.g.getTextColor()}}>Tab Two</Text>
                         </Animated.View>
     
                         {/*Opening Concepts*/}
@@ -923,7 +923,7 @@ export default class LearnToPlay extends React.Component{
                                 onPress={() => {
                                     updateGameFEN(global.g.getSicilianDefence());
                                 }}>
-                                <Text>Sicilian Defence</Text>
+                                <Text style = {{color: global.g.getTextColor()}}>Sicilian Defence</Text>
                             </TouchableOpacity>
                         </Animated.View>
                         
@@ -953,7 +953,7 @@ export default class LearnToPlay extends React.Component{
                               //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
                               updateGameMove(global.g.getFIDE2021_Game6(),0);
                             }}>
-                            <Text>FIDE 2021 Game 6</Text>
+                            <Text style = {{color: global.g.getTextColor()}}>FIDE 2021 Game 6</Text>
                           </TouchableOpacity>
                         </Animated.View>
                         
@@ -973,7 +973,7 @@ export default class LearnToPlay extends React.Component{
                             ],
                         }}
                         >
-                            <Text>Tab Five</Text>
+                            <Text style = {{color: global.g.getTextColor()}}>Tab Five</Text>
                         </Animated.View>
                     </ScrollView>
                 </View>
