@@ -360,18 +360,9 @@ export default class ChessBoard extends React.Component{
                   style={{width: 100, height: 100}}
                   onPress={() => {
                     //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION//
-                    var moves = 'e2:e3,e7:e5,f1:b5';
-                    updateGameMove(moves);
+                    updateGameMove(global.g.getFIDE2021_Game6());
                   }}>
-                  <Text>Test 1</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={{width: 100, height: 100}}
-                  onPress={() => {
-                    var moves = 'g1:f3,e7:e5';
-                    updateGameMove(moves);
-                  }}>
-                  <Text>Test 2</Text>
+                  <Text>FIDE 2021 Game 6</Text>
                 </TouchableOpacity>
               </View>
               )}

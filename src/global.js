@@ -32,7 +32,7 @@ import Login from './Pages/Login';
 
 class Global extends React.Component {
   /*ctor*/
-  constructor(windowHeight, windowWidth, darkmode, userStats, pictures, fen) {
+  constructor(windowHeight, windowWidth, darkmode, userStats, pictures, fen, pgn) {
     super();
     this.windowHeight = windowHeight;
     this.windowWidth = windowWidth;
@@ -40,6 +40,7 @@ class Global extends React.Component {
     this.userStats = userStats;
     this.pictures = pictures;
     this.fen = fen;
+    this.pgn = pgn;
   }
 
   /*Getter*/
@@ -276,6 +277,12 @@ class Global extends React.Component {
   }
   /*fen end*/
 
+  /*pgn*/
+  getFIDE2021_Game6 = () => {
+    return this.pgn.Carlsen.FIDE2021_Game6;
+  }
+  /*pgn end*/
+
   /*Setter*/
   /*Darkmode*/
   setSwitchValue = value => {
@@ -482,6 +489,12 @@ var g = new Global(
       Start: "start",
     }
   },
+  {
+    Carlsen:
+    {
+      FIDE2021_Game6: 'd2:d4,g8:f6,g1:f3,d7:d5,g2:g3,e7:e6,f1:g2,f8:e7,e1:g1'
+    }
+  }
 );
 
 /*global Variable*/
