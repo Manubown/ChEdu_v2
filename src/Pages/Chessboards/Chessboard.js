@@ -312,77 +312,74 @@ class HumanVsHuman extends Component {
     });
   }
 }
-export default function CheduChessBoard() {
-  return (
-    <View
-      style={
-        (global.g.getWindowWidth(),
-        global.g.getWindowHeight(),
-        {backgroundColor: global.g.getBackgroundColor()})
-      }>
-      <HumanVsHuman>
-        {({
-          position,
-          onDrop,
-          onMouseOverSquare,
-          onMouseOutSquare,
-          squareStyles,
-          dropSquareStyle,
-          onDragOverSquare,
-          onSquareClick,
-          onSquareRightClick,
-          updateGameMove,
-          updateGameFEN
-        }) => (
-          <View>
-            <Chessboard
-              id="humanVsHuman"
-              width={(windowHeight / 4) * 3}
-              position={position} //position zB. (a6: 'kW') ==> König auf a6
-              onDrop={onDrop}
-              onMouseOverSquare={onMouseOverSquare}
-              onMouseOutSquare={onMouseOutSquare}
-              boardStyle={{
-                borderRadius: '5px',
-                boxShadow: `0 5px 15px #185a5c`,
-              }}
-              squareStyles={squareStyles}
-              dropSquareStyle={dropSquareStyle}
-              onDragOverSquare={onDragOverSquare}
-              onSquareClick={onSquareClick}
-              onSquareRightClick={onSquareRightClick}
-            />
 
-            <TouchableOpacity
-              style={{width: 100, height: 100}}
-              onPress={() => {
-                //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION//
-                var moves = 'e2:e3,e7:e5,f1:b5';
-                updateGameMove(moves);
-              }}>
-              <Text>Test 1</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{width: 100, height: 100}}
-              onPress={() => {
-                var moves = 'g1:f3,e7:e5';
-                updateGameMove(moves);
-              }}>
-              <Text>Test 2</Text>
-            </TouchableOpacity>
+export default class ChessBoard extends React.Component{  
+  render(){
+      return (
+          <View
+          style={
+              /*(global.g.getWindowWidth(),
+              global.g.getWindowHeight(),
+              {backgroundColor: global.g.getBackgroundColor()}),*/
+              {flex: 1}
+          }>
+            <HumanVsHuman>
+                {({
+                position,
+                onDrop,
+                onMouseOverSquare,
+                onMouseOutSquare,
+                squareStyles,
+                dropSquareStyle,
+                onDragOverSquare,
+                onSquareClick,
+                onSquareRightClick,
+                updateGameMove,
+                updateGameFEN
+                }) => (
+                <View>
+                  <Chessboard
+                      id="humanVsHuman"
+                      width={(windowHeight / 4) * 3}
+                      position={position} //position zB. (a6: 'kW') ==> König auf a6
+                      onDrop={onDrop}
+                      onMouseOverSquare={onMouseOverSquare}
+                      onMouseOutSquare={onMouseOutSquare}
+                      boardStyle={{
+                          borderRadius: '5px',
+                          boxShadow: `0 5px 15px #185a5c`,
+                      }}
+                      squareStyles={squareStyles}
+                      dropSquareStyle={dropSquareStyle}
+                      onDragOverSquare={onDragOverSquare}
+                      onSquareClick={onSquareClick}
+                      onSquareRightClick={onSquareRightClick}
+                  />
 
-            <TouchableOpacity
-              style={{width: 100, height: 100}}
-              onPress={() => {
-                updateGameFEN(global.g.getSicilianDefence());
-              }}>
-              <Text>Sicilian Defence</Text>
-            </TouchableOpacity>
+                <TouchableOpacity
+                  style={{width: 100, height: 100}}
+                  onPress={() => {
+                    //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION//
+                    var moves = 'e2:e3,e7:e5,f1:b5';
+                    updateGameMove(moves);
+                  }}>
+                  <Text>Test 1</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{width: 100, height: 100}}
+                  onPress={() => {
+                    var moves = 'g1:f3,e7:e5';
+                    updateGameMove(moves);
+                  }}>
+                  <Text>Test 2</Text>
+                </TouchableOpacity>
+              </View>
+              )}
+            </HumanVsHuman>
           </View>
-        )}
-      </HumanVsHuman>
-    </View>
-  );
+      );
+  }
+  
 }
 
 const squareStyling = ({pieceSquare, history}) => {
