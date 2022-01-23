@@ -27,6 +27,9 @@ class HumanVsHuman extends Component {
     square: '',
     // array of past game moves
     history: [], //pgn
+    // chessboard moves bgn
+    chessboardMoves: '',
+    moveIndex: 0,
   };
 
   componentDidMount() {
@@ -35,6 +38,7 @@ class HumanVsHuman extends Component {
     //this.state.fen übergeben für Logik
   }
 
+  // UPDATE GAME FEN //
   updateGameFEN = FEN => {
     console.log('updateGame:');
 
@@ -51,33 +55,60 @@ class HumanVsHuman extends Component {
     this.setState({position: this.game.position, fen: this.game.fen()});
   };
 
-  updateGameMove = moves => {
+  nextMove = () => {
+    //moveIndex++;
+  };
+  lastMove = () => {
+    //moveIndex--;
+  };
+  // UPDATE GAME MOVE //
+  updateGameMove = (moves, moveIndex) => {
     console.log('updateGame:');
 
+    this.setState({chessboardMoves: moves, moveIndex: moveIndex});
     /////// SET NEW POSITION ///////
 
+    console.log('Chessboard moves: ' + this.state.chessboardMoves);
+    console.log('Chessboard moveIndex: ' + this.state.moveIndex);
     //// SET NEW POSITION ////
     this.game = new Chess();
     this.setState({position: this.game.position, fen: this.game.fen()});
 
     // Split into moves //
     const element = moves.split(',');
+
     //// GET POSITIONS FROM ARRAY ////
 
     console.log(moves);
+    console.log('moveIndex: ' + moveIndex);
 
     // BownMoveNotation //
 
-    Array.prototype.forEach.call(element, move => {
-      console.log('Move: ');
+    if (!moveIndex) {
+      console.log('Move index is Null');
+      Array.prototype.forEach.call(element, move => {
+        console.log('Move: ');
 
-      // Split into positions //
-      const movePosition = move.split(':');
+        // Split into positions //
+        const movePosition = move.split(':');
 
-      console.log('From: ' + movePosition[0] + 'to:' + movePosition[1]);
+        console.log('From: ' + movePosition[0] + 'to:' + movePosition[1]);
 
-      this.game.move({from: movePosition[0], to: movePosition[1]});
-    });
+        this.game.move({from: movePosition[0], to: movePosition[1]});
+      });
+    } else {
+      console.log('Move index is not null');
+      for (let index = 0; index < moveIndex; index++) {
+        console.log('Move: ');
+
+        // Split into positions //
+        const movePosition = element[index].split(':');
+
+        console.log('From: ' + movePosition[0] + 'to:' + movePosition[1]);
+
+        this.game.move({from: movePosition[0], to: movePosition[1]});
+      }
+    }
 
     //// SET NEW POSITIONS TO BOARD ////
     this.setState({position: this.game.position, fen: this.game.fen()});
@@ -167,6 +198,8 @@ class HumanVsHuman extends Component {
     }
     */
   };
+
+  //
 
   // keep clicked square style and remove hint squares
   removeHighlightSquare = () => {
@@ -313,64 +346,64 @@ class HumanVsHuman extends Component {
   }
 }
 
-export default class ChessBoard extends React.Component{  
-  render(){
-      return (
-          <View
-          style={
-              /*(global.g.getWindowWidth(),
+export default class ChessBoard extends React.Component {
+  render() {
+    return (
+      <View
+        style={
+          /*(global.g.getWindowWidth(),
               global.g.getWindowHeight(),
               {backgroundColor: global.g.getBackgroundColor()}),*/
-              {flex: 1}
-          }>
-            <HumanVsHuman>
-                {({
-                position,
-                onDrop,
-                onMouseOverSquare,
-                onMouseOutSquare,
-                squareStyles,
-                dropSquareStyle,
-                onDragOverSquare,
-                onSquareClick,
-                onSquareRightClick,
-                updateGameMove,
-                updateGameFEN
-                }) => (
-                <View>
-                  <Chessboard
-                      id="humanVsHuman"
-                      width={(windowHeight / 4) * 3}
-                      position={position} //position zB. (a6: 'kW') ==> König auf a6
-                      onDrop={onDrop}
-                      onMouseOverSquare={onMouseOverSquare}
-                      onMouseOutSquare={onMouseOutSquare}
-                      boardStyle={{
-                          borderRadius: '5px',
-                          boxShadow: `0 5px 15px #185a5c`,
-                      }}
-                      squareStyles={squareStyles}
-                      dropSquareStyle={dropSquareStyle}
-                      onDragOverSquare={onDragOverSquare}
-                      onSquareClick={onSquareClick}
-                      onSquareRightClick={onSquareRightClick}
-                  />
+          {flex: 1}
+        }>
+        <HumanVsHuman>
+          {({
+            position,
+            onDrop,
+            onMouseOverSquare,
+            onMouseOutSquare,
+            squareStyles,
+            dropSquareStyle,
+            onDragOverSquare,
+            onSquareClick,
+            onSquareRightClick,
+            updateGameMove,
+            updateGameFEN,
+          }) => (
+            <View>
+              <Chessboard
+                id="humanVsHuman"
+                width={(windowHeight / 4) * 3}
+                position={position} //position zB. (a6: 'kW') ==> König auf a6
+                onDrop={onDrop}
+                onMouseOverSquare={onMouseOverSquare}
+                onMouseOutSquare={onMouseOutSquare}
+                boardStyle={{
+                  borderRadius: '5px',
+                  boxShadow: `0 5px 15px #185a5c`,
+                }}
+                squareStyles={squareStyles}
+                dropSquareStyle={dropSquareStyle}
+                onDragOverSquare={onDragOverSquare}
+                onSquareClick={onSquareClick}
+                onSquareRightClick={onSquareRightClick}
+                orientation="white"
+              />
 
-                <TouchableOpacity
-                  style={{width: 100, height: 100}}
-                  onPress={() => {
-                    //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION//
-                    updateGameMove(global.g.getFIDE2021_Game6());
-                  }}>
-                  <Text>FIDE 2021 Game 6</Text>
-                </TouchableOpacity>
-              </View>
-              )}
-            </HumanVsHuman>
-          </View>
-      );
+              <TouchableOpacity
+                style={{width: 100, height: 100}}
+                onPress={() => {
+                  //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION//
+                  updateGameMove(global.g.getFIDE2021_Game6(), 3);
+                }}>
+                <Text>FIDE 2021 Game 6</Text>
+              </TouchableOpacity>
+            </View>
+          )}
+        </HumanVsHuman>
+      </View>
+    );
   }
-  
 }
 
 const squareStyling = ({pieceSquare, history}) => {
