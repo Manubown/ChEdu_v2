@@ -56,10 +56,28 @@ class HumanVsHuman extends Component {
   };
 
   nextMove = () => {
+    console.log('**********************');
     //moveIndex++;
+    if (this.state.chessboardMoves.split(',').length > this.state.moveIndex) {
+      console.log('TRUE');
+      const currentMoveIndex = this.state.moveIndex++;
+      console.log('Current Move Idnex: ' + currentMoveIndex);
+      this.setState({moveIndex: currentMoveIndex});
+    }
+    console.log(this.state.moveIndex);
+    this.updateGameMove(this.state.chessboardMoves, this.state.moveIndex);
   };
   lastMove = () => {
+    console.log('**********************');
     //moveIndex--;
+    if (this.state.moveIndex > 0) {
+      console.log('TRUE');
+      const currentMoveIndex = this.state.moveIndex--;
+      console.log('Current Move Idnex: ' + currentMoveIndex);
+      this.setState({moveIndex: currentMoveIndex});
+    }
+    console.log(this.state.moveIndex);
+    this.updateGameMove(this.state.chessboardMoves, this.state.moveIndex);
   };
   // UPDATE GAME MOVE //
   updateGameMove = (moves, moveIndex) => {
@@ -84,8 +102,9 @@ class HumanVsHuman extends Component {
 
     // BownMoveNotation //
 
-    if (!moveIndex) {
+    if (moveIndex == undefined) {
       console.log('Move index is Null');
+      this.setState({moveIndex: element.length});
       Array.prototype.forEach.call(element, move => {
         console.log('Move: ');
 
@@ -342,6 +361,8 @@ class HumanVsHuman extends Component {
       onSquareRightClick: this.onSquareRightClick,
       updateGameMove: this.updateGameMove,
       updateGameFEN: this.updateGameFEN,
+      nextMove: this.nextMove,
+      lastMove: this.lastMove,
     });
   }
 }
@@ -369,6 +390,8 @@ export default class ChessBoard extends React.Component {
             onSquareRightClick,
             updateGameMove,
             updateGameFEN,
+            nextMove,
+            lastMove,
           }) => (
             <View>
               <Chessboard
@@ -394,9 +417,25 @@ export default class ChessBoard extends React.Component {
                 style={{width: 100, height: 100}}
                 onPress={() => {
                   //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION//
-                  updateGameMove(global.g.getFIDE2021_Game6(), 3);
+                  updateGameMove(global.g.getFIDE2021_Game6());
                 }}>
                 <Text>FIDE 2021 Game 6</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{width: 100, height: 100}}
+                onPress={() => {
+                  //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION//
+                  nextMove();
+                }}>
+                <Text>Next move</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{width: 100, height: 100}}
+                onPress={() => {
+                  //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION//
+                  lastMove();
+                }}>
+                <Text>Last Move</Text>
               </TouchableOpacity>
             </View>
           )}
