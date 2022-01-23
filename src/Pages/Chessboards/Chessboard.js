@@ -308,6 +308,7 @@ class HumanVsHuman extends Component {
       onSquareClick: this.onSquareClick,
       onSquareRightClick: this.onSquareRightClick,
       updateGameMove: this.updateGameMove,
+      updateGameFEN: this.updateGameFEN,
     });
   }
 }
@@ -331,6 +332,7 @@ export default function CheduChessBoard() {
           onSquareClick,
           onSquareRightClick,
           updateGameMove,
+          updateGameFEN
         }) => (
           <View>
             <Chessboard
@@ -367,6 +369,14 @@ export default function CheduChessBoard() {
                 updateGameMove(moves);
               }}>
               <Text>Test 2</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={{width: 100, height: 100}}
+              onPress={() => {
+                updateGameFEN(global.g.getSicilianDefence());
+              }}>
+              <Text>Sicilian Defence</Text>
             </TouchableOpacity>
           </View>
         )}
