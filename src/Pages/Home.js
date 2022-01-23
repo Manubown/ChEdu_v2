@@ -856,7 +856,6 @@ export default class Home extends React.Component {
               style={{
                 justifyContent: 'center',
                 alignItems: 'center',
-                //TODO: Transform
                 transform: [
                   {
                     translateX: translateXTabChessBoard,
@@ -879,7 +878,6 @@ export default class Home extends React.Component {
               style={{
                 justifyContent: 'center',
                 alignItems: 'center',
-                //Transform TODO
                 transform: [
                   {
                     translateX: translateXTabAnalysis,
