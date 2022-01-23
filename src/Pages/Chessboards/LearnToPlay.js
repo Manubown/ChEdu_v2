@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Dimensions, View, TouchableOpacity, Text, Animated, ScrollView} from 'react-native';
+import {Dimensions, View, TouchableOpacity, Text, Animated, ScrollView, ImageBackground} from 'react-native';
 import PropTypes from 'prop-types';
 import * as Chess from 'chess.js'; // import Chess from  "chess.js"(default) if recieving an error about new Chess() not being a constructor
 import {
@@ -8,10 +8,11 @@ import {
   TrophyFilled,
 } from '@ant-design/icons';
 
+/*styles*/
+import styles from '../../styles';
+
 import Chessboard from 'chessboardjsx';
 //import Resource from "./Resource";
-
-const windowHeight = Dimensions.get('window').height;
 
 class HumanVsHuman extends Component {
   static propTypes = {children: PropTypes.func};
@@ -543,10 +544,8 @@ export default class LearnToPlay extends React.Component{
         return (
             <View
             style={
-                /*(global.g.getWindowWidth(),
-                global.g.getWindowHeight(),
-                {backgroundColor: global.g.getBackgroundColor()}),*/
-                {flex: 1}
+              global.g.getWindowWidth(),
+              global.g.getWindowHeight()
             }>
             <HumanVsHuman>
                 {({
@@ -564,10 +563,21 @@ export default class LearnToPlay extends React.Component{
                 nextMove,
                 lastMove,
                 }) => (
-                <View>
+                <View
+                  style={
+                    {
+                      backgroundColor: global.g.getBackgroundColor()
+                    }
+                  }
+                >
+                  {/*Chessboard with info*/}
+                  <View
+                    style = {{ flexDirection: 'row', alignSelf: 'center' }}
+                  >
                     <Chessboard
+
                         id="humanVsHuman"
-                        width={(windowHeight / 4) * 3}
+                        width={(global.g.getWindowHeight() / 4) * 3}
                         position={position} //position zB. (a6: 'kW') ==> König auf a6
                         onDrop={onDrop}
                         onMouseOverSquare={onMouseOverSquare}
@@ -583,6 +593,31 @@ export default class LearnToPlay extends React.Component{
                         onSquareRightClick={onSquareRightClick}
                         orientation="white"
                     />
+                  </View>
+                  
+                  {/*Tools*/}
+                  <View style={{ flexDirection: "row", alignSelf: "center" }}>
+                    <TouchableOpacity
+                        style={{width: 100, height: 100}}
+                        onPress={() => {
+                          //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                          lastMove();
+                        }}>
+                        <LeftCircleTwoTone 
+                          twoToneColor={"#185a5c"} 
+                        />
+                      </TouchableOpacity>
+                      <TouchableOpacity
+                        style={{width: 100, height: 100}}
+                        onPress={() => {
+                          //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                          nextMove();
+                        }}>
+                        <RightCircleTwoTone 
+                          twoToneColor={"#185a5c"}
+                        />
+                      </TouchableOpacity>
+                  </View>
 
                     <View
                         style={{
@@ -609,25 +644,19 @@ export default class LearnToPlay extends React.Component{
                                     height: '100%',
                                     top: 0,
                                     left: 0,
-                                    backgroundColor: '#007aff',
-                                    borderRadius: 4,
                                     transform: [{translateX}],
                                 }}
                             />
-            
+                            
                             {/*Chess Basics*/}
                             <TouchableOpacity
-                                style={{
-                                flex: 1,
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                borderWidth: 1,
-                                borderColor: '#007aff',
-                                borderRadius: 4,
-                                borderRightWidth: 0,
-                                borderTopRightRadius: 0,
-                                borderBottomRightRadius: 0,
-                                }}
+                                style={
+                                  styles.LearnToPlaySlider,
+                                  {
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                  }
+                                }
                                 onLayout={event =>
                                 this.setState({xTabChessBasics: event.nativeEvent.layout.x})
                                 }
@@ -636,96 +665,160 @@ export default class LearnToPlay extends React.Component{
                                     this.handleSlide(xTabChessBasics),
                                 )
                                 }>
-                                <Text style={{color: active === 0 ? '#fff' : '#007aff'}}>
-                                    Chess Basics
-                                </Text>
+                                  <ImageBackground
+                                    source={global.g.getChessBasics()}
+                                    style={styles.LearnToPlaySlider}>
+                                    <View
+                                      style={{
+                                        backgroundColor: 'rgba(52, 52, 52, 0.8)',
+                                        borderRadius: 20,
+                                        margin: (global.g.getWindowWidth() /20),
+                                        marginTop: (global.g.getWindowWidth() /20),
+                                        marginBottom: (global.g.getWindowWidth() /20)
+                                      }}>
+                                      <Text
+                                        style={{
+                                          fontSize: global.g.getWindowWidth() / 75,
+                                          color: 'white',
+                                          margin: 10,
+                                          textAlign: 'center',
+                                        }}
+                                      >
+                                        Chess basics
+                                      </Text>
+                                    </View>
+                                  </ImageBackground>
                             </TouchableOpacity>
                                 
                             {/*Strategic Concepts*/}
                             <TouchableOpacity
-                                style={{
-                                flex: 1,
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                borderWidth: 1,
-                                borderColor: '#007aff',
-                                borderLeftWidth: 0,
-                                borderRightWidth: 0,
-                                borderTopLeftRadius: 0,
-                                borderBottomLeftRadius: 0,
-                                }}
+                                style={
+                                  styles.LearnToPlaySlider,
+                                  {
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                  }
+                                }
                                 onLayout={event =>
                                 this.setState({xTabStrategicConcepts: event.nativeEvent.layout.x})
                                 }
                                 onPress={() =>
                                 this.setState({active: 1}, () => this.handleSlide(xTabStrategicConcepts))
-                                }>
-                                <Text style={{color: active === 1 ? '#fff' : '#007aff'}}>
+                                }
+                            >
+                              <ImageBackground
+                                source={global.g.getStrategyConcepts()}
+                                style={styles.LearnToPlaySlider}>
+                                <View
+                                  style={{
+                                    backgroundColor: 'rgba(52, 52, 52, 0.8)',
+                                    borderRadius: 20,
+                                    margin: (global.g.getWindowWidth() /20),
+                                    marginTop: (global.g.getWindowWidth() /20),
+                                    marginBottom: (global.g.getWindowWidth() /20)
+                                  }}>
+                                  <Text
+                                    style={{
+                                      fontSize: global.g.getWindowWidth() / 75,
+                                      color: 'white',
+                                      margin: 10,
+                                      textAlign: 'center',
+                                    }}>
                                     Strategic Concepts
-                                </Text>
+                                  </Text>
+                                </View>
+                              </ImageBackground>
                             </TouchableOpacity>
                 
                             {/*Opening Concepts*/}
                             <TouchableOpacity
-                                style={{
-                                flex: 1,
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                borderWidth: 1,
-                                borderColor: '#007aff',
-                                borderLeftWidth: 0,
-                                borderRightWidth: 0,
-                                borderTopLeftRadius: 0,
-                                borderBottomLeftRadius: 0,
-                                }}
+                                style={
+                                  styles.LearnToPlaySlider,
+                                  {
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                  }
+                                }
                                 onLayout={event =>
                                 this.setState({xTabOpeningConcepts: event.nativeEvent.layout.x})
                                 }
                                 onPress={() =>
                                 this.setState({active: 2}, () => this.handleSlide(xTabOpeningConcepts))
-                                }>
-                                <Text style={{color: active === 2 ? '#fff' : '#007aff'}}>
+                                }
+                            >
+                              <ImageBackground
+                                source={global.g.getOpeningConcepts()}
+                                style={styles.LearnToPlaySlider}>
+                                <View
+                                  style={{
+                                    backgroundColor: 'rgba(52, 52, 52, 0.8)',
+                                    borderRadius: 20,
+                                    margin: (global.g.getWindowWidth() /20),
+                                    marginTop: (global.g.getWindowWidth() /20),
+                                    marginBottom: (global.g.getWindowWidth() /20)
+                                  }}>
+                                  <Text
+                                    style={{
+                                      fontSize: global.g.getWindowWidth() / 75,
+                                      color: 'white',
+                                      margin: 10,
+                                      textAlign: 'center',
+                                    }}>
                                     Opening Concepts
-                                </Text>
+                                  </Text>
+                                </View>
+                              </ImageBackground>
                             </TouchableOpacity>
                 
                             {/*Expert Mode*/}
                             <TouchableOpacity
-                                style={{
-                                flex: 1,
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                borderWidth: 1,
-                                borderColor: '#007aff',
-                                borderLeftWidth: 0,
-                                borderRightWidth: 0,
-                                borderTopLeftRadius: 0,
-                                borderBottomLeftRadius: 0,
-                                }}
+                                style={
+                                  styles.LearnToPlaySlider,
+                                  {
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                  }
+                                }
                                 onLayout={event =>
                                 this.setState({xTabExpertMode: event.nativeEvent.layout.x})
                                 }
                                 onPress={() =>
                                 this.setState({active: 3}, () => this.handleSlide(xTabExpertMode))
-                                }>
-                                <Text style={{color: active === 3 ? '#fff' : '#007aff'}}>
+                                }
+                            >
+                              <ImageBackground
+                                source={global.g.getExpertMode()}
+                                style={styles.LearnToPlaySlider}>
+                                <View
+                                  style={{
+                                    backgroundColor: 'rgba(52, 52, 52, 0.8)',
+                                    borderRadius: 20,
+                                    margin: (global.g.getWindowWidth() /20),
+                                    marginTop: (global.g.getWindowWidth() /20),
+                                    marginBottom: (global.g.getWindowWidth() /20)
+                                  }}>
+                                  <Text
+                                    style={{
+                                      fontSize: global.g.getWindowWidth() / 75,
+                                      color: 'white',
+                                      margin: 10,
+                                      textAlign: 'center',
+                                    }}>
                                     Expert Mode
-                                </Text>
+                                  </Text>
+                                </View>
+                              </ImageBackground>
                             </TouchableOpacity>
                 
                             {/*Textbook Checkmates*/}
                             <TouchableOpacity
-                                style={{
-                                flex: 1,
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                borderWidth: 1,
-                                borderColor: '#007aff',
-                                borderRadius: 4,
-                                borderLeftWidth: 0,
-                                borderTopLeftRadius: 0,
-                                borderBottomLeftRadius: 0,
-                                }}
+                                style={
+                                  styles.LearnToPlaySlider,
+                                  {
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                  }
+                                }
                                 onLayout={event =>
                                 this.setState({xTabTextbookCheckmates: event.nativeEvent.layout.x})
                                 }
@@ -733,16 +826,38 @@ export default class LearnToPlay extends React.Component{
                                 this.setState({active: 4}, () =>
                                     this.handleSlide(xTabTextbookCheckmates),
                                 )
-                                }>
-                                <Text style={{color: active === 4 ? '#fff' : '#007aff'}}>
+                                }
+                            >
+                              <ImageBackground
+                                source={global.g.getTextbookCheckmates()}
+                                style={styles.LearnToPlaySlider}>
+                                <View
+                                  style={{
+                                    backgroundColor: 'rgba(52, 52, 52, 0.8)',
+                                    borderRadius: 20,
+                                    margin: (global.g.getWindowWidth() /20),
+                                    marginTop: (global.g.getWindowWidth() /20),
+                                    marginBottom: (global.g.getWindowWidth() /20)
+                                  }}>
+                                  <Text
+                                    style={{
+                                      fontSize: global.g.getWindowWidth() / 75,
+                                      color: 'white',
+                                      margin: 10,
+                                      textAlign: 'center',
+                                    }}>
                                     Textbook Checkmates
-                                </Text>
+                                  </Text>
+                                </View>
+                              </ImageBackground>
                             </TouchableOpacity>
                         </View>
                     </View>
                     
                     {/*Single Slides*/}
-                    <ScrollView>
+                    <ScrollView
+                      style = {{marginTop: global.g.getWindowWidth()/50}}
+                    >
                         {/*Chess Basics*/}
                         <Animated.View
                         style={{
@@ -839,23 +954,6 @@ export default class LearnToPlay extends React.Component{
                               updateGameMove(global.g.getFIDE2021_Game6(),0);
                             }}>
                             <Text>FIDE 2021 Game 6</Text>
-                          </TouchableOpacity>
-
-                          <TouchableOpacity
-                            style={{width: 100, height: 100}}
-                            onPress={() => {
-                              //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                              nextMove();
-                            }}>
-                            <Text>Next move</Text>
-                          </TouchableOpacity>
-                          <TouchableOpacity
-                            style={{width: 100, height: 100}}
-                            onPress={() => {
-                              //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                              lastMove();
-                            }}>
-                            <Text>Last Move</Text>
                           </TouchableOpacity>
                         </Animated.View>
                         

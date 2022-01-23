@@ -11,8 +11,6 @@ import {
 import Chessboard from 'chessboardjsx';
 //import Resource from "./Resource";
 
-const windowHeight = Dimensions.get('window').height;
-
 class HumanVsHuman extends Component {
   static propTypes = {children: PropTypes.func};
   state = {
@@ -372,10 +370,8 @@ export default class ChessBoard extends React.Component {
     return (
       <View
         style={
-          /*(global.g.getWindowWidth(),
-              global.g.getWindowHeight(),
-              {backgroundColor: global.g.getBackgroundColor()}),*/
-          {flex: 1}
+          global.g.getWindowWidth(),
+          global.g.getWindowHeight()
         }>
         <HumanVsHuman>
           {({
@@ -393,25 +389,35 @@ export default class ChessBoard extends React.Component {
             nextMove,
             lastMove,
           }) => (
-            <View>
-              <Chessboard
-                id="humanVsHuman"
-                width={(windowHeight / 4) * 3}
-                position={position} //position zB. (a6: 'kW') ==> König auf a6
-                onDrop={onDrop}
-                onMouseOverSquare={onMouseOverSquare}
-                onMouseOutSquare={onMouseOutSquare}
-                boardStyle={{
-                  borderRadius: '5px',
-                  boxShadow: `0 5px 15px #185a5c`,
-                }}
-                squareStyles={squareStyles}
-                dropSquareStyle={dropSquareStyle}
-                onDragOverSquare={onDragOverSquare}
-                onSquareClick={onSquareClick}
-                onSquareRightClick={onSquareRightClick}
-                orientation="white"
-              />
+            <View
+              style={
+                {
+                  backgroundColor: global.g.getBackgroundColor()
+                }
+              }
+            >
+              <View
+                style = {{ flexDirection: 'row', alignSelf: 'center' }}
+              >
+                <Chessboard
+                  id="humanVsHuman"
+                  width={(global.g.getWindowHeight() / 4) * 3}
+                  position={position} //position zB. (a6: 'kW') ==> König auf a6
+                  onDrop={onDrop}
+                  onMouseOverSquare={onMouseOverSquare}
+                  onMouseOutSquare={onMouseOutSquare}
+                  boardStyle={{
+                    borderRadius: '5px',
+                    boxShadow: `0 5px 15px #185a5c`,
+                  }}
+                  squareStyles={squareStyles}
+                  dropSquareStyle={dropSquareStyle}
+                  onDragOverSquare={onDragOverSquare}
+                  onSquareClick={onSquareClick}
+                  onSquareRightClick={onSquareRightClick}
+                  orientation="white"
+                />
+              </View>
 
               <TouchableOpacity
                 style={{width: 100, height: 100}}
