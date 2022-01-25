@@ -8,9 +8,13 @@ import styles from '../styles';
 import {HandleSwitchBackground} from '../global';
 
 //API Communication
-//import { RequestLogin } from "../Connection/ApiCommunication";
+import {RequestRegister} from '../WEB/ApiCommunication';
 
 export default class Register extends React.Component {
+  state = {
+    emailSend: false,
+  };
+
   render() {
     return (
       <View
@@ -19,15 +23,14 @@ export default class Register extends React.Component {
           global.g.getWindowHeight(),
           {backgroundColor: global.g.getBackgroundColor()})
         }>
-
         {/*SideBar*/}
         <View style={styles.SideBar}>
           {/*Logo*/}
           <TouchableOpacity
-          onPress={() => {
-            //RequestLogin(this.state.Username, this.state.Password);
-            this.props.navigation.navigate('Home');
-          }}>
+            onPress={() => {
+              //RequestLogin(this.state.Username, this.state.Password);
+              this.props.navigation.navigate('Home');
+            }}>
             {global.g.getLogo()}
           </TouchableOpacity>
         </View>
@@ -41,7 +44,7 @@ export default class Register extends React.Component {
               <TextInput
                 style={{
                   margin: 20,
-                  color: global.g.getTextColor()
+                  color: global.g.getTextColor(),
                 }}
                 onChangeText={Username => {
                   this.setState({Username});
@@ -53,7 +56,7 @@ export default class Register extends React.Component {
               <TextInput
                 style={{
                   margin: 20,
-                  color: global.g.getTextColor()
+                  color: global.g.getTextColor(),
                 }}
                 onChangeText={Email => {
                   this.setState({Email});
@@ -65,7 +68,7 @@ export default class Register extends React.Component {
               <TextInput
                 style={{
                   margin: 20,
-                  color: global.g.getTextColor()
+                  color: global.g.getTextColor(),
                 }}
                 onChangeText={Password => {
                   this.setState({Password});
@@ -73,11 +76,38 @@ export default class Register extends React.Component {
                 placeholder="Password"
                 keyboardType="default"
               />
+              {this.state.emailSend ? (
+                <View
+                  style={{
+                    with: 150,
+                    backgroundColor: 'green',
+                    borderTopLeftRadius: 20,
+                    borderTopRightRadius: 20,
+                  }}>
+                  <Text
+                    style={{
+                      textAlign: 'center',
+                      color: 'white',
+                      fontSize: 20,
+                      padding: 20,
+                    }}>
+                    Email Send!
+                  </Text>
+                </View>
+              ) : null}
+
               <Button
                 style={styles.Buttons}
                 onPress={() => {
-                  //RequestLogin(this.state.Username, this.state.Password, this.state.Email);
-                  this.props.navigation.navigate('Home');
+                  this.setState({emailSend: true});
+                  RequestRegister(
+                    this.state.Username,
+                    this.state.Password,
+                    this.state.Email,
+                  );
+                  setTimeout(() => {
+                    this.props.navigation.navigate('Home');
+                  }, 1000);
                 }}
                 title="Register"
               />
@@ -86,9 +116,7 @@ export default class Register extends React.Component {
         </View>
 
         {/*Darkmode fix*/}
-        <View style = {{height: global.g.getWindowHeight()/2}}>
-          
-        </View>
+        <View style={{height: global.g.getWindowHeight() / 2}}></View>
       </View>
     );
   }

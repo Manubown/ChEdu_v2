@@ -31,6 +31,8 @@ export default class Home extends React.Component {
     translateYLearnToPlay: -1000,
     translateYOnline: -1000,
     translateYChessboard: -1000,
+
+    isLoggedIn: false,
   };
 
   /*componontDidMount*/
@@ -46,12 +48,11 @@ export default class Home extends React.Component {
     });
   }
 
-  componentWillUnmount() {}
-
   /*updateValuesStats*/
   updateValuesStats = () => {
     this.setState({
       switchValue: global.g.getSwitchValue(),
+      isLoggedIn: global.g.getIsLoggedIn(),
     });
   };
 
@@ -387,59 +388,63 @@ export default class Home extends React.Component {
 
           {/*Menu*/}
           <View>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Login')}>
-              <View
-                style={
-                  ({
-                    backgroundColor: global.g.getBackgroundColor(),
-                  },
-                  styles.MenuShadow)
-                }>
-                <Image
-                  source={global.g.getSwitchLogin()}
+            {!this.state.isLoggedIn ? (
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('Login')}>
+                <View
+                  style={
+                    ({
+                      backgroundColor: global.g.getBackgroundColor(),
+                    },
+                    styles.MenuShadow)
+                  }>
+                  <Image
+                    source={global.g.getSwitchLogin()}
+                    style={{
+                      width: (global.g.getWindowWidth() / 10) * 0.8,
+                      height: (global.g.getWindowWidth() / 10) * 0.8,
+                      color: 'white',
+                    }}
+                  />
+                </View>
+                <Text
                   style={{
-                    width: (global.g.getWindowWidth() / 10) * 0.8,
-                    height: (global.g.getWindowWidth() / 10) * 0.8,
-                    color: 'white',
-                  }}
-                />
-              </View>
-              <Text
-                style={{
-                  textAlign: 'center',
-                  fontWeight: 'bold',
-                  color: global.g.getTextColor(),
-                }}>
-                Login
-              </Text>
-            </TouchableOpacity>
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    color: global.g.getTextColor(),
+                  }}>
+                  Login
+                </Text>
+              </TouchableOpacity>
+            ) : null}
 
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Register')}>
-              <View
-                style={
-                  ({backgroundColor: global.g.getBackgroundColor()},
-                  styles.MenuShadow)
-                }>
-                <Image
-                  source={global.g.getSwitchRegister()}
+            {!this.state.isLoggedIn ? (
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('Register')}>
+                <View
+                  style={
+                    ({backgroundColor: global.g.getBackgroundColor()},
+                    styles.MenuShadow)
+                  }>
+                  <Image
+                    source={global.g.getSwitchRegister()}
+                    style={{
+                      width: (global.g.getWindowWidth() / 10) * 0.8,
+                      height: (global.g.getWindowWidth() / 10) * 0.8,
+                      color: 'white',
+                    }}
+                  />
+                </View>
+                <Text
                   style={{
-                    width: (global.g.getWindowWidth() / 10) * 0.8,
-                    height: (global.g.getWindowWidth() / 10) * 0.8,
-                    color: 'white',
-                  }}
-                />
-              </View>
-              <Text
-                style={{
-                  textAlign: 'center',
-                  fontWeight: 'bold',
-                  color: global.g.getTextColor(),
-                }}>
-                Register
-              </Text>
-            </TouchableOpacity>
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    color: global.g.getTextColor(),
+                  }}>
+                  Register
+                </Text>
+              </TouchableOpacity>
+            ) : null}
 
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('User')}>
@@ -466,6 +471,38 @@ export default class Home extends React.Component {
                 User
               </Text>
             </TouchableOpacity>
+
+            {this.state.isLoggedIn ? (
+              <TouchableOpacity
+                onPress={() => {
+                  global.g.setIsLoggedIn(false), this.updateValuesStats();
+                }}>
+                <View
+                  style={
+                    ({
+                      backgroundColor: global.g.getBackgroundColor(),
+                    },
+                    styles.MenuShadow)
+                  }>
+                  <Image
+                    source={global.g.getSwitchLogin()}
+                    style={{
+                      width: (global.g.getWindowWidth() / 10) * 0.8,
+                      height: (global.g.getWindowWidth() / 10) * 0.8,
+                      color: 'white',
+                    }}
+                  />
+                </View>
+                <Text
+                  style={{
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    color: global.g.getTextColor(),
+                  }}>
+                  Logout
+                </Text>
+              </TouchableOpacity>
+            ) : null}
           </View>
         </View>
 

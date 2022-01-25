@@ -8,9 +8,12 @@ import styles from '../styles';
 import {HandleSwitchBackground} from '../global';
 
 //API Communication
-//import { RequestLogin } from "../Connection/ApiCommunication";
+import {RequestLogin} from '../WEB/ApiCommunication';
 
 export default class Login extends React.Component {
+  state = {
+    LoginSucced: false,
+  };
   /*componontDidMount*/
   componentDidMount() {
     this.updateValuesStats();
@@ -55,23 +58,23 @@ export default class Login extends React.Component {
           <View style={{justifyContent: 'center', alignItems: 'center'}}>
             <View style={{flexDirection: 'column'}}>
               <Title style={{color: global.g.getTextColor()}}>Login</Title>
-              <Text style={{color: global.g.getTextColor()}}>Username</Text>
+              <Text style={{color: global.g.getTextColor()}}>Email</Text>
               <TextInput
                 style={{
                   margin: 20,
-                  color: global.g.getTextColor()
+                  color: global.g.getTextColor(),
                 }}
                 onChangeText={Username => {
                   this.setState({Username});
                 }}
-                placeholder="Username"
+                placeholder="Email"
                 keyboardType="default"
               />
               <Text style={{color: global.g.getTextColor()}}>Password</Text>
               <TextInput
                 style={{
                   margin: 20,
-                  color: global.g.getTextColor()
+                  color: global.g.getTextColor(),
                 }}
                 onChangeText={Password => {
                   this.setState({Password});
@@ -79,11 +82,35 @@ export default class Login extends React.Component {
                 placeholder="Password"
                 keyboardType="default"
               />
+              {this.state.LoginSucced ? (
+                <View
+                  style={{
+                    with: 150,
+                    backgroundColor: 'green',
+                    borderTopLeftRadius: 20,
+                    borderTopRightRadius: 20,
+                  }}>
+                  <Text
+                    style={{
+                      textAlign: 'center',
+                      color: 'white',
+                      fontSize: 20,
+                      padding: 20,
+                    }}>
+                    Login Successfull!
+                  </Text>
+                </View>
+              ) : null}
               <Button
                 style={styles.Buttons}
                 onPress={() => {
-                  //RequestLogin(this.state.Username, this.state.Password);
-                  this.props.navigation.navigate('Home');
+                  if (RequestLogin(this.state.Username, this.state.Password)) {
+                    this.setState({LoginSucced: true});
+                  }
+
+                  setTimeout(() => {
+                    this.props.navigation.navigate('Home');
+                  }, 1000);
                 }}
                 title="Login"
               />
@@ -92,9 +119,7 @@ export default class Login extends React.Component {
         </View>
 
         {/*Darkmode*/}
-        <View style = {{height: global.g.getWindowHeight()/2}}>
-          
-        </View>
+        <View style={{height: global.g.getWindowHeight() / 2}}></View>
       </View>
     );
   }

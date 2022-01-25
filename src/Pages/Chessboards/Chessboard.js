@@ -25,9 +25,37 @@ class HumanVsHuman extends Component {
     square: '',
     // array of past game moves
     history: [], //pgn
+    // saves last position of unduing
+    undoPosition: '',
     // chessboard moves bgn
-    chessboardMoves: '',
+    chessboardMoves: '', //bgn
+    // chessboard move Index bgn
     moveIndex: 0,
+  };
+
+  addChessBoardMove = (from, to) => {
+    console.log('add Chess board moves: ' + this.state.chessboardMoves);
+    var x = this.state.chessboardMoves.split(',').length;
+    if (this.state.moveIndex < x) {
+      var mewChessboardMoves = this.state.chessboardMoves
+        .split(',')
+        .splice(0, this.state.moveIndex);
+
+      var newbdn = mewChessboardMoves.toString() + ',' + from + ':' + to;
+      console.log('Chessboard Moves: ' + newbdn);
+
+      console.log('add Chess board moves: ' + this.state.chessboardMoves);
+      this.setState({
+        chessboardMoves: newbdn,
+        moveIndex: newbdn.length + 1,
+      });
+    } else {
+      this.setState({
+        chessboardMoves: this.state.chessboardMoves + ',' + from + ':' + to,
+        moveIndex: this.state.chessboardMoves.split(',').length + 1,
+      });
+    }
+    console.log('add Chess board moves: ' + this.state.chessboardMoves);
   };
 
   componentDidMount() {
@@ -53,7 +81,38 @@ class HumanVsHuman extends Component {
     this.setState({position: this.game.position, fen: this.game.fen()});
   };
 
-  nextMove = () => {
+  undoMovePgn = () => {
+    var undoMove = this.game.undo();
+    console.log('Undo Move: ' + undoMove);
+    this.setState({
+      position: this.game.position,
+      fen: this.game.fen(),
+      undoPosition: undoMove,
+    });
+  };
+
+  nextMovePgn = () => {
+    for (let index = 0; index < this.state.history.length; index++) {
+      const position = this.state.history[index];
+      console.log(position.to);
+      console.log(this.state.undoPosition);
+      console.log(
+        'IF(' + position.to + '==' + this.state.undoPosition.to + ')',
+      );
+      if (position == this.state.undoPosition) {
+        console.log('true');
+        this.game.move(this.state.history[index].to);
+        this.setState({
+          position: this.game.position,
+          fen: this.game.fen(),
+          undoPosition: this.state.history[index++],
+        });
+        break;
+      }
+    }
+  };
+
+  nextMoveBgn = () => {
     console.log('**********************');
     //moveIndex++;
     if (this.state.chessboardMoves.split(',').length > this.state.moveIndex) {
@@ -65,7 +124,7 @@ class HumanVsHuman extends Component {
     console.log(this.state.moveIndex);
     this.updateGameMove(this.state.chessboardMoves, this.state.moveIndex);
   };
-  lastMove = () => {
+  lastMoveBgn = () => {
     console.log('**********************');
     //moveIndex--;
     if (this.state.moveIndex > 0) {
@@ -77,6 +136,14 @@ class HumanVsHuman extends Component {
     console.log(this.state.moveIndex);
     this.updateGameMove(this.state.chessboardMoves, this.state.moveIndex);
   };
+
+  updateGamePGN = () => {
+    this.game.load_pgn(
+      '1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Ng5 Ngf6 6.Bd3 e6 7.N1f3 h6 8.Nxe6 Qe7 9.O-O fxe6 10.Bg6+ Kd8 {Kasparov schüttelt kurz den Kopf} 11.Bf4 b5 12.a4 Bb7 13.Re1 Nd5 14.Bg3 Kc8 15.axb5 cxb5 16.Qd3 Bc6 17.Bf5 exf5 18.Rxe7 Bxe7 19.c4 1-0',
+    );
+    this.setState({position: this.game.position, fen: this.game.fen()});
+  };
+
   // UPDATE GAME MOVE //
   updateGameMove = (moves, moveIndex) => {
     console.log('updateGame:');
@@ -265,6 +332,7 @@ class HumanVsHuman extends Component {
 
     // illegal move
     if (move === null) return;
+    this.addChessBoardMove(sourceSquare, targetSquare);
     this.setState(({history, pieceSquare}) => ({
       fen: this.game.fen(),
       history: this.game.history({verbose: true}),
@@ -322,6 +390,8 @@ class HumanVsHuman extends Component {
     // illegal move
     if (move === null) return;
 
+    this.addChessBoardMove(this.state.pieceSquare, square);
+
     this.setState({
       fen: this.game.fen(),
       history: this.game.history({verbose: true}),
@@ -359,8 +429,12 @@ class HumanVsHuman extends Component {
       onSquareRightClick: this.onSquareRightClick,
       updateGameMove: this.updateGameMove,
       updateGameFEN: this.updateGameFEN,
-      nextMove: this.nextMove,
-      lastMove: this.lastMove,
+      nextMoveBgn: this.nextMoveBgn,
+      lastMoveBgn: this.lastMoveBgn,
+      undoMovePgn: this.undoMovePgn,
+      nextMovePgn: this.nextMovePgn,
+      updateGamePGN: this.updateGamePGN,
+      chessBoardMoves: this.state.chessboardMoves,
     });
   }
 }
@@ -368,11 +442,7 @@ class HumanVsHuman extends Component {
 export default class ChessBoard extends React.Component {
   render() {
     return (
-      <View
-        style={
-          global.g.getWindowWidth(),
-          global.g.getWindowHeight()
-        }>
+      <View style={(global.g.getWindowWidth(), global.g.getWindowHeight())}>
         <HumanVsHuman>
           {({
             position,
@@ -386,19 +456,18 @@ export default class ChessBoard extends React.Component {
             onSquareRightClick,
             updateGameMove,
             updateGameFEN,
-            nextMove,
-            lastMove,
+            nextMoveBgn,
+            lastMoveBgn,
+            updateGamePGN,
+            undoMovePgn,
+            nextMovePgn,
+            chessBoardMoves,
           }) => (
             <View
-              style={
-                {
-                  backgroundColor: global.g.getBackgroundColor()
-                }
-              }
-            >
-              <View
-                style = {{ flexDirection: 'row', alignSelf: 'center' }}
-              >
+              style={{
+                backgroundColor: global.g.getBackgroundColor(),
+              }}>
+              <View style={{flexDirection: 'row', alignSelf: 'center'}}>
                 <Chessboard
                   id="humanVsHuman"
                   width={(global.g.getWindowHeight() / 4) * 3}
@@ -420,37 +489,36 @@ export default class ChessBoard extends React.Component {
               </View>
 
               {/*Tools*/}
-              <View style={{ flexDirection: "row", alignSelf: "center" }}>
+              <View style={{flexDirection: 'row', alignSelf: 'center'}}>
                 <TouchableOpacity
-                    style={{width: 100, height: 100}}
-                    onPress={() => {
-                      //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                      lastMove();
-                    }}>
-                    <LeftCircleTwoTone 
-                      twoToneColor={"#185a5c"} 
-                    />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={{width: 100, height: 100}}
-                    onPress={() => {
-                      //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                      nextMove();
-                    }}>
-                    <RightCircleTwoTone 
-                      twoToneColor={"#185a5c"}
-                    />
-                  </TouchableOpacity>
-                </View>
+                  style={{width: 100, height: 100}}
+                  onPress={() => {
+                    //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                    undoMovePgn();
+                  }}>
+                  <LeftCircleTwoTone twoToneColor={'#185a5c'} />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{width: 100, height: 100}}
+                  onPress={() => {
+                    //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                    //nextMove();
+                    nextMovePgn();
+                  }}>
+                  <RightCircleTwoTone twoToneColor={'#185a5c'} />
+                </TouchableOpacity>
+              </View>
 
               <TouchableOpacity
                 style={{width: 100, height: 100}}
                 onPress={() => {
                   //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                  updateGameMove(global.g.getFIDE2021_Game6(),0);
+                  //updateGameMove(global.g.getFIDE2021_Game6(), 0);
+                  updateGamePGN();
                 }}>
                 <Text>Testgame</Text>
               </TouchableOpacity>
+              <Text Text={chessBoardMoves} />
             </View>
           )}
         </HumanVsHuman>
