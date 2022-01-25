@@ -331,6 +331,12 @@ class Global extends React.Component {
   };
   /*Darkmode end*/
 
+  /*UserStats*/
+  setUserStats = value => {
+    this.userStats = value;
+  }
+  /*UserStats end*/
+
   /*Standards*/
   /*Logo*/
   getLogo = () => {
