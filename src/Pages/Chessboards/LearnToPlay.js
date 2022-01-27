@@ -598,7 +598,7 @@ export default class LearnToPlay extends React.Component{
                   {/*Tools*/}
                   <View style={{ flexDirection: "row", alignSelf: "center" }}>
                     <TouchableOpacity
-                        style={{width: 100, height: 100}}
+                        style={{width: 50}}
                         onPress={() => {
                           //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
                           lastMove();
@@ -608,13 +608,13 @@ export default class LearnToPlay extends React.Component{
                         />
                       </TouchableOpacity>
                       <TouchableOpacity
-                        style={{width: 100, height: 100}}
+                        style={{width: 50}}
                         onPress={() => {
                           //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
                           nextMove();
                         }}>
                         <RightCircleTwoTone 
-                          twoToneColor={"#185a5c"}
+                          twoToneColor={"#185a5c"}                         
                         />
                       </TouchableOpacity>
                   </View>
