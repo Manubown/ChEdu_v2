@@ -444,8 +444,9 @@ export default class ChessBoard extends React.Component {
     return (
       <View style={(global.g.getWindowWidth(), global.g.getWindowHeight()),
         {
+          backgroundColor: global.g.getBackgroundColor(),
           marginTop: global.g.getWindowHeight()/10,
-          marginBottom: global.g.getWindowHeight()/10
+          marginBottom: global.g.getWindowHeight()/10,
         }}>
         <HumanVsHuman>
           {({
@@ -467,10 +468,7 @@ export default class ChessBoard extends React.Component {
             nextMovePgn,
             chessBoardMoves,
           }) => (
-            <View
-              style={{
-                backgroundColor: global.g.getBackgroundColor(),
-              }}>
+            <View style={{}}>
               <View style={{flexDirection: 'row', alignSelf: 'center'}}>
                 <Chessboard
                   id="humanVsHuman"
@@ -495,7 +493,7 @@ export default class ChessBoard extends React.Component {
               {/*Tools*/}
               <View style={{flexDirection: 'row', alignSelf: 'center'}}>
                 <TouchableOpacity
-                  style={{width: 100, height: 100}}
+                  style={{width: 100}}
                   onPress={() => {
                     //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
                     undoMovePgn();
@@ -503,7 +501,7 @@ export default class ChessBoard extends React.Component {
                   <LeftCircleTwoTone twoToneColor={'#185a5c'} />
                 </TouchableOpacity>
                 <TouchableOpacity
-                  style={{width: 100, height: 100}}
+                  style={{width: 100}}
                   onPress={() => {
                     //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
                     //nextMove();
