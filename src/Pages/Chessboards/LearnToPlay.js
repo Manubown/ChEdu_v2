@@ -545,7 +545,11 @@ export default class LearnToPlay extends React.Component{
             <View
             style={
               global.g.getWindowWidth(),
-              global.g.getWindowHeight()
+              global.g.getWindowHeight(),
+              {
+                marginTop: global.g.getWindowHeight()/10,
+                marginBottom: global.g.getWindowHeight()/10
+              }
             }>
             <HumanVsHuman>
                 {({

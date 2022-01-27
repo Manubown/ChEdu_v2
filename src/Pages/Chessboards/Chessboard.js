@@ -442,7 +442,11 @@ class HumanVsHuman extends Component {
 export default class ChessBoard extends React.Component {
   render() {
     return (
-      <View style={(global.g.getWindowWidth(), global.g.getWindowHeight())}>
+      <View style={(global.g.getWindowWidth(), global.g.getWindowHeight()),
+        {
+          marginTop: global.g.getWindowHeight()/10,
+          marginBottom: global.g.getWindowHeight()/10
+        }}>
         <HumanVsHuman>
           {({
             position,
