@@ -15,6 +15,7 @@ import {
 import styles from '../styles';
 
 import {HandleSwitchBackground} from '../global';
+import {getData, deleteData} from '../Scripts/SaveData';
 
 export default class Home extends React.Component {
   state = {
@@ -32,6 +33,14 @@ export default class Home extends React.Component {
     translateYOnline: -1000,
     translateYChessboard: -1000,
 
+    /*User Stats*/
+    username: 'User',
+    elo: 1000,
+    playedGames: 0,
+    wonGames: 0,
+    lostGames: 0,
+    localGames: 0,
+    onlineGames: 0,
     isLoggedIn: false,
   };
 
@@ -50,10 +59,22 @@ export default class Home extends React.Component {
 
   /*updateValuesStats*/
   updateValuesStats = () => {
-    this.setState({
-      switchValue: global.g.getSwitchValue(),
-      isLoggedIn: global.g.getIsLoggedIn(),
-    });
+    console.log('Update value stats');
+    if (getData()) {
+      this.setState({
+        username: global.g.getUsername(),
+        elo: global.g.getElo(),
+        playedGames: global.g.getPlayedGames(),
+        wonGames: global.g.getWonGames(),
+        lostGames: global.g.getLostGames(),
+        localGames: global.g.getLocalGames(),
+        onlineGames: global.g.getOnlineGames(),
+        switchValue: global.g.getSwitchValue(),
+        isLoggedIn: global.g.getIsLoggedIn(),
+      });
+      console.log('is logged in: local: ' + this.state.isLoggedIn);
+      console.log('is logged in: global: ' + global.g.getIsLoggedIn());
+    }
   };
 
   /*handleSlide*/
@@ -207,141 +228,139 @@ export default class Home extends React.Component {
                     }}>
                     Statistics
                   </Text>
-                  <Image />
                 </View>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    fontSize: global.g.getWindowWidth() / 80,
-                  }}>
+                {this.state.isLoggedIn ? (
                   <View
                     style={{
-                      flexDirection: 'column',
-                      width: global.g.getWindowWidth() / 10,
-                      height: global.g.getWindowHeight() / 10,
-                      textAlign: 'right',
+                      flexDirection: 'row',
+                      fontSize: global.g.getWindowWidth() / 80,
                     }}>
-                    <Text
+                    <View
                       style={{
-                        fontSize: global.g.getWindowWidth() / 80,
-                        color: 'white',
+                        flexDirection: 'column',
+                        width: global.g.getWindowWidth() / 10,
+                        height: global.g.getWindowHeight() / 10,
+                        textAlign: 'right',
                       }}>
-                      Username:{' '}
-                    </Text>
-                    <Text
+                      <Text
+                        style={{
+                          fontSize: global.g.getWindowWidth() / 80,
+                          color: 'white',
+                        }}>
+                        Username:{' '}
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: global.g.getWindowWidth() / 80,
+                          color: 'white',
+                        }}>
+                        Elo:{' '}
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: global.g.getWindowWidth() / 80,
+                          color: 'white',
+                        }}>
+                        Played Games:{' '}
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: global.g.getWindowWidth() / 80,
+                          color: 'white',
+                        }}>
+                        Won Games:{' '}
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: global.g.getWindowWidth() / 80,
+                          color: 'white',
+                        }}>
+                        Lost Games:{' '}
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: global.g.getWindowWidth() / 80,
+                          color: 'white',
+                        }}>
+                        Local Games:{' '}
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: global.g.getWindowWidth() / 80,
+                          color: 'white',
+                        }}>
+                        Online Games:{' '}
+                      </Text>
+                    </View>
+                    <View
                       style={{
-                        fontSize: global.g.getWindowWidth() / 80,
-                        color: 'white',
+                        flexDirection: 'column',
+                        width: global.g.getWindowWidth() / 10,
+                        textAlign: 'left',
                       }}>
-                      Elo:{' '}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: global.g.getWindowWidth() / 80,
-                        color: 'white',
-                      }}>
-                      Played Games:{' '}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: global.g.getWindowWidth() / 80,
-                        color: 'white',
-                      }}>
-                      Won Games:{' '}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: global.g.getWindowWidth() / 80,
-                        color: 'white',
-                      }}>
-                      Lost Games:{' '}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: global.g.getWindowWidth() / 80,
-                        color: 'white',
-                      }}>
-                      Local Games:{' '}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: global.g.getWindowWidth() / 80,
-                        color: 'white',
-                      }}>
-                      Online Games:{' '}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: global.g.getWindowWidth() / 80,
-                        color: 'white',
-                      }}>
-                      Play Time:{' '}
-                    </Text>
+                      <Text
+                        style={{
+                          fontSize: global.g.getWindowWidth() / 80,
+                          color: 'white',
+                        }}>
+                        {global.g.getUsername()}
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: global.g.getWindowWidth() / 80,
+                          color: 'white',
+                        }}>
+                        {global.g.getElo()}
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: global.g.getWindowWidth() / 80,
+                          color: 'white',
+                        }}>
+                        {global.g.getPlayedGames()}
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: global.g.getWindowWidth() / 80,
+                          color: 'white',
+                        }}>
+                        {global.g.getWonGames()}
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: global.g.getWindowWidth() / 80,
+                          color: 'white',
+                        }}>
+                        {global.g.getLostGames()}
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: global.g.getWindowWidth() / 80,
+                          color: 'white',
+                        }}>
+                        {global.g.getLocalGames()}
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: global.g.getWindowWidth() / 80,
+                          color: 'white',
+                        }}>
+                        {global.g.getOnlineGames()}
+                      </Text>
+                    </View>
                   </View>
-                  <View
+                ) : (
+                  <Text
                     style={{
-                      flexDirection: 'column',
-                      width: global.g.getWindowWidth() / 10,
-                      textAlign: 'left',
+                      paddingTop: 20,
+                      fontSize: global.g.getWindowWidth() / 70,
+                      color: 'white',
+                      textAlign: 'center',
                     }}>
-                    <Text
-                      style={{
-                        fontSize: global.g.getWindowWidth() / 80,
-                        color: 'white',
-                      }}>
-                      {}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: global.g.getWindowWidth() / 80,
-                        color: 'white',
-                      }}>
-                      {}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: global.g.getWindowWidth() / 80,
-                        color: 'white',
-                      }}>
-                      {}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: global.g.getWindowWidth() / 80,
-                        color: 'white',
-                      }}>
-                      {}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: global.g.getWindowWidth() / 80,
-                        color: 'white',
-                      }}>
-                      {}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: global.g.getWindowWidth() / 80,
-                        color: 'white',
-                      }}>
-                      {}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: global.g.getWindowWidth() / 80,
-                        color: 'white',
-                      }}>
-                      {}
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: global.g.getWindowWidth() / 80,
-                        color: 'white',
-                      }}>
-                      {}
-                    </Text>
-                  </View>
-                </View>
+                    Login or Register to save your stats which will be shown
+                    here!
+                  </Text>
+                )}
               </View>
             </View>
 
@@ -388,6 +407,7 @@ export default class Home extends React.Component {
 
           {/*Menu*/}
           <View>
+            {console.log('Menue button is Logged IN: ' + this.state.isLoggedIn)}
             {!this.state.isLoggedIn ? (
               <TouchableOpacity
                 onPress={() => this.props.navigation.navigate('Login')}>
@@ -416,7 +436,40 @@ export default class Home extends React.Component {
                   Login
                 </Text>
               </TouchableOpacity>
-            ) : null}
+            ) : (
+              <TouchableOpacity
+                onPress={() => {
+                  deleteData(),
+                    global.g.setIsLoggedIn(false),
+                    this.updateValuesStats();
+                  this.props.navigation.navigate('LoadingScreen');
+                }}>
+                <View
+                  style={
+                    ({
+                      backgroundColor: global.g.getBackgroundColor(),
+                    },
+                    styles.MenuShadow)
+                  }>
+                  <Image
+                    source={global.g.getSwitchLogin()}
+                    style={{
+                      width: (global.g.getWindowWidth() / 10) * 0.8,
+                      height: (global.g.getWindowWidth() / 10) * 0.8,
+                      color: 'white',
+                    }}
+                  />
+                </View>
+                <Text
+                  style={{
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    color: global.g.getTextColor(),
+                  }}>
+                  Logout
+                </Text>
+              </TouchableOpacity>
+            )}
 
             {!this.state.isLoggedIn ? (
               <TouchableOpacity
@@ -471,38 +524,6 @@ export default class Home extends React.Component {
                 User
               </Text>
             </TouchableOpacity>
-
-            {this.state.isLoggedIn ? (
-              <TouchableOpacity
-                onPress={() => {
-                  global.g.setIsLoggedIn(false), this.updateValuesStats();
-                }}>
-                <View
-                  style={
-                    ({
-                      backgroundColor: global.g.getBackgroundColor(),
-                    },
-                    styles.MenuShadow)
-                  }>
-                  <Image
-                    source={global.g.getSwitchLogin()}
-                    style={{
-                      width: (global.g.getWindowWidth() / 10) * 0.8,
-                      height: (global.g.getWindowWidth() / 10) * 0.8,
-                      color: 'white',
-                    }}
-                  />
-                </View>
-                <Text
-                  style={{
-                    textAlign: 'center',
-                    fontWeight: 'bold',
-                    color: global.g.getTextColor(),
-                  }}>
-                  Logout
-                </Text>
-              </TouchableOpacity>
-            ) : null}
           </View>
         </View>
 

@@ -1,6 +1,13 @@
 /* React standart imports*/
 import React from 'react';
-import {Text, View, Image, Dimensions, Switch} from 'react-native';
+import {
+  Text,
+  View,
+  Image,
+  Dimensions,
+  Switch,
+  TouchableHighlightBase,
+} from 'react-native';
 
 /*Pictures*/
 import cheduLogo from './Pictures/Logo.png';
@@ -28,14 +35,13 @@ import {NavigationContainer} from '@react-navigation/native';
 
 /*Pages */
 import Home from './Pages/Home';
-import Login from './Pages/Login';
+import Login from './Pages/LoginRegister/Login';
 
 class Global extends React.Component {
   /*ctor*/
   constructor(
     windowHeight,
     windowWidth,
-    isLoggedIn,
     darkmode,
     userStats,
     pictures,
@@ -45,7 +51,6 @@ class Global extends React.Component {
     super();
     this.windowHeight = windowHeight;
     this.windowWidth = windowWidth;
-    this.isLoggedIn = isLoggedIn;
     this.darkmode = darkmode;
     this.userStats = userStats;
     this.pictures = pictures;
@@ -66,7 +71,7 @@ class Global extends React.Component {
 
   /*User Data*/
   getIsLoggedIn = () => {
-    return this.isLoggedIn;
+    return this.userStats.isLoggedIn;
   };
 
   /*Darkmode*/
@@ -298,7 +303,7 @@ class Global extends React.Component {
 
   /*User Data*/
   setIsLoggedIn = value => {
-    this.isLoggedIn = value;
+    this.userStats.isLoggedIn = value;
   };
 
   /*Darkmode*/
@@ -332,9 +337,25 @@ class Global extends React.Component {
   /*Darkmode end*/
 
   /*UserStats*/
-  setUserStats = value => {
-    this.userStats = value;
-  }
+  setUserStats = (
+    username,
+    elo,
+    playedGames,
+    wonGames,
+    lostGames,
+    localGames,
+    onlineGames,
+    isLoggedIn,
+  ) => {
+    this.userStats.username = username;
+    this.userStats.elo = elo;
+    this.userStats.playedGames = playedGames;
+    this.userStats.wonGames = wonGames;
+    this.userStats.lostGames = lostGames;
+    this.userStats.localGames = localGames;
+    this.userStats.onlineGames = onlineGames;
+    this.userStats.isLoggedIn = isLoggedIn;
+  };
   /*UserStats end*/
 
   /*Standards*/
@@ -412,7 +433,6 @@ export function HandleSwitchBackground() {
 var g = new Global(
   Dimensions.get('window').height,
   Dimensions.get('window').width,
-  false,
   {
     switchValue: false,
     backgroundColor: 'white',
@@ -424,13 +444,14 @@ var g = new Global(
     separator: blackSeparator,
   },
   {
-    username: 'Michael',
+    username: 'User',
     elo: 1000,
     playedGames: 0,
     wonGames: 0,
     lostGames: 0,
     localGames: 0,
     onlineGames: 0,
+    isLoggedIn: false,
   },
   {
     cheduLogo: cheduLogo,

@@ -42,15 +42,41 @@ export const RequestLogin = async (username, password) => {
     Email: username,
     HashedPassword: password,
   };
-  console.log(postRequest.PlayerName + postRequest.HashedPassword);
+  console.log(postRequest.Email + postRequest.HashedPassword);
   try {
     const response = await axios
       .post('https://chedu.at:5000/VerifyPlayer', postRequest)
       .then(function (response) {
         console.log('Login request Sent! \n Post request sent! ');
         console.log(response.data);
-        if (storeData(response.data, username)) {
-          global.g.setIsLoggedIn(true);
+        var responseData = response.data.Online;
+
+        var responseDataOffline = response.data.Offline;
+        global.g.setUserStats(
+          username.split('@')[0],
+          responseData.OverallPoints,
+          responseData.WonWhite +
+            responseData.WonBlack +
+            responseData.LostWhite +
+            responseData.LostBlack +
+            responseDataOffline.WonWhite +
+            responseDataOffline.WonBlack +
+            responseDataOffline.LostWhite +
+            responseDataOffline.LostBlack,
+          responseData.WonWhite + responseData.WonBlack,
+          responseData.LostWhite + responseData.LostBlack,
+          responseDataOffline.WonWhite +
+            responseDataOffline.WonBlack +
+            responseDataOffline.LostWhite +
+            responseDataOffline.LostBlack,
+          responseData.WonWhite +
+            responseData.WonBlack +
+            responseData.LostWhite +
+            responseData.LostBlack,
+          true,
+        );
+
+        if (storeData()) {
           return true;
         } else {
           return false;

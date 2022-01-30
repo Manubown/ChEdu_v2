@@ -4,11 +4,10 @@ import {Text, View, Button, TextInput, TouchableOpacity} from 'react-native';
 import {Title} from 'react-native-paper';
 
 /*styles*/
-import styles from '../styles';
-import {HandleSwitchBackground} from '../global';
+import styles from '../../styles';
 
 //API Communication
-import {RequestLogin} from '../WEB/ApiCommunication';
+import {RequestLogin} from '../../WEB/ApiCommunication';
 
 export default class Login extends React.Component {
   state = {
@@ -72,6 +71,7 @@ export default class Login extends React.Component {
               />
               <Text style={{color: global.g.getTextColor()}}>Password</Text>
               <TextInput
+                secureTextEntry={true}
                 style={{
                   margin: 20,
                   color: global.g.getTextColor(),
@@ -109,7 +109,7 @@ export default class Login extends React.Component {
                   }
 
                   setTimeout(() => {
-                    this.props.navigation.navigate('Home');
+                    this.props.navigation.navigate('LoadingScreen');
                   }, 1000);
                 }}
                 title="Login"

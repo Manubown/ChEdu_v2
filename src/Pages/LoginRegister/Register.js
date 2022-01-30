@@ -4,11 +4,11 @@ import {Text, View, Button, TextInput, TouchableOpacity} from 'react-native';
 import {Title} from 'react-native-paper';
 
 /*styles*/
-import styles from '../styles';
-import {HandleSwitchBackground} from '../global';
+import styles from '../../styles';
+import {HandleSwitchBackground} from '../../global';
 
 //API Communication
-import {RequestRegister} from '../WEB/ApiCommunication';
+import {RequestRegister} from '../../WEB/ApiCommunication';
 
 export default class Register extends React.Component {
   state = {
@@ -66,6 +66,7 @@ export default class Register extends React.Component {
               />
               <Text style={{color: global.g.getTextColor()}}>Password</Text>
               <TextInput
+                secureTextEntry={true}
                 style={{
                   margin: 20,
                   color: global.g.getTextColor(),
