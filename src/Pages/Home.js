@@ -497,33 +497,33 @@ export default class Home extends React.Component {
                   Register
                 </Text>
               </TouchableOpacity>
-            ) : null}
-
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('User')}>
-              <View
-                style={
-                  ({backgroundColor: global.g.getBackgroundColor()},
-                  styles.MenuShadow)
-                }>
-                <Image
-                  source={global.g.getUserPicture()}
+            ) : (
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate('User')}>
+                <View
+                  style={
+                    ({backgroundColor: global.g.getBackgroundColor()},
+                    styles.MenuShadow)
+                  }>
+                  <Image
+                    source={global.g.getUserPicture()}
+                    style={{
+                      width: (global.g.getWindowWidth() / 10) * 0.8,
+                      height: (global.g.getWindowWidth() / 10) * 0.8,
+                      color: 'white',
+                    }}
+                  />
+                </View>
+                <Text
                   style={{
-                    width: (global.g.getWindowWidth() / 10) * 0.8,
-                    height: (global.g.getWindowWidth() / 10) * 0.8,
-                    color: 'white',
-                  }}
-                />
-              </View>
-              <Text
-                style={{
-                  textAlign: 'center',
-                  fontWeight: 'bold',
-                  color: global.g.getTextColor(),
-                }}>
-                User
-              </Text>
-            </TouchableOpacity>
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    color: global.g.getTextColor(),
+                  }}>
+                  User
+                </Text>
+              </TouchableOpacity>
+            )}
           </View>
         </View>
 

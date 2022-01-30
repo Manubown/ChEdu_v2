@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.js": "/static/js/main.ba345087.js",
+    "static/media/expert_modus.jpg": "/static/media/expert_modus.70090dd1cb9df2a01ae7.jpg",
+    "static/media/coming_soon.jpg": "/static/media/coming_soon.e2c4e7432abef9547567.jpg",
+    "static/media/two_kings.jpg": "/static/media/two_kings.bb72348b4e5f1be7603e.jpg",
+    "static/media/textbook_checkmates.jpg": "/static/media/textbook_checkmates.08decc4f4720dd4a0e45.jpg",
+    "static/media/Poster_Schachbrett.png": "/static/media/Poster_Schachbrett.23bac3067f452e962bd4.png",
+    "static/media/chess_basics.jpg": "/static/media/chess_basics.60ee2097d22ca843828d.jpg",
+    "static/media/register.png": "/static/media/register.269f3a23c158b2a9b4b4.png",
+    "static/media/register_white.png": "/static/media/register_white.9181a7700c27192d0f49.png",
+    "static/media/opening_concepts.jpg": "/static/media/opening_concepts.cc3364cd5f9943d916c2.jpg",
+    "static/media/user.png": "/static/media/user.1f63c5443df010d2f158.png",
+    "static/media/strategy_concepts.jpg": "/static/media/strategy_concepts.f119a985cd9c9688dff4.jpg",
+    "static/media/black_separator.png": "/static/media/black_separator.1f5c64582d4f97252e72.png",
+    "static/media/Logo.png": "/static/media/Logo.039b3c575d9242a7a7a9.png",
+    "static/media/login.png": "/static/media/login.67446af40919342cf0b0.png",
+    "static/media/login_white.png": "/static/media/login_white.6784ec2276e47760d08d.png",
+    "static/media/white_separator.png": "/static/media/white_separator.324d0381651817550bf4.png",
+    "static/media/right-arrow.jpeg": "/static/media/right-arrow.59cc0b60cd4651f1b406.jpeg",
+    "index.html": "/index.html",
+    "main.ba345087.js.map": "/static/js/main.ba345087.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.ba345087.js"
+  ]
+}
