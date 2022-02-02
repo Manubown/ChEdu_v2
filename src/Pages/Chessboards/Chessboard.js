@@ -37,6 +37,7 @@ class HumanVsHuman extends Component {
     console.log('Component did mount: ' + this);
     this.game = new Chess();
     //this.state.fen übergeben für Logik
+    window.scrollTo(0, 0);
   }
 
   addChessBoardMove = (from, to) => {
