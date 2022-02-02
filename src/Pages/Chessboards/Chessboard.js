@@ -451,25 +451,7 @@ export default class ChessBoard extends React.Component {
             backgroundColor: global.g.getBackgroundColor(),
           })
         }>
-        <TouchableOpacity
-            onPress={() => {
-              //RequestLogin(this.state.Username, this.state.Password);
-              this.props.navigation.navigate('Home');
-            }
-          }
-          style = {{
-            width: (global.g.getWindowWidth() / 10) * 1,
-            height: (global.g.getWindowWidth() / 10) * 1,
-          }}
-        >
-          <Image
-            source = {global.g.getCheduLogo()}
-            style = {{
-              width: (global.g.getWindowWidth() / 15) * 1,
-              height: (global.g.getWindowWidth() / 15) * 1,
-            }}
-          />
-        </TouchableOpacity>
+        {global.g.getOnlyLogo()}
         <View
           style={{
             paddingBottom: global.g.getWindowHeight() / 10,

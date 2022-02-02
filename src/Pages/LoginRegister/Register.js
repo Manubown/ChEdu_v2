@@ -22,6 +22,7 @@ export default class Register extends React.Component {
           global.g.getWindowHeight(),
           {backgroundColor: global.g.getBackgroundColor()})
         }>
+        {global.g.getOnlyLogo()}
         {/*SideBar*/}
         <View style={styles.SideBar}>
           {/*Logo*/}

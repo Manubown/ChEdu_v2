@@ -1,6 +1,6 @@
 /* React standart imports*/
 import * as React from 'react';
-import {Text, View, Button, TextInput, TouchableOpacity} from 'react-native';
+import {Text, View, Button, TextInput, TouchableOpacity, Image} from 'react-native';
 import {Title} from 'react-native-paper';
 
 /*styles*/
@@ -40,6 +40,7 @@ export default class Login extends React.Component {
           global.g.getWindowHeight(),
           {backgroundColor: global.g.getBackgroundColor()})
         }>
+        {global.g.getOnlyLogo()}
         {/*SideBar*/}
         <View style={styles.SideBar}>
           {/*Logo*/}
