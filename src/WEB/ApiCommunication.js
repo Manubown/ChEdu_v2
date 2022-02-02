@@ -4,13 +4,15 @@ import axios from 'axios';
 
 import {storeData, deleteData} from '../Scripts/SaveData';
 
+import {SHA256} from 'crypto-js';
+
 export const RequestRegister = (username, password, email) => {
   console.log('Register POST Request Test: ' + username, password, email);
 
   var postRequest = {
     PlayerName: username,
     Email: email,
-    HashedPassword: password,
+    HashedPassword: SHA256(password),
   };
   console.log(
     postRequest.PlayerName + postRequest.Email + postRequest.HashedPassword,
@@ -40,7 +42,7 @@ export const RequestLogin = async (username, password) => {
 
   var postRequest = {
     Email: username,
-    HashedPassword: password,
+    HashedPassword: SHA256(password),
   };
   console.log(postRequest.Email + postRequest.HashedPassword);
   try {
