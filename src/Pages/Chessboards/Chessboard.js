@@ -11,7 +11,7 @@ import {
 import Chessboard from 'chessboardjsx';
 //import Resource from "./Resource";
 
-class HumanVsHuman extends Component {
+class HumanVsHuman extends React.Component {
   static propTypes = {children: PropTypes.func};
   state = {
     fen: 'start', //auf Lichess nachschauen
@@ -31,6 +31,8 @@ class HumanVsHuman extends Component {
     chessboardMoves: '', //bgn
     // chessboard move Index bgn
     moveIndex: 0,
+
+    gameOver: false,
   };
 
   componentDidMount() {
@@ -285,6 +287,20 @@ class HumanVsHuman extends Component {
     */
   };
 
+  isGameOver = game => {
+    //Game Over
+    let possibleMoves = game.moves();
+    if (
+      game.game_over() === true ||
+      game.in_draw() === true ||
+      possibleMoves.length === 0
+    ) {
+      this.setState({gameOver: true});
+      return true;
+    } else {
+      return false;
+    }
+  };
   //
 
   // keep clicked square style and remove hint squares
@@ -331,6 +347,8 @@ class HumanVsHuman extends Component {
       to: targetSquare,
       promotion: 'q', // always promote to a queen for example simplicity
     });
+
+    console.log('OnDrop: Game Over: ' + this.isGameOver(this.game));
 
     // illegal move
     if (move === null) return;
@@ -389,6 +407,8 @@ class HumanVsHuman extends Component {
       promotion: 'q', // always promote to a queen for example simplicity
     });
 
+    console.log('OnDrop: Game Over: ' + this.isGameOver(this.game));
+
     // illegal move
     if (move === null) return;
 
@@ -437,6 +457,7 @@ class HumanVsHuman extends Component {
       undoMovePGN: this.undoMovePGN,
       nextMovePGN: this.nextMovePGN,
       chessBoardMoves: this.state.chessboardMoves,
+      gameOver: this.state.gameOver,
     });
   }
 }
@@ -452,7 +473,13 @@ export default class ChessBoard extends React.Component {
             backgroundColor: global.g.getBackgroundColor(),
           })
         }>
-        {global.g.getOnlyLogo()}
+        <TouchableOpacity
+          onPress={() => {
+            //RequestLogin(this.state.Username, this.state.Password);
+            this.props.navigation.navigate('Home');
+          }}>
+          {global.g.getOnlyLogo()}
+        </TouchableOpacity>
         <View
           style={{
             paddingBottom: global.g.getWindowHeight() / 10,
@@ -476,9 +503,25 @@ export default class ChessBoard extends React.Component {
               undoMovePGN,
               nextMovePGN,
               chessBoardMoves,
+              gameOver,
             }) => (
               <View style={{}}>
                 <View style={{flexDirection: 'row', alignSelf: 'center'}}>
+                  {gameOver ? (
+                    <View
+                      style={{
+                        zIndex: '10000',
+                        position: 'absolute',
+                        marginTop: global.g.getWindowHeight() / 4,
+                        marginLeft: global.g.getWindowHeight() / 4,
+                        width: global.g.getWindowHeight() / 4,
+                        height: global.g.getWindowHeight() / 4,
+                        backgroundColor: global.g.getBackgroundColor(),
+                        opacity: 1,
+                      }}>
+                      <Text style={{textAlign: 'center'}}>GAME OVER!</Text>
+                    </View>
+                  ) : null}
                   <Chessboard
                     id="humanVsHuman"
                     width={(global.g.getWindowHeight() / 4) * 3}

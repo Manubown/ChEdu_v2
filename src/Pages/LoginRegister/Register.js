@@ -22,7 +22,13 @@ export default class Register extends React.Component {
           global.g.getWindowHeight(),
           {backgroundColor: global.g.getBackgroundColor()})
         }>
-        {global.g.getOnlyLogo()}
+        <TouchableOpacity
+          onPress={() => {
+            //RequestLogin(this.state.Username, this.state.Password);
+            this.props.navigation.navigate('Home');
+          }}>
+          {global.g.getOnlyLogo()}
+        </TouchableOpacity>
         {/*SideBar*/}
         <View style={styles.SideBar}>
           {/*Logo*/}

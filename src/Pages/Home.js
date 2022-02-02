@@ -157,7 +157,7 @@ export default class Home extends React.Component {
         }).start(),
         Animated.spring(translateXTabOnline, {
           toValue: global.g.getWindowWidth(),
-          duration: 100
+          duration: 100,
         }).start(),
         Animated.spring(translateXTabChessBoard, {
           toValue: global.g.getWindowWidth() * 2,
