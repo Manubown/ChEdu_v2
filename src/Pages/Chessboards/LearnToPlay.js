@@ -542,14 +542,21 @@ export default class LearnToPlay extends React.Component{
         } = this.state;
 
         return (
+          <View style = {
+            global.g.getWindowWidth(),
+            global.g.getWindowHeight(),
+            {
+              backgroundColor: global.g.getBackgroundColor(),
+            }
+            }
+          >
+            <Text>Test</Text>
             <View
             style={
-              global.g.getWindowWidth(),
-              global.g.getWindowHeight(),
+              
               {
-                backgroundColor: global.g.getBackgroundColor(),
-                marginTop: global.g.getWindowHeight()/10,
-                marginBottom: global.g.getWindowHeight()/10,
+                paddingTop: global.g.getWindowHeight()/10,
+                paddingBottom: global.g.getWindowHeight()/10,
               }
             }>
             <HumanVsHuman>
@@ -984,6 +991,7 @@ export default class LearnToPlay extends React.Component{
                 </View>
                 )}
             </HumanVsHuman>
+            </View>
             </View>
         );
     }

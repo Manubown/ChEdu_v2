@@ -443,14 +443,20 @@ class HumanVsHuman extends Component {
 export default class ChessBoard extends React.Component {
   render() {
     return (
+      <View style = {
+        global.g.getWindowWidth(),
+        global.g.getWindowHeight(),
+        {
+          backgroundColor: global.g.getBackgroundColor(),
+        }
+        }
+      >
       <View
         style={
-          ((global.g.getWindowWidth(), global.g.getWindowHeight()),
           {
-            backgroundColor: global.g.getBackgroundColor(),
             paddingTop: global.g.getWindowHeight() / 10,
             paddingBottom: global.g.getWindowHeight() / 10,
-          })
+          }
         }>
         <HumanVsHuman>
           {({
@@ -531,6 +537,7 @@ export default class ChessBoard extends React.Component {
             </View>
           )}
         </HumanVsHuman>
+      </View>
       </View>
     );
   }
