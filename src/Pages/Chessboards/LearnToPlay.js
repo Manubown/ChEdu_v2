@@ -237,8 +237,8 @@ export default class LearnToPlay extends React.Component {
               onSquareRightClick,
               updateGameMove,
               updateGameFEN,
-              nextMove,
-              lastMove,
+              undoMovePGN,
+              nextMovePGN,
             }) => (
               <View
                 style={{
@@ -272,7 +272,7 @@ export default class LearnToPlay extends React.Component {
                     style={{width: 50}}
                     onPress={() => {
                       //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                      lastMove();
+                      undoMovePGN();
                     }}>
                     <LeftCircleTwoTone twoToneColor={'#185a5c'} />
                   </TouchableOpacity>
@@ -280,7 +280,7 @@ export default class LearnToPlay extends React.Component {
                     style={{width: 50}}
                     onPress={() => {
                       //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                      nextMove();
+                      nextMovePGN();
                     }}>
                     <RightCircleTwoTone twoToneColor={'#185a5c'} />
                   </TouchableOpacity>
