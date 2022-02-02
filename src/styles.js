@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
 
   LearnToPlaySlider: {
     overflow: 'hidden',
-    margin: (windowWidth /17) * 0.1,
+    margin: (windowWidth / 17) * 0.1,
     width: (windowWidth / 17) * 2.8,
     height: (windowWidth / 17) * 1,
     borderRadius: 20,

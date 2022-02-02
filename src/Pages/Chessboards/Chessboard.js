@@ -443,101 +443,99 @@ class HumanVsHuman extends Component {
 export default class ChessBoard extends React.Component {
   render() {
     return (
-      <View style = {
-        global.g.getWindowWidth(),
-        global.g.getWindowHeight(),
-        {
-          backgroundColor: global.g.getBackgroundColor(),
-        }
-        }
-      >
       <View
         style={
+          (global.g.getWindowWidth(),
+          global.g.getWindowHeight(),
           {
+            backgroundColor: global.g.getBackgroundColor(),
+          })
+        }>
+        <View
+          style={{
             paddingTop: global.g.getWindowHeight() / 10,
             paddingBottom: global.g.getWindowHeight() / 10,
-          }
-        }>
-        <HumanVsHuman>
-          {({
-            position,
-            onDrop,
-            onMouseOverSquare,
-            onMouseOutSquare,
-            squareStyles,
-            dropSquareStyle,
-            onDragOverSquare,
-            onSquareClick,
-            onSquareRightClick,
-            updateGameFEN,
-            updateGameBGN,
-            nextMoveBGN,
-            lastMoveBGN,
-            updateGamePGN,
-            undoMovePGN,
-            nextMovePGN,
-            chessBoardMoves,
-          }) => (
-            <View style={{}}>
-              <View style={{flexDirection: 'row', alignSelf: 'center'}}>
-                <Chessboard
-                  id="humanVsHuman"
-                  width={(global.g.getWindowHeight() / 4) * 3}
-                  position={position} //position zB. (a6: 'kW') ==> König auf a6
-                  onDrop={onDrop}
-                  onMouseOverSquare={onMouseOverSquare}
-                  onMouseOutSquare={onMouseOutSquare}
-                  boardStyle={{
-                    borderRadius: '5px',
-                    boxShadow: `0 5px 15px #185a5c`,
-                  }}
-                  squareStyles={squareStyles}
-                  dropSquareStyle={dropSquareStyle}
-                  onDragOverSquare={onDragOverSquare}
-                  onSquareClick={onSquareClick}
-                  onSquareRightClick={onSquareRightClick}
-                  orientation="white"
+          }}>
+          <HumanVsHuman>
+            {({
+              position,
+              onDrop,
+              onMouseOverSquare,
+              onMouseOutSquare,
+              squareStyles,
+              dropSquareStyle,
+              onDragOverSquare,
+              onSquareClick,
+              onSquareRightClick,
+              updateGameFEN,
+              updateGameBGN,
+              nextMoveBGN,
+              lastMoveBGN,
+              updateGamePGN,
+              undoMovePGN,
+              nextMovePGN,
+              chessBoardMoves,
+            }) => (
+              <View style={{}}>
+                <View style={{flexDirection: 'row', alignSelf: 'center'}}>
+                  <Chessboard
+                    id="humanVsHuman"
+                    width={(global.g.getWindowHeight() / 4) * 3}
+                    position={position} //position zB. (a6: 'kW') ==> König auf a6
+                    onDrop={onDrop}
+                    onMouseOverSquare={onMouseOverSquare}
+                    onMouseOutSquare={onMouseOutSquare}
+                    boardStyle={{
+                      borderRadius: '5px',
+                      boxShadow: `0 5px 15px #185a5c`,
+                    }}
+                    squareStyles={squareStyles}
+                    dropSquareStyle={dropSquareStyle}
+                    onDragOverSquare={onDragOverSquare}
+                    onSquareClick={onSquareClick}
+                    onSquareRightClick={onSquareRightClick}
+                    orientation="white"
+                  />
+                </View>
+
+                {/*Tools*/}
+                <View style={{flexDirection: 'row', alignSelf: 'center'}}>
+                  <TouchableOpacity
+                    style={{width: 100}}
+                    onPress={() => {
+                      //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                      lastMoveBGN();
+                    }}>
+                    <LeftCircleTwoTone twoToneColor={'#185a5c'} />
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={{width: 100}}
+                    onPress={() => {
+                      //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                      //nextMove();
+                      nextMoveBGN();
+                    }}>
+                    <RightCircleTwoTone twoToneColor={'#185a5c'} />
+                  </TouchableOpacity>
+                </View>
+
+                <TouchableOpacity
+                  style={{width: 100, height: 100, backgroundColor: 'white'}}
+                  onPress={() => {
+                    //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                    //updateGameBGN(global.g.getFIDE2021_Game6(), 0);
+                    updateGamePGN();
+                  }}>
+                  <Text>Testgame</Text>
+                </TouchableOpacity>
+                <Text
+                  style={{fontSize: 20, color: 'green'}}
+                  Text={chessBoardMoves}
                 />
               </View>
-
-              {/*Tools*/}
-              <View style={{flexDirection: 'row', alignSelf: 'center'}}>
-                <TouchableOpacity
-                  style={{width: 100}}
-                  onPress={() => {
-                    //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                    lastMoveBGN();
-                  }}>
-                  <LeftCircleTwoTone twoToneColor={'#185a5c'} />
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={{width: 100}}
-                  onPress={() => {
-                    //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                    //nextMove();
-                    nextMoveBGN();
-                  }}>
-                  <RightCircleTwoTone twoToneColor={'#185a5c'} />
-                </TouchableOpacity>
-              </View>
-
-              <TouchableOpacity
-                style={{width: 100, height: 100, backgroundColor: 'white'}}
-                onPress={() => {
-                  //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                  //updateGameBGN(global.g.getFIDE2021_Game6(), 0);
-                  updateGamePGN();
-                }}>
-                <Text>Testgame</Text>
-              </TouchableOpacity>
-              <Text
-                style={{fontSize: 20, color: 'green'}}
-                Text={chessBoardMoves}
-              />
-            </View>
-          )}
-        </HumanVsHuman>
-      </View>
+            )}
+          </HumanVsHuman>
+        </View>
       </View>
     );
   }
