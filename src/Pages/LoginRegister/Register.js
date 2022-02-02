@@ -5,7 +5,6 @@ import {Title} from 'react-native-paper';
 
 /*styles*/
 import styles from '../../styles';
-import {HandleSwitchBackground} from '../../global';
 
 //API Communication
 import {RequestRegister} from '../../WEB/ApiCommunication';
