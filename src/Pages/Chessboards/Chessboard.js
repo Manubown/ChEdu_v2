@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Dimensions, View, TouchableOpacity, Text} from 'react-native';
+import {Dimensions, View, TouchableOpacity, Text, Image} from 'react-native';
 import PropTypes from 'prop-types';
 import * as Chess from 'chess.js'; // import Chess from  "chess.js"(default) if recieving an error about new Chess() not being a constructor
 import {
@@ -451,9 +451,27 @@ export default class ChessBoard extends React.Component {
             backgroundColor: global.g.getBackgroundColor(),
           })
         }>
+        <TouchableOpacity
+            onPress={() => {
+              //RequestLogin(this.state.Username, this.state.Password);
+              this.props.navigation.navigate('Home');
+            }
+          }
+          style = {{
+            width: (global.g.getWindowWidth() / 10) * 1,
+            height: (global.g.getWindowWidth() / 10) * 1,
+          }}
+        >
+          <Image
+            source = {global.g.getCheduLogo()}
+            style = {{
+              width: (global.g.getWindowWidth() / 15) * 1,
+              height: (global.g.getWindowWidth() / 15) * 1,
+            }}
+          />
+        </TouchableOpacity>
         <View
           style={{
-            paddingTop: global.g.getWindowHeight() / 10,
             paddingBottom: global.g.getWindowHeight() / 10,
           }}>
           <HumanVsHuman>
