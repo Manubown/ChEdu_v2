@@ -7,7 +7,7 @@ import {
   Animated,
   ScrollView,
   ImageBackground,
-  Image
+  Image,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import * as Chess from 'chess.js'; // import Chess from  "chess.js"(default) if recieving an error about new Chess() not being a constructor
@@ -566,7 +566,13 @@ export default class LearnToPlay extends React.Component {
             backgroundColor: global.g.getBackgroundColor(),
           })
         }>
-        {global.g.getOnlyLogo()}        
+        <TouchableOpacity
+          onPress={() => {
+            //RequestLogin(this.state.Username, this.state.Password);
+            this.props.navigation.navigate('Home');
+          }}>
+          {global.g.getOnlyLogo()}
+        </TouchableOpacity>
         <View
           style={{
             paddingBottom: global.g.getWindowHeight() / 10,

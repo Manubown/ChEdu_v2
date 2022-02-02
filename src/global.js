@@ -7,7 +7,7 @@ import {
   Dimensions,
   Switch,
   TouchableHighlightBase,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 /*Pictures*/
@@ -390,34 +390,27 @@ class Global extends React.Component {
   };
 
   /*Only Logo*/
-  getOnlyLogo = () =>{
-    return(
-      <TouchableOpacity
-          onPress={() => {
-            //RequestLogin(this.state.Username, this.state.Password);
-            this.props.navigation.navigate('Home');
-          }
-        }
-      >
+  getOnlyLogo = () => {
+    return (
+      <View>
         <Image
-          source = {global.g.getCheduLogo()}
-          style = {{
+          source={global.g.getCheduLogo()}
+          style={{
             width: (global.g.getWindowWidth() / 15) * 1,
             height: (global.g.getWindowWidth() / 15) * 1,
           }}
         />
         <Text
           style={{
-            fontWeight: 'bold', 
+            fontWeight: 'bold',
             width: (global.g.getWindowWidth() / 15) * 1,
-            textAlign: 'center'
-          }}
-        >
+            textAlign: 'center',
+          }}>
           Back to Home
         </Text>
-      </TouchableOpacity>
+      </View>
     );
-  }
+  };
 }
 
 /*HandleSwitch*/
