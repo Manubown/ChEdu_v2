@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Switch,
+  Linking
 } from 'react-native';
 
 /*styles*/
@@ -532,7 +533,11 @@ export default class Home extends React.Component {
           style={{
             alignItems: 'center',
           }}>
-          <Text>Video</Text>
+          <TouchableOpacity
+                onPress={() => Linking.openURL('https://youtu.be/0feB-55VoEk?t=1782')}
+          >
+            <Text style={{color: 'blue'}}>Video</Text>
+          </TouchableOpacity>
         </View>
 
         {/*Content*/}
