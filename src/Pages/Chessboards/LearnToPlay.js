@@ -25,6 +25,8 @@ import Chessboard from 'chessboardjsx';
 
 import LogicalChessboard from './LogicalChessboard';
 
+import Explanation from './Chessboard_Components/Explanation';
+
 export default class LearnToPlay extends React.Component {
   state = {
     active: 0,
@@ -247,7 +249,8 @@ export default class LearnToPlay extends React.Component {
                 }}>
                 {/*Chessboard with info*/}
                 <View style={{flexDirection: 'row', alignSelf: 'center'}}>
-                  {/*if(updateGameFEN())*/}
+                  <Explanation value={position}/>
+                    
                   <Chessboard
                     id="LearnToPlay"
                     width={(global.g.getWindowHeight() / 4) * 3}

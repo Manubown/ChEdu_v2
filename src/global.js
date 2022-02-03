@@ -302,6 +302,11 @@ class Global extends React.Component {
   };
   /*pgn end*/
 
+  /*Explanations*/
+  getExplanationSicilianDefense = () => {
+    return this.explanation.Openings.SicilianDefence;
+  }
+  /*Explanations end*/
   /*Setter*/
 
   /*User Data*/
