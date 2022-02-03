@@ -239,6 +239,7 @@ export default class LearnToPlay extends React.Component {
               updateGameFEN,
               undoMovePGN,
               nextMovePGN,
+              updateGamePGN
             }) => (
               <View
                 style={{
@@ -246,6 +247,7 @@ export default class LearnToPlay extends React.Component {
                 }}>
                 {/*Chessboard with info*/}
                 <View style={{flexDirection: 'row', alignSelf: 'center'}}>
+                  {/*if(updateGameFEN())*/}
                   <Chessboard
                     id="LearnToPlay"
                     width={(global.g.getWindowHeight() / 4) * 3}
@@ -633,11 +635,10 @@ export default class LearnToPlay extends React.Component {
                     <TouchableOpacity
                       style={{width: 100, height: 100}}
                       onPress={() => {
-                        //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                        updateGameMove(global.g.getFIDE2021_Game6(), 0);
+                        updateGamePGN(global.g.getSomeCarlsenGame());
                       }}>
                       <Text style={{color: global.g.getTextColor()}}>
-                        FIDE 2021 Game 6
+                        Some Carslen Game
                       </Text>
                     </TouchableOpacity>
                   </Animated.View>
