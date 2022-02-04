@@ -123,7 +123,7 @@ export default class Login extends React.Component {
                   }
                   setTimeout(() => {
                     this.props.navigation.navigate('LoadingScreen');
-                  }, 100);
+                  }, 1000);
                 }}
                 title="Login"
               />
