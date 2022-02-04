@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.7caa30e7.js",
+    "main.js": "/static/js/main.4cb80c76.js",
     "static/media/expert_modus.jpg": "/static/media/expert_modus.70090dd1cb9df2a01ae7.jpg",
     "static/media/coming_soon.jpg": "/static/media/coming_soon.e2c4e7432abef9547567.jpg",
     "static/media/two_kings.jpg": "/static/media/two_kings.bb72348b4e5f1be7603e.jpg",
@@ -19,9 +19,9 @@
     "static/media/white_separator.png": "/static/media/white_separator.324d0381651817550bf4.png",
     "static/media/right-arrow.jpeg": "/static/media/right-arrow.59cc0b60cd4651f1b406.jpeg",
     "index.html": "/index.html",
-    "main.7caa30e7.js.map": "/static/js/main.7caa30e7.js.map"
+    "main.4cb80c76.js.map": "/static/js/main.4cb80c76.js.map"
   },
   "entrypoints": [
-    "static/js/main.7caa30e7.js"
+    "static/js/main.4cb80c76.js"
   ]
 }
