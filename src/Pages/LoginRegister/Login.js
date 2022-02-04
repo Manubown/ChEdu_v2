@@ -121,10 +121,9 @@ export default class Login extends React.Component {
                   if (RequestLogin(this.state.Username, this.state.Password)) {
                     this.setState({LoginSucced: true});
                   }
-
                   setTimeout(() => {
                     this.props.navigation.navigate('LoadingScreen');
-                  }, 1000);
+                  }, 100);
                 }}
                 title="Login"
               />

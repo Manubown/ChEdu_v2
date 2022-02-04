@@ -15,7 +15,7 @@ export default class LogicalChessboard extends React.Component {
     // currently clicked square
     square: '',
     // array of past game moves
-    history: [], //
+    history: [], //PGN
 
     // saves last position of unduing
     futurMoves: [],
@@ -435,9 +435,11 @@ export default class LogicalChessboard extends React.Component {
       onSquareClick: this.onSquareClick,
       onSquareRightClick: this.onSquareRightClick,
       updateGameFEN: this.updateGameFEN,
+      /* Todo: Remove 
       updateGameBGN: this.updateGameBGN,
       nextMoveBGN: this.nextMoveBGN,
       lastMoveBGN: this.lastMoveBGN,
+      */
       updateGamePGN: this.updateGamePGN,
       undoMovePGN: this.undoMovePGN,
       nextMovePGN: this.nextMovePGN,

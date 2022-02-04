@@ -55,7 +55,7 @@ export const RequestLogin = async (username, password) => {
 
         var responseDataOffline = response.data.Offline;
         global.g.setUserStats(
-          username.split('@')[0],
+          responseData.PlayerName,
           responseData.OverallPoints,
           responseData.WonWhite +
             responseData.WonBlack +

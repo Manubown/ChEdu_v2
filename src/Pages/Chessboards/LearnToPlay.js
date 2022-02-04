@@ -1,21 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
-  Dimensions,
   View,
   TouchableOpacity,
   Text,
   Animated,
   ScrollView,
   ImageBackground,
-  Image,
 } from 'react-native';
-import PropTypes from 'prop-types';
-import * as Chess from 'chess.js'; // import Chess from  "chess.js"(default) if recieving an error about new Chess() not being a constructor
-import {
-  RightCircleTwoTone,
-  LeftCircleTwoTone,
-  TrophyFilled,
-} from '@ant-design/icons';
+
+import {RightCircleTwoTone, LeftCircleTwoTone} from '@ant-design/icons';
 
 /*styles*/
 import styles from '../../styles';
@@ -241,7 +234,7 @@ export default class LearnToPlay extends React.Component {
               updateGameFEN,
               undoMovePGN,
               nextMovePGN,
-              updateGamePGN
+              updateGamePGN,
             }) => (
               <View
                 style={{
@@ -249,8 +242,8 @@ export default class LearnToPlay extends React.Component {
                 }}>
                 {/*Chessboard with info*/}
                 <View style={{flexDirection: 'row', alignSelf: 'center'}}>
-                  <Explanation value={position}/>
-                    
+                  <Explanation value={position} />
+
                   <Chessboard
                     id="LearnToPlay"
                     width={(global.g.getWindowHeight() / 4) * 3}
@@ -678,22 +671,3 @@ export default class LearnToPlay extends React.Component {
     );
   }
 }
-
-const squareStyling = ({pieceSquare, history}) => {
-  const sourceSquare = history.length && history[history.length - 1].from;
-  const targetSquare = history.length && history[history.length - 1].to;
-
-  return {
-    [pieceSquare]: {backgroundColor: '#185a5c'},
-    ...(history.length && {
-      [sourceSquare]: {
-        backgroundColor: '#3c8688',
-      },
-    }),
-    ...(history.length && {
-      [targetSquare]: {
-        backgroundColor: '#185a5c',
-      },
-    }),
-  };
-};

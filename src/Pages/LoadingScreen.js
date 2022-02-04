@@ -18,6 +18,7 @@ export default class LoadingScreen extends React.Component {
 
   load() {
     getData();
+    window.scrollTo(0, 0);
     setTimeout(() => {
       this.props.navigation.navigate('Home');
     }, 1000);
