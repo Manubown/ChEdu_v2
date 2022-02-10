@@ -20,8 +20,6 @@ export default class LogicalChessboard extends React.Component {
     // saves last position of unduing
     futurMoves: [],
 
-    // chessboard moves bgn
-    chessboardMoves: '', //bgn
     // chessboard move Index bgn
     moveIndex: 0,
     gameOver: false,
@@ -102,7 +100,7 @@ export default class LogicalChessboard extends React.Component {
     console.log('Future moves: ' + this.state.futurMoves);
   };
 
-  updateGamePGN = PGN => {
+  updateGamePGN = (PGN, position) => {
     this.game.load_pgn(PGN);
     this.setState({position: this.game.position, fen: this.game.fen()});
   };
@@ -443,7 +441,6 @@ export default class LogicalChessboard extends React.Component {
       updateGamePGN: this.updateGamePGN,
       undoMovePGN: this.undoMovePGN,
       nextMovePGN: this.nextMovePGN,
-      chessBoardMoves: this.state.chessboardMoves,
       gameOver: this.state.gameOver,
     });
   }
