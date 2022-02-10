@@ -57,7 +57,6 @@ export default class LogicalChessboard extends React.Component {
     console.log('add Chess board moves: ' + this.state.chessboardMoves);
   };
 
-  // UPDATE GAME FEN //
   updateGameFEN = FEN => {
     console.log('updateGame:');
 
@@ -409,6 +408,10 @@ export default class LogicalChessboard extends React.Component {
     this.setState({
       squareStyles: {[square]: {backgroundColor: 'deepPink'}},
     });
+  };
+
+  getPGNComment = () => {
+    return this.game.get_comment();
   };
 
   render() {
