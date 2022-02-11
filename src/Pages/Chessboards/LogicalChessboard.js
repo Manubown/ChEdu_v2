@@ -19,7 +19,7 @@ export default class LogicalChessboard extends React.Component {
 
     // saves last position of unduing
     futurMoves: [],
-
+    //chessboardMoves: '',
     // chessboard move Index bgn
     moveIndex: 0,
     gameOver: false,
@@ -32,6 +32,7 @@ export default class LogicalChessboard extends React.Component {
     window.scrollTo(0, 0);
   }
 
+  /*
   addChessBoardMove = (from, to) => {
     console.log('add Chess board moves: ' + this.state.chessboardMoves);
     var x = this.state.chessboardMoves.split(',').length;
@@ -56,6 +57,7 @@ export default class LogicalChessboard extends React.Component {
     }
     console.log('add Chess board moves: ' + this.state.chessboardMoves);
   };
+  */
 
   updateGameFEN = FEN => {
     console.log('updateGame:');
@@ -334,7 +336,7 @@ export default class LogicalChessboard extends React.Component {
 
     // illegal move
     if (move === null) return;
-    this.addChessBoardMove(sourceSquare, targetSquare);
+    //this.addChessBoardMove(sourceSquare, targetSquare);
     this.setState(({history, pieceSquare}) => ({
       fen: this.game.fen(),
       history: this.game.history({verbose: true}),
@@ -394,7 +396,7 @@ export default class LogicalChessboard extends React.Component {
     // illegal move
     if (move === null) return;
 
-    this.addChessBoardMove(this.state.pieceSquare, square);
+    //this.addChessBoardMove(this.state.pieceSquare, square);
 
     this.setState({
       fen: this.game.fen(),
