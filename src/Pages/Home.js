@@ -537,7 +537,14 @@ export default class Home extends React.Component {
             onPress={() =>
               Linking.openURL('https://youtu.be/0feB-55VoEk?t=1782')
             }>
-            <Text style={{color: 'blue'}}>Video</Text>
+            <Image
+              source={global.g.getCheduVideo()}
+              style={{
+                height: global.g.getWindowWidth() / 8,
+                width: global.g.getWindowWidth() / 4.5,
+                borderRadius: 20
+              }}
+            />
           </TouchableOpacity>
         </View>
 
@@ -553,7 +560,7 @@ export default class Home extends React.Component {
             <View
               style={{
                 flexDirection: 'row',
-                marginTop: 60,
+                marginTop: 20,
                 marginBottom: 20,
                 height: 36,
                 position: 'relative',
@@ -595,7 +602,7 @@ export default class Home extends React.Component {
                   )
                 }>
                 <Text style={{color: active === 0 ? '#fff' : '#007aff'}}>
-                  Learn to play
+                  EduBoard
                 </Text>
               </TouchableOpacity>
 
@@ -647,7 +654,7 @@ export default class Home extends React.Component {
                   )
                 }>
                 <Text style={{color: active === 2 ? '#fff' : '#007aff'}}>
-                  ChessBoard
+                  1v1 Board
                 </Text>
               </TouchableOpacity>
 
@@ -684,8 +691,6 @@ export default class Home extends React.Component {
             {/*Learn to play*/}
             <Animated.View
               style={{
-                justifyContent: 'center',
-                alignItems: 'center',
                 transform: [{translateX: translateXTabLearnToPlay}],
               }}
               onLayout={event =>
@@ -693,178 +698,66 @@ export default class Home extends React.Component {
                   translateYLearnToPlay: event.nativeEvent.layout.height,
                 })
               }>
-              <View style={{marginTop: 20, marginLeft: 0}}>
-                <ImageBackground
-                  source={global.g.getChessPosterChessBoard()}
-                  style={styles.Poster_Schachbrett}>
-                  <View style={{alignItems: 'center'}}>
-                    <Text
-                      style={{
-                        fontSize: global.g.getWindowWidth() / 25,
-                        fontWeight: 'bold',
-                        textAlign: 'center',
-                      }}>
-                      You want to learn chess, get better and beyond?
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: global.g.getWindowWidth() / 20,
-                        fontWeight: 'bold',
-                        textAlign: 'center',
-                      }}>
-                      THIS IS YOUR PLACE TO START!
-                    </Text>
-                    <TouchableOpacity
-                      onPress={() =>
-                        this.props.navigation.navigate('LearnToPlay')
-                      }>
-                      <Text
-                        style={{
-                          fontSize: global.g.getWindowWidth() / 40,
-                          fontWeight: 'bold',
-                          textAlign: 'center',
-                          color: '#007aff',
-                        }}>
-                        Start here!
-                      </Text>
-                    </TouchableOpacity>
-                  </View>
-                </ImageBackground>
-
-                {/*Separator*/}
-                <Image
-                  source={global.g.getSeparator()}
-                  style={{
-                    height: global.g.getWindowWidth() / 8,
-                  }}
-                />
-
-                <View style={{flexDirection: 'row'}}>
-                  {/*Chess Basics*/}
-                  <ImageBackground
-                    source={global.g.getChessBasics()}
-                    style={styles.Opening_Concepts}>
-                    <View
-                      style={{
-                        backgroundColor: 'rgba(52, 52, 52, 0.8)',
-                        borderRadius: 20,
-                      }}>
-                      <Text
-                        style={{
-                          fontSize: global.g.getWindowWidth() / 50,
-                          color: 'white',
-                          margin: 10,
-                          textAlign: 'center',
-                        }}>
-                        Chess basics
-                      </Text>
-                    </View>
-                  </ImageBackground>
-
-                  {/*Strategic Conncepts*/}
-                  <ImageBackground
-                    source={global.g.getStrategyConcepts()}
-                    style={styles.Opening_Concepts}>
-                    <View
-                      style={{
-                        backgroundColor: 'rgba(52, 52, 52, 0.8)',
-                        borderRadius: 20,
-                      }}>
-                      <Text
-                        style={{
-                          fontSize: global.g.getWindowWidth() / 50,
-                          color: 'white',
-                          margin: 10,
-                          textAlign: 'center',
-                        }}>
-                        Strategic Concepts
-                      </Text>
-                    </View>
-                  </ImageBackground>
-
-                  {/*Opening Concepts*/}
-                  <ImageBackground
-                    source={global.g.getOpeningConcepts()}
-                    style={styles.Opening_Concepts}>
-                    <View
-                      style={{
-                        backgroundColor: 'rgba(52, 52, 52, 0.8)',
-                        borderRadius: 20,
-                      }}>
-                      <Text
-                        style={{
-                          fontSize: global.g.getWindowWidth() / 50,
-                          color: 'white',
-                          margin: 10,
-                          textAlign: 'center',
-                        }}>
-                        Opening Concepts
-                      </Text>
-                    </View>
-                  </ImageBackground>
+              <View style={{marginTop: 20, marginLeft: 0, flexDirection: 'row', justifyContent: 'center', }}>
+                <View style = {styles.TextShadow}>
+                  <Text style = {styles.ContentText, {color: global.g.getTextColor()}}>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+                    sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+                    sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+                    sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+                    sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+                    sed diam voluptua. At vero eos et accusam et justo duo dolores
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+                    sed diam voluptua. At vero eos et accusam et justo duo dolores
+                  </Text>
                 </View>
-
-                {/*Separator*/}
-                <Image
-                  source={global.g.getSeparator()}
-                  style={{
-                    height: global.g.getWindowWidth() / 8,
-                  }}
-                />
-
-                <View style={{flexDirection: 'row'}}>
-                  {/*Expert Mode*/}
-                  <ImageBackground
-                    source={global.g.getExpertMode()}
-                    style={styles.Opening_Concepts}>
+                <View>
+                  <TouchableOpacity
+                    onPress={() =>
+                      this.props.navigation.navigate('LearnToPlay')
+                    }>
                     <View
-                      style={{
-                        backgroundColor: 'rgba(52, 52, 52, 0.8)',
-                        borderRadius: 20,
-                      }}>
-                      <Text
+                    style={
+                      ({backgroundColor: global.g.getBackgroundColor()},
+                      styles.BookShadow)
+                    }>
+                      <Image
+                        source={global.g.getBook()}
                         style={{
-                          fontSize: global.g.getWindowWidth() / 50,
+                          width: (global.g.getWindowWidth() / 5) * 0.8,
+                          height: (global.g.getWindowWidth() / 5) * 0.8,
                           color: 'white',
-                          margin: 10,
-                          textAlign: 'center',
-                        }}>
-                        Expert Mode
-                      </Text>
+                        }}
+                      />
                     </View>
-                  </ImageBackground>
-
-                  {/*Textbook Checkmates*/}
-                  <ImageBackground
-                    source={global.g.getTextbookCheckmates()}
-                    style={styles.Opening_Concepts}>
-                    <View
+                      
+                    <Text
                       style={{
-                        backgroundColor: 'rgba(52, 52, 52, 0.8)',
-                        borderRadius: 20,
+                        fontSize: global.g.getWindowWidth() / 40,
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                        color: global.g.getTextColor(),
                       }}>
-                      <Text
-                        style={{
-                          fontSize: global.g.getWindowWidth() / 50,
-                          color: 'white',
-                          margin: 10,
-                          textAlign: 'center',
-                        }}>
-                        Textbook Checkmates
-                      </Text>
-                    </View>
-                  </ImageBackground>
-
-                  {/*Platzhalter*/}
-                  <ImageBackground
-                    source={global.g.getComingSoon()}
-                    style={styles.Opening_Concepts}>
-                    <View
-                      style={{
-                        backgroundColor: 'rgba(52, 52, 52, 0.8)',
-                        borderRadius: 20,
-                      }}></View>
-                  </ImageBackground>
+                      Start here!
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+                <View style = {styles.TextShadow}>
+                  <Text style = {styles.ContentText, {color: global.g.getTextColor()}}>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+                    sed diam voluptua. At vero eos et accusam et justo duo dolores 
+                  </Text>
                 </View>
               </View>
             </Animated.View>

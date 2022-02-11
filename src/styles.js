@@ -168,6 +168,43 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
 
+  BookShadow: {
+    flexDirection: 'row',
+    overflow: 'hidden',
+    margin: (windowWidth / 5) * 0.1,
+    width: (windowWidth / 5) * 0.85,
+    height: (windowWidth / 5) * 0.85,
+    borderRadius: 20,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+
+    shadowOpacity: 0.23,
+    shadowRadius: 5,
+    elevation: 4,
+  },
+
+  TextShadow: {
+    width: windowWidth/4,
+    marginLeft: windowWidth/40,
+    marginRight: windowWidth/40,
+    borderRadius: 20,
+    padding: 15,
+
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+
+    shadowOpacity: 0.23,
+    shadowRadius: 5,
+    elevation: 4,
+  },
+
   Opening_Concepts: {
     overflow: 'hidden',
     margin: (windowWidth / 10) * 0.1,
@@ -304,6 +341,11 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
   },
+
+  ContentText: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+  }
 });
 
 export default styles;

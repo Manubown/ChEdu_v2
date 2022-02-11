@@ -29,6 +29,9 @@ import whiteSeparator from './Pictures/white_separator.png';
 import chessBoardImage from './Pictures/chessBoard.png';
 import posterChessBoard from './Pictures/Poster_Schachbrett.png';
 import startArrow from './Pictures/right-arrow.jpeg';
+import cheduVideo from './Pictures/ChEdu_Video.png';
+import whiteBook from './Pictures/book_white.png';
+import blackBook from './Pictures/book_black.png';
 
 /*styles*/
 import styles from './styles';
@@ -113,6 +116,10 @@ class Global extends React.Component {
   getSeparator = () => {
     return this.darkmode.separator;
   };
+
+  getBook = () => {
+    return this.darkmode.book;
+  }
   /*Darkmode end*/
 
   /*UserStats*/
@@ -228,6 +235,18 @@ class Global extends React.Component {
   getStartArrow = () => {
     return this.pictures.startArrow;
   };
+
+  getCheduVideo = () => {
+    return this.pictures.cheduVideo;
+  };
+
+  getBookBlack = () => {
+    return this.pictures.blackBook;
+  };
+
+  getBookWhite = () => {
+    return this.pictures.whiteBook;
+  };
   /*Pictures end*/
 
   /*fen*/
@@ -342,6 +361,10 @@ class Global extends React.Component {
   setSeparator = value => {
     this.darkmode.separator = value;
   };
+
+  setBook = value => {
+    this.darkmode.book = value;
+  }
   /*Darkmode end*/
 
   /*UserStats*/
@@ -412,7 +435,8 @@ class Global extends React.Component {
             fontWeight: 'bold',
             width: (global.g.getWindowWidth() / 15) * 1,
             textAlign: 'center',
-          }}>
+            color: global.g.getTextColor(),
+        }}>
           Back to Home
         </Text>
       </View>
@@ -439,6 +463,7 @@ export function HandleSwitchBackground() {
     global.g.setSunMoon('🌙');
     global.g.setTextColor('white');
     global.g.setSeparator(global.g.getWhiteSeparator());
+    global.g.setBook(global.g.getBookWhite());
   } else if (isSwitchOn === false) {
     console.log('Switch OFF');
     global.g.setSwitchValue(false);
@@ -448,6 +473,7 @@ export function HandleSwitchBackground() {
     global.g.setSunMoon('☀️');
     global.g.setTextColor('balck');
     global.g.setSeparator(global.g.getBlackSeparator());
+    global.g.setBook(global.g.getBookBlack());
   }
 
   console.log('Switch Value: ' + isSwitchOn);
@@ -473,6 +499,7 @@ var g = new Global(
     sunMoon: '☀️',
     textColor: 'black',
     separator: blackSeparator,
+    book: whiteBook,
   },
   {
     username: 'User',
@@ -503,6 +530,9 @@ var g = new Global(
     chessBoardImage: chessBoardImage,
     posterChessBoard: posterChessBoard,
     startArrow: startArrow,
+    cheduVideo: cheduVideo,
+    blackBook: blackBook,
+    whiteBook: whiteBook,
   },
   {
     Openings: {
