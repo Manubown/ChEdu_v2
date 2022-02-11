@@ -172,8 +172,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     overflow: 'hidden',
     margin: (windowWidth / 5) * 0.1,
-    width: (windowWidth / 5) * 0.85,
-    height: (windowWidth / 5) * 0.85,
+    padding: 10,
     borderRadius: 20,
     alignItems: 'center',
     shadowColor: '#000',
@@ -189,8 +188,8 @@ const styles = StyleSheet.create({
 
   TextShadow: {
     width: windowWidth/4,
-    marginLeft: windowWidth/40,
-    marginRight: windowWidth/40,
+    marginLeft: windowWidth/30,
+    marginRight: windowWidth/30,
     borderRadius: 20,
     padding: 15,
 
