@@ -32,6 +32,12 @@ import startArrow from './Pictures/right-arrow.jpeg';
 import cheduVideo from './Pictures/ChEdu_Video.png';
 import whiteBook from './Pictures/book_white.png';
 import blackBook from './Pictures/book_black.png';
+import whiteWWW from './Pictures/world-wide-web_white.png';
+import blackWWW from './Pictures/world-wide-web_black.png';
+import whiteSword from './Pictures/sword_white.png';
+import blackSword from './Pictures/sword_black.png';
+import whiteLens from './Pictures/zoom-lens_white.png';
+import blackLens from './Pictures/zoom-lens_black.png';
 
 /*styles*/
 import styles from './styles';
@@ -119,6 +125,18 @@ class Global extends React.Component {
 
   getBook = () => {
     return this.darkmode.book;
+  }
+
+  getWWW = () => {
+    return this.darkmode.www;
+  }
+
+  getSword = () => {
+    return this.darkmode.sword;
+  }
+
+  getLens = () => {
+    return this.darkmode.lens;
   }
   /*Darkmode end*/
 
@@ -247,6 +265,30 @@ class Global extends React.Component {
   getBookWhite = () => {
     return this.pictures.whiteBook;
   };
+
+  getWWWBlack = () => {
+    return this.pictures.blackWWW;
+  };
+
+  getWWWWhite = () => {
+    return this.pictures.whiteWWW;
+  };
+
+  getSwordBlack = () => {
+    return this.pictures.blackSword;
+  };
+
+  getSwordWhite = () => {
+    return this.pictures.whiteSword;
+  };
+
+  getLensBlack = () => {
+    return this.pictures.blackLens;
+  };
+
+  getLensWhite = () => {
+    return this.pictures.whiteLens;
+  };
   /*Pictures end*/
 
   /*fen*/
@@ -365,6 +407,18 @@ class Global extends React.Component {
   setBook = value => {
     this.darkmode.book = value;
   }
+
+  setWWW = value => {
+    this.darkmode.www = value;
+  }
+
+  setSword = value => {
+    this.darkmode.sword = value;
+  }
+
+  setLens = value => {
+    this.darkmode.lens = value;
+  }
   /*Darkmode end*/
 
   /*UserStats*/
@@ -464,6 +518,9 @@ export function HandleSwitchBackground() {
     global.g.setTextColor('white');
     global.g.setSeparator(global.g.getWhiteSeparator());
     global.g.setBook(global.g.getBookWhite());
+    global.g.setWWW(global.g.getWWWWhite());
+    global.g.setSword(global.g.getSwordWhite());
+    global.g.setLens(global.g.getLensWhite());
   } else if (isSwitchOn === false) {
     console.log('Switch OFF');
     global.g.setSwitchValue(false);
@@ -474,6 +531,9 @@ export function HandleSwitchBackground() {
     global.g.setTextColor('balck');
     global.g.setSeparator(global.g.getBlackSeparator());
     global.g.setBook(global.g.getBookBlack());
+    global.g.setWWW(global.g.getWWWBlack());
+    global.g.setSword(global.g.getSwordBlack());
+    global.g.setLens(global.g.getLensBlack());
   }
 
   console.log('Switch Value: ' + isSwitchOn);
@@ -499,7 +559,10 @@ var g = new Global(
     sunMoon: '☀️',
     textColor: 'black',
     separator: blackSeparator,
-    book: whiteBook,
+    book: blackBook,
+    www: blackWWW,
+    sword: blackSword,
+    lens: blackLens,
   },
   {
     username: 'User',
@@ -533,6 +596,12 @@ var g = new Global(
     cheduVideo: cheduVideo,
     blackBook: blackBook,
     whiteBook: whiteBook,
+    blackWWW: blackWWW,
+    whiteWWW: whiteWWW,
+    blackSword: blackSword,
+    whiteSword: whiteSword,
+    blackLens: blackLens,
+    whiteLens: whiteLens,
   },
   {
     Openings: {
