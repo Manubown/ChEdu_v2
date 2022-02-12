@@ -13,6 +13,8 @@ import Register from './Pages/LoginRegister/Register';
 import User from './Pages/User';
 import LearnToPlay from './Pages/Chessboards/LearnToPlay';
 import Chessboard from './Pages/Chessboards/Chessboard';
+import Online from './Pages/Chessboards/Online';
+import Analysis from './Pages/Chessboards/Analysis';
 import LoadingScreen from './Pages/LoadingScreen';
 
 const Stack = createNativeStackNavigator();
@@ -32,13 +34,25 @@ const AppNavigation = () => {
         <Stack.Screen
           name="LearnToPlay"
           component={LearnToPlay}
-          options={{title: 'LearnToPlay'}}
+          options={{title: 'EduBoard'}}
         />
 
         <Stack.Screen
           name="Chessboard"
           component={Chessboard}
-          options={{title: 'Chessboard'}}
+          options={{title: '1v1 Board'}}
+        />
+
+        <Stack.Screen
+          name="Online"
+          component={Online}
+          options={{title: 'Online'}}
+        />
+
+        <Stack.Screen
+          name="Analysis"
+          component={Analysis}
+          options={{title: 'Analysis'}}
         />
 
         <Stack.Screen

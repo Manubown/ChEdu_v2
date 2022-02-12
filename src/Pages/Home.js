@@ -873,7 +873,7 @@ export default class Home extends React.Component {
                 <View>
                   <TouchableOpacity
                     onPress={() =>
-                      this.props.navigation.navigate('LearnToPlay')
+                      this.props.navigation.navigate('Online')
                     }>
                     <View
                       style={
@@ -985,7 +985,7 @@ export default class Home extends React.Component {
                 <View>
                   <TouchableOpacity
                     onPress={() =>
-                      this.props.navigation.navigate('LearnToPlay')
+                      this.props.navigation.navigate('Chessboard')
                     }>
                     <View
                       style={
@@ -1095,7 +1095,7 @@ export default class Home extends React.Component {
                 <View>
                   <TouchableOpacity
                     onPress={() =>
-                      this.props.navigation.navigate('LearnToPlay')
+                      this.props.navigation.navigate('Analysis')
                     }>
                     <View
                       style={
