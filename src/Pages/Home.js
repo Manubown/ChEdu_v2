@@ -189,6 +189,17 @@ export default class Home extends React.Component {
       translateYChessboard,
       switchValue,
     } = this.state;
+    
+    /*const [textShown, setTextShown] = useState(false); //To show ur remaining Text
+    const [lengthMore,setLengthMore] = useState(false); //to show the "Read more & Less Line"
+    const toggleNumberOfLines = () => { //To toggle the show text or hide it
+        setTextShown(!textShown);
+    }
+    
+    const onTextLayout = useCallback(e =>{
+        setLengthMore(e.nativeEvent.lines.length >=4); //to check the text is more than 4 lines or not
+        // console.log(e.nativeEvent);
+    },[]);*/    
 
     return (
       <View
@@ -708,9 +719,19 @@ export default class Home extends React.Component {
                 <View>
                   <View style={styles.TextShadow}>
                     <Text
+                      //onTextLayout={onTextLayout}
+                      //numberOfLines={textShown ? undefined : 4}
                       style={
                         (styles.ContentText, {color: global.g.getTextColor()})
-                      }>
+                      }
+                    >
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores Lorem ipsum dolor sit amet,
+                      consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                      invidunt ut labore et dolore magna aliquyam erat, sed diam
+                      voluptua. At vero eos et accusam et justo dWuo dolores
                       Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                       sed diam nonumy eirmod tempor invidunt ut labore et dolore
                       magna aliquyam erat, sed diam voluptua. At vero eos et
@@ -724,15 +745,15 @@ export default class Home extends React.Component {
                       accusam et justo duo dolores Lorem ipsum dolor sit amet,
                       consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                       invidunt ut labore et dolore magna aliquyam erat, sed diam
-                      voluptua. At vero eos et accusam et justo duo dolores
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                      magna aliquyam erat, sed diam voluptua. At vero eos et
-                      accusam et justo duo dolores Lorem ipsum dolor sit amet,
-                      consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                      invidunt ut labore et dolore magna aliquyam erat, sed diam
-                      voluptua. At vero eos et accusam et justo duo dolores
+                      voluptua. At vero eos et accusam et justo duWo dolores
                     </Text>
+
+                    {/*
+                      lengthMore ? <Text
+                      onPress={toggleNumberOfLines}
+                      style={{ lineHeight: 21, marginTop: 10 }}>{textShown ? 'Read less...' : 'Read more...'}</Text>
+                      :null
+                    */}
                   </View>
                 </View>
 
@@ -786,8 +807,6 @@ export default class Home extends React.Component {
             {/*Online*/}
             <Animated.View
               style={{
-                justifyContent: 'center',
-                alignItems: 'center',
                 //Transform, damit die Position von oben koriigiert wird hier eben -translateY
                 transform: [
                   {
@@ -803,37 +822,104 @@ export default class Home extends React.Component {
                   translateYOnline: event.nativeEvent.layout.height,
                 })
               }>
-              <Text>Tab Two</Text>
-              <Text>Tab Two</Text>
-              <Text>Tab Two</Text>
-              <Text>Tab Two</Text>
-              <Text>Tab Two</Text>
-              <Text>Tab Two</Text>
-              <Text>Tab Two</Text>
-              <Text>Tab Two</Text>
-              <Text>Tab Two</Text>
-              <Text>Tab Two</Text>
-              <Text>Tab Two</Text>
-              <Text>Tab Two</Text>
-              <Text>Tab Two</Text>
-              <Text>Tab Two</Text>
-              <Text>Tab Two</Text>
-              <Text>Tab Two</Text>
-              <Text>Tab Two</Text>
+              <View
+                style={{
+                  marginTop: 20,
+                  marginLeft: 0,
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                }}>
+                <View>
+                  <View style={styles.TextShadow}>
+                    <Text
+                      //onTextLayout={onTextLayout}
+                      //numberOfLines={textShown ? undefined : 4}
+                      style={
+                        (styles.ContentText, {color: global.g.getTextColor()})
+                      }
+                    >
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores Lorem ipsum dolor sit amet,
+                      consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                      invidunt ut labore et dolore magna aliquyam erat, sed diam
+                      voluptua. At vero eos et accusam et justo dWuo dolores
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores Lorem ipsum dolor sit amet,
+                      consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                      invidunt ut labore et dolore magna aliquyam erat, sed diam
+                      voluptua. At vero eos et accusam et justo duo dolores
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores Lorem ipsum dolor sit amet,
+                      consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                      invidunt ut labore et dolore magna aliquyam erat, sed diam
+                      voluptua. At vero eos et accusam et justo duWo dolores
+                    </Text>
 
-              <View style={{marginTop: 20}}>
-                <Image
-                  source={global.g.getTwoKings()}
-                  style={{width: 30, height: 30, borderRadius: 15}}
-                />
+                    {/*
+                      lengthMore ? <Text
+                      onPress={toggleNumberOfLines}
+                      style={{ lineHeight: 21, marginTop: 10 }}>{textShown ? 'Read less...' : 'Read more...'}</Text>
+                      :null
+                    */}
+                  </View>
+                </View>
+
+                <View>
+                  <TouchableOpacity
+                    onPress={() =>
+                      this.props.navigation.navigate('LearnToPlay')
+                    }>
+                    <View
+                      style={
+                        ({backgroundColor: global.g.getBackgroundColor()},
+                        styles.BookShadow)
+                      }>
+                      <Image
+                        source={global.g.getWWW()}
+                        style={{
+                          width: (global.g.getWindowWidth() / 5) * 0.8,
+                          height: (global.g.getWindowWidth() / 5) * 0.8,
+                          color: 'white',
+                        }}
+                      />
+                    </View>
+
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 40,
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                        color: global.g.getTextColor(),
+                      }}>
+                      Start here!
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+                <View>
+                  <View style={styles.TextShadow}>
+                    <Text
+                      style={
+                        (styles.ContentText, {color: global.g.getTextColor()})
+                      }>
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores
+                    </Text>
+                  </View>
+                </View>
               </View>
             </Animated.View>
 
             {/*Chessboard*/}
             <Animated.View
               style={{
-                justifyContent: 'center',
-                alignItems: 'center',
                 transform: [
                   {
                     translateX: translateXTabChessBoard,
@@ -848,14 +934,104 @@ export default class Home extends React.Component {
                   translateYChessboard: event.nativeEvent.layout.height,
                 })
               }>
-              <Text>ddd</Text>
+              <View
+                style={{
+                  marginTop: 20,
+                  marginLeft: 0,
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                }}>
+                <View>
+                  <View style={styles.TextShadow}>
+                    <Text
+                      //onTextLayout={onTextLayout}
+                      //numberOfLines={textShown ? undefined : 4}
+                      style={
+                        (styles.ContentText, {color: global.g.getTextColor()})
+                      }
+                    >
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores Lorem ipsum dolor sit amet,
+                      consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                      invidunt ut labore et dolore magna aliquyam erat, sed diam
+                      voluptua. At vero eos et accusam et justo dWuo dolores
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores Lorem ipsum dolor sit amet,
+                      consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                      invidunt ut labore et dolore magna aliquyam erat, sed diam
+                      voluptua. At vero eos et accusam et justo duo dolores
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores Lorem ipsum dolor sit amet,
+                      consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                      invidunt ut labore et dolore magna aliquyam erat, sed diam
+                      voluptua. At vero eos et accusam et justo duWo dolores
+                    </Text>
+
+                    {/*
+                      lengthMore ? <Text
+                      onPress={toggleNumberOfLines}
+                      style={{ lineHeight: 21, marginTop: 10 }}>{textShown ? 'Read less...' : 'Read more...'}</Text>
+                      :null
+                    */}
+                  </View>
+                </View>
+
+                <View>
+                  <TouchableOpacity
+                    onPress={() =>
+                      this.props.navigation.navigate('LearnToPlay')
+                    }>
+                    <View
+                      style={
+                        ({backgroundColor: global.g.getBackgroundColor()},
+                        styles.BookShadow)
+                      }>
+                      <Image
+                        source={global.g.getSword()}
+                        style={{
+                          width: (global.g.getWindowWidth() / 5) * 0.8,
+                          height: (global.g.getWindowWidth() / 5) * 0.8,
+                          color: 'white',
+                        }}
+                      />
+                    </View>
+
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 40,
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                        color: global.g.getTextColor(),
+                      }}>
+                      Start here!
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+                <View>
+                  <View style={styles.TextShadow}>
+                    <Text
+                      style={
+                        (styles.ContentText, {color: global.g.getTextColor()})
+                      }>
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores
+                    </Text>
+                  </View>
+                </View>
+              </View>
             </Animated.View>
 
             {/*Analysis*/}
             <Animated.View
               style={{
-                justifyContent: 'center',
-                alignItems: 'center',
                 transform: [
                   {
                     translateX: translateXTabAnalysis,
@@ -868,12 +1044,98 @@ export default class Home extends React.Component {
                   },
                 ],
               }}>
-              <Text>Tab Four</Text>
-              <View style={{marginTop: 20}}>
-                <Image
-                  source={global.g.getTwoKings()}
-                  style={{width: 30, height: 30, borderRadius: 15}}
-                />
+                <View
+                style={{
+                  marginTop: 20,
+                  marginLeft: 0,
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                }}>
+                <View>
+                  <View style={styles.TextShadow}>
+                    <Text
+                      //onTextLayout={onTextLayout}
+                      //numberOfLines={textShown ? undefined : 4}
+                      style={
+                        (styles.ContentText, {color: global.g.getTextColor()})
+                      }
+                    >
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores Lorem ipsum dolor sit amet,
+                      consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                      invidunt ut labore et dolore magna aliquyam erat, sed diam
+                      voluptua. At vero eos et accusam et justo dWuo dolores
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores Lorem ipsum dolor sit amet,
+                      consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                      invidunt ut labore et dolore magna aliquyam erat, sed diam
+                      voluptua. At vero eos et accusam et justo duo dolores
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores Lorem ipsum dolor sit amet,
+                      consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                      invidunt ut labore et dolore magna aliquyam erat, sed diam
+                      voluptua. At vero eos et accusam et justo duWo dolores
+                    </Text>
+
+                    {/*
+                      lengthMore ? <Text
+                      onPress={toggleNumberOfLines}
+                      style={{ lineHeight: 21, marginTop: 10 }}>{textShown ? 'Read less...' : 'Read more...'}</Text>
+                      :null
+                    */}
+                  </View>
+                </View>
+
+                <View>
+                  <TouchableOpacity
+                    onPress={() =>
+                      this.props.navigation.navigate('LearnToPlay')
+                    }>
+                    <View
+                      style={
+                        ({backgroundColor: global.g.getBackgroundColor()},
+                        styles.BookShadow)
+                      }>
+                      <Image
+                        source={global.g.getLens()}
+                        style={{
+                          width: (global.g.getWindowWidth() / 5) * 0.8,
+                          height: (global.g.getWindowWidth() / 5) * 0.8,
+                          color: 'white',
+                        }}
+                      />
+                    </View>
+
+                    <Text
+                      style={{
+                        fontSize: global.g.getWindowWidth() / 40,
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                        color: global.g.getTextColor(),
+                      }}>
+                      Start here!
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+                <View>
+                  <View style={styles.TextShadow}>
+                    <Text
+                      style={
+                        (styles.ContentText, {color: global.g.getTextColor()})
+                      }>
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores
+                    </Text>
+                  </View>
+                </View>
               </View>
             </Animated.View>
           </ScrollView>
