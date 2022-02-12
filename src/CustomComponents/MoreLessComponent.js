@@ -9,7 +9,7 @@ const MoreLessComponent = props => {
       {!more ? props.truncatedText : props.fullText}
 
       <TouchableOpacity onPress={() => setMore(!more)}>
-        <Text style={{color: 'blue'}}>
+        <Text style={{color: '#007aff'}}>
           {more ? ' Read less...' : ' Read more...'}
         </Text>
       </TouchableOpacity>
