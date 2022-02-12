@@ -542,7 +542,7 @@ export default class Home extends React.Component {
               style={{
                 height: global.g.getWindowWidth() / 8,
                 width: global.g.getWindowWidth() / 4.5,
-                borderRadius: 20
+                borderRadius: 20,
               }}
             />
           </TouchableOpacity>
@@ -698,27 +698,39 @@ export default class Home extends React.Component {
                   translateYLearnToPlay: event.nativeEvent.layout.height,
                 })
               }>
-              <View style={{marginTop: 20, marginLeft: 0, flexDirection: 'row', justifyContent: 'center', }}>
-                <View style = {styles.TextShadow}>
-                  <Text style = {styles.ContentText, {color: global.g.getTextColor()}}>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores
+              <View
+                style={{
+                  marginTop: 20,
+                  marginLeft: 0,
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                }}>
+                <View style={styles.TextShadow}>
+                  <Text
+                    style={
+                      (styles.ContentText, {color: global.g.getTextColor()})
+                    }>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                    justo duo dolores Lorem ipsum dolor sit amet, consetetur
+                    sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam voluptua. At
+                    vero eos et accusam et justo duo dolores Lorem ipsum dolor
+                    sit amet, consetetur sadipscing elitr, sed diam nonumy
+                    eirmod tempor invidunt ut labore et dolore magna aliquyam
+                    erat, sed diam voluptua. At vero eos et accusam et justo duo
+                    dolores Lorem ipsum dolor sit amet, consetetur sadipscing
+                    elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                    dolore magna aliquyam erat, sed diam voluptua. At vero eos
+                    et accusam et justo duo dolores Lorem ipsum dolor sit amet,
+                    consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    invidunt ut labore et dolore magna aliquyam erat, sed diam
+                    voluptua. At vero eos et accusam et justo duo dolores Lorem
+                    ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                    nonumy eirmod tempor invidunt ut labore et dolore magna
+                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                    justo duo dolores
                   </Text>
                 </View>
                 <View>
@@ -727,10 +739,10 @@ export default class Home extends React.Component {
                       this.props.navigation.navigate('LearnToPlay')
                     }>
                     <View
-                    style={
-                      ({backgroundColor: global.g.getBackgroundColor()},
-                      styles.BookShadow)
-                    }>
+                      style={
+                        ({backgroundColor: global.g.getBackgroundColor()},
+                        styles.BookShadow)
+                      }>
                       <Image
                         source={global.g.getBook()}
                         style={{
@@ -740,7 +752,7 @@ export default class Home extends React.Component {
                         }}
                       />
                     </View>
-                      
+
                     <Text
                       style={{
                         fontSize: global.g.getWindowWidth() / 40,
@@ -752,11 +764,15 @@ export default class Home extends React.Component {
                     </Text>
                   </TouchableOpacity>
                 </View>
-                <View style = {styles.TextShadow}>
-                  <Text style = {styles.ContentText, {color: global.g.getTextColor()}}>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores 
+                <View style={styles.TextShadow}>
+                  <Text
+                    style={
+                      (styles.ContentText, {color: global.g.getTextColor()})
+                    }>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                    justo duo dolores
                   </Text>
                 </View>
               </View>
