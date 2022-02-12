@@ -450,6 +450,7 @@ export default class LogicalChessboard extends React.Component {
     console.log('############################');
     console.log();
 
+    //Output Values
     return this.props.children({
       squareStyles,
       position: fen,
