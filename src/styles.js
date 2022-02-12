@@ -187,9 +187,9 @@ const styles = StyleSheet.create({
   },
 
   TextShadow: {
-    width: windowWidth/4,
-    marginLeft: windowWidth/30,
-    marginRight: windowWidth/30,
+    width: windowWidth / 4,
+    marginLeft: windowWidth / 30,
+    marginRight: windowWidth / 30,
     borderRadius: 20,
     padding: 15,
 
@@ -344,7 +344,7 @@ const styles = StyleSheet.create({
   ContentText: {
     textAlign: 'center',
     fontWeight: 'bold',
-  }
+  },
 });
 
 export default styles;
