@@ -705,34 +705,37 @@ export default class Home extends React.Component {
                   flexDirection: 'row',
                   justifyContent: 'center',
                 }}>
-                <View style={styles.TextShadow}>
-                  <Text
-                    style={
-                      (styles.ContentText, {color: global.g.getTextColor()})
-                    }>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                    justo duo dolores Lorem ipsum dolor sit amet, consetetur
-                    sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                    labore et dolore magna aliquyam erat, sed diam voluptua. At
-                    vero eos et accusam et justo duo dolores Lorem ipsum dolor
-                    sit amet, consetetur sadipscing elitr, sed diam nonumy
-                    eirmod tempor invidunt ut labore et dolore magna aliquyam
-                    erat, sed diam voluptua. At vero eos et accusam et justo duo
-                    dolores Lorem ipsum dolor sit amet, consetetur sadipscing
-                    elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-                    dolore magna aliquyam erat, sed diam voluptua. At vero eos
-                    et accusam et justo duo dolores Lorem ipsum dolor sit amet,
-                    consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                    invidunt ut labore et dolore magna aliquyam erat, sed diam
-                    voluptua. At vero eos et accusam et justo duo dolores Lorem
-                    ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                    nonumy eirmod tempor invidunt ut labore et dolore magna
-                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                    justo duo dolores
-                  </Text>
+                <View>
+                  <View style={styles.TextShadow}>
+                    <Text
+                      style={
+                        (styles.ContentText, {color: global.g.getTextColor()})
+                      }>
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores Lorem ipsum dolor sit amet,
+                      consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                      invidunt ut labore et dolore magna aliquyam erat, sed diam
+                      voluptua. At vero eos et accusam et justo duo dolores
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores Lorem ipsum dolor sit amet,
+                      consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                      invidunt ut labore et dolore magna aliquyam erat, sed diam
+                      voluptua. At vero eos et accusam et justo duo dolores
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores Lorem ipsum dolor sit amet,
+                      consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                      invidunt ut labore et dolore magna aliquyam erat, sed diam
+                      voluptua. At vero eos et accusam et justo duo dolores
+                    </Text>
+                  </View>
                 </View>
+
                 <View>
                   <TouchableOpacity
                     onPress={() =>
@@ -764,16 +767,18 @@ export default class Home extends React.Component {
                     </Text>
                   </TouchableOpacity>
                 </View>
-                <View style={styles.TextShadow}>
-                  <Text
-                    style={
-                      (styles.ContentText, {color: global.g.getTextColor()})
-                    }>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                    justo duo dolores
-                  </Text>
+                <View>
+                  <View style={styles.TextShadow}>
+                    <Text
+                      style={
+                        (styles.ContentText, {color: global.g.getTextColor()})
+                      }>
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                      magna aliquyam erat, sed diam voluptua. At vero eos et
+                      accusam et justo duo dolores
+                    </Text>
+                  </View>
                 </View>
               </View>
             </Animated.View>
