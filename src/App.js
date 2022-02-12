@@ -7,15 +7,15 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 /*Pages*/
-import Home from './Pages/Home';
-import Login from './Pages/User_Info/Login';
-import Register from './Pages/User_Info/Register';
-import User from './Pages/User_Info/User';
-import LearnToPlay from './Pages/Chessboards/LearnToPlay';
-import Chessboard from './Pages/Chessboards/Chessboard';
-import Online from './Pages/Chessboards/Online';
-import Analysis from './Pages/Chessboards/Analysis';
-import LoadingScreen from './Pages/LoadingScreen';
+import Home from './User_Interface/Home';
+import Login from './User_Interface/User_Info/Login';
+import Register from './User_Interface/User_Info/Register';
+import User from './User_Interface/User_Info/User';
+import LearnToPlay from './User_Interface/Chessboards/LearnToPlay';
+import Chessboard from './User_Interface/Chessboards/Chessboard';
+import Online from './User_Interface/Chessboards/Online';
+import Analysis from './User_Interface/Chessboards/Analysis';
+import LoadingScreen from './User_Interface/LoadingScreen';
 
 const Stack = createNativeStackNavigator();
 
