@@ -8,9 +8,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 /*Pages*/
 import Home from './Pages/Home';
-import Login from './Pages/LoginRegister/Login';
-import Register from './Pages/LoginRegister/Register';
-import User from './Pages/User';
+import Login from './Pages/User_Info/Login';
+import Register from './Pages/User_Info/Register';
+import User from './Pages/User_Info/User';
 import LearnToPlay from './Pages/Chessboards/LearnToPlay';
 import Chessboard from './Pages/Chessboards/Chessboard';
 import Online from './Pages/Chessboards/Online';

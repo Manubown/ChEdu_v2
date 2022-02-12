@@ -45,7 +45,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 /*Pages */
 import Home from './Pages/Home';
-import Login from './Pages/LoginRegister/Login';
+import Login from './Pages/User_Info/Login';
 
 class Global extends React.Component {
   /*ctor*/

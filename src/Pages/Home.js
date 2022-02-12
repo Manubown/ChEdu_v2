@@ -18,7 +18,7 @@ import styles from '../styles';
 import {HandleSwitchBackground} from '../global';
 import {getData, deleteData} from '../Scripts/SaveData';
 
-import MoreLessComponent from '../CustomComponents/MoreLessComponent';
+import MoreLessComponent from './CustomComponents/MoreLessComponent';
 
 export default class Home extends React.Component {
   state = {
