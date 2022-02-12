@@ -18,6 +18,8 @@ import styles from '../styles';
 import {HandleSwitchBackground} from '../global';
 import {getData, deleteData} from '../Scripts/SaveData';
 
+import MoreLessComponent from '../CustomComponents/MoreLessComponent';
+
 export default class Home extends React.Component {
   state = {
     active: 0,
@@ -189,7 +191,7 @@ export default class Home extends React.Component {
       translateYChessboard,
       switchValue,
     } = this.state;
-    
+
     /*const [textShown, setTextShown] = useState(false); //To show ur remaining Text
     const [lengthMore,setLengthMore] = useState(false); //to show the "Read more & Less Line"
     const toggleNumberOfLines = () => { //To toggle the show text or hide it
@@ -199,7 +201,7 @@ export default class Home extends React.Component {
     const onTextLayout = useCallback(e =>{
         setLengthMore(e.nativeEvent.lines.length >=4); //to check the text is more than 4 lines or not
         // console.log(e.nativeEvent);
-    },[]);*/    
+    },[]);*/
 
     return (
       <View
@@ -723,9 +725,10 @@ export default class Home extends React.Component {
                       //numberOfLines={textShown ? undefined : 4}
                       style={
                         (styles.ContentText, {color: global.g.getTextColor()})
-                      }
-                    >
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      }>
+                      <MoreLessComponent
+                        truncatedText="Lorem ipsum dolor"
+                        fullText="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                       sed diam nonumy eirmod tempor invidunt ut labore et dolore
                       magna aliquyam erat, sed diam voluptua. At vero eos et
                       accusam et justo duo dolores Lorem ipsum dolor sit amet,
@@ -745,7 +748,8 @@ export default class Home extends React.Component {
                       accusam et justo duo dolores Lorem ipsum dolor sit amet,
                       consetetur sadipscing elitr, sed diam nonumy eirmod tempor
                       invidunt ut labore et dolore magna aliquyam erat, sed diam
-                      voluptua. At vero eos et accusam et justo duWo dolores
+                      voluptua. At vero eos et accusam et justo duWo dolores"
+                      />
                     </Text>
 
                     {/*
@@ -836,8 +840,7 @@ export default class Home extends React.Component {
                       //numberOfLines={textShown ? undefined : 4}
                       style={
                         (styles.ContentText, {color: global.g.getTextColor()})
-                      }
-                    >
+                      }>
                       Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                       sed diam nonumy eirmod tempor invidunt ut labore et dolore
                       magna aliquyam erat, sed diam voluptua. At vero eos et
@@ -872,9 +875,7 @@ export default class Home extends React.Component {
 
                 <View>
                   <TouchableOpacity
-                    onPress={() =>
-                      this.props.navigation.navigate('Online')
-                    }>
+                    onPress={() => this.props.navigation.navigate('Online')}>
                     <View
                       style={
                         ({backgroundColor: global.g.getBackgroundColor()},
@@ -948,8 +949,7 @@ export default class Home extends React.Component {
                       //numberOfLines={textShown ? undefined : 4}
                       style={
                         (styles.ContentText, {color: global.g.getTextColor()})
-                      }
-                    >
+                      }>
                       Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                       sed diam nonumy eirmod tempor invidunt ut labore et dolore
                       magna aliquyam erat, sed diam voluptua. At vero eos et
@@ -1044,7 +1044,7 @@ export default class Home extends React.Component {
                   },
                 ],
               }}>
-                <View
+              <View
                 style={{
                   marginTop: 20,
                   marginLeft: 0,
@@ -1058,8 +1058,7 @@ export default class Home extends React.Component {
                       //numberOfLines={textShown ? undefined : 4}
                       style={
                         (styles.ContentText, {color: global.g.getTextColor()})
-                      }
-                    >
+                      }>
                       Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                       sed diam nonumy eirmod tempor invidunt ut labore et dolore
                       magna aliquyam erat, sed diam voluptua. At vero eos et
@@ -1094,9 +1093,7 @@ export default class Home extends React.Component {
 
                 <View>
                   <TouchableOpacity
-                    onPress={() =>
-                      this.props.navigation.navigate('Analysis')
-                    }>
+                    onPress={() => this.props.navigation.navigate('Analysis')}>
                     <View
                       style={
                         ({backgroundColor: global.g.getBackgroundColor()},
