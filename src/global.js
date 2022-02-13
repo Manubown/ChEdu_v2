@@ -44,8 +44,8 @@ import styles from './styles';
 import {NavigationContainer} from '@react-navigation/native';
 
 /*Pages */
-import Home from './User_Interface/Home';
-import Login from './User_Interface/User_Info/Login';
+import Home from './Screens/Home';
+import Login from './Screens/User_Info/Login';
 
 class Global extends React.Component {
   /*ctor*/
