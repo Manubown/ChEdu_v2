@@ -649,6 +649,7 @@ export default class LearnToPlay extends React.Component {
                       style={{width: 100, height: 100}}
                       onPress={() => {
                         updateGameFEN(global.g.getSicilianDefence(), 2);
+                        window.scrollTo(0,0);
                       }}>
                       <Text style={{color: global.g.getTextColor()}}>
                         Sicilian Defence
