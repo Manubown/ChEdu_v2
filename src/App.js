@@ -16,7 +16,7 @@ import Chessboard from './Screens/Chessboards/Chessboard';
 import Online from './Screens/Chessboards/Online';
 import Analysis from './Screens/Chessboards/Analysis';
 import LoadingScreen from './Screens/LoadingScreen';
-/**import MobileWebView from './Screens/Mobile/MobileWebView';*/
+import MobileWebView from './Screens/Mobile/MobileWebView';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,7 +24,7 @@ const AppNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/*<Stack.Screen name="MobileWebView" component={MobileWebView} />*/}
+        <Stack.Screen name="MobileWebView" component={MobileWebView} />
         <Stack.Screen
           name="LoadingScreen"
           component={LoadingScreen}

@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00AC93A15165DA328C431BE4 /* libPods-ChEdu_v2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC947DA7DCEFE932AA672452 /* libPods-ChEdu_v2.a */; };
 		00E356F31AD99517003FC87E /* ChEdu_v2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ChEdu_v2Tests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1E420C0F273F8AA041A6BC03 /* libPods-ChEdu_v2-ChEdu_v2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EBF96A07EF2483A3718E8A /* libPods-ChEdu_v2-ChEdu_v2Tests.a */; };
+		48FDBF98A2A923DA6B0904FA /* libPods-ChEdu_v2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0225634E06F3C2A2837EEF8C /* libPods-ChEdu_v2.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		D8C1127AF6674B8FD050303D /* libPods-ChEdu_v2-ChEdu_v2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3BCC5BD903E615FD149139 /* libPods-ChEdu_v2-ChEdu_v2Tests.a */; };
+		D3D8B29C27BBA74300AF2C54 /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D8B29B27BBA74300AF2C54 /* OpenSSL.xcframework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,20 +31,21 @@
 		00E356EE1AD99517003FC87E /* ChEdu_v2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChEdu_v2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ChEdu_v2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChEdu_v2Tests.m; sourceTree = "<group>"; };
+		0225634E06F3C2A2837EEF8C /* libPods-ChEdu_v2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChEdu_v2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* ChEdu_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChEdu_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ChEdu_v2/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ChEdu_v2/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ChEdu_v2/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ChEdu_v2/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ChEdu_v2/main.m; sourceTree = "<group>"; };
-		178ED45039F2B2B2FFAB8251 /* Pods-ChEdu_v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChEdu_v2.debug.xcconfig"; path = "Target Support Files/Pods-ChEdu_v2/Pods-ChEdu_v2.debug.xcconfig"; sourceTree = "<group>"; };
-		1E3BCC5BD903E615FD149139 /* libPods-ChEdu_v2-ChEdu_v2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChEdu_v2-ChEdu_v2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ChEdu_v2/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A8E12D4FDC26015E466F3CBE /* Pods-ChEdu_v2-ChEdu_v2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChEdu_v2-ChEdu_v2Tests.debug.xcconfig"; path = "Target Support Files/Pods-ChEdu_v2-ChEdu_v2Tests/Pods-ChEdu_v2-ChEdu_v2Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		DF9AF233A8993DC318D63CCA /* Pods-ChEdu_v2-ChEdu_v2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChEdu_v2-ChEdu_v2Tests.release.xcconfig"; path = "Target Support Files/Pods-ChEdu_v2-ChEdu_v2Tests/Pods-ChEdu_v2-ChEdu_v2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		95ACB72F42DD7C191CF39883 /* Pods-ChEdu_v2-ChEdu_v2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChEdu_v2-ChEdu_v2Tests.debug.xcconfig"; path = "Target Support Files/Pods-ChEdu_v2-ChEdu_v2Tests/Pods-ChEdu_v2-ChEdu_v2Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		ACC49B00398E0BCC3BF13ACF /* Pods-ChEdu_v2-ChEdu_v2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChEdu_v2-ChEdu_v2Tests.release.xcconfig"; path = "Target Support Files/Pods-ChEdu_v2-ChEdu_v2Tests/Pods-ChEdu_v2-ChEdu_v2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B5244DDB549B7966CA1DA333 /* Pods-ChEdu_v2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChEdu_v2.debug.xcconfig"; path = "Target Support Files/Pods-ChEdu_v2/Pods-ChEdu_v2.debug.xcconfig"; sourceTree = "<group>"; };
+		D3D8B29B27BBA74300AF2C54 /* OpenSSL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OpenSSL.xcframework; path = "Pods/OpenSSL-Universal/Frameworks/OpenSSL.xcframework"; sourceTree = "<group>"; };
+		E6EBF96A07EF2483A3718E8A /* libPods-ChEdu_v2-ChEdu_v2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChEdu_v2-ChEdu_v2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBF91BA996808B40C51D9186 /* Pods-ChEdu_v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChEdu_v2.release.xcconfig"; path = "Target Support Files/Pods-ChEdu_v2/Pods-ChEdu_v2.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F5456F39914126D10FB00CD6 /* Pods-ChEdu_v2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChEdu_v2.release.xcconfig"; path = "Target Support Files/Pods-ChEdu_v2/Pods-ChEdu_v2.release.xcconfig"; sourceTree = "<group>"; };
-		FC947DA7DCEFE932AA672452 /* libPods-ChEdu_v2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChEdu_v2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8C1127AF6674B8FD050303D /* libPods-ChEdu_v2-ChEdu_v2Tests.a in Frameworks */,
+				1E420C0F273F8AA041A6BC03 /* libPods-ChEdu_v2-ChEdu_v2Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00AC93A15165DA328C431BE4 /* libPods-ChEdu_v2.a in Frameworks */,
+				D3D8B29C27BBA74300AF2C54 /* OpenSSL.xcframework in Frameworks */,
+				48FDBF98A2A923DA6B0904FA /* libPods-ChEdu_v2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,9 +102,10 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3D8B29B27BBA74300AF2C54 /* OpenSSL.xcframework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				FC947DA7DCEFE932AA672452 /* libPods-ChEdu_v2.a */,
-				1E3BCC5BD903E615FD149139 /* libPods-ChEdu_v2-ChEdu_v2Tests.a */,
+				0225634E06F3C2A2837EEF8C /* libPods-ChEdu_v2.a */,
+				E6EBF96A07EF2483A3718E8A /* libPods-ChEdu_v2-ChEdu_v2Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,7 +125,7 @@
 				00E356EF1AD99517003FC87E /* ChEdu_v2Tests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				DEB7D472140ECAD4C04F2E85 /* Pods */,
+				94BD9120370C88FEF4BA5423 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -137,15 +141,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DEB7D472140ECAD4C04F2E85 /* Pods */ = {
+		94BD9120370C88FEF4BA5423 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				178ED45039F2B2B2FFAB8251 /* Pods-ChEdu_v2.debug.xcconfig */,
-				F5456F39914126D10FB00CD6 /* Pods-ChEdu_v2.release.xcconfig */,
-				A8E12D4FDC26015E466F3CBE /* Pods-ChEdu_v2-ChEdu_v2Tests.debug.xcconfig */,
-				DF9AF233A8993DC318D63CCA /* Pods-ChEdu_v2-ChEdu_v2Tests.release.xcconfig */,
+				B5244DDB549B7966CA1DA333 /* Pods-ChEdu_v2.debug.xcconfig */,
+				EBF91BA996808B40C51D9186 /* Pods-ChEdu_v2.release.xcconfig */,
+				95ACB72F42DD7C191CF39883 /* Pods-ChEdu_v2-ChEdu_v2Tests.debug.xcconfig */,
+				ACC49B00398E0BCC3BF13ACF /* Pods-ChEdu_v2-ChEdu_v2Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -156,11 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ChEdu_v2Tests" */;
 			buildPhases = (
-				D0134686372C6F24234EFDFC /* [CP] Check Pods Manifest.lock */,
+				7A1C50428724C209E0087ACC /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				C4A6E32CE718BF265D7FF6B1 /* [CP] Copy Pods Resources */,
+				5B71B3ECE79622A04A54FAAE /* [CP] Embed Pods Frameworks */,
+				A43D1274E6778A4663CFEF04 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,13 +180,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ChEdu_v2" */;
 			buildPhases = (
-				150A676CEAFD9199E2461F69 /* [CP] Check Pods Manifest.lock */,
+				FEAF73726AFA5F79A8EA22DF /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				D35B55792C853BC004BF728C /* [CP] Copy Pods Resources */,
+				48F45BDDB25F18DC712E6FB7 /* [CP] Embed Pods Frameworks */,
+				BD2AC366C8C112AA4F755953 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,7 +204,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
@@ -251,7 +256,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -259,50 +264,45 @@
 			name = "Bundle React Native code and images";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		150A676CEAFD9199E2461F69 /* [CP] Check Pods Manifest.lock */ = {
+		48F45BDDB25F18DC712E6FB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChEdu_v2/Pods-ChEdu_v2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChEdu_v2/Pods-ChEdu_v2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChEdu_v2/Pods-ChEdu_v2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B71B3ECE79622A04A54FAAE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChEdu_v2-ChEdu_v2Tests/Pods-ChEdu_v2-ChEdu_v2Tests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ChEdu_v2-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-ChEdu_v2-ChEdu_v2Tests/Pods-ChEdu_v2-ChEdu_v2Tests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChEdu_v2-ChEdu_v2Tests/Pods-ChEdu_v2-ChEdu_v2Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C4A6E32CE718BF265D7FF6B1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ChEdu_v2-ChEdu_v2Tests/Pods-ChEdu_v2-ChEdu_v2Tests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ChEdu_v2-ChEdu_v2Tests/Pods-ChEdu_v2-ChEdu_v2Tests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChEdu_v2-ChEdu_v2Tests/Pods-ChEdu_v2-ChEdu_v2Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D0134686372C6F24234EFDFC /* [CP] Check Pods Manifest.lock */ = {
+		7A1C50428724C209E0087ACC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -324,7 +324,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D35B55792C853BC004BF728C /* [CP] Copy Pods Resources */ = {
+		A43D1274E6778A4663CFEF04 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChEdu_v2-ChEdu_v2Tests/Pods-ChEdu_v2-ChEdu_v2Tests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChEdu_v2-ChEdu_v2Tests/Pods-ChEdu_v2-ChEdu_v2Tests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChEdu_v2-ChEdu_v2Tests/Pods-ChEdu_v2-ChEdu_v2Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD2AC366C8C112AA4F755953 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -360,6 +377,28 @@
 			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		FEAF73726AFA5F79A8EA22DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChEdu_v2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -393,15 +432,16 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8E12D4FDC26015E466F3CBE /* Pods-ChEdu_v2-ChEdu_v2Tests.debug.xcconfig */;
+			baseConfigurationReference = 95ACB72F42DD7C191CF39883 /* Pods-ChEdu_v2-ChEdu_v2Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ChEdu_v2Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,12 +460,13 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF9AF233A8993DC318D63CCA /* Pods-ChEdu_v2-ChEdu_v2Tests.release.xcconfig */;
+			baseConfigurationReference = ACC49B00398E0BCC3BF13ACF /* Pods-ChEdu_v2-ChEdu_v2Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = ChEdu_v2Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,13 +485,15 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 178ED45039F2B2B2FFAB8251 /* Pods-ChEdu_v2.debug.xcconfig */;
+			baseConfigurationReference = B5244DDB549B7966CA1DA333 /* Pods-ChEdu_v2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_BITCODE = NO;
+				DEVELOPMENT_TEAM = BW38Q92HMD;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = ChEdu_v2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,12 +513,15 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5456F39914126D10FB00CD6 /* Pods-ChEdu_v2.release.xcconfig */;
+			baseConfigurationReference = EBF91BA996808B40C51D9186 /* Pods-ChEdu_v2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BW38Q92HMD;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ChEdu_v2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -522,7 +568,8 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
@@ -555,6 +602,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -588,9 +636,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -612,8 +661,9 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Release;
 		};

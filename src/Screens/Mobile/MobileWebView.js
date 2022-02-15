@@ -8,7 +8,6 @@ export default class MobileWebView extends Component {
         source={{
           uri: 'https://chedu.at/',
         }}
-        style={{marginTop: 20}}
       />
     );
   }
