@@ -708,9 +708,12 @@ var g = new Global(
     Carlsen: {
       Some_Carlsen_Game:
         '1. d4 {01010011 01101111 01101111 01101110 00100000 01000001 01110110 01100001 01101001 01101100 01100001 01100010 01101100 01100101} Nf6 2. Nf3 d5 3. e3 Bf5 4. c4 c6 5. Nc3 e6 6. Bd3 Bxd3 7. Qxd3 Nbd7 8. b3 Bd6 9. O-O O-O 10. Bb2 Qe7 11. Rad1 Rad8 12. Rfe1 dxc4 13. bxc4 e5 14. dxe5 Nxe5 15. Nxe5 Bxe5 16. Qe2 Rxd1 17. Rxd1 Rd8 18. Rxd8+ Qxd8 19. Qd1 Qxd1+ 20. Nxd1 Bxb2 21. Nxb2 b5 22. f3 Kf8 23. Kf2 Ke7',
+      New_In_Chess_Classic_Final_2021:
+        '1. e4 {Carlsen vs. Nakamura Game in 2021} e5 2. Nf3 Nc6 3. Bb5 Nf6 4. d3 Bc5 5. c3 O-O 6. O-O d6 7. h3 a6 8. Bxc6 bxc6 9. Nbd2 Re8 10. Re1 Bb6 11. Nf1 Nd7 12. Ng3 Nf8 13. d4 Ng6 14. Be3 a5 15. Qc2 a4 16. Rad1 Be6 17. c4 f6 18. b4 axb3 19. axb3 Ba5 20. Rf1 Bb4 21. Ra1 Qd7 22. Rfd1 Rxa1 23. Rxa1 d5 24. cxd5 cxd5 25. dxe5 Nxe5 26. Nxe5 fxe5 27. exd5 Bxd5 28. Ra7 Rc8 29. Bb6 cxb6 30. Rxd7 Rxc2 31. Rxd5 Bc5 32. Ne4 Bd4 33. Kf1 Rb2 34. f4 Rb1+ 35. Ke2 Rb2+ 36. Kf1 Rb1+ 37. Ke2 Rb2+ 38. Kf1 Rb1+ 1/2-1/2',
     },
     Nakamura: {
-      NakamuraGame1: 'SIODFHOUSDHFIUAWDHIUF',
+      New_In_Chess_Classic_Final_2021:
+        '1. e4 {Carlsen vs. Nakamura Game in 2021} e5 2. Nf3 Nc6 3. Bb5 Nf6 4. d3 Bc5 5. c3 O-O 6. O-O d6 7. h3 a6 8. Bxc6 bxc6 9. Nbd2 Re8 10. Re1 Bb6 11. Nf1 Nd7 12. Ng3 Nf8 13. d4 Ng6 14. Be3 a5 15. Qc2 a4 16. Rad1 Be6 17. c4 f6 18. b4 axb3 19. axb3 Ba5 20. Rf1 Bb4 21. Ra1 Qd7 22. Rfd1 Rxa1 23. Rxa1 d5 24. cxd5 cxd5 25. dxe5 Nxe5 26. Nxe5 fxe5 27. exd5 Bxd5 28. Ra7 Rc8 29. Bb6 cxb6 30. Rxd7 Rxc2 31. Rxd5 Bc5 32. Ne4 Bd4 33. Kf1 Rb2 34. f4 Rb1+ 35. Ke2 Rb2+ 36. Kf1 Rb1+ 37. Ke2 Rb2+ 38. Kf1 Rb1+ 1/2-1/2',
     },
   },
   {
