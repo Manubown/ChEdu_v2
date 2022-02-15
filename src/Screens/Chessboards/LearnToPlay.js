@@ -20,6 +20,7 @@ import Chessboard from 'chessboardjsx';
 import LogicalChessboard from './LogicalChessboard';
 import MoreLessComponent from '../CustomComponents/MoreLessComponent';
 import {CommentBox, FENBox} from '../CustomComponents/ChessboardComponents';
+import {ExportGameComponent} from '../CustomComponents/GameComponents';
 
 export default class LearnToPlay extends React.Component {
   state = {
@@ -649,7 +650,7 @@ export default class LearnToPlay extends React.Component {
                       style={{width: 100, height: 100}}
                       onPress={() => {
                         updateGameFEN(global.g.getSicilianDefence(), 2);
-                        window.scrollTo(0,0);
+                        window.scrollTo(0, 0);
                       }}>
                       <Text style={{color: global.g.getTextColor()}}>
                         Sicilian Defence
@@ -679,31 +680,17 @@ export default class LearnToPlay extends React.Component {
                         translateYExpertMode: event.nativeEvent.layout.height,
                       })
                     }>
-                    <View style={styles.GameBoxShadow}>
-                      <MoreLessComponent
-                        truncatedText={
-                          <Image 
-                            source = {global.g.getMagnusCarlsen()} 
-                            style = {styles.GrandMaster}
-                          />
-                        }
-                        fullText={
-                          <TouchableOpacity
-                            style={{
-                              width: 100,
-                              height: 100,
-                              backgroundColor: 'white',
-                            }}
-                            onPress={() => {
-                              //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                              //updateGameBGN(global.g.getFIDE2021_Game6(), 0);
-                              updateGamePGN(global.g.getSomeCarlsenGame(), 1);
-                            }}>
-                            <Text>Testgame</Text>
-                          </TouchableOpacity>
-                        }
-                      />
-                    </View>
+                    <ExportGameComponent
+                      picture={global.g.getMagnusCarlsen()}
+                      name={'Magnus Carlsen'}
+                      elo={1600}
+                      bio={
+                        'Bester spieler einfach der hammer!11!1! Immer schon toll gewesen!'
+                      }
+                      pgnComponent={this.getComponentArray(
+                        (updateGamePGN = {updateGamePGN}),
+                      )}
+                    />
                   </Animated.View>
 
                   {/*Textbook Checkmates*/}
@@ -738,3 +725,23 @@ export default class LearnToPlay extends React.Component {
     );
   }
 }
+
+const getComponentArray = props => {
+  var ComponentArray = Array();
+  ComponentArray[0] = (
+    <TouchableOpacity
+      style={{
+        width: 100,
+        height: 100,
+        backgroundColor: 'white',
+      }}
+      onPress={() => {
+        //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+        //updateGameBGN(global.g.getFIDE2021_Game6(), 0);
+        props.updateGamePGN(global.g.getSomeCarlsenGame(), 1);
+      }}>
+      <Text>Testgame</Text>
+    </TouchableOpacity>
+  );
+  return ComponentArray;
+};

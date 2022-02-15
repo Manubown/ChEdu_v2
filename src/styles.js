@@ -129,6 +129,57 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
 
+  GameComponentImage: {
+    width: windowWidth / 8,
+    height: windowWidth / 8,
+    borderRadius: 200,
+    marginTop: -(windowWidth / 16),
+
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+
+    shadowOpacity: 1,
+    shadowRadius: 5,
+    elevation: 4,
+  },
+
+  GameInnerComponentShadow: {
+    margin: 10,
+    padding: 10,
+    width: windowWidth / 6,
+    borderRadius: 20,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+
+    shadowOpacity: 0.23,
+    shadowRadius: 5,
+    elevation: 4,
+  },
+
+  GameComponentShadow: {
+    margin: windowWidth / 16,
+    padding: 10,
+    width: windowWidth / 5,
+    borderRadius: 20,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+
+    shadowOpacity: 0.23,
+    shadowRadius: 5,
+    elevation: 4,
+  },
+
   ChessBoardButtonShadow: {
     overflow: 'hidden',
     margin: (windowWidth / 10) * 0.1,
@@ -399,12 +450,6 @@ const styles = StyleSheet.create({
   ContentText: {
     textAlign: 'center',
     fontWeight: 'bold',
-  },
-
-  GrandMaster: {
-    width: (windowWidth / 10) * 0.8,
-    height: (windowWidth / 10) * 0.8,
-    borderRadius: 20,
   },
 });
 
