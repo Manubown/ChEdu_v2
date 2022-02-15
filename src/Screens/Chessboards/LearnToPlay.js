@@ -6,6 +6,7 @@ import {
   Animated,
   ScrollView,
   ImageBackground,
+  Image,
 } from 'react-native';
 
 import {RightCircleTwoTone, LeftCircleTwoTone} from '@ant-design/icons';
@@ -679,38 +680,26 @@ export default class LearnToPlay extends React.Component {
                     }>
                     <View style={styles.GameBoxShadow}>
                       <MoreLessComponent
-                        truncatedText={'looooool'}
+                        truncatedText={
+                          <Image 
+                            source = {global.g.getMagnusCarlsen()} 
+                            style = {styles.GrandMaster}
+                          />
+                        }
                         fullText={
-                          ((
-                            <TouchableOpacity
-                              style={{
-                                width: 100,
-                                height: 100,
-                                backgroundColor: 'white',
-                              }}
-                              onPress={() => {
-                                //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                                //updateGameBGN(global.g.getFIDE2021_Game6(), 0);
-                                updateGamePGN(global.g.getSomeCarlsenGame(), 1);
-                              }}>
-                              <Text>Testgame</Text>
-                            </TouchableOpacity>
-                          ),
-                          (
-                            <TouchableOpacity
-                              style={{
-                                width: 100,
-                                height: 100,
-                                backgroundColor: 'white',
-                              }}
-                              onPress={() => {
-                                //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                                //updateGameBGN(global.g.getFIDE2021_Game6(), 0);
-                                updateGamePGN(global.g.getSomeCarlsenGame(), 1);
-                              }}>
-                              <Text>Testgame 2</Text>
-                            </TouchableOpacity>
-                          ))
+                          <TouchableOpacity
+                            style={{
+                              width: 100,
+                              height: 100,
+                              backgroundColor: 'white',
+                            }}
+                            onPress={() => {
+                              //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                              //updateGameBGN(global.g.getFIDE2021_Game6(), 0);
+                              updateGamePGN(global.g.getSomeCarlsenGame(), 1);
+                            }}>
+                            <Text>Testgame</Text>
+                          </TouchableOpacity>
                         }
                       />
                     </View>

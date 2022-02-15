@@ -38,6 +38,13 @@ import whiteSword from './Pictures/sword_white.png';
 import blackSword from './Pictures/sword_black.png';
 import whiteLens from './Pictures/zoom-lens_white.png';
 import blackLens from './Pictures/zoom-lens_black.png';
+import alirezaFirouzja from './Pictures/Alireza_Firouzja .jpg';
+import anishGiri from './Pictures/Anish_giri.jpg';
+import antolyKarpov from './Pictures/Antoly_Karpov.jpg';
+import bobbyFischer from './Pictures/Bobby_Fischer.jpg';
+import garryKasparov from './Pictures/Garry_Kasparov.png';
+import hikaruNakamura from './Pictures/Hikaru_Nakamura.jpg';
+import magnusCarlsen from './Pictures/Magnus_Carlsen.jpg';
 
 /*styles*/
 import styles from './styles';
@@ -71,7 +78,7 @@ class Global extends React.Component {
   }
 
   //#region Getter
-  /*Window*/
+  //#region Window
   getWindowHeight = () => {
     return this.windowHeight;
   };
@@ -79,14 +86,15 @@ class Global extends React.Component {
   getWindowWidth = () => {
     return this.windowWidth;
   };
-  /*Window end*/
+  //#endregion Window end
 
-  /*User Data*/
+  //#region User Data
   getIsLoggedIn = () => {
     return this.userStats.isLoggedIn;
   };
+  //#endregion User Data
 
-  /*Darkmode*/
+  //#region Darkmode
   getDarkmode = () => {
     return this.darkmode;
   };
@@ -138,9 +146,9 @@ class Global extends React.Component {
   getLens = () => {
     return this.darkmode.lens;
   };
-  /*Darkmode end*/
+  //#endregion Darkmode end
 
-  /*UserStats*/
+  //#region UserStats
   getUserStats = () => {
     return this.userStats;
   };
@@ -175,9 +183,9 @@ class Global extends React.Component {
   getLostGames = () => {
     return this.userStats.lostGames;
   };
-  /*UserStats end*/
+  //#endregion UserStats end
 
-  /*Pictures*/
+  //#region Pictures
   getPictures = () => {
     return this.pictures;
   };
@@ -289,9 +297,37 @@ class Global extends React.Component {
   getLensWhite = () => {
     return this.pictures.whiteLens;
   };
-  /*Pictures end*/
 
-  /*fen*/
+  getAlirezaFirouzja = () => {
+    return this.pictures.alirezaFirouzja;
+  }
+
+  getAnishGiri = () => {
+    return this.pictures.anishGiri;
+  }
+
+  getAntolyKarpov = () => {
+    return this.pictures.antolyKarpov;
+  }
+
+  getBobbyFischer = () => {
+    return this.pictures.bobbyFischer;
+  }
+
+  getGarryKasparov = () => {
+    return this.pictures.garryKasparov;
+  }
+
+  getHikaruNakamura = () => {
+    return this.pictures.hikaruNakamura;
+  }
+
+  getMagnusCarlsen = () => {
+    return this.pictures.magnusCarlsen;
+  }
+  //#endregion Pictures end
+
+  //#region fen
   getSicilianDefence = () => {
     return this.fen.Openings.SicilianDefence;
   };
@@ -355,20 +391,22 @@ class Global extends React.Component {
   getRetiOpening = () => {
     return this.fen.Openings.RetiOpening;
   };
-  /*fen end*/
+  //#endregion fen end
 
-  /*pgn*/
+  //#region pgn
   getSomeCarlsenGame = () => {
     return this.pgn.Carlsen.Some_Carlsen_Game;
   };
-  /*pgn end*/
+  //#endregion pgn end
 
-  /*Explanations*/
+  //#region Explanations
   getExplanationSicilianDefense = () => {
     return this.explanation.Openings.SicilianDefence;
   };
-  /*Explanations end*/
-  //#endregion
+  //#endregion Explanations end
+  
+  //#endregion Getter 
+
   //#region Setter
   /*User Data*/
   setIsLoggedIn = value => {
@@ -442,7 +480,7 @@ class Global extends React.Component {
     this.userStats.isLoggedIn = isLoggedIn;
   };
   /*UserStats end*/
-  //#endregion
+  //#endregion Setter
 
   /*Standards*/
   /*Logo*/
@@ -603,6 +641,13 @@ var g = new Global(
     whiteSword: whiteSword,
     blackLens: blackLens,
     whiteLens: whiteLens,
+    alirezaFirouzja: alirezaFirouzja,
+    anishGiri: anishGiri,
+    antolyKarpov: antolyKarpov,
+    bobbyFischer: bobbyFischer,
+    garryKasparov: garryKasparov,
+    hikaruNakamura: hikaruNakamura,
+    magnusCarlsen: magnusCarlsen,
   },
   {
     Openings: {

@@ -400,6 +400,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
   },
+
+  GrandMaster: {
+    width: (windowWidth / 10) * 0.8,
+    height: (windowWidth / 10) * 0.8,
+    borderRadius: 20,
+  },
 });
 
 export default styles;
