@@ -48,6 +48,7 @@ export default class Login extends React.Component {
           {backgroundColor: global.g.getBackgroundColor()})
         }>
         <TouchableOpacity
+          style={{width: global.g.getWindowWidth() / 15}}
           onPress={() => {
             //RequestLogin(this.state.Username, this.state.Password);
             this.props.navigation.navigate('Home');

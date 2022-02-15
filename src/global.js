@@ -70,7 +70,7 @@ class Global extends React.Component {
     this.explanation = explanation;
   }
 
-  /*Getter*/
+  //#region Getter
   /*Window*/
   getWindowHeight = () => {
     return this.windowHeight;
@@ -368,8 +368,8 @@ class Global extends React.Component {
     return this.explanation.Openings.SicilianDefence;
   };
   /*Explanations end*/
-  /*Setter*/
-
+  //#endregion
+  //#region Setter
   /*User Data*/
   setIsLoggedIn = value => {
     this.userStats.isLoggedIn = value;
@@ -442,6 +442,7 @@ class Global extends React.Component {
     this.userStats.isLoggedIn = isLoggedIn;
   };
   /*UserStats end*/
+  //#endregion
 
   /*Standards*/
   /*Logo*/
@@ -476,18 +477,18 @@ class Global extends React.Component {
   /*Only Logo*/
   getOnlyLogo = () => {
     return (
-      <View>
+      <View style={{width: global.g.getWindowWidth() / 10}}>
         <Image
           source={global.g.getCheduLogo()}
           style={{
-            width: (global.g.getWindowWidth() / 15) * 1,
-            height: (global.g.getWindowWidth() / 15) * 1,
+            width: global.g.getWindowWidth() / 10,
+            height: global.g.getWindowWidth() / 10,
           }}
         />
         <Text
           style={{
             fontWeight: 'bold',
-            width: (global.g.getWindowWidth() / 15) * 1,
+            width: global.g.getWindowWidth() / 10,
             textAlign: 'center',
             color: global.g.getTextColor(),
           }}>
@@ -661,7 +662,7 @@ var g = new Global(
   {
     Carlsen: {
       Some_Carlsen_Game:
-        '1. d4 Nf6 2. Nf3 d5 3. e3 Bf5 4. c4 c6 5. Nc3 e6 6. Bd3 Bxd3 7. Qxd3 Nbd7 8. b3 Bd6 9. O-O O-O 10. Bb2 Qe7 11. Rad1 Rad8 12. Rfe1 dxc4 13. bxc4 e5 14. dxe5 Nxe5 15. Nxe5 Bxe5 16. Qe2 Rxd1 17. Rxd1 Rd8 18. Rxd8+ Qxd8 19. Qd1 Qxd1+ 20. Nxd1 Bxb2 21. Nxb2 b5 22. f3 Kf8 23. Kf2 Ke7',
+        '1. d4 {01010011 01101111 01101111 01101110 00100000 01000001 01110110 01100001 01101001 01101100 01100001 01100010 01101100 01100101} Nf6 2. Nf3 d5 3. e3 Bf5 4. c4 c6 5. Nc3 e6 6. Bd3 Bxd3 7. Qxd3 Nbd7 8. b3 Bd6 9. O-O O-O 10. Bb2 Qe7 11. Rad1 Rad8 12. Rfe1 dxc4 13. bxc4 e5 14. dxe5 Nxe5 15. Nxe5 Bxe5 16. Qe2 Rxd1 17. Rxd1 Rd8 18. Rxd8+ Qxd8 19. Qd1 Qxd1+ 20. Nxd1 Bxb2 21. Nxb2 b5 22. f3 Kf8 23. Kf2 Ke7',
     },
   },
   {

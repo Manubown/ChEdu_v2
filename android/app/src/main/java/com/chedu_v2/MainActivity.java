@@ -1,6 +1,7 @@
 package com.chedu_v2;
 
 import com.facebook.react.ReactActivity;
+import android.os.Bundle;
 
 public class MainActivity extends ReactActivity {
 
@@ -12,4 +13,9 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "ChEdu_v2";
   }
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(null);
+}
 }

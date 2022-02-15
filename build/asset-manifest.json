@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.4cb80c76.js",
+    "main.js": "/static/js/main.efcc801c.js",
     "static/media/expert_modus.jpg": "/static/media/expert_modus.70090dd1cb9df2a01ae7.jpg",
+    "static/media/ChEdu_Video.png": "/static/media/ChEdu_Video.a3d61c4c39f6f37e019b.png",
     "static/media/coming_soon.jpg": "/static/media/coming_soon.e2c4e7432abef9547567.jpg",
     "static/media/two_kings.jpg": "/static/media/two_kings.bb72348b4e5f1be7603e.jpg",
     "static/media/textbook_checkmates.jpg": "/static/media/textbook_checkmates.08decc4f4720dd4a0e45.jpg",
@@ -11,7 +12,15 @@
     "static/media/register_white.png": "/static/media/register_white.9181a7700c27192d0f49.png",
     "static/media/opening_concepts.jpg": "/static/media/opening_concepts.cc3364cd5f9943d916c2.jpg",
     "static/media/user.png": "/static/media/user.1f63c5443df010d2f158.png",
+    "static/media/sword_black.png": "/static/media/sword_black.5a58fda130f0ced47c9a.png",
+    "static/media/world-wide-web_black.png": "/static/media/world-wide-web_black.bbb90612ed1421031336.png",
     "static/media/strategy_concepts.jpg": "/static/media/strategy_concepts.f119a985cd9c9688dff4.jpg",
+    "static/media/sword_white.png": "/static/media/sword_white.9ce628a50b93ef807e06.png",
+    "static/media/zoom-lens_black.png": "/static/media/zoom-lens_black.ad72d55a324c644d0299.png",
+    "static/media/book_black.png": "/static/media/book_black.b3d555555d6a449b84fd.png",
+    "static/media/book_white.png": "/static/media/book_white.97edaa448617af621a68.png",
+    "static/media/world-wide-web_white.png": "/static/media/world-wide-web_white.dbedddd74aa650c204e3.png",
+    "static/media/zoom-lens_white.png": "/static/media/zoom-lens_white.95719ec048be72db4762.png",
     "static/media/black_separator.png": "/static/media/black_separator.1f5c64582d4f97252e72.png",
     "static/media/Logo.png": "/static/media/Logo.039b3c575d9242a7a7a9.png",
     "static/media/login.png": "/static/media/login.67446af40919342cf0b0.png",
@@ -19,9 +28,9 @@
     "static/media/white_separator.png": "/static/media/white_separator.324d0381651817550bf4.png",
     "static/media/right-arrow.jpeg": "/static/media/right-arrow.59cc0b60cd4651f1b406.jpeg",
     "index.html": "/index.html",
-    "main.4cb80c76.js.map": "/static/js/main.4cb80c76.js.map"
+    "main.efcc801c.js.map": "/static/js/main.efcc801c.js.map"
   },
   "entrypoints": [
-    "static/js/main.4cb80c76.js"
+    "static/js/main.efcc801c.js"
   ]
 }

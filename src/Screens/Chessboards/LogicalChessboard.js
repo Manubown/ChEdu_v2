@@ -25,6 +25,7 @@ export default class LogicalChessboard extends React.Component {
     pgnComment: '',
     moveIndex: 0,
     gameOver: false,
+    autoplay: false,
   };
 
   componentDidMount() {
@@ -79,7 +80,6 @@ export default class LogicalChessboard extends React.Component {
 
   undoMovePGN = () => {
     var undoMove = this.game.undo();
-    console.log('Undo Move: ' + undoMove.to);
     this.setState({
       position: this.game.position,
       fen: this.game.fen(),
@@ -108,10 +108,21 @@ export default class LogicalChessboard extends React.Component {
     this.updatePGNComment();
   };
 
-  updateGamePGN = (PGN, position) => {
+  autoplayM = () => {
+    if (this.state.autoplay == true) {
+      setTimeout(this.autoplayM, 3000);
+    }
+  };
+
+  updateGamePGN = (PGN, position, autoplay) => {
     console.log('UpdateGamePGN');
     this.game.load_pgn(PGN);
     this.setState({position: this.game.position, fen: this.game.fen()});
+    window.scrollTo(0, 0);
+    if (autoplay == true) {
+      this.setState({autoplay: true});
+      this.autoplayM();
+    }
 
     var currentPosition = this.game.history().length;
     console.log(currentPosition);

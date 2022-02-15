@@ -93,6 +93,23 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
+  GameBoxShadow: {
+    width: windowWidth / 8,
+    height: windowHeight / 2,
+    margin: (windowWidth / 10) * 0.1,
+    borderRadius: 20,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+
+    shadowOpacity: 0.23,
+    shadowRadius: 5,
+    elevation: 4,
+  },
+
   BaseShadow: {
     overflow: 'hidden',
     margin: (windowWidth / 10) * 0.1,
@@ -101,6 +118,44 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignItems: 'center',
     backgroundColor: '#328da8',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+
+    shadowOpacity: 0.23,
+    shadowRadius: 5,
+    elevation: 4,
+  },
+
+  ChessBoardButtonShadow: {
+    overflow: 'hidden',
+    margin: (windowWidth / 10) * 0.1,
+    padding: 20,
+    flexDirection: 'row',
+    borderRadius: 20,
+    alignItems: 'center',
+    textAlign: 'center',
+    backgroundColor: 'white',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+
+    shadowOpacity: 0.23,
+    shadowRadius: 5,
+    elevation: 4,
+  },
+
+  CommentBox: {
+    overflow: 'hidden',
+    margin: (windowWidth / 10) * 0.1,
+    padding: 5,
+    width: (windowWidth / 10) * 9,
+    borderRadius: 20,
+    backgroundColor: 'white',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,

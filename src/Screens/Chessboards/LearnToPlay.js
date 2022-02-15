@@ -17,6 +17,8 @@ import Chessboard from 'chessboardjsx';
 //import Resource from "./Resource";
 
 import LogicalChessboard from './LogicalChessboard';
+import MoreLessComponent from '../CustomComponents/MoreLessComponent';
+import {CommentBox, FENBox} from '../CustomComponents/ChessboardComponents';
 
 export default class LearnToPlay extends React.Component {
   state = {
@@ -206,13 +208,6 @@ export default class LearnToPlay extends React.Component {
             backgroundColor: global.g.getBackgroundColor(),
           })
         }>
-        <TouchableOpacity
-          onPress={() => {
-            //RequestLogin(this.state.Username, this.state.Password);
-            this.props.navigation.navigate('Home');
-          }}>
-          {global.g.getOnlyLogo()}
-        </TouchableOpacity>
         <View
           style={{
             paddingBottom: global.g.getWindowHeight() / 10,
@@ -229,55 +224,114 @@ export default class LearnToPlay extends React.Component {
               onSquareClick,
               onSquareRightClick,
               updateGameFEN,
+              updateGamePGN,
               undoMovePGN,
               nextMovePGN,
-              updateGamePGN,
+              chessBoardMoves,
+              gameOver,
+              pgnComment,
+              moveIndex,
             }) => (
-              <View
-                style={{
-                  backgroundColor: global.g.getBackgroundColor(),
-                }}>
-                {/*Chessboard with info*/}
-                <View style={{flexDirection: 'row', alignSelf: 'center'}}>
-                  <Chessboard
-                    id="LearnToPlay"
-                    width={(global.g.getWindowHeight() / 4) * 3}
-                    position={position} //position zB. (a6: 'kW') ==> König auf a6
-                    onDrop={onDrop}
-                    onMouseOverSquare={onMouseOverSquare}
-                    onMouseOutSquare={onMouseOutSquare}
-                    boardStyle={{
-                      borderRadius: '5px',
-                      boxShadow: `0 5px 15px #185a5c`,
-                    }}
-                    squareStyles={squareStyles}
-                    dropSquareStyle={dropSquareStyle}
-                    onDragOverSquare={onDragOverSquare}
-                    onSquareClick={onSquareClick}
-                    onSquareRightClick={onSquareRightClick}
-                    orientation="white"
-                  />
+              <View style={{}}>
+                {/*////// Window row Element //////*/}
+                <View style={{flexDirection: 'row'}}>
+                  {/*///// Chessboard Field /////*/}
+                  <View>
+                    <Chessboard
+                      id="Chessboard"
+                      width={
+                        global.g.getWindowHeight() -
+                        global.g.getWindowHeight() / 15
+                      }
+                      position={position} //position zB. (a6: 'kW') ==> König auf a6
+                      onDrop={onDrop}
+                      onMouseOverSquare={onMouseOverSquare}
+                      onMouseOutSquare={onMouseOutSquare}
+                      boardStyle={{
+                        borderRadius: '5px',
+                        boxShadow: `0 5px 15px #185a5c`,
+                      }}
+                      squareStyles={squareStyles}
+                      dropSquareStyle={dropSquareStyle}
+                      onDragOverSquare={onDragOverSquare}
+                      onSquareClick={onSquareClick}
+                      onSquareRightClick={onSquareRightClick}
+                      orientation="white"
+                    />
+                  </View>
+
+                  <View
+                    style={{
+                      alignItems: 'center',
+                      width:
+                        global.g.getWindowWidth() -
+                        (global.g.getWindowHeight() -
+                          global.g.getWindowHeight() / 30),
+                    }}>
+                    <TouchableOpacity
+                      onPress={() => {
+                        //RequestLogin(this.state.Username, this.state.Password);
+                        this.props.navigation.navigate('Home');
+                      }}>
+                      {global.g.getOnlyLogo()}
+                    </TouchableOpacity>
+                    <View style={styles.ChessBoardButtonShadow}>
+                      <TouchableOpacity
+                        style={{width: 100}}
+                        onPress={() => {
+                          //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                          undoMovePGN();
+                        }}>
+                        <LeftCircleTwoTone
+                          twoToneColor={'#185a5c'}
+                          style={{fontSize: 30}}
+                        />
+                      </TouchableOpacity>
+                      <TouchableOpacity
+                        style={{width: 100}}
+                        onPress={() => {
+                          //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                          //nextMove();
+                          nextMovePGN();
+                        }}>
+                        <RightCircleTwoTone
+                          twoToneColor={'#185a5c'}
+                          style={{fontSize: 30}}
+                        />
+                      </TouchableOpacity>
+                    </View>
+
+                    <FENBox FEN={position} />
+                    <View style={styles.ChessBoardButtonShadow}>
+                      <TouchableOpacity
+                        style={{
+                          backgroundColor: 'white',
+                        }}
+                        onPress={() => {}}>
+                        <Text>Learning steps below :)</Text>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
                 </View>
 
+                <CommentBox pgnComment={pgnComment} />
                 {/*Tools*/}
-                <View style={{flexDirection: 'row', alignSelf: 'center'}}>
-                  <TouchableOpacity
-                    style={{width: 50}}
-                    onPress={() => {
-                      //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                      undoMovePGN();
+
+                {gameOver ? (
+                  <View
+                    style={{
+                      zIndex: '500',
+                      position: 'absolute',
+                      marginTop: global.g.getWindowHeight() / 3,
+                      marginLeft: global.g.getWindowHeight() / 3,
+                      width: global.g.getWindowHeight() / 3,
+                      height: global.g.getWindowHeight() / 3,
+                      backgroundColor: global.g.getBackgroundColor(),
+                      opacity: 1,
                     }}>
-                    <LeftCircleTwoTone twoToneColor={'#185a5c'} />
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    style={{width: 50}}
-                    onPress={() => {
-                      //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                      nextMovePGN();
-                    }}>
-                    <RightCircleTwoTone twoToneColor={'#185a5c'} />
-                  </TouchableOpacity>
-                </View>
+                    <Text style={{textAlign: 'center'}}>GAME OVER!</Text>
+                  </View>
+                ) : null}
 
                 <View
                   style={{
@@ -593,7 +647,7 @@ export default class LearnToPlay extends React.Component {
                     <TouchableOpacity
                       style={{width: 100, height: 100}}
                       onPress={() => {
-                        updateGameFEN(global.g.getSicilianDefence());
+                        updateGameFEN(global.g.getSicilianDefence(), 2);
                       }}>
                       <Text style={{color: global.g.getTextColor()}}>
                         Sicilian Defence
@@ -623,15 +677,43 @@ export default class LearnToPlay extends React.Component {
                         translateYExpertMode: event.nativeEvent.layout.height,
                       })
                     }>
-                    <TouchableOpacity
-                      style={{width: 100, height: 100}}
-                      onPress={() => {
-                        updateGamePGN(global.g.getSomeCarlsenGame());
-                      }}>
-                      <Text style={{color: global.g.getTextColor()}}>
-                        Some Carslen Game
-                      </Text>
-                    </TouchableOpacity>
+                    <View style={styles.GameBoxShadow}>
+                      <MoreLessComponent
+                        truncatedText={'looooool'}
+                        fullText={
+                          ((
+                            <TouchableOpacity
+                              style={{
+                                width: 100,
+                                height: 100,
+                                backgroundColor: 'white',
+                              }}
+                              onPress={() => {
+                                //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                                //updateGameBGN(global.g.getFIDE2021_Game6(), 0);
+                                updateGamePGN(global.g.getSomeCarlsenGame(), 1);
+                              }}>
+                              <Text>Testgame</Text>
+                            </TouchableOpacity>
+                          ),
+                          (
+                            <TouchableOpacity
+                              style={{
+                                width: 100,
+                                height: 100,
+                                backgroundColor: 'white',
+                              }}
+                              onPress={() => {
+                                //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                                //updateGameBGN(global.g.getFIDE2021_Game6(), 0);
+                                updateGamePGN(global.g.getSomeCarlsenGame(), 1);
+                              }}>
+                              <Text>Testgame 2</Text>
+                            </TouchableOpacity>
+                          ))
+                        }
+                      />
+                    </View>
                   </Animated.View>
 
                   {/*Textbook Checkmates*/}
