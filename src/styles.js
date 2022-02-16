@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   GameInnerComponentShadow: {
     margin: 10,
     padding: 10,
-    width: windowWidth / 6,
+    width: windowWidth / 5,
     borderRadius: 20,
     alignItems: 'center',
     shadowColor: '#000',
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
   GameComponentShadow: {
     margin: windowWidth / 16,
     padding: 10,
-    width: windowWidth / 5,
+    width: windowWidth / 4,
     borderRadius: 20,
     alignItems: 'center',
     shadowColor: '#000',

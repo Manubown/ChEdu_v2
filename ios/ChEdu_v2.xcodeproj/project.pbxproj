@@ -145,7 +145,6 @@
 				A8E12D4FDC26015E466F3CBE /* Pods-ChEdu_v2-ChEdu_v2Tests.debug.xcconfig */,
 				DF9AF233A8993DC318D63CCA /* Pods-ChEdu_v2-ChEdu_v2Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

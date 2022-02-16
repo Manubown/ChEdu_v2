@@ -114,15 +114,11 @@ export default class LogicalChessboard extends React.Component {
     }
   };
 
-  updateGamePGN = (PGN, position, autoplay) => {
+  updateGamePGN = (PGN, position) => {
     console.log('UpdateGamePGN');
     this.game.load_pgn(PGN);
     this.setState({position: this.game.position, fen: this.game.fen()});
     window.scrollTo(0, 0);
-    if (autoplay == true) {
-      this.setState({autoplay: true});
-      this.autoplayM();
-    }
 
     var currentPosition = this.game.history().length;
     console.log(currentPosition);
