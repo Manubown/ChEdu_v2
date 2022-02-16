@@ -126,6 +126,9 @@ export default class LogicalChessboard extends React.Component {
     this.setState({position: this.game.position, fen: this.game.fen()});
     window.scrollTo(0, 0);
 
+    console.log('PGN:');
+    console.log(this.game.history());
+
     var currentPosition = this.game.history().length;
     console.log(currentPosition);
     console.log(position);
@@ -513,6 +516,7 @@ export default class LogicalChessboard extends React.Component {
       updateGamePGN: this.updateGamePGN,
       undoMovePGN: this.undoMovePGN,
       nextMovePGN: this.nextMovePGN,
+      updatePGNPosition: this.updatePGNPosition,
       gameOver: this.state.gameOver,
     });
   }

@@ -69,7 +69,7 @@ const renderElements = (pgnArray, nameArray, updateGamePGN) => {
           backgroundColor: 'white',
         }}
         onPress={() => {
-          updateGamePGN(element, 5);
+          updateGamePGN(element, 1);
         }}>
         <View style={styles.GameInnerComponentShadow}>
           <Text

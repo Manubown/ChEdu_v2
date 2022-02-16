@@ -20,3 +20,5 @@ export const FENBox = props => {
     </View>
   );
 };
+
+export const PGNViewer = props => {};
