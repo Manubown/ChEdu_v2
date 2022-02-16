@@ -397,6 +397,13 @@ class Global extends React.Component {
   getSomeCarlsenGame = () => {
     return this.pgn.Carlsen.Some_Carlsen_Game;
   };
+
+  getNewInChessClassicFinal2021 = () => {
+    return this.pgn.Carlsen.New_In_Chess_Classic_Final_2021;
+  }
+  getWorldChessChampionship2021Game6 = () => {
+    return this.pgn.Carlsen.World_Chess_Championship_2021_Game6;
+  };
   //#endregion pgn end
 
   //#region Explanations
@@ -711,7 +718,7 @@ var g = new Global(
       New_In_Chess_Classic_Final_2021:
         '1. e4 {Carlsen vs. Nakamura Game in 2021} e5 2. Nf3 Nc6 3. Bb5 Nf6 4. d3 Bc5 5. c3 O-O 6. O-O d6 7. h3 a6 8. Bxc6 bxc6 9. Nbd2 Re8 10. Re1 Bb6 11. Nf1 Nd7 12. Ng3 Nf8 13. d4 Ng6 14. Be3 a5 15. Qc2 a4 16. Rad1 Be6 17. c4 f6 18. b4 axb3 19. axb3 Ba5 20. Rf1 Bb4 21. Ra1 Qd7 22. Rfd1 Rxa1 23. Rxa1 d5 24. cxd5 cxd5 25. dxe5 Nxe5 26. Nxe5 fxe5 27. exd5 Bxd5 28. Ra7 Rc8 29. Bb6 cxb6 30. Rxd7 Rxc2 31. Rxd5 Bc5 32. Ne4 Bd4 33. Kf1 Rb2 34. f4 Rb1+ 35. Ke2 Rb2+ 36. Kf1 Rb1+ 37. Ke2 Rb2+ 38. Kf1 Rb1+ 1/2-1/2',
       World_Chess_Championship_2021_Game6:
-        '1.d4Nf62.Nf3d53.g3e64.Bg2Be75.O-OO-O6.b3c57.dxc5Bxc58.c4dxc49.Qc2Qe710.Nbd2Nc611.Nxc4b512.Nce5Nb413.Qb2Bb714.a3Nc615.Nd3Bb616.Bg5Rfd817.Bxf6gxf618.Rac1Nd419.Nxd4Bxd420.Qa2Bxg221.Kxg2Qb7+22.Kg1Qe423.Qc2a524.Rfd1Kg725.Rd2Rac826.Qxc8Rxc827.Rxc8Qd528.b4a429.e3Be530.h4h531.Kh2Bb232.Rc5Qd633.Rd1Bxa334.Rxb5Qd735.Rc5e536.Rc2Qd537.Rdd2Qb338.Ra2e439.Nc5Qxb440.Nxe4Qb341.Rac2Bf842.Nc5Qb543.Nd3a344.Nf4Qa545.Ra2Bb446.Rd3Kh647.Rd1Qa448.Rda1Bd649.Kg1Qb350.Ne2Qd351.Nd4Kh752.Kh2Qe453.Rxa3Qxh4+54.Kg1Qe455.Ra4Be556.Ne2Qc257.R1a2Qb358.Kg2Qd5+59.f3Qd160.f4Bc761.Kf2Bb662.Ra1Qb363.Re4Kg764.Re8f565.Raa8Qb466.Rac8Ba567.Rc1Bb668.Re5Qb369.Re8Qd570.Rcc8Qh171.Rc1Qd572.Rb1Ba773.Re7Bc574.Re5Qd375.Rb7Qc276.Rb5Ba777.Ra5Bb678.Rab5Ba779.Rxf5Qd380.Rxf7+Kxf781.Rb7+Kg682.Rxa7Qd583.Ra6+Kh784.Ra1Kg685.Nd4Qb786.Ra2Qh187.Ra6+Kf788.Nf3Qb189.Rd6Kg790.Rd5Qa2+91.Rd2Qb192.Re2Qb693.Rc2Qb194.Nd4Qh195.Rc7+Kf696.Rc6+Kf797.Nf3Qb198.Ng5+Kg799.Ne6+Kf7100.Nd4Qh1101.Rc7+Kf6102.Nf3Qb1103.Rd7Qb2+104.Rd2Qb1105.Ng1Qb4106.Rd1Qb3107.Rd6+Kg7108.Rd4Qb2+109.Ne2Qb1110.e4Qh1111.Rd7+Kg8112.Rd4Qh2+113.Ke3h4114.gxh4Qh3+115.Kd2Qxh4116.Rd3Kf8117.Rf3Qd8+118.Ke3Qa5119.Kf2Qa7+120.Re3Qd7121.Ng3Qd2+122.Kf3Qd1+123.Re2Qb3+124.Kg2Qb7125.Rd2Qb3126.Rd5Ke7127.Re5+Kf7128.Rf5+Ke8129.e5Qa2+130.Kh3Qe6131.Kh4Qh6+132.Nh5Qh7133.e6Qg6134.Rf7Kd8135.f5Qg1136.Ng71-0',
+        '1. d4 Nf6 2. Nf3 d5 3. g3 e6 4. Bg2 Be7 5. O-O O-O 6. b3 c5 7. dxc5 Bxc5 8. c4 dxc4 9. Qc2 Qe7 10. Nbd2 Nc6 11. Nxc4 b5 12. Nce5 Nb4 13. Qb2 Bb7 14. a3 Nc6 15. Nd3 Bb6 16. Bg5 Rfd8 17. Bxf6 gxf6 18. Rac1 Nd4 19. Nxd4 Bxd4 20. Qa2 Bxg2 21. Kxg2 Qb7+ 22. Kg1 Qe4 23. Qc2 a5 24. Rfd1 Kg7 25. Rd2 Rac8 26. Qxc8 Rxc8 27. Rxc8 Qd5 28. b4 a4 29. e3 Be5 30. h4 h5 31. Kh2 Bb2 32. Rc5 Qd6 33. Rd1 Bxa3 34. Rxb5 Qd7 35. Rc5 e5 36. Rc2 Qd5 37. Rdd2 Qb3 38. Ra2 e4 39. Nc5 Qxb4 40. Nxe4 Qb3 41. Rac2 Bf8 42. Nc5 Qb5 43. Nd3 a3 44. Nf4 Qa5 45. Ra2 Bb4 46. Rd3 Kh6 47. Rd1 Qa4 48. Rda1 Bd6 49. Kg1 Qb3 50. Ne2 Qd3 51. Nd4 Kh7 52. Kh2 Qe4 53. Rxa3 Qxh4+ 54. Kg1 Qe4 55. Ra4 Be5 56. Ne2 Qc2 57. R1a2 Qb3 58. Kg2 Qd5+ 59. f3 Qd1 60. f4 Bc7 61. Kf2 Bb6 62. Ra1 Qb3 63. Re4 Kg7 64. Re8 f5 65. Raa8 Qb4 66. Rac8 Ba5 67. Rc1 Bb6 68. Re5 Qb3 69. Re8 Qd5 70. Rcc8 Qh1  71. Rc1 Qd5 72. Rb1 Ba7 73. Re7 Bc5 74. Re5 Qd3 75. Rb7 Qc2 76. Rb5 Ba7 77. Ra5 Bb6 78. Rab5 Ba7 79. Rxf5  Qd3 80. Rxf7+ Kxf7 81. Rb7+ Kg6 82. Rxa7 Qd5 83. Ra6+ Kh7 84. Ra1 Kg6 85. Nd4 Qb7 86. Ra2 Qh1 87. Ra6+ Kf7 88. Nf3 Qb1 89. Rd6 Kg7 90. Rd5 Qa2+ 91. Rd2 Qb1 92. Re2 Qb6 93. Rc2 Qb1 94. Nd4 Qh1 95. Rc7+ Kf6 96. Rc6+ Kf7 97. Nf3 Qb1 98. Ng5+ Kg7 99. Ne6+ Kf7 100. Nd4 Qh1 101. Rc7+ Kf6 102. Nf3 Qb1 103. Rd7 Qb2+ 104. Rd2 Qb1 105. Ng1 Qb4 106. Rd1 Qb3 107. Rd6+ Kg7 108. Rd4 Qb2+ 109. Ne2 Qb1 110. e4 Qh1 111. Rd7+ Kg8 112. Rd4 Qh2+ 113. Ke3 h4 114. gxh4 Qh3+ 115. Kd2 Qxh4 116. Rd3 Kf8 117. Rf3 Qd8+ 118. Ke3 Qa5 119. Kf2 Qa7+ 120. Re3 Qd7 121. Ng3 Qd2+ 122. Kf3 Qd1+ 123. Re2 Qb3+ 124. Kg2 Qb7 125. Rd2 Qb3 126. Rd5 Ke7 127. Re5+ Kf7 128. Rf5+ Ke8 129. e5 Qa2+ 130. Kh3 Qe6 131. Kh4 Qh6+ 132. Nh5 Qh7 133. e6 Qg6 134. Rf7 Kd8 135. f5 Qg1 136. Ng7 1-0',
     },
     Nakamura: {
       New_In_Chess_Classic_Final_2021:
