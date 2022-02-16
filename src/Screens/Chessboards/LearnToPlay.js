@@ -680,25 +680,65 @@ export default class LearnToPlay extends React.Component {
                         translateYExpertMode: event.nativeEvent.layout.height,
                       })
                     }>
-                    <ExportGameComponent
-                      picture={global.g.getMagnusCarlsen()}
-                      name={'Magnus Carlsen'}
-                      elo={1600}
-                      bio={
-                        'Bester spieler einfach der hammer!11!1! Immer schon toll gewesen!'
-                      }
-                      ComponentArray={[
-                        global.g.getSomeCarlsenGame(),
-                        global.g.getNewInChessClassicFinal2021(),
-                        global.g.getWorldChessChampionship2021Game6(),
-                      ]}
-                      NameArray={[
-                        'Some Carlsen Game',
-                        'New in chess classic final 2021',
-                        'World Chess Championship 2021 Game6',
-                      ]}
-                      updateGamePGNMethode={updateGamePGN}
-                    />
+                    <View style={{flexDirection: 'row'}}>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getMagnusCarlsen()}
+                          name={'Magnus Carlsen'}
+                          elo={1600}
+                          bio={
+                            'Bester spieler einfach der hammer!11!1! Immer schon toll gewesen!'
+                          }
+                          ComponentArray={[
+                            global.g.getSomeCarlsenGame(),
+                            global.g.getNewInChessClassicFinal2021(),
+                            global.g.getWorldChessChampionship2021Game6(),
+                            global.g.getCarlsen_vs_Kramnik(),
+                            global.g.getCarlsen_vs_Aronian(),
+                            global.g.getCarlsen_vs_Nakamura(),
+                            global.g.getCarlsen_vs_Gelfand(),
+                            global.g.getCarlsen_vs_Kasparov(),
+                          ]}
+                          NameArray={[
+                            'Some Carlsen Game',
+                            'New in chess classic final 2021',
+                            'World Chess Championship 2021 Game6',
+                            'Carlsen vs Kramnik',
+                            'Carlsen vs Aronian',
+                            'Carlsen vs Nakamura',
+                            'Carlsen vs Gelfand',
+                            'Carlsen vs Kasparov',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getGarryKasparov()}
+                          name={'Garry Kasparov'}
+                          elo={1400}
+                          ComponentArray={[
+                            global.g.getKasparov_vs_Magerramov(),
+                            global.g.getKasparov_vs_Palatnik(),
+                            global.g.getKasparov_vs_Topalov(),
+                            global.g.getKasparov_vs_Karpov(),
+                            global.g.getKasparov_vs_Anand(),
+                            global.g.getKasparov_vs_Deep_Blue(),
+                            global.g.getKasparov_vs_Karpov_Second(),
+                          ]}
+                          NameArray={[
+                            'Kasparov vs Magerramov',
+                            'Kasparov vs Palatnik',
+                            'Kasparov vs Topalov',
+                            'Kasparov vs Karpov',
+                            'Kasparov vs Anand',
+                            'Kasparov vs Deep Blue',
+                            'Kasparov vs Karpov Second',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
                   </Animated.View>
 
                   {/*Textbook Checkmates*/}

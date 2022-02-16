@@ -1,13 +1,20 @@
 {
   "files": {
-    "main.js": "/static/js/main.efcc801c.js",
+    "main.js": "/static/js/main.d6ae94b7.js",
+    "static/media/Hikaru_Nakamura.jpg": "/static/media/Hikaru_Nakamura.2f956f9010a8a718bed2.jpg",
     "static/media/expert_modus.jpg": "/static/media/expert_modus.70090dd1cb9df2a01ae7.jpg",
     "static/media/ChEdu_Video.png": "/static/media/ChEdu_Video.a3d61c4c39f6f37e019b.png",
+    "static/media/Garry_Kasparov.png": "/static/media/Garry_Kasparov.f0578de1921cde7349f0.png",
     "static/media/coming_soon.jpg": "/static/media/coming_soon.e2c4e7432abef9547567.jpg",
     "static/media/two_kings.jpg": "/static/media/two_kings.bb72348b4e5f1be7603e.jpg",
     "static/media/textbook_checkmates.jpg": "/static/media/textbook_checkmates.08decc4f4720dd4a0e45.jpg",
+    "static/media/Antoly_Karpov.jpg": "/static/media/Antoly_Karpov.f49da44ebc51e7d92a2b.jpg",
+    "static/media/Anish_giri.jpg": "/static/media/Anish_giri.951a26b476279d77663d.jpg",
+    "static/media/Magnus_Carlsen.jpg": "/static/media/Magnus_Carlsen.0ac9b40c64664a2b69e1.jpg",
+    "static/media/Alireza_Firouzja .jpg": "/static/media/Alireza_Firouzja .b07e11c8e662bfc65454.jpg",
     "static/media/Poster_Schachbrett.png": "/static/media/Poster_Schachbrett.23bac3067f452e962bd4.png",
     "static/media/chess_basics.jpg": "/static/media/chess_basics.60ee2097d22ca843828d.jpg",
+    "static/media/Bobby_Fischer.jpg": "/static/media/Bobby_Fischer.0409d55f04543e1aac56.jpg",
     "static/media/register.png": "/static/media/register.269f3a23c158b2a9b4b4.png",
     "static/media/register_white.png": "/static/media/register_white.9181a7700c27192d0f49.png",
     "static/media/opening_concepts.jpg": "/static/media/opening_concepts.cc3364cd5f9943d916c2.jpg",
@@ -28,9 +35,9 @@
     "static/media/white_separator.png": "/static/media/white_separator.324d0381651817550bf4.png",
     "static/media/right-arrow.jpeg": "/static/media/right-arrow.59cc0b60cd4651f1b406.jpeg",
     "index.html": "/index.html",
-    "main.efcc801c.js.map": "/static/js/main.efcc801c.js.map"
+    "main.d6ae94b7.js.map": "/static/js/main.d6ae94b7.js.map"
   },
   "entrypoints": [
-    "static/js/main.efcc801c.js"
+    "static/js/main.d6ae94b7.js"
   ]
 }

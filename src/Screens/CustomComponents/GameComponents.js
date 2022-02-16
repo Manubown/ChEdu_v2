@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from '../../styles';
 
 export const ExportGameComponent = props => {
+  const [isClosed, setIsClosed] = useState(true);
+
   return (
     <View style={styles.GameComponentShadow}>
       <Image style={styles.GameComponentImage} source={props.picture} />
@@ -49,19 +51,48 @@ export const ExportGameComponent = props => {
         props.ComponentArray,
         props.NameArray,
         props.updateGamePGNMethode,
+        isClosed,
       ).map(type => (
         <View>{type}</View>
       ))}
+      <TouchableOpacity
+        onPress={() => {
+          setIsClosed(!isClosed);
+        }}>
+        <View style={styles.GameShowMoreComponentShadow}>
+          <Text
+            style={{
+              fontSize: 25,
+              color: 'white',
+              textAlign: 'center',
+              margin: 20,
+            }}>
+            {isClosed ? 'Show more games' : 'Show less games'}
+          </Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
 
-const renderElements = (pgnArray, nameArray, updateGamePGN) => {
+const renderElements = (pgnArray, nameArray, updateGamePGN, isClosed) => {
   var GameComponenets = Array();
-
+  console.log('Is CLosed:' + isClosed);
   var i = 0;
 
-  pgnArray.forEach(element => {
+  var finalArray = [];
+
+  if (isClosed) {
+    for (var i = 0; i < 3; i++) {
+      finalArray.push(pgnArray[i]);
+    }
+  } else {
+    pgnArray.forEach(element => {
+      finalArray.push(pgnArray[i]);
+    });
+  }
+
+  finalArray.forEach(element => {
     console.log(pgnArray[i]);
     GameComponenets.push(
       <TouchableOpacity
@@ -86,6 +117,5 @@ const renderElements = (pgnArray, nameArray, updateGamePGN) => {
     );
     i++;
   });
-
   return GameComponenets;
 };
