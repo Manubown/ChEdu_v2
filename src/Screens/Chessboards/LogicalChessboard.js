@@ -23,6 +23,9 @@ export default class LogicalChessboard extends React.Component {
     //chessboardMoves: '',
     // chessboard move Index bgn
     pgnComment: '',
+
+    pgnArray: '',
+
     moveIndex: 0,
     gameOver: false,
     autoplay: false,
@@ -86,6 +89,9 @@ export default class LogicalChessboard extends React.Component {
     });
     this.state.futurMoves.unshift(undoMove);
 
+    console.log('Histroy');
+    console.log(this.game.history());
+
     this.setState({moveIndex: this.game.history().length});
 
     this.updatePGNComment();
@@ -123,12 +129,40 @@ export default class LogicalChessboard extends React.Component {
     var currentPosition = this.game.history().length;
     console.log(currentPosition);
     console.log(position);
-    for (let i = currentPosition; i > position; i--) {
+    for (let i = currentPosition; i > 0; i--) {
       console.log('Going to position: ' + i);
       this.undoMovePGN();
     }
 
+    this.generatePGNArray();
+
+    this.updatePGNPosition(position);
+
     this.updatePGNComment();
+  };
+
+  generatePGNArray = () => {
+    var pgnArray = Array();
+
+    console.log('PGN Elements:');
+    this.state.futurMoves.forEach(element => {
+      console.log(element);
+    });
+  };
+
+  updatePGNPosition = position => {
+    var currentPosition = this.game.history().length;
+    if (position < currentPosition) {
+      for (let i = currentPosition; i > position; i--) {
+        console.log('Going to position: ' + i);
+        this.undoMovePGN();
+      }
+    } else {
+      for (let i = currentPosition; i < position; i++) {
+        console.log('Going to position: ' + i);
+        this.nextMovePGN();
+      }
+    }
   };
 
   // BGN
