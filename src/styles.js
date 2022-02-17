@@ -146,6 +146,27 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
 
+  GameSANComponentShadow: {
+    margin: 10,
+    padding: 10,
+    width: windowWidth / 4,
+    height: windowWidth / 4,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    overflow: 'scroll',
+    borderRadius: 20,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+
+    shadowOpacity: 0.23,
+    shadowRadius: 5,
+    elevation: 4,
+  },
+
   GameInnerComponentShadow: {
     margin: 10,
     padding: 10,

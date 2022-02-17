@@ -78,7 +78,6 @@ export const ExportGameComponent = props => {
 const renderElements = (pgnArray, nameArray, updateGamePGN, isClosed) => {
   var GameComponenets = Array();
   console.log('Is CLosed:' + isClosed);
-  var i = 0;
 
   var finalArray = [];
 
@@ -88,10 +87,13 @@ const renderElements = (pgnArray, nameArray, updateGamePGN, isClosed) => {
     }
   } else {
     pgnArray.forEach(element => {
-      finalArray.push(pgnArray[i]);
+      finalArray.push(element);
     });
   }
+  console.log('Final Array:');
+  console.log(finalArray);
 
+  var i = 0;
   finalArray.forEach(element => {
     console.log(pgnArray[i]);
     GameComponenets.push(
@@ -105,7 +107,7 @@ const renderElements = (pgnArray, nameArray, updateGamePGN, isClosed) => {
         <View style={styles.GameInnerComponentShadow}>
           <Text
             style={{
-              fontSize: 25,
+              fontSize: global.g.getWindowWidth() / 75,
               color: global.g.getTextColor(),
               textAlign: 'center',
               margin: 10,

@@ -19,7 +19,11 @@ import Chessboard from 'chessboardjsx';
 
 import LogicalChessboard from './LogicalChessboard';
 import MoreLessComponent from '../CustomComponents/MoreLessComponent';
-import {CommentBox, FENBox} from '../CustomComponents/ChessboardComponents';
+import {
+  CommentBox,
+  FENBox,
+  PGNViewer,
+} from '../CustomComponents/ChessboardComponents';
 import {ExportGameComponent} from '../CustomComponents/GameComponents';
 
 export default class LearnToPlay extends React.Component {
@@ -233,6 +237,8 @@ export default class LearnToPlay extends React.Component {
               gameOver,
               pgnComment,
               moveIndex,
+              SAN,
+              updatePGNPosition,
             }) => (
               <View style={{}}>
                 {/*////// Window row Element //////*/}
@@ -270,49 +276,45 @@ export default class LearnToPlay extends React.Component {
                         (global.g.getWindowHeight() -
                           global.g.getWindowHeight() / 30),
                     }}>
-                    <TouchableOpacity
-                      onPress={() => {
-                        //RequestLogin(this.state.Username, this.state.Password);
-                        this.props.navigation.navigate('Home');
-                      }}>
-                      {global.g.getOnlyLogo()}
-                    </TouchableOpacity>
-                    <View style={styles.ChessBoardButtonShadow}>
+                    <View style={{flexDirection: 'row'}}>
                       <TouchableOpacity
-                        style={{width: 100}}
                         onPress={() => {
-                          //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                          undoMovePGN();
+                          //RequestLogin(this.state.Username, this.state.Password);
+                          this.props.navigation.navigate('Home');
                         }}>
-                        <LeftCircleTwoTone
-                          twoToneColor={'#185a5c'}
-                          style={{fontSize: 30}}
-                        />
+                        {global.g.getOnlyLogo()}
                       </TouchableOpacity>
-                      <TouchableOpacity
-                        style={{width: 100}}
-                        onPress={() => {
-                          //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                          //nextMove();
-                          nextMovePGN();
-                        }}>
-                        <RightCircleTwoTone
-                          twoToneColor={'#185a5c'}
-                          style={{fontSize: 30}}
-                        />
-                      </TouchableOpacity>
+                      <View style={styles.ChessBoardButtonShadow}>
+                        <TouchableOpacity
+                          style={{width: 100}}
+                          onPress={() => {
+                            //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                            undoMovePGN();
+                          }}>
+                          <LeftCircleTwoTone
+                            twoToneColor={'#185a5c'}
+                            style={{fontSize: 30}}
+                          />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          style={{width: 100}}
+                          onPress={() => {
+                            //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                            //nextMove();
+                            nextMovePGN();
+                          }}>
+                          <RightCircleTwoTone
+                            twoToneColor={'#185a5c'}
+                            style={{fontSize: 30}}
+                          />
+                        </TouchableOpacity>
+                      </View>
                     </View>
 
-                    <FENBox FEN={position} />
-                    <View style={styles.ChessBoardButtonShadow}>
-                      <TouchableOpacity
-                        style={{
-                          backgroundColor: 'white',
-                        }}
-                        onPress={() => {}}>
-                        <Text>Learning steps below :)</Text>
-                      </TouchableOpacity>
-                    </View>
+                    <PGNViewer
+                      SAN={SAN}
+                      updatePGNPosition={updatePGNPosition}
+                    />
                   </View>
                 </View>
 

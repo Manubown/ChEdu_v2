@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as Chess from 'chess.js'; // import Chess from  "chess.js"(default) if recieving an error about new Chess() not being a constructor
 import {ConsoleSqlOutlined} from '@ant-design/icons';
+import {TouchableOpacityBase} from 'react-native';
 
 export default class LogicalChessboard extends React.Component {
   static propTypes = {children: PropTypes.func};
@@ -24,7 +25,7 @@ export default class LogicalChessboard extends React.Component {
     // chessboard move Index bgn
     pgnComment: '',
 
-    pgnArray: '',
+    SAN: '',
 
     moveIndex: 0,
     gameOver: false,
@@ -140,7 +141,6 @@ export default class LogicalChessboard extends React.Component {
     this.generatePGNArray();
 
     this.updatePGNPosition(position);
-
     this.updatePGNComment();
   };
 
@@ -149,21 +149,28 @@ export default class LogicalChessboard extends React.Component {
 
     console.log('PGN Elements:');
     this.state.futurMoves.forEach(element => {
-      console.log(element);
+      console.log(element.san);
+      pgnArray.push(element.san);
     });
+    console.log('SAN generated: ');
+    console.log(pgnArray);
+    this.setState({SAN: pgnArray});
   };
 
   updatePGNPosition = position => {
-    var currentPosition = this.game.history().length;
-    if (position < currentPosition) {
-      for (let i = currentPosition; i > position; i--) {
-        console.log('Going to position: ' + i);
-        this.undoMovePGN();
-      }
-    } else {
-      for (let i = currentPosition; i < position; i++) {
-        console.log('Going to position: ' + i);
-        this.nextMovePGN();
+    console.log('Update Position');
+    if (this.game != null) {
+      var currentPosition = this.game.history().length;
+      if (position < currentPosition) {
+        for (let i = currentPosition; i > position; i--) {
+          console.log('Going to position: ' + i);
+          this.undoMovePGN();
+        }
+      } else {
+        for (let i = currentPosition; i < position; i++) {
+          console.log('Going to position: ' + i);
+          this.nextMovePGN();
+        }
       }
     }
   };
@@ -483,7 +490,7 @@ export default class LogicalChessboard extends React.Component {
   };
 
   render() {
-    const {fen, dropSquareStyle, squareStyles, pgnComment, moveIndex} =
+    const {fen, dropSquareStyle, squareStyles, pgnComment, moveIndex, SAN} =
       this.state;
     console.log('Render: Fen: ' + fen);
     console.log();
@@ -500,6 +507,7 @@ export default class LogicalChessboard extends React.Component {
       position: fen,
       pgnComment: pgnComment,
       moveIndex: moveIndex,
+      SAN: SAN,
       onMouseOverSquare: this.onMouseOverSquare,
       onMouseOutSquare: this.onMouseOutSquare,
       onDrop: this.onDrop,
