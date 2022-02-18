@@ -648,16 +648,21 @@ export default class LearnToPlay extends React.Component {
                           event.nativeEvent.layout.height,
                       })
                     }>
-                    <TouchableOpacity
-                      style={{width: 100, height: 100}}
-                      onPress={() => {
-                        updateGameFEN(global.g.getSicilianDefence(), 2);
-                        window.scrollTo(0, 0);
-                      }}>
-                      <Text style={{color: global.g.getTextColor()}}>
-                        Sicilian Defence
-                      </Text>
-                    </TouchableOpacity>
+                    <View style = {{flexDirection: 'row'}}>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getSicilianDefencePicture()}
+                          name={'Sicilian Defense'}
+                          ComponentArray={[
+                            global.g.getSicilianDefence(),
+                          ]}
+                          NameArray={[
+                            'Sicilian Defense',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
                   </Animated.View>
 
                   {/*Expert Mode*/}
