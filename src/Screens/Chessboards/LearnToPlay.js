@@ -692,18 +692,14 @@ export default class LearnToPlay extends React.Component {
                             'Bester spieler einfach der hammer!11!1! Immer schon toll gewesen!'
                           }
                           ComponentArray={[
-                            global.g.getSomeCarlsenGame(),
-                            global.g.getNewInChessClassicFinal2021(),
                             global.g.getWorldChessChampionship2021Game6(),
-                            global.g.getCarlsen_vs_Kramnik(),
-                            global.g.getCarlsen_vs_Aronian(),
-                            global.g.getCarlsen_vs_Nakamura(),
-                            global.g.getCarlsen_vs_Gelfand(),
-                            global.g.getCarlsen_vs_Kasparov(),
+                            global.g.getKramnik_vs_Carlsen2008(),
+                            global.g.getCarlsen_vs_Aronian2015(),
+                            global.g.getCarlsen_vs_Nakamura2011(),
+                            global.g.getCarlsen_vs_Gelfand2013(),
+                            global.g.getCarlsen_vs_Kasparov2004(),
                           ]}
                           NameArray={[
-                            'Some Carlsen Game',
-                            'New in chess classic final 2021',
                             'World Chess Championship 2021 Game6',
                             'Carlsen vs Kramnik',
                             'Carlsen vs Aronian',
@@ -720,13 +716,13 @@ export default class LearnToPlay extends React.Component {
                           name={'Garry Kasparov'}
                           elo={1400}
                           ComponentArray={[
-                            global.g.getKasparov_vs_Magerramov(),
-                            global.g.getKasparov_vs_Palatnik(),
-                            global.g.getKasparov_vs_Topalov(),
-                            global.g.getKasparov_vs_Karpov(),
-                            global.g.getKasparov_vs_Anand(),
-                            global.g.getKasparov_vs_Deep_Blue(),
-                            global.g.getKasparov_vs_Karpov_Second(),
+                            global.g.getMagerramov_vs_Kasparov1977(),
+                            global.g.getKasparov_vs_Palatnik1978(),
+                            global.g.getKasparov_vs_Topalov1999(),
+                            global.g.getKasparov_vs_Karpov1987(),
+                            global.g.getKasparov_vs_Anand1996(),
+                            global.g.getKasparov_vs_Deep_Blue1996(),
+                            global.g.getKasparov_vs_Karpov1985(),
                           ]}
                           NameArray={[
                             'Kasparov vs Magerramov',

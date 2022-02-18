@@ -67,7 +67,7 @@ export const ExportGameComponent = props => {
               textAlign: 'center',
               margin: 20,
             }}>
-            {isClosed ? 'Show more games' : 'Show less games'}
+            {isClosed ? 'show games' : 'hide games'}
           </Text>
         </View>
       </TouchableOpacity>
