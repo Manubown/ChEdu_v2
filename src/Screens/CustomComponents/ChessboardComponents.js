@@ -27,31 +27,26 @@ export const PGNViewer = props => {
     var updatePGNPosition = props.updatePGNPosition;
     var moveIndex = props.moveIndex;
 
+    var backgroundColorPointer ='red'
+
     var i = 0;
 
-    console.log('San: ');
-    console.log(SAN);
-    console.log(SAN.length);
 
     if (SAN.length > 1) {
-      console.log('SAN > 1');
-      console.log('Print SAN in PGNView: ');
       return (
         <View style={styles.GameSANComponentShadow}>
           {SANComponent(updatePGNPosition, SAN, moveIndex).map(type => (
-            <View>{type}</View>
+            <View >{type}</View>
           ))}
         </View>
       );
     }
   }
-  console.log('Null returned!');
   return null;
 };
 
 const SANComponent = (updatePGNPosition, SAN, position) => {
-  console.log('Created San Component!');
-  console.log(SAN);
+
 
   const [currentBackgroundColor, setCurrentBackgroundColor] =
     useState('#e0e0e0');
@@ -61,10 +56,9 @@ const SANComponent = (updatePGNPosition, SAN, position) => {
 
   var MoveNumber = 0;
   var printIndex = 1;
+  //Render 1
   SAN.map(sanElement => {
-    console.log(sanElement);
     var positionValue = i + 1;
-
     var text = '';
 
     if (printIndex >= 1) {
@@ -77,10 +71,9 @@ const SANComponent = (updatePGNPosition, SAN, position) => {
 
     sanMapArray.push(
       <TouchableOpacity
-        style={{margin: 5}}
+        style={{margin: 5, marginLeft:2, marginRight:2,}}
         onPress={() => {
           updatePGNPosition(positionValue);
-          console.log('PGN Position:' + positionValue);
         }}>
         <View
           style={{
@@ -97,7 +90,5 @@ const SANComponent = (updatePGNPosition, SAN, position) => {
     );
     i++;
   });
-  console.log('Return sanMAP');
-  console.log(sanMapArray);
   return sanMapArray;
 };

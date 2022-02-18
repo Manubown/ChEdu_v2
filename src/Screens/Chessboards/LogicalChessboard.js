@@ -90,9 +90,6 @@ export default class LogicalChessboard extends React.Component {
     });
     this.state.futurMoves.unshift(undoMove);
 
-    console.log('Histroy');
-    console.log(this.game.history());
-
     this.setState({moveIndex: this.game.history().length});
 
     this.updatePGNComment();
@@ -100,7 +97,6 @@ export default class LogicalChessboard extends React.Component {
 
   nextMovePGN = () => {
     var move = this.state.futurMoves.shift();
-    console.log('Next Move: ' + move);
     if (this.game.move({from: move.from, to: move.to}) === null) {
       console.log('invalid move');
     }
@@ -122,19 +118,13 @@ export default class LogicalChessboard extends React.Component {
   };
 
   updateGamePGN = (PGN, position) => {
-    console.log('UpdateGamePGN');
     this.game.load_pgn(PGN);
     this.setState({position: this.game.position, fen: this.game.fen()});
     window.scrollTo(0, 0);
 
-    console.log('PGN:');
-    console.log(this.game.history());
 
     var currentPosition = this.game.history().length;
-    console.log(currentPosition);
-    console.log(position);
     for (let i = currentPosition; i > 0; i--) {
-      console.log('Going to position: ' + i);
       this.undoMovePGN();
     }
 
@@ -147,28 +137,21 @@ export default class LogicalChessboard extends React.Component {
   generatePGNArray = () => {
     var pgnArray = Array();
 
-    console.log('PGN Elements:');
     this.state.futurMoves.forEach(element => {
-      console.log(element.san);
       pgnArray.push(element.san);
     });
-    console.log('SAN generated: ');
-    console.log(pgnArray);
     this.setState({SAN: pgnArray});
   };
 
   updatePGNPosition = position => {
-    console.log('Update Position');
     if (this.game != null) {
       var currentPosition = this.game.history().length;
       if (position < currentPosition) {
         for (let i = currentPosition; i > position; i--) {
-          console.log('Going to position: ' + i);
           this.undoMovePGN();
         }
       } else {
         for (let i = currentPosition; i < position; i++) {
-          console.log('Going to position: ' + i);
           this.nextMovePGN();
         }
       }
@@ -360,7 +343,6 @@ export default class LogicalChessboard extends React.Component {
 
   // keep clicked square style and remove hint squares
   removeHighlightSquare = () => {
-    console.log('removeHighlightSquare');
     this.setState(({pieceSquare, history}) => ({
       squareStyles: squareStyling({pieceSquare, history}),
     }));
@@ -368,7 +350,6 @@ export default class LogicalChessboard extends React.Component {
 
   // show possible moves
   highlightSquare = (sourceSquare, squaresToHighlight) => {
-    console.log('highlightSquare');
     const highlightStyles = [sourceSquare, ...squaresToHighlight].reduce(
       (a, c) => {
         return {
@@ -395,7 +376,6 @@ export default class LogicalChessboard extends React.Component {
   };
 
   onDrop = ({sourceSquare, targetSquare}) => {
-    console.log('onDrop');
     // see if the move is legal
     let move = this.game.move({
       from: sourceSquare,
@@ -419,7 +399,6 @@ export default class LogicalChessboard extends React.Component {
   onMouseOverSquare = square => {
     // get list of possible moves for this square
 
-    console.log('onMouseOverSquare');
     let moves = this.game.moves({
       square: square,
       verbose: true,
@@ -440,7 +419,6 @@ export default class LogicalChessboard extends React.Component {
 
   // central squares get diff dropSquareStyles
   onDragOverSquare = square => {
-    console.log('onDragOverSquare');
 
     this.setState({
       dropSquareStyle:
@@ -451,7 +429,6 @@ export default class LogicalChessboard extends React.Component {
   };
 
   onSquareClick = square => {
-    console.log('onSquareClick: ' + square);
     this.setState(({history}) => ({
       squareStyles: squareStyling({pieceSquare: square, history}),
       pieceSquare: square,
@@ -463,7 +440,6 @@ export default class LogicalChessboard extends React.Component {
       promotion: 'q', // always promote to a queen for example simplicity
     });
 
-    console.log('OnDrop: Game Over: ' + this.isGameOver(this.game));
 
     // illegal move
     if (move === null) return;
@@ -478,25 +454,19 @@ export default class LogicalChessboard extends React.Component {
   };
 
   onSquareRightClick = square => {
-    console.log('onSquareRightClick');
     this.setState({
       squareStyles: {[square]: {backgroundColor: 'deepPink'}},
     });
   };
 
   updatePGNComment = () => {
-    console.log('PGN Comment: ' + this.game.get_comment());
     this.setState({pgnComment: this.game.get_comment()});
   };
 
   render() {
     const {fen, dropSquareStyle, squareStyles, pgnComment, moveIndex, SAN} =
       this.state;
-    console.log('Render: Fen: ' + fen);
-    console.log();
-    console.log('History:');
 
-    this.state.history.forEach(element => console.log(element));
 
     console.log('############################');
     console.log();
