@@ -79,10 +79,13 @@ const renderElements = (pgnArray, nameArray, updateGamePGN, isClosed) => {
   var GameComponenets = Array();
   console.log('Is CLosed:' + isClosed);
 
+  //Set how many games get Showen
+  var ShowGames = 3;
+
   var finalArray = [];
 
   if (isClosed) {
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < ShowGames; i++) {
       finalArray.push(pgnArray[i]);
     }
   } else {
