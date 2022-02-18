@@ -27,7 +27,7 @@ export const ExportGameComponent = props => {
               margin: 10,
             }}>
             {' '}
-            Elo: {props.elo}
+            Highest Elo: {props.elo}
           </Text>
         </View>
       ) : null}

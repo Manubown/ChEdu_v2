@@ -457,12 +457,59 @@ class Global extends React.Component {
   getKasparov_vs_Deep_Blue1996 = () => {
     return this.pgn.Kasparov.Kasparov_vs_Deep_Blue1996;
   };
-  getKasparov_vs_Karpov1985 = () => {
-    return this.pgn.Kasparov.Kasparov_vs_Karpov1985;
+  getKarpov_vs_Kasparov1985 = () => {
+    return this.pgn.Kasparov.Karpov_vs_Kasparov1985;
   };
   //#endregion
 
+  //#region Giri
+  getGiri_vs_Hao2021 = () => {
+    return this.pgn.Giri.Giri_vs_Hao2021;
+  };
+  getLiren_vs_Giri2017 = () => {
+    return this.pgn.Giri.Liren_vs_Giri2017;
+  };
+  getGiri_vs_Harikrishna2019 = () => {
+    return this.pgn.Giri.Giri_vs_Harikrishna2019;
+  };
+  //#endregion
   //#endregion pgn end
+
+  //#region Fischer
+  getByrne_vs_Fischer1963 = () => {
+    return this.pgn.Fischer.Byrne_vs_Fischer1963;
+  };
+  getFischer_vs_Myagmarsuren1967 = () => {
+    return this.pgn.Fischer.Fischer_vs_Myagmarsuren1967;
+  };
+  getFischer_vs_Spassky1972 = () => {
+    return this.pgn.Fischer.Fischer_vs_Spassky1972;
+  };
+  getFischer_vs_Tal1961 = () => {
+    return this.pgn.Fischer.Fischer_vs_Tal1961;
+  };
+  getSpassky_vs_Fischer1972 = () => {
+    return this.pgn.Fischer.Spassky_vs_Fischer1972;
+  };
+  //#endregion
+
+  //#region Karpov
+  getAnand_vs_Karpov1998 = () => {
+    return this.pgn.Karpov.Anand_vs_Karpov1998;
+  };
+  getGelfand_vs_Karpov1995 = () => {
+    return this.pgn.Karpov.Gelfand_vs_Karpov1995;
+  };
+  getKarpov_vs_Kasparov1988 = () => {
+    return this.pgn.Karpov.Karpov_vs_Kasparov1988;
+  };
+  getKarpov_vs_Korchnoi1981 = () => {
+    return this.pgn.Karpov.Karpov_vs_Korchnoi1981;
+  };
+  getKarpov_vs_Spassky1979 = () => {
+    return this.pgn.Karpov.Karpov_vs_Spassky1979;
+  };
+  //#endregion
 
   //#endregion Getter
 
@@ -803,9 +850,41 @@ var g = new Global(
         '1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6 6.Be3 Ng4 7.Bg5 h6 8.Bh4 g5 9.Bg3 Bg7 10.Be2 h5 11.Bxg4 Bxg4 12.f3 Bd7 13.Bf2 Nc6 14.Qd2 Ne5 15.O-O g4 16.f4 Nc4 17.Qe2 Rc8 18.b3 Na3 19.Nd5 e6 20.Nb4 Qa5 21.Qe1 h4 22.Be3 h3 23.g3 Nb5 24.Rd1 Nc3 25.Nd3 Qc7 26.Rc1 Nxe4 27.f5 e5 28.f6 Nxf6 29.Nf5 Bxf5 30.Rxf5 Qc6 31.Qe2 Qe4 32.Rf2 Nd5 33.Re1 Qxe3 34.Qxg4 O-O 35.Rxe3 Nxe3 36.Qxh3 Nxc2 37.Qd7 Nd4 38.Qxb7 a5 39.Kg2 Rc3 40.Nb2 Nc2 41.Nc4 d5 42.Nd6 Ne3+ 43.Kh3 f5 44.Qd7 f4+ 45.Qe6+ Kh7 46.Nf7 Rxf7 47.Qxf7 Rc6 48.gxf4 Rf6 49.Qc7 e4 50.f5 d4 51.Qe7 Rh6+ 52.Kg3 Nd1 53.Rf4 e3 54.Rg4 1-0',
       Kasparov_vs_Deep_Blue1996:
         '1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Be7 6.Re1 b5 7.Bb3 d6 8.c3 O-O 9.h3 h6 10.d4 Re8 11.Nbd2 Bf8 12.Nf1 Bd7 13.Ng3 Na5 14.Bc2 c5 15.b3 Nc6 16.d5 Ne7 17.Be3 Ng6 18.Qd2 Nh7 19.a4 Nh4 20.Nxh4 Qxh4 21.Qe2 Qd8 22.b4 Qc7 23.Rec1 c4 24.Ra3 Rec8 25.Rca1 Qd8 26.f4 Nf6 27.fxe5 dxe5 28.Qf1 Ne8 29.Qf2 Nd6 30.Bb6 Qe8 31.R3a2 Be7 32.Bc5 Bf8 33.Nf5 Bxf5 34.exf5 f6 35.Bxd6 Bxd6 36.axb5 axb5 37.Be4 Rxa2 38.Qxa2 Qd7 39.Qa7 Rc7 40.Qb6 Rb7 41.Ra8+ Kf7 42.Qa6 Qc7 43.Qc6 Qb6+ 44.Kf1 Rb8 45.Ra6 1-0',
-      Kasparov_vs_Karpov1985:
-        '1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6 6.Be2 e6 7.O-O Be7 8.f4 O-O 9.Kh1 Qc7 10.a4 Nc6 11.Be3 Re8 12.Bf3 Rb8 13.Qd2 Bd7 14.Qf2 Nxd4 15.Bxd4 e5 16.Be3 Be6 17.f5 Bc4 18.Bb6 Qc8 19.Rfc1 d5 20.b3 Bb4 21.Na2 Ba3 22.bxc4 Bxc1 23.Nxc1 Qxc4 24.exd5 e4 25.Be2 Qxc2 26.Qd4 Rbc8 27.h3 e3 28.d6 Qd2 29.Nd3 Qxe2 30.d7 Nxd7 31.Qxd7 Qd2 32.Re1 e2 33.Kg1 a5 34.g3 Qh6 35.Bf2 Qc6 36.Qxc6 Rxc6 37.Rb1 Rc4 38.Rxb7 Rxa4 39.Be1 Ra3 40.Rd7 a4 41.Kf2 Rb3 42.Nc1 Rb1 43.Na2 Ra8 44.Re7 Rb2 45.Rxe2 Rxe2+ 46.Kxe2 Re8+ 47.Kf2 h5 48.Bc3 Rb8 49.Bb4 Rd8 50.Ke2 a3 51.Bc3 f6 52.Bb4 Kf7 53.Nc3 Rb8 54.Na2 Rb5 55.g4 Rb8 56.Kd3 Rd8+ 57.Kc4 Rd1 58.Bxa3 Ra1 59.Kb3 Rh1 60.gxh5 Rxh3+ 61.Nc3 Rf3 62.Bc1 Rxf5 63.h6 g6 64.Ne4 Rh5 65.Bb2 1/2-1/2',
+      Karpov_vs_Kasparov1985:
+        '1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6 6.Be2 e6 7.O-O Be7 8.f4 O-O 9.Kh1 Qc7 10.a4 Nc6 11.Be3 Re8 12.Bf3 Rb8 13.Qd2 Bd7 14.Nb3 b6 15.g4 Bc8 16.g5 Nd7 17.Qf2 Bf8 18.Bg2 Bb7 19.Rad1 g6 20.Bc1 Rbc8 21.Rd3 Nb4 22.Rh3 Bg7 23.Be3 Re7 24.Kg1 Rce8 25.Rd1 f5 26.gxf6 Nxf6 27.Rg3 Rf7 28.Bxb6 Qb8 29.Be3 Nh5 30.Rg4 Nf6 31.Rh4 g5 32.fxg5 Ng4 33.Qd2 Nxe3 34.Qxe3 Nxc2 35.Qb6 Ba8 36.Rxd6 Rb7 37.Qxa6 Rxb3 38.Rxe6 Rxb2 39.Qc4 Kh8 40.e5 Qa7+ 41.Kh1 Bxg2+ 42.Kxg2 Nd4+ 0-1',
     },
+    Giri:{
+      Giri_vs_Hao2021:
+        '1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. g3 Be7 5. Bg2 O-O 6. O-O dxc4 7. Qc2 a6 8. a4 Bd7 9. Qxc4 Bc6 10. Bf4 Bd6 11. Nc3 Bxf4 12. gxf4 a5 13. e3 Na6 14. Ne5 Bxg2 15. Kxg2 c6 16. h3 Qb6 17. Qe2 c5 18. Rfd1 cxd4 19. Rxd4 Rad8 20. Rxd8 Qxd8 21. Rd1 Qa8 22. Kg1 Nb4 23. Qb5 Nbd5 24. Nxd5 Nxd5 25. Rc1 h6 26. Qd7 Nf6 27. Qd6 g6 28. b3 h5 29. Kh2 Kg7 30. Qd4 Rd8 31. Qb2 Qb8 32. b4 axb4 33. Rc4 b3 34. Rb4 Qa7 35. Rxb3 Qxa4 36. Rxb7 Qe8 37. Ra7 Rd5 38. Qb7 Ne4 39. Nxf7 1-0',
+      Liren_vs_Giri2017:
+        '1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. O-O Nf6 5. d3 O-O 6. h3 d6 7. c3 a6 8. a4 Ba7 9. Re1 h6 10. Nbd2 Be6 11. Bxe6 fxe6 12. Nf1 Nh5 13. Be3 a5 14. Bxa7 Rxa7 15. d4 Qf6 16. Re3 Nf4 17. h4 Qg6 18. g3 Raa8 19. dxe5 Nxe5 20. Nxe5 dxe5 21. f3 Rad8 22. Qc2 Nh5 23. Kh2 Rf6 24. Rd1 Rdf8 25. Rdd3 Qf7 26. Qd1 Rg6 27. Qe1 Qe7 28. Kh3 Rxg3+ 29. Nxg3 Nf4+ 30. Kh2 Qxh4+ 31. Kg1 Rf6 32. Rd8+ Kh7 33. Rd2 Rg6 34. Rg2 h5 35. Rh2 Rxg3+ 36. Kh1 Qg5 37. Qf1 h4 38. Re1 h3 39. Rd1 Qh5 40. Rd7 Qxf3+ 41. Qxf3 Rxf3 42. Rhd2 Kh6 43. Rd8 Kh5 44. Rh8+ Kg4 45. Rd1 Ne2 0-1',
+      Giri_vs_Harikrishna2019:
+        '1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d3 O-O 6. O-O d5 7. exd5 Nxd5 8. Re1 Bg4 9. Nbd2 Nb6 10. h3 Bh5 11. Bb3 Qxd3 12. Nxe5 Bxd1 13. Nxd3 Bxb3 14. axb3 Be7 15. b4 a6 16. Ne4 Nd7 17. Bf4 Rac8 18. Rad1 Rfd8 19. g4 Bf8 20. Kg2 Re8 21. Bg3 f6 22. f4 Re7 23. f5 Rce8 24. Nf4 Nd8 25. Rxd7 Rxd7 26. Nxf6+ gxf6 27. Rxe8 Kf7 28. Re3 Rd2+ 29. Re2 Rd1 30. Ne6 Nxe6 31. fxe6+ Ke8 32. Bxc7 Rd3 33. Bf4 Rd5 34. Kf3 Ke7 35. Re4 Bg7 36. Be3 f5 37. Bg5+ Bf6 38. Bxf6+ Kxf6 39. g5+ Kxg5 40. Re3 1-0',
+    },
+    Fischer:{
+      Byrne_vs_Fischer1963:
+        '1. d4 {Notes from various sources.} Nf6 2. c4 g6 3. g3 c6 4. Bg2 d5 5. cxd5 {5.Qb3 maintains more tension. -- Fischer} cxd5 6. Nc3 Bg7 7. e3 O-O 8. Nge2 Nc6 9. O-O b6 10. b3 {It is hard for either side to introduce an imbalance into this essentially symmetrical variation. Deadeye equality also ensues afer 10.Nf4 e6 11.b3 Ba6 12.Re1 Rc8 13.Ba3 Re8 14.Rc1 (Stahlberg-Flohr, Kemeri 1937) -- Fischer} Ba6 11. Ba3 {After White his 11th move I should adjudicate his position as slightly superior, and at worst completely safe. To turn this into a mating position in eleven more moves is more witchcraft than chess! Quite honestly, I do not see the man who can stop Bobby at this time. -- K.F. Kirby, South African Chess Quarterly} Re8 12. Qd2 e5 {! I was a bit worried about weakening my QP, but felt that the tremendous activity obtained by my minor pieces would permit White no time to exploit it. 12...e6 would probably lead to a draw. -- Fischer} 13. dxe5 Nxe5 14. Rfd1 {"Add another to those melancholy case histories entitled: The Wrong Rook." -- Fischer ~ "This is very much a case of the wrong rook. One can understand Byrne his desire to break the pin on the e2-knight, but this turns out to be less important than other considerations. Fischer spends a lot of time and energy analysing the superior 14. Rad1!, but still comes to the conclusion that Black can keep the advantage." -- John Nunn} Nd3 {Now it is all systems go for the Fischer rocket. -- Robert Wade} 15. Qc2 {There is hardly any other defense to the threat of ...Ne4. -- Fischer} Nxf2 {! The key to Black his previous play. The complete justification for this sac does not become apparent until White resigns! -- Fischer} 16. Kxf2 Ng4+ 17. Kg1 Nxe3 18. Qd2 {Byrne: As I sat pondering why Fischer would choose such a line, because it was so obviously lost for Black, there suddenly comes...} Nxg2 {!! This dazzling move came as the shocker... the culminating combination is of such depth that, even at the very moment at which I resigned, both grandmasters who were commenting on the play for the spectators in a separate room believed I had a won game! -- Robert Byrne} 19. Kxg2 d4 {!} 20. Nxd4 Bb7+ {The King is at Black his mercy. -- Fischer} 21. Kf1 {In a room set aside for commentaries on the games in progress, two grandmasters were stating, for the benefit of the spectators, that Byrne had a won game. Byrne his reply to Fischer his next move must have been jaw dropping! -- Wade} Qd7 {And White resigns. Fischer writes: "A bitter disappointment. I would hoped for 22.Qf2 Qh3+ 23.Kg1 Re1+!! 24.Rxe1 Bxd4 with mate to follow shortly."} 0-1',
+      Fischer_vs_Myagmarsuren1967:
+        '1. e4 e6 2. d3 d5 3. Nd2 Nf6 4. g3 c5 5. Bg2 Nc6 6. Ngf3 Be7 7. O-O O-O 8. e5 Nd7 9. Re1 b5 10. Nf1 b4 11. h4 a5 12. Bf4 a4 13. a3 bxa3 14. bxa3 Na5 15. Ne3 Ba6 16. Bh3 d4 17. Nf1 Nb6 18. Ng5 Nd5 19. Bd2 Bxg5 20. Bxg5 Qd7 21. Qh5 Rfc8 22. Nd2 Nc3 23. Bf6 Qe8 24. Ne4 g6 25. Qg5 Nxe4 26. Rxe4 c4 27. h5 cxd3 28. Rh4 Ra7 29. Bg2 dxc2 30. Qh6 Qf8 31. Qxh7+ 1-0',
+      Fischer_vs_Spassky1972:
+        '1. c4 e6 2. Nf3 d5 3. d4 Nf6 4. Nc3 Be7 5. Bg5 O-O 6. e3 h6 7. Bh4 b6 8. cxd5 Nxd5 9. Bxe7 Qxe7 10. Nxd5 exd5 11. Rc1 Be6 12. Qa4 c5 13. Qa3 Rc8 14. Bb5 a6 15. dxc5 bxc5 16. O-O Ra7 17. Be2 Nd7 18. Nd4 Qf8 19. Nxe6 fxe6 20. e4 d4 21. f4 Qe7 22. e5 Rb8 23. Bc4 Kh8 24. Qh3 Nf8 25. b3 a5 26. f5 exf5 27. Rxf5 Nh7 28. Rcf1 Qd8 29. Qg3 Re7 30. h4 Rbb7 31. e6 Rbc7 32. Qe5 Qe8 33. a4 Qd8 34. R1f2 Qe8 35. R2f3 Qd8 36. Bd3 Qe8 37. Qe4 Nf6 38. Rxf6 gxf6 39. Rxf6 Kg8 40. Bc4 Kh8 41. Qf4 1-0',
+      Fischer_vs_Tal1961:
+        '1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 e6 5. Nc3 Qc7 6. g3 Nf6 7. Ndb5 Qb8 8. Bf4 Ne5 9. Be2 Bc5 10. Bxe5 Qxe5 11. f4 Qb8 12. e5 a6 13. exf6 axb5 14. fxg7 Rg8 15. Ne4 Be7 16. Qd4 Ra4 17. Nf6+ Bxf6 18. Qxf6 Qc7 19. O-O-O Rxa2 20. Kb1 Ra6 21. Bxb5 Rb6 22. Bd3 e5 23. fxe5 Rxf6 24. exf6 Qc5 25. Bxh7 Qg5 26. Bxg8 Qxf6 27. Rhf1 Qxg7 28. Bxf7+ Kd8 29. Be6 Qh6 30. Bxd7 Bxd7 31. Rf7 Qxh2 32. Rdxd7+ Ke8 33. Rde7+ Kd8 34. Rd7+ Kc8 35. Rc7+ Kd8 36. Rfd7+ Ke8 37. Rd1 b5 38. Rb7 Qh5 39. g4 Qh3 40. g5 Qf3 41. Re1+ Kf8 42. Rxb5 Kg7 43. Rb6 Qg3 44. Rd1 Qc7 45. Rdd6 Qc8 46. b3 Kh7 47. Ra6 1-0',
+      Spassky_vs_Fischer1972:
+        '1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. Nf3 g6 5. Bc4 Nb6 6. Bb3 Bg7 7. Nbd2 O-O 8. h3 a5 9. a4 dxe5 10. dxe5 Na6 11. O-O Nc5 12. Qe2 Qe8 13. Ne4 Nbxa4 14. Bxa4 Nxa4 15. Re1 Nb6 16. Bd2 a4 17. Bg5 h6 18. Bh4 Bf5 19. g4 Be6 20. Nd4 Bc4 21. Qd2 Qd7 22. Rad1 Rfe8 23. f4 Bd5 24. Nc5 Qc8 25. Qc3 e6 26. Kh2 Nd7 27. Nd3 c5 28. Nb5 Qc6 29. Nd6 Qxd6 30. exd6 Bxc3 31. bxc3 f6 32. g5 hxg5 33. fxg5 f5 34. Bg3 Kf7 35. Ne5+ Nxe5 36. Bxe5 b5 37. Rf1 Rh8 38. Bf6 a3 39. Rf4 a2 40. c4 Bxc4 41. d7 Bd5 42. Kg3 Ra3+ 43. c3 Rha8 44. Rh4 e5 45. Rh7+ Ke6 46. Re7+ Kd6 47. Rxe5 Rxc3+ 48. Kf2 Rc2+ 49. Ke1 Kxd7 50. Rexd5+ Kc6 51. Rd6+ Kb7 52. Rd7+ Ka6 53. R7d2 Rxd2 54. Kxd2 b4 55. h4 Kb5 56. h5 c4 57. Ra1 gxh5 58. g6 h4 59. g7 h3 60. Be7 Rg8 61. Bf8 h2 62. Kc2 Kc6 63. Rd1 b3+ 64. Kc3 h1=Q 65. Rxh1 Kd5 66. Kb2 f4 67. Rd1+ Ke4 68. Rc1 Kd3 69. Rd1+ Ke2 70. Rc1 f3 71. Bc5 Rxg7 72. Rxc4 Rd7 73. Re4+ Kf1 74. Bd4 f2 0-1',
+    },
+    Karpov:{
+      Anand_vs_Karpov1998:
+        '1.e4 c6 2.d4 d5 3.exd5 cxd5 4.c4 Nf6 5.Nc3 e6 6.Nf3 Be7 7.cxd5 Nxd5 8.Bd3 Nc6 9.O-O O-O 10.Re1 Bf6 11.Be4 Nce7 12.h4 Nf5 13.Qd3 Nxc3 14.bxc3 h6 15.h5 Nd6 16.Ne5 Nxe4 17.Qxe4 Bxe5 18.dxe5 f5 19.Qe2 Bd7 20.Rd1 Bb5 21.Qf3 Qe8 22.Bf4 Rc8 23.Rd4 Rc4 24.Rad1 Qf7 25.Rxc4 Bxc4 26.a3 Rc8 27.Rd4 Kh7 28.Bd2 Bd5 29.Qh3 b5 30.a4 bxa4 31.Rxa4 Rc4 32.Rxc4 Bxc4 33.Qh4 Bb5 34.c4 Be8 35.c5 Qd7 36.Bc3 Qd3 37.Qd4 Qxd4 38.Bxd4 a5 39.c6 Bxc6 40.f3 f4 41.Bb2 Be8 42.Bc1 a4 43.Bxf4 a3 44.Be3 Bxh5 45.Kf2 Be8 46.Bd4 Bc6 47.Bc3 a2 48.g3 h5 49.g4 h4 0-1',
+      Gelfand_vs_Karpov1995:
+        '1.c4 e5 2.g3 Nf6 3.Bg2 Nc6 4.Nf3 Bc5 5.O-O d6 6.Nc3 O-O 7.d3 a6 8.a3 Nd4 9.Nd2 c6 10.b4 Ba7 11.Bb2 Bf5 12.e3 Ne6 13.Nf3 h6 14.Qb3 Qd7 15.Rad1 Bg4 16.Rd2 Rad8 17.Rc1 Bxf3 18.Bxf3 d5 19.cxd5 cxd5 20.Na4 d4 21.Nc5 Qe7 22.Rdc2 dxe3 23.fxe3 e4 24.Bxf6 gxf6 25.Bxe4 Ng5 26.Bxb7 Bxc5 27.bxc5 Qxe3+ 28.Kh1 Rxd3 29.Qc4 Rfd8 30.Rf1 R8d4 31.Qxa6 Ne4 32.Rg2 Rd1 33.Bxe4 Qxe4 34.Qxf6 Qd5 35.Kg1 Rxf1+ 36.Kxf1 Rd1+ 0-1',
+      Karpov_vs_Kasparov1988:
+        '1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.cxd5 Nxd5 5.e4 Nxc3 6.bxc3 Bg7 7.Bc4 c5 8.Ne2 Nc6 9.Be3 O-O 10.O-O Bg4 11.f3 Na5 12.Bxf7+ Rxf7 13.fxg4 Rxf1+ 14.Kxf1 Qd6 15.e5 Qd5 16.Bf2 Rd8 17.Qa4 b6 18.Qc2 Rf8 19.Kg1 Qc4 20.Qd2 Qe6 21.h3 Nc4 22.Qg5 h6 23.Qc1 Qf7 24.Bg3 g5 25.Qc2 Qd5 26.Bf2 b5 27.Ng3 Rf7 28.Re1 b4 29.Qg6 Kf8 30.Ne4 Rxf2 31.Kxf2 bxc3 32.Qf5+ Kg8 33.Qc8+ Kh7 34.Qxc5 Qf7+ 35.Kg1 c2 36.Ng3 Bf8 37.Nf5 Kg8 38.Rc1 1-0',
+      Karpov_vs_Korchnoi1981:
+        '1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Nxe4 6. d4 b5 7. Bb3 d5 8. dxe5 Be6 9. Nbd2 Nc5 10. c3 d4 11. Bxe6 Nxe6 12. cxd4 Ncxd4 13. a4 Be7 14. Nxd4 Nxd4 15. Ne4 Ne6 16. Be3 O-O 17. f4 Qxd1 18. Rfxd1 Rfb8 19. Rd7 Bf8 20. f5 Nd8 21. a5 Nc6 22. e6 fxe6 23. f6 Ne5 24. Rxc7 Rc8 25. Rac1 Rxc7 26. Rxc7 Rd8 27. h3 h6 28. Ra7 Nc4 29. Bb6 Rb8 30. Bc5 Bxc5+ 31. Nxc5 gxf6 32. b4 Rd8 33. Rxa6 Kf7 34. Ra7+ Kg6 35. Rd7 Re8 36. a6 Ra8 37. Rb7 Kf5 38. Rxb5 Ke5 39. Rb7 Kd5 40. Rf7 f5 41. Rf6 e5 1-0',
+      Karpov_vs_Spassky1979:
+        '1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3 Be7 5. Bf4 O-O 6. e3 c5 7. dxc5 Nc6 8. Qc2 Qa5 9. a3 Bxc5 10. Rd1 Be7 11. Nd2 Bd7 12. Be2 Rfc8 13. O-O Qd8 14. cxd5 exd5 15. Nf3 h6 16. Ne5 Be6 17. Nxc6 Rxc6 18. Bf3 Qb6 19. Be5 Ne4 20. Qe2 Nxc3 21. Bxc3 Rd8 22. Rd3 Rcd6 23. Rfd1 R6d7 24. R1d2 Qb5 25. Qd1 b6 26. g3 Bf8 27. Bg2 Be7 28. Qh5 a6 29. h3 Qc6 30. Kh2 a5 31. f4 f6 32. Qd1 Qb5 33. g4 g5 34. Kh1 Qc6 35. f5 Bf7 36. e4 Kg7 37. exd5 Qc7 38. Re2 b5 39. Rxe7 Rxe7 40. d6 Qc4 41. b3 1-0',
+    }
   },
 );
 

@@ -687,7 +687,7 @@ export default class LearnToPlay extends React.Component {
                         <ExportGameComponent
                           picture={global.g.getMagnusCarlsen()}
                           name={'Magnus Carlsen'}
-                          elo={1600}
+                          elo={2882}
                           bio={
                             'Bester spieler einfach der hammer!11!1! Immer schon toll gewesen!'
                           }
@@ -701,7 +701,7 @@ export default class LearnToPlay extends React.Component {
                           ]}
                           NameArray={[
                             'World Chess Championship 2021 Game6',
-                            'Carlsen vs Kramnik',
+                            'Kramnik vs Carlsen',
                             'Carlsen vs Aronian',
                             'Carlsen vs Nakamura',
                             'Carlsen vs Gelfand',
@@ -714,7 +714,10 @@ export default class LearnToPlay extends React.Component {
                         <ExportGameComponent
                           picture={global.g.getGarryKasparov()}
                           name={'Garry Kasparov'}
-                          elo={1400}
+                          bio={
+                            'Bester spieler einfach der hammer!11!1! Immer schon toll gewesen!'
+                          }
+                          elo={2851}
                           ComponentArray={[
                             global.g.getMagerramov_vs_Kasparov1977(),
                             global.g.getKasparov_vs_Palatnik1978(),
@@ -722,16 +725,114 @@ export default class LearnToPlay extends React.Component {
                             global.g.getKasparov_vs_Karpov1987(),
                             global.g.getKasparov_vs_Anand1996(),
                             global.g.getKasparov_vs_Deep_Blue1996(),
-                            global.g.getKasparov_vs_Karpov1985(),
+                            global.g.getKarpov_vs_Kasparov1985(),
                           ]}
                           NameArray={[
-                            'Kasparov vs Magerramov',
+                            'Magerramov vs Kasparov',
                             'Kasparov vs Palatnik',
                             'Kasparov vs Topalov',
                             'Kasparov vs Karpov',
                             'Kasparov vs Anand',
                             'Kasparov vs Deep Blue',
                             'Kasparov vs Karpov Second',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getHikaruNakamura()}
+                          name={'Hikaru Nakamura'}
+                          bio={
+                            'Bester spieler einfach der hammer!11!1! Immer schon toll gewesen!'
+                          }
+                          elo={2816}
+                          ComponentArray={[
+                            global.g.getGelfand_vs_Nakamura2010(),
+                            global.g.getStripunsky_vs_Nakamura1998(),
+                            global.g.getNakamura_vs_Oluto_Adu1999(),
+                            global.g.getNakamura_vs_Novikov2002(),
+                            global.g.getCrafty_AI_vs_Nakamura2007(),
+                          ]}
+                          NameArray={[
+                            'Gelfand vs Nakamura 2010',
+                            'Stripunksy vs Nakamura 1998',
+                            'Nakamura vs Adu 1999',
+                            'Nakamura vs Novikov 2002',
+                            'Crafty AI vs Nakamura 2007',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getAnishGiri()}
+                          name={'Anish Giri'}
+                          elo={2798}
+                          bio={
+                            'Bester spieler einfach der hammer!11!1! Immer schon toll gewesen!'
+                          }
+                          ComponentArray={[
+                            global.g.getGiri_vs_Hao2021(),
+                            global.g.getLiren_vs_Giri2017(),
+                            global.g.getGiri_vs_Harikrishna2019(),
+                          ]}
+                          NameArray={[
+                            'Giri vs Hao 2021',
+                            'Liren vs Giri 2017',
+                            'Giri vs Harikrishna 2019',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getAntolyKarpov()}
+                          name={'Antoly Karpov'}
+                          elo={2780}
+                          bio={
+                            'Bester spieler einfach der hammer!11!1! Immer schon toll gewesen!'
+                          }
+                          ComponentArray={[
+                            global.g.getAnand_vs_Karpov1998(),
+                            global.g.getGelfand_vs_Karpov1995(),
+                            global.g.getKarpov_vs_Kasparov1988(),
+                            global.g.getKarpov_vs_Korchnoi1981(),
+                            global.g.getKarpov_vs_Spassky1979(),
+                          ]}
+                          NameArray={[
+                            'Anand vs Karpov 1998',
+                            'Gelfand vs Karpov 1995',
+                            'Karpov vs Kasparov 1988',
+                            'Karpov vs Korchnoi 1981',
+                            'Karpov vs Spassky 1979',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getBobbyFischer()}
+                          name={'Bobby Fischer'}
+                          elo={2785}
+                          bio={
+                            'Bester spieler einfach der hammer!11!1! Immer schon toll gewesen!'
+                          }
+                          ComponentArray={[
+                            global.g.getByrne_vs_Fischer1963(),
+                            global.g.getFischer_vs_Myagmarsuren1967(),
+                            global.g.getFischer_vs_Spassky1972(),
+                            global.g.getFischer_vs_Tal1961(),
+                            global.g.getSpassky_vs_Fischer1972(),
+                          ]}
+                          NameArray={[
+                            'Byrne vs Fischer 1963',
+                            'Fischer vs Myagmarsuren 1967',
+                            'Fischer vs Spassky 1972',
+                            'Fischer vs Tal 1961',
+                            'Spassky vs Fischer 1972',
                           ]}
                           updateGamePGNMethode={updateGamePGN}
                         />
@@ -772,7 +873,7 @@ export default class LearnToPlay extends React.Component {
   }
 }
 
-const getComponentArray = props => {
+/*const getComponentArray = props => {
   var ComponentArray = Array();
   ComponentArray[0] = (
     <TouchableOpacity
@@ -790,4 +891,4 @@ const getComponentArray = props => {
     </TouchableOpacity>
   );
   return ComponentArray;
-};
+};*/
