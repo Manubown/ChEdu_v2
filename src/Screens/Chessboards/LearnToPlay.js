@@ -9,7 +9,13 @@ import {
   Image,
 } from 'react-native';
 
-import {RightCircleTwoTone, LeftCircleTwoTone, ForwardFilled, BackwardFilled, UpCircleFilled} from '@ant-design/icons';
+import {
+  RightCircleTwoTone,
+  LeftCircleTwoTone,
+  ForwardFilled,
+  BackwardFilled,
+  UpCircleFilled,
+} from '@ant-design/icons';
 
 /*styles*/
 import styles from '../../styles';
@@ -33,7 +39,7 @@ export default class LearnToPlay extends React.Component {
     xTabStrategicConcepts: 0, //x co-ordinate of tab two
     xTabOpeningConcepts: 0, //x co-ordinate of tab three
     xTabExpertMode: 0, //x co-ordinate of tab four
-    xTabTextbookCheckmates: 0, //x co-ordinate of tab five
+    xTabTextbookCheckmates: 0, //x co-ordinate of s
     translateX: new Animated.Value(0),
     translateXTabChessBasics: new Animated.Value(0),
     translateXTabStrategicConcepts: new Animated.Value(
@@ -278,11 +284,9 @@ export default class LearnToPlay extends React.Component {
                     }}>
                     <View style={{flexDirection: 'row'}}>
                       <View style={styles.ChessBoardButtonShadow}>
-                        <TouchableOpacity
-                          style={{width: 50}}
-                        >
-                          <BackwardFilled 
-                            style={{color: '#185a5c',fontSize: 30}}
+                        <TouchableOpacity style={{width: 50}}>
+                          <BackwardFilled
+                            style={{color: '#185a5c', fontSize: 30}}
                             onPress={() => {
                               //TODO: set on first move
                               nextMovePGN();
@@ -317,9 +321,8 @@ export default class LearnToPlay extends React.Component {
                           onPress={() => {
                             //TODO: set on last move
                             nextMovePGN();
-                          }}
-                        >
-                          <ForwardFilled 
+                          }}>
+                          <ForwardFilled
                             style={{color: '#185a5c', fontSize: 30}}
                           />
                         </TouchableOpacity>
@@ -328,9 +331,8 @@ export default class LearnToPlay extends React.Component {
                           onPress={() => {
                             //TODO: routate Board
                             nextMovePGN();
-                          }}
-                        >
-                          <UpCircleFilled 
+                          }}>
+                          <UpCircleFilled
                             style={{color: '#185a5c', fontSize: 30}}
                           />
                         </TouchableOpacity>
@@ -681,17 +683,13 @@ export default class LearnToPlay extends React.Component {
                           event.nativeEvent.layout.height,
                       })
                     }>
-                    <View style = {{flexDirection: 'row'}}>
+                    <View style={{flexDirection: 'row'}}>
                       <View>
                         <ExportGameComponent
                           picture={global.g.getSicilianDefencePicture()}
                           name={'Sicilian Defence'}
-                          ComponentArray={[
-                            global.g.getSicilianDefence(),
-                          ]}
-                          NameArray={[
-                            'Sicilian Defence',
-                          ]}
+                          ComponentArray={[global.g.getSicilianDefence().PGN]}
+                          NameArray={['Sicilian Defence']}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -699,12 +697,8 @@ export default class LearnToPlay extends React.Component {
                         <ExportGameComponent
                           picture={global.g.getFrenchDefencePicture()}
                           name={'French Defence'}
-                          ComponentArray={[
-                            global.g.getFrenchDefence(),
-                          ]}
-                          NameArray={[
-                            'French Defence',
-                          ]}
+                          ComponentArray={[global.g.getFrenchDefence()]}
+                          NameArray={['French Defence']}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -712,27 +706,19 @@ export default class LearnToPlay extends React.Component {
                         <ExportGameComponent
                           picture={global.g.getRuyLopezPicture()}
                           name={'Ruy Lopez'}
-                          ComponentArray={[
-                            global.g.getRuyLopez(),
-                          ]}
-                          NameArray={[
-                            'Ruy Lopez',
-                          ]}
+                          ComponentArray={[global.g.getRuyLopez()]}
+                          NameArray={['Ruy Lopez']}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                     </View>
-                    <View style = {{flexDirection: 'row'}}>
+                    <View style={{flexDirection: 'row'}}>
                       <View>
                         <ExportGameComponent
                           picture={global.g.getCaroKannPicture()}
                           name={'Caro Kann'}
-                          ComponentArray={[
-                            global.g.getCaroKann(),
-                          ]}
-                          NameArray={[
-                            'Caro Kann',
-                          ]}
+                          ComponentArray={[global.g.getCaroKann()]}
+                          NameArray={['Caro Kann']}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -740,12 +726,8 @@ export default class LearnToPlay extends React.Component {
                         <ExportGameComponent
                           picture={global.g.getItalianGamePicture()}
                           name={'Italian Game'}
-                          ComponentArray={[
-                            global.g.getItalianGame(),
-                          ]}
-                          NameArray={[
-                            'Italian Game',
-                          ]}
+                          ComponentArray={[global.g.getItalianGame()]}
+                          NameArray={['Italian Game']}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -753,27 +735,19 @@ export default class LearnToPlay extends React.Component {
                         <ExportGameComponent
                           picture={global.g.getScandinavianDefencePicture()}
                           name={'Scandinavian Defence'}
-                          ComponentArray={[
-                            global.g.getScandinavianDefence(),
-                          ]}
-                          NameArray={[
-                            'Scandinavian Defence',
-                          ]}
+                          ComponentArray={[global.g.getScandinavianDefence()]}
+                          NameArray={['Scandinavian Defence']}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                     </View>
-                    <View style = {{flexDirection: 'row'}}>
+                    <View style={{flexDirection: 'row'}}>
                       <View>
                         <ExportGameComponent
                           picture={global.g.getPircDefencePicture()}
                           name={'Pirc Defence'}
-                          ComponentArray={[
-                            global.g.getPircDefence(),
-                          ]}
-                          NameArray={[
-                            'Pirc Defence',
-                          ]}
+                          ComponentArray={[global.g.getPircDefence()]}
+                          NameArray={['Pirc Defence']}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -781,12 +755,8 @@ export default class LearnToPlay extends React.Component {
                         <ExportGameComponent
                           picture={global.g.getScotchGamePicture()}
                           name={'Scotch Game'}
-                          ComponentArray={[
-                            global.g.getScotchGame(),
-                          ]}
-                          NameArray={[
-                            'Scotch Game',
-                          ]}
+                          ComponentArray={[global.g.getScotchGame()]}
+                          NameArray={['Scotch Game']}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -794,27 +764,19 @@ export default class LearnToPlay extends React.Component {
                         <ExportGameComponent
                           picture={global.g.getViennaGamePicture()}
                           name={'Vienna Game'}
-                          ComponentArray={[
-                            global.g.getViennaGame(),
-                          ]}
-                          NameArray={[
-                            'Vienna Game',
-                          ]}
+                          ComponentArray={[global.g.getViennaGame()]}
+                          NameArray={['Vienna Game']}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                     </View>
-                    <View style = {{flexDirection: 'row'}}>
+                    <View style={{flexDirection: 'row'}}>
                       <View>
                         <ExportGameComponent
                           picture={global.g.getQueensGambitPicture()}
-                          name={'Queen\'s Gambit'}
-                          ComponentArray={[
-                            global.g.getQueensGambit(),
-                          ]}
-                          NameArray={[
-                            'Queen\'s Gambit',
-                          ]}
+                          name={"Queen's Gambit"}
+                          ComponentArray={[global.g.getQueensGambit()]}
+                          NameArray={["Queen's Gambit"]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -822,12 +784,8 @@ export default class LearnToPlay extends React.Component {
                         <ExportGameComponent
                           picture={global.g.getSlavDefencePicture()}
                           name={'Slav Defence'}
-                          ComponentArray={[
-                            global.g.getSlavDefence(),
-                          ]}
-                          NameArray={[
-                            'Slav Defence',
-                          ]}
+                          ComponentArray={[global.g.getSlavDefence()]}
+                          NameArray={['Slav Defence']}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -835,27 +793,19 @@ export default class LearnToPlay extends React.Component {
                         <ExportGameComponent
                           picture={global.g.getIndianDefencePicture()}
                           name={'Indian Defence'}
-                          ComponentArray={[
-                            global.g.getIndianDefence(),
-                          ]}
-                          NameArray={[
-                            'Indian Defence',
-                          ]}
+                          ComponentArray={[global.g.getIndianDefence()]}
+                          NameArray={['Indian Defence']}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                     </View>
-                    <View style = {{flexDirection: 'row'}}>
+                    <View style={{flexDirection: 'row'}}>
                       <View>
                         <ExportGameComponent
                           picture={global.g.getDutchDefencePicture()}
                           name={'Dutch Defence'}
-                          ComponentArray={[
-                            global.g.getDutchDefence(),
-                          ]}
-                          NameArray={[
-                            'Dutch Defence',
-                          ]}
+                          ComponentArray={[global.g.getDutchDefence()]}
+                          NameArray={['Dutch Defence']}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -863,12 +813,8 @@ export default class LearnToPlay extends React.Component {
                         <ExportGameComponent
                           picture={global.g.getEnglishOpeningPicture()}
                           name={'English Opening'}
-                          ComponentArray={[
-                            global.g.getEnglishOpening(),
-                          ]}
-                          NameArray={[
-                            'English Opening',
-                          ]}
+                          ComponentArray={[global.g.getEnglishOpening()]}
+                          NameArray={['English Opening']}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -876,27 +822,19 @@ export default class LearnToPlay extends React.Component {
                         <ExportGameComponent
                           picture={global.g.getCatalanOpeningPicture()}
                           name={'Catalan Opening'}
-                          ComponentArray={[
-                            global.g.getCatalanOpening(),
-                          ]}
-                          NameArray={[
-                            'Catalan Opening',
-                          ]}
+                          ComponentArray={[global.g.getCatalanOpening()]}
+                          NameArray={['Catalan Opening']}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                     </View>
-                    <View style = {{flexDirection: 'row'}}>
+                    <View style={{flexDirection: 'row'}}>
                       <View>
                         <ExportGameComponent
                           picture={global.g.getRetiOpeningPicture()}
                           name={'Réti Opening'}
-                          ComponentArray={[
-                            global.g.getRetiOpening(),
-                          ]}
-                          NameArray={[
-                            'Réti Opening',
-                          ]}
+                          ComponentArray={[global.g.getRetiOpening()]}
+                          NameArray={['Réti Opening']}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -1102,9 +1040,7 @@ export default class LearnToPlay extends React.Component {
                         },
                       ],
                     }}>
-                    <Text style={{color: global.g.getTextColor()}}>
-                      Tab Five
-                    </Text>
+                    <Text style={{color: global.g.getTextColor()}}>s</Text>
                   </Animated.View>
                 </ScrollView>
               </View>

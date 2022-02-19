@@ -118,7 +118,6 @@ export default class LogicalChessboard extends React.Component {
   };
 
   updateGamePGN = (PGN, position) => {
-    this.game.clear();
     this.setState({position: this.game.position, fen: this.game.fen()});
     this.game.load_pgn(PGN);
     this.setState({position: this.game.position, fen: this.game.fen()});
