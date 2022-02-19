@@ -695,9 +695,156 @@ export default class LearnToPlay extends React.Component {
                       <View>
                         <ExportGameComponent
                           picture={global.g.getSicilianDefencePicture()}
-                          name={'Sicilian Defense'}
-                          ComponentArray={[global.g.getSicilianDefence()]}
-                          NameArray={['Sicilian Defense']}
+                          name={'Sicilian Defence'}
+                          ComponentArray={[global.g.getSicilianDefence().PGN]}
+                          NameArray={['Sicilian Defence']}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getFrenchDefencePicture()}
+                          name={'French Defence'}
+                          ComponentArray={[global.g.getFrenchDefence().PGN]}
+                          NameArray={['French Defence']}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getRuyLopezPicture()}
+                          name={'Ruy Lopez'}
+                          ComponentArray={[global.g.getRuyLopez().PGN]}
+                          NameArray={['Ruy Lopez']}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getCaroKannPicture()}
+                          name={'Caro Kann'}
+                          ComponentArray={[global.g.getCaroKann().PGN]}
+                          NameArray={['Caro Kann']}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getItalianGamePicture()}
+                          name={'Italian Game'}
+                          ComponentArray={[global.g.getItalianGame().PGN]}
+                          NameArray={['Italian Game']}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getScandinavianDefencePicture()}
+                          name={'Scandinavian Defence'}
+                          ComponentArray={[
+                            global.g.getScandinavianDefence().PGN,
+                          ]}
+                          NameArray={['Scandinavian Defence']}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getPircDefencePicture()}
+                          name={'Pirc Defence'}
+                          ComponentArray={[global.g.getPircDefence().PGN]}
+                          NameArray={['Pirc Defence']}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getScotchGamePicture()}
+                          name={'Scotch Game'}
+                          ComponentArray={[global.g.getScotchGame().PGN]}
+                          NameArray={['Scotch Game']}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getViennaGamePicture()}
+                          name={'Vienna Game'}
+                          ComponentArray={[global.g.getViennaGame().PGN]}
+                          NameArray={['Vienna Game']}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getQueensGambitPicture()}
+                          name={"Queen's Gambit"}
+                          ComponentArray={[global.g.getQueensGambit().PGN]}
+                          NameArray={["Queen's Gambit"]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getSlavDefencePicture()}
+                          name={'Slav Defence'}
+                          ComponentArray={[global.g.getSlavDefence().PGN]}
+                          NameArray={['Slav Defence']}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getIndianDefencePicture()}
+                          name={'Indian Defence'}
+                          ComponentArray={[global.g.getIndianDefence().PGN]}
+                          NameArray={['Indian Defence']}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getDutchDefencePicture()}
+                          name={'Dutch Defence'}
+                          ComponentArray={[global.g.getDutchDefence().PGN]}
+                          NameArray={['Dutch Defence']}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getEnglishOpeningPicture()}
+                          name={'English Opening'}
+                          ComponentArray={[global.g.getEnglishOpening().PGN]}
+                          NameArray={['English Opening']}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getCatalanOpeningPicture()}
+                          name={'Catalan Opening'}
+                          ComponentArray={[global.g.getCatalanOpening().PGN]}
+                          NameArray={['Catalan Opening']}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getRetiOpeningPicture()}
+                          name={'Réti Opening'}
+                          ComponentArray={[global.g.getRetiOpening().PGN]}
+                          NameArray={['Réti Opening']}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -736,12 +883,12 @@ export default class LearnToPlay extends React.Component {
                             'Magnus Carlsen is a Norwegian chess player who won the World Chess Championship in 2013, becoming the second youngest world chess champion at age 22.'
                           }
                           ComponentArray={[
-                            global.g.getWorldChessChampionship2021Game6(),
-                            global.g.getKramnik_vs_Carlsen2008(),
-                            global.g.getCarlsen_vs_Aronian2015(),
-                            global.g.getCarlsen_vs_Nakamura2011(),
-                            global.g.getCarlsen_vs_Gelfand2013(),
-                            global.g.getCarlsen_vs_Kasparov2004(),
+                            global.g.getWorldChessChampionship2021Game6().PGN,
+                            global.g.getKramnik_vs_Carlsen2008().PGN,
+                            global.g.getCarlsen_vs_Aronian2015().PGN,
+                            global.g.getCarlsen_vs_Nakamura2011().PGN,
+                            global.g.getCarlsen_vs_Gelfand2013().PGN,
+                            global.g.getCarlsen_vs_Kasparov2004().PGN,
                           ]}
                           NameArray={[
                             'World Chess Championship 2021 Game6',
@@ -763,13 +910,13 @@ export default class LearnToPlay extends React.Component {
                           }
                           elo={2851}
                           ComponentArray={[
-                            global.g.getMagerramov_vs_Kasparov1977(),
-                            global.g.getKasparov_vs_Palatnik1978(),
-                            global.g.getKasparov_vs_Topalov1999(),
-                            global.g.getKasparov_vs_Karpov1987(),
-                            global.g.getKasparov_vs_Anand1996(),
-                            global.g.getKasparov_vs_Deep_Blue1996(),
-                            global.g.getKarpov_vs_Kasparov1985(),
+                            global.g.getMagerramov_vs_Kasparov1977().PGN,
+                            global.g.getKasparov_vs_Palatnik1978().PGN,
+                            global.g.getKasparov_vs_Topalov1999().PGN,
+                            global.g.getKasparov_vs_Karpov1987().PGN,
+                            global.g.getKasparov_vs_Anand1996().PGN,
+                            global.g.getKasparov_vs_Deep_Blue1996().PGN,
+                            global.g.getKarpov_vs_Kasparov1985().PGN,
                           ]}
                           NameArray={[
                             'Magerramov vs Kasparov',
@@ -792,11 +939,11 @@ export default class LearnToPlay extends React.Component {
                           }
                           elo={2816}
                           ComponentArray={[
-                            global.g.getGelfand_vs_Nakamura2010(),
-                            global.g.getStripunsky_vs_Nakamura1998(),
-                            global.g.getNakamura_vs_Oluto_Adu1999(),
-                            global.g.getNakamura_vs_Novikov2002(),
-                            global.g.getCrafty_AI_vs_Nakamura2007(),
+                            global.g.getGelfand_vs_Nakamura2010().PGN,
+                            global.g.getStripunsky_vs_Nakamura1998().PGN,
+                            global.g.getNakamura_vs_Oluto_Adu1999().PGN,
+                            global.g.getNakamura_vs_Novikov2002().PGN,
+                            global.g.getCrafty_AI_vs_Nakamura2007().PGN,
                           ]}
                           NameArray={[
                             'Gelfand vs Nakamura 2010',
@@ -819,9 +966,9 @@ export default class LearnToPlay extends React.Component {
                             'Anish Kumar Giri is a Russian-born Dutch Grandmaster and former chess prodigy. He achieved the grandmaster title at the age of 14 years and 7 months.'
                           }
                           ComponentArray={[
-                            global.g.getGiri_vs_Hao2021(),
-                            global.g.getLiren_vs_Giri2017(),
-                            global.g.getGiri_vs_Harikrishna2019(),
+                            global.g.getGiri_vs_Hao2021().PGN,
+                            global.g.getLiren_vs_Giri2017().PGN,
+                            global.g.getGiri_vs_Harikrishna2019().PGN,
                           ]}
                           NameArray={[
                             'Giri vs Hao 2021',
@@ -840,11 +987,11 @@ export default class LearnToPlay extends React.Component {
                             'Anatoly Karpov is a Russian chess grandmaster who was the official world champion from 1975 to 1985 before being defeated by Garry Kasparov.'
                           }
                           ComponentArray={[
-                            global.g.getAnand_vs_Karpov1998(),
-                            global.g.getGelfand_vs_Karpov1995(),
-                            global.g.getKarpov_vs_Kasparov1988(),
-                            global.g.getKarpov_vs_Korchnoi1981(),
-                            global.g.getKarpov_vs_Spassky1979(),
+                            global.g.getAnand_vs_Karpov1998().PGN,
+                            global.g.getGelfand_vs_Karpov1995().PGN,
+                            global.g.getKarpov_vs_Kasparov1988().PGN,
+                            global.g.getKarpov_vs_Korchnoi1981().PGN,
+                            global.g.getKarpov_vs_Spassky1979().PGN,
                           ]}
                           NameArray={[
                             'Anand vs Karpov 1998',
@@ -865,11 +1012,11 @@ export default class LearnToPlay extends React.Component {
                             'A chess prodigy, Bobby Fischer went on to become the greatest chess player of all time, bagging the World Championship title along with several others.'
                           }
                           ComponentArray={[
-                            global.g.getByrne_vs_Fischer1963(),
-                            global.g.getFischer_vs_Myagmarsuren1967(),
-                            global.g.getFischer_vs_Spassky1972(),
-                            global.g.getFischer_vs_Tal1961(),
-                            global.g.getSpassky_vs_Fischer1972(),
+                            global.g.getByrne_vs_Fischer1963().PGN,
+                            global.g.getFischer_vs_Myagmarsuren1967().PGN,
+                            global.g.getFischer_vs_Spassky1972().PGN,
+                            global.g.getFischer_vs_Tal1961().PGN,
+                            global.g.getSpassky_vs_Fischer1972().PGN,
                           ]}
                           NameArray={[
                             'Byrne vs Fischer 1963',

@@ -2,6 +2,63 @@ import React, {useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styles from '../../styles';
 
+export const StandardGameComponent = props => {
+  const [isClosed, setIsClosed] = useState(false);
+
+  return (
+    <View style={styles.GameComponentShadow}>
+      <Image style={styles.GameComponentImage} source={props.picture} />
+      <Text
+        style={{
+          fontSize: 38,
+          color: global.g.getTextColor(),
+          fontWeight: 'bold',
+          textAlign: 'center',
+        }}>
+        {props.name}
+      </Text>
+      {props.elo != null ? (
+        <View style={styles.GameInnerComponentShadow}>
+          <Text
+            style={{
+              fontSize: 25,
+              color: global.g.getTextColor(),
+              textAlign: 'center',
+              margin: 10,
+            }}>
+            {' '}
+            Highest Elo: {props.elo}
+          </Text>
+        </View>
+      ) : null}
+      {props.bio != null ? (
+        <View style={styles.GameInnerComponentShadow}>
+          <Text
+            style={{
+              fontSize: 25,
+              color: global.g.getTextColor(),
+              textAlign: 'center',
+              margin: 10,
+            }}>
+            {' '}
+            {props.bio}
+          </Text>
+        </View>
+      ) : null}
+      {console.log('Render Component:')}
+      {console.log(props.NameArray)}
+      {renderElements(
+        props.ComponentArray,
+        props.NameArray,
+        props.updateGamePGNMethode,
+        isClosed,
+      ).map(type => (
+        <View>{type}</View>
+      ))}
+    </View>
+  );
+};
+
 export const ExportGameComponent = props => {
   const [isClosed, setIsClosed] = useState(true);
 
