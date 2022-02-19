@@ -22,21 +22,20 @@ export const FENBox = props => {
 };
 
 export const PGNViewer = props => {
-  if (props.SAN != null) {
-    var SAN = props.SAN;
-    var updatePGNPosition = props.updatePGNPosition;
-    var moveIndex = props.moveIndex;
+  var SAN = props.SAN;
+  var updatePGNPosition = props.updatePGNPosition;
+  var moveIndex = props.moveIndex;
 
-    var backgroundColorPointer ='red'
+  if (props.SAN != null) {
+    var backgroundColorPointer = 'red';
 
     var i = 0;
-
 
     if (SAN.length > 1) {
       return (
         <View style={styles.GameSANComponentShadow}>
           {SANComponent(updatePGNPosition, SAN, moveIndex).map(type => (
-            <View >{type}</View>
+            <View>{type}</View>
           ))}
         </View>
       );
@@ -46,8 +45,8 @@ export const PGNViewer = props => {
 };
 
 const SANComponent = (updatePGNPosition, SAN, position) => {
-
-
+  console.log('San:');
+  console.log(SAN);
   const [currentBackgroundColor, setCurrentBackgroundColor] =
     useState('#e0e0e0');
 
@@ -71,7 +70,7 @@ const SANComponent = (updatePGNPosition, SAN, position) => {
 
     sanMapArray.push(
       <TouchableOpacity
-        style={{margin: 5, marginLeft:2, marginRight:2,}}
+        style={{margin: 5, marginLeft: 2, marginRight: 2}}
         onPress={() => {
           updatePGNPosition(positionValue);
         }}>
@@ -92,3 +91,108 @@ const SANComponent = (updatePGNPosition, SAN, position) => {
   });
   return sanMapArray;
 };
+
+/*
+export const TablePGNViewer = props => {
+  console.log('Table View:');
+  var SAN = props.SAN;
+  var updatePGNPosition = props.updatePGNPosition;
+
+  console.log(SAN);
+  console.log(updatePGNPosition);
+
+  //Create Table Array
+  var tableData = new Array();
+
+  for (var i = 0; i <= SAN.length - 1; i += 2) {
+    tableData.push([SAN[i], SAN[i + 1]]);
+  }
+
+  console.log('Table Array:');
+
+  console.log({tableData});
+
+  var x = 0;
+  var updatePosition = Array();
+  if (tableData != null) {
+    tabledata.forEach(element => {
+      updatePosition.push(x);
+      x++;
+      updatePosition.push(x);
+      x++;
+    });
+  }
+
+  const PgnComponents = Array();
+  var columnWidth = global.g.getWindowWidth() / 5;
+
+  for (var i = 0; i < tableData.length; i++) {
+    PgnComponents.push(
+      <View
+        style={{
+          width: columnWidth,
+          flexDirection: 'row',
+          alignItems: 'center',
+          alignContent: 'center',
+          borderColor: 'black',
+        }}>
+        <View
+          style={{
+            fontSize: 30,
+            padding: 5,
+            backgroundColor: '#c4cbcf',
+            width: columnWidth / 4,
+            alignItems: 'center',
+          }}>
+          <Text>{i + 1}.</Text>
+        </View>
+        <TouchableOpacity
+          onPress={() => {
+            console.log('Clicked: ' + (i + 1) * 2 - 1);
+            updatePGNPosition(updatePosition[(i + 1) * 2 - 1]);
+          }}>
+          <View
+            style={{
+              fontSize: 30,
+              padding: 5,
+              width: columnWidth / 4,
+              alignItems: 'center',
+              backgroundColor: '#f0d9b5',
+            }}>
+            <Text>{tableData[i][0]}</Text>
+          </View>
+        </TouchableOpacity>
+        {tableData[i][1] != null ? (
+          <TouchableOpacity
+            onPress={() => {
+              console.log('Clicked: ' + (i + 1) * 2 - 1);
+              updatePGNPosition(updatePosition[(i + 1) * 2]);
+            }}>
+            <View
+              style={{
+                fontSize: 30,
+                padding: 5,
+                width: columnWidth / 4,
+                alignItems: 'center',
+                backgroundColor: '#f0d9b5',
+              }}>
+              <Text>{tableData[i][1]}</Text>
+            </View>
+          </TouchableOpacity>
+        ) : null}
+      </View>,
+    );
+  }
+  if (PgnComponents.length > 1) {
+    console.log('RETURN PGN TABLE COMPONENT');
+    return (
+      <View style={styles.GameTableComponentShadow}>
+        {PgnComponents.map(element => (
+          <View>{element}</View>
+        ))}
+      </View>
+    );
+  }
+  return null;
+};
+*/
