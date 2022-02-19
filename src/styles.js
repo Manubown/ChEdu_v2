@@ -148,8 +148,6 @@ const styles = StyleSheet.create({
 
   GameTableComponentShadow: {
     margin: 10,
-    padding: 10,
-    width: windowWidth / 4,
     height: windowWidth / 4,
     flexDirection: 'column',
     overflow: 'scroll',

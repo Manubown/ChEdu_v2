@@ -27,6 +27,8 @@ export default class LogicalChessboard extends React.Component {
 
     SAN: '',
 
+    orientation: 'white',
+
     moveIndex: 0,
     gameOver: false,
     autoplay: false,
@@ -111,6 +113,21 @@ export default class LogicalChessboard extends React.Component {
     this.updatePGNComment();
   };
 
+  firstMove = () => {
+    var currentPosition = this.game.history().length;
+    for (let i = currentPosition; i > 0; i--) {
+      this.undoMovePGN();
+    }
+  };
+
+  boardRotateBoard = () => {
+    if (this.state.orientation == 'white') {
+      this.setState({orientation: 'black'});
+    } else {
+      this.setState({orientation: 'white'});
+    }
+  };
+
   autoplayM = () => {
     if (this.state.autoplay == true) {
       setTimeout(this.autoplayM, 3000);
@@ -118,6 +135,9 @@ export default class LogicalChessboard extends React.Component {
   };
 
   updateGamePGN = (PGN, position) => {
+    console.log('RESET FUTURE MOVES');
+    //this.setState({futurMoves: []});
+    this.game.clear();
     this.setState({position: this.game.position, fen: this.game.fen()});
     this.game.load_pgn(PGN);
     this.setState({position: this.game.position, fen: this.game.fen()});
@@ -154,7 +174,7 @@ export default class LogicalChessboard extends React.Component {
         for (let i = currentPosition; i > position; i--) {
           this.undoMovePGN();
         }
-      } else {
+      } else if (position > currentPosition) {
         for (let i = currentPosition; i < position; i++) {
           this.nextMovePGN();
         }
@@ -466,8 +486,15 @@ export default class LogicalChessboard extends React.Component {
   };
 
   render() {
-    const {fen, dropSquareStyle, squareStyles, pgnComment, moveIndex, SAN} =
-      this.state;
+    const {
+      fen,
+      dropSquareStyle,
+      squareStyles,
+      pgnComment,
+      moveIndex,
+      SAN,
+      orientation,
+    } = this.state;
 
     console.log('############################');
     console.log();
@@ -479,6 +506,7 @@ export default class LogicalChessboard extends React.Component {
       pgnComment: pgnComment,
       moveIndex: moveIndex,
       SAN: SAN,
+      orientation: orientation,
       onMouseOverSquare: this.onMouseOverSquare,
       onMouseOutSquare: this.onMouseOutSquare,
       onDrop: this.onDrop,
@@ -496,6 +524,7 @@ export default class LogicalChessboard extends React.Component {
       undoMovePGN: this.undoMovePGN,
       nextMovePGN: this.nextMovePGN,
       updatePGNPosition: this.updatePGNPosition,
+      boardRotateBoard: this.boardRotateBoard,
       gameOver: this.state.gameOver,
     });
   }

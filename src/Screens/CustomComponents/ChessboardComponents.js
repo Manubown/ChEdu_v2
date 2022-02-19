@@ -92,7 +92,6 @@ const SANComponent = (updatePGNPosition, SAN, position) => {
   return sanMapArray;
 };
 
-/*
 export const TablePGNViewer = props => {
   console.log('Table View:');
   var SAN = props.SAN;
@@ -115,7 +114,7 @@ export const TablePGNViewer = props => {
   var x = 0;
   var updatePosition = Array();
   if (tableData != null) {
-    tabledata.forEach(element => {
+    tableData.forEach(element => {
       updatePosition.push(x);
       x++;
       updatePosition.push(x);
@@ -127,12 +126,22 @@ export const TablePGNViewer = props => {
   var columnWidth = global.g.getWindowWidth() / 5;
 
   for (var i = 0; i < tableData.length; i++) {
+    console.log('PGN TABLE VIEW RENDERER');
+    var positionValue = 1;
+    var digit1 = (i + 1) * 2 - 1;
+    var digit2 = (i + 1) * 2;
+    console.log(digit1);
+    console.log(digit2);
+    var x = updatePosition[digit1];
+    var y = updatePosition[digit2];
+    console.log(x);
+    console.log(y);
+
     PgnComponents.push(
       <View
         style={{
-          width: columnWidth,
           flexDirection: 'row',
-          alignItems: 'center',
+          alignItems: 'flex-end',
           alignContent: 'center',
           borderColor: 'black',
         }}>
@@ -148,8 +157,9 @@ export const TablePGNViewer = props => {
         </View>
         <TouchableOpacity
           onPress={() => {
-            console.log('Clicked: ' + (i + 1) * 2 - 1);
-            updatePGNPosition(updatePosition[(i + 1) * 2 - 1]);
+            console.log('Clicked: ');
+            console.log(positionValue);
+            updatePGNPosition(positionValue[x]);
           }}>
           <View
             style={{
@@ -165,8 +175,9 @@ export const TablePGNViewer = props => {
         {tableData[i][1] != null ? (
           <TouchableOpacity
             onPress={() => {
-              console.log('Clicked: ' + (i + 1) * 2 - 1);
-              updatePGNPosition(updatePosition[(i + 1) * 2]);
+              console.log('Clicked: ');
+              console.log(positionValue + 1);
+              updatePGNPosition(positionValue[y]);
             }}>
             <View
               style={{
@@ -182,6 +193,7 @@ export const TablePGNViewer = props => {
         ) : null}
       </View>,
     );
+    positionValue += 2;
   }
   if (PgnComponents.length > 1) {
     console.log('RETURN PGN TABLE COMPONENT');
@@ -195,4 +207,3 @@ export const TablePGNViewer = props => {
   }
   return null;
 };
-*/
