@@ -27,7 +27,7 @@ export const ExportGameComponent = props => {
               margin: 10,
             }}>
             {' '}
-            Elo: {props.elo}
+            Highest Elo: {props.elo}
           </Text>
         </View>
       ) : null}
@@ -80,7 +80,7 @@ const renderElements = (pgnArray, nameArray, updateGamePGN, isClosed) => {
   console.log('Is CLosed:' + isClosed);
 
   //Set how many games get Showen
-  var ShowGames = 3;
+  var ShowGames = 0;
 
   var finalArray = [];
 
