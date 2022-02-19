@@ -932,7 +932,7 @@ export default class LearnToPlay extends React.Component {
                           name={'Magnus Carlsen'}
                           elo={2882}
                           bio={
-                            'Bester spieler einfach der hammer!11!1! Immer schon toll gewesen!'
+                            'Magnus Carlsen is a Norwegian chess player who won the World Chess Championship in 2013, becoming the second youngest world chess champion at age 22.'
                           }
                           ComponentArray={[
                             global.g.getWorldChessChampionship2021Game6(),
@@ -958,7 +958,7 @@ export default class LearnToPlay extends React.Component {
                           picture={global.g.getGarryKasparov()}
                           name={'Garry Kasparov'}
                           bio={
-                            'Bester spieler einfach der hammer!11!1! Immer schon toll gewesen!'
+                            'Garry Kasparov is a Russian chess Grandmaster considered by many to be the greatest chess player of all time. The former World Chess Champion is also a well-known writer and political activist.'
                           }
                           elo={2851}
                           ComponentArray={[
@@ -987,7 +987,7 @@ export default class LearnToPlay extends React.Component {
                           picture={global.g.getHikaruNakamura()}
                           name={'Hikaru Nakamura'}
                           bio={
-                            'Bester spieler einfach der hammer!11!1! Immer schon toll gewesen!'
+                            'Hikaru Nakamura, the youngest American Grandmaster of 2003, is a chess player, content creator, and live streaming on twitch.'
                           }
                           elo={2816}
                           ComponentArray={[
@@ -1015,7 +1015,7 @@ export default class LearnToPlay extends React.Component {
                           name={'Anish Giri'}
                           elo={2798}
                           bio={
-                            'Bester spieler einfach der hammer!11!1! Immer schon toll gewesen!'
+                            'Anish Kumar Giri is a Russian-born Dutch Grandmaster and former chess prodigy. He achieved the grandmaster title at the age of 14 years and 7 months.'
                           }
                           ComponentArray={[
                             global.g.getGiri_vs_Hao2021(),
@@ -1036,7 +1036,7 @@ export default class LearnToPlay extends React.Component {
                           name={'Antoly Karpov'}
                           elo={2780}
                           bio={
-                            'Bester spieler einfach der hammer!11!1! Immer schon toll gewesen!'
+                            'Anatoly Karpov is a Russian chess grandmaster who was the official world champion from 1975 to 1985 before being defeated by Garry Kasparov.'
                           }
                           ComponentArray={[
                             global.g.getAnand_vs_Karpov1998(),
@@ -1061,7 +1061,7 @@ export default class LearnToPlay extends React.Component {
                           name={'Bobby Fischer'}
                           elo={2785}
                           bio={
-                            'Bester spieler einfach der hammer!11!1! Immer schon toll gewesen!'
+                            'A chess prodigy, Bobby Fischer went on to become the greatest chess player of all time, bagging the World Championship title along with several others.'
                           }
                           ComponentArray={[
                             global.g.getByrne_vs_Fischer1963(),
