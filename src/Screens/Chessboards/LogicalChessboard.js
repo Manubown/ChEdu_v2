@@ -118,10 +118,11 @@ export default class LogicalChessboard extends React.Component {
   };
 
   updateGamePGN = (PGN, position) => {
+    this.game.clear();
+    this.setState({position: this.game.position, fen: this.game.fen()});
     this.game.load_pgn(PGN);
     this.setState({position: this.game.position, fen: this.game.fen()});
     window.scrollTo(0, 0);
-
 
     var currentPosition = this.game.history().length;
     for (let i = currentPosition; i > 0; i--) {
@@ -135,12 +136,16 @@ export default class LogicalChessboard extends React.Component {
   };
 
   generatePGNArray = () => {
-    var pgnArray = Array();
+    this.setState({SAN: []});
+    var pgnArray = new Array();
+    console.log(pgnArray);
 
     this.state.futurMoves.forEach(element => {
       pgnArray.push(element.san);
     });
     this.setState({SAN: pgnArray});
+    console.log('PGN ARRAY:');
+    console.log(pgnArray);
   };
 
   updatePGNPosition = position => {
@@ -419,7 +424,6 @@ export default class LogicalChessboard extends React.Component {
 
   // central squares get diff dropSquareStyles
   onDragOverSquare = square => {
-
     this.setState({
       dropSquareStyle:
         square === 'e4' || square === 'd4' || square === 'e5' || square === 'd5'
@@ -439,7 +443,6 @@ export default class LogicalChessboard extends React.Component {
       to: square,
       promotion: 'q', // always promote to a queen for example simplicity
     });
-
 
     // illegal move
     if (move === null) return;
@@ -466,7 +469,6 @@ export default class LogicalChessboard extends React.Component {
   render() {
     const {fen, dropSquareStyle, squareStyles, pgnComment, moveIndex, SAN} =
       this.state;
-
 
     console.log('############################');
     console.log();

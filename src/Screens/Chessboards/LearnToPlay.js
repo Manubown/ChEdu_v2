@@ -23,6 +23,7 @@ import {
   CommentBox,
   FENBox,
   PGNViewer,
+  //TablePGNViewer,
 } from '../CustomComponents/ChessboardComponents';
 import {ExportGameComponent} from '../CustomComponents/GameComponents';
 
@@ -315,6 +316,12 @@ export default class LearnToPlay extends React.Component {
                       SAN={SAN}
                       updatePGNPosition={updatePGNPosition}
                     />
+                    {/*
+                      <TablePGNViewer
+                      SAN={SAN}
+                      updatePGNPosition={updatePGNPosition}
+                    />
+                      */}
                   </View>
                 </View>
 
