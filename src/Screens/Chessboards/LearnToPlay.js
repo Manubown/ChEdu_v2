@@ -9,7 +9,7 @@ import {
   Image,
 } from 'react-native';
 
-import {RightCircleTwoTone, LeftCircleTwoTone} from '@ant-design/icons';
+import {RightCircleTwoTone, LeftCircleTwoTone, ForwardFilled, BackwardFilled, UpCircleFilled} from '@ant-design/icons';
 
 /*styles*/
 import styles from '../../styles';
@@ -23,7 +23,6 @@ import {
   CommentBox,
   FENBox,
   PGNViewer,
-  //TablePGNViewer,
 } from '../CustomComponents/ChessboardComponents';
 import {ExportGameComponent} from '../CustomComponents/GameComponents';
 
@@ -278,16 +277,20 @@ export default class LearnToPlay extends React.Component {
                           global.g.getWindowHeight() / 30),
                     }}>
                     <View style={{flexDirection: 'row'}}>
-                      <TouchableOpacity
-                        onPress={() => {
-                          //RequestLogin(this.state.Username, this.state.Password);
-                          this.props.navigation.navigate('Home');
-                        }}>
-                        {global.g.getOnlyLogo()}
-                      </TouchableOpacity>
                       <View style={styles.ChessBoardButtonShadow}>
                         <TouchableOpacity
-                          style={{width: 100}}
+                          style={{width: 50}}
+                        >
+                          <BackwardFilled 
+                            style={{color: '#185a5c',fontSize: 30}}
+                            onPress={() => {
+                              //TODO: set on first move
+                              nextMovePGN();
+                            }}
+                          />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          style={{width: 50}}
                           onPress={() => {
                             //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
                             undoMovePGN();
@@ -298,7 +301,7 @@ export default class LearnToPlay extends React.Component {
                           />
                         </TouchableOpacity>
                         <TouchableOpacity
-                          style={{width: 100}}
+                          style={{width: 50}}
                           onPress={() => {
                             //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
                             //nextMove();
@@ -309,19 +312,42 @@ export default class LearnToPlay extends React.Component {
                             style={{fontSize: 30}}
                           />
                         </TouchableOpacity>
+                        <TouchableOpacity
+                          style={{width: 50}}
+                          onPress={() => {
+                            //TODO: set on last move
+                            nextMovePGN();
+                          }}
+                        >
+                          <ForwardFilled 
+                            style={{color: '#185a5c', fontSize: 30}}
+                          />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          style={{width: 50}}
+                          onPress={() => {
+                            //TODO: routate Board
+                            nextMovePGN();
+                          }}
+                        >
+                          <UpCircleFilled 
+                            style={{color: '#185a5c', fontSize: 30}}
+                          />
+                        </TouchableOpacity>
                       </View>
+                      <TouchableOpacity
+                        onPress={() => {
+                          //RequestLogin(this.state.Username, this.state.Password);
+                          this.props.navigation.navigate('Home');
+                        }}>
+                        {global.g.getOnlyLogo()}
+                      </TouchableOpacity>
                     </View>
 
                     <PGNViewer
                       SAN={SAN}
                       updatePGNPosition={updatePGNPosition}
                     />
-                    {/*
-                      <TablePGNViewer
-                      SAN={SAN}
-                      updatePGNPosition={updatePGNPosition}
-                    />
-                      */}
                   </View>
                 </View>
 
@@ -659,12 +685,217 @@ export default class LearnToPlay extends React.Component {
                       <View>
                         <ExportGameComponent
                           picture={global.g.getSicilianDefencePicture()}
-                          name={'Sicilian Defense'}
+                          name={'Sicilian Defence'}
                           ComponentArray={[
                             global.g.getSicilianDefence(),
                           ]}
                           NameArray={[
-                            'Sicilian Defense',
+                            'Sicilian Defence',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getFrenchDefencePicture()}
+                          name={'French Defence'}
+                          ComponentArray={[
+                            global.g.getFrenchDefence(),
+                          ]}
+                          NameArray={[
+                            'French Defence',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getRuyLopezPicture()}
+                          name={'Ruy Lopez'}
+                          ComponentArray={[
+                            global.g.getRuyLopez(),
+                          ]}
+                          NameArray={[
+                            'Ruy Lopez',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
+                    <View style = {{flexDirection: 'row'}}>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getCaroKannPicture()}
+                          name={'Caro Kann'}
+                          ComponentArray={[
+                            global.g.getCaroKann(),
+                          ]}
+                          NameArray={[
+                            'Caro Kann',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getItalianGamePicture()}
+                          name={'Italian Game'}
+                          ComponentArray={[
+                            global.g.getItalianGame(),
+                          ]}
+                          NameArray={[
+                            'Italian Game',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getScandinavianDefencePicture()}
+                          name={'Scandinavian Defence'}
+                          ComponentArray={[
+                            global.g.getScandinavianDefence(),
+                          ]}
+                          NameArray={[
+                            'Scandinavian Defence',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
+                    <View style = {{flexDirection: 'row'}}>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getPircDefencePicture()}
+                          name={'Pirc Defence'}
+                          ComponentArray={[
+                            global.g.getPircDefence(),
+                          ]}
+                          NameArray={[
+                            'Pirc Defence',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getScotchGamePicture()}
+                          name={'Scotch Game'}
+                          ComponentArray={[
+                            global.g.getScotchGame(),
+                          ]}
+                          NameArray={[
+                            'Scotch Game',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getViennaGamePicture()}
+                          name={'Vienna Game'}
+                          ComponentArray={[
+                            global.g.getViennaGame(),
+                          ]}
+                          NameArray={[
+                            'Vienna Game',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
+                    <View style = {{flexDirection: 'row'}}>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getQueensGambitPicture()}
+                          name={'Queen\'s Gambit'}
+                          ComponentArray={[
+                            global.g.getQueensGambit(),
+                          ]}
+                          NameArray={[
+                            'Queen\'s Gambit',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getSlavDefencePicture()}
+                          name={'Slav Defence'}
+                          ComponentArray={[
+                            global.g.getSlavDefence(),
+                          ]}
+                          NameArray={[
+                            'Slav Defence',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getIndianDefencePicture()}
+                          name={'Indian Defence'}
+                          ComponentArray={[
+                            global.g.getIndianDefence(),
+                          ]}
+                          NameArray={[
+                            'Indian Defence',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
+                    <View style = {{flexDirection: 'row'}}>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getDutchDefencePicture()}
+                          name={'Dutch Defence'}
+                          ComponentArray={[
+                            global.g.getDutchDefence(),
+                          ]}
+                          NameArray={[
+                            'Dutch Defence',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getEnglishOpeningPicture()}
+                          name={'English Opening'}
+                          ComponentArray={[
+                            global.g.getEnglishOpening(),
+                          ]}
+                          NameArray={[
+                            'English Opening',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getCatalanOpeningPicture()}
+                          name={'Catalan Opening'}
+                          ComponentArray={[
+                            global.g.getCatalanOpening(),
+                          ]}
+                          NameArray={[
+                            'Catalan Opening',
+                          ]}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
+                    <View style = {{flexDirection: 'row'}}>
+                      <View>
+                        <ExportGameComponent
+                          picture={global.g.getRetiOpeningPicture()}
+                          name={'Réti Opening'}
+                          ComponentArray={[
+                            global.g.getRetiOpening(),
+                          ]}
+                          NameArray={[
+                            'Réti Opening',
                           ]}
                           updateGamePGNMethode={updateGamePGN}
                         />

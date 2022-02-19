@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
   ChessBoardButtonShadow: {
     overflow: 'hidden',
     margin: (windowWidth / 10) * 0.1,
-    padding: 20,
+    padding: 10,
     flexDirection: 'row',
     borderRadius: 20,
     alignItems: 'center',

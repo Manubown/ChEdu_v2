@@ -46,6 +46,21 @@ import garryKasparov from './Pictures/Garry_Kasparov.png';
 import hikaruNakamura from './Pictures/Hikaru_Nakamura.jpg';
 import magnusCarlsen from './Pictures/Magnus_Carlsen.jpg';
 import sicilianDefencePicture from './Pictures/SicilianDefence.png';
+import frenchDefencePicture from './Pictures/FrenchDefence.png';
+import ruyLopezPicture from './Pictures/RuyLopez.png';
+import caroKannPicture from './Pictures/SicilianDefence.png';
+import italianGamePicture from './Pictures/ItalianGame.png';
+import scandinavianDefencePicture from './Pictures/ScandinavianDefence.png';
+import pircDefencePicture from './Pictures/PircDefence.png';
+import scotchGamePicture from './Pictures/ScotchGame.png';
+import viennaGamePicture from './Pictures/ViennaGame.png';
+import queensGambitPicture from './Pictures/QueensGambit.png';
+import slavDefencePicture from './Pictures/SlavDefence.png';
+import indianDefencePicture from './Pictures/IndianDefence.png';
+import dutchDefencePicture from './Pictures/DutchDefence.png';
+import englishOpeningPicture from './Pictures/EnglishOpening.png';
+import catalanOpeningPicture from './Pictures/CatalanOpening.png';
+import retiOpeningPicture from './Pictures/RetiOpening.png';
 
 /*styles*/
 import styles from './styles';
@@ -327,7 +342,67 @@ class Global extends React.Component {
 
   getSicilianDefencePicture = () => {
     return this.pictures.sicilianDefencePicture;
-  }
+  };
+
+  getFrenchDefencePicture = () => {
+    return this.pictures.frenchDefencePicture;
+  };
+
+  getRuyLopezPicture = () => {
+    return this.pictures.ruyLopezPicture;
+  };
+
+  getCaroKannPicture = () => {
+    return this.pictures.caroKannPicture;
+  };
+
+  getItalianGamePicture = () => {
+    return this.pictures.italianGamePicture;
+  };
+
+  getScandinavianDefencePicture = () => {
+    return this.pictures.scandinavianDefencePicture;
+  };
+  
+  getPircDefencePicture = () => {
+    return this.pictures.pircDefencePicture;
+  };
+
+  getScotchGamePicture = () => {
+    return this.pictures.scotchGamePicture;
+  };
+
+  getViennaGamePicture = () => {
+    return this.pictures.viennaGamePicture;
+  };
+
+  getQueensGambitPicture = () => {
+    return this.pictures.queensGambitPicture;
+  };
+
+  getSlavDefencePicture = () => {
+    return this.pictures.slavDefencePicture;
+  };
+
+  getIndianDefencePicture = () => {
+    return this.pictures.indianDefencePicture;
+  };
+
+  getDutchDefencePicture = () => {
+    return this.pictures.dutchDefencePicture;
+  };
+
+  getEnglishOpeningPicture = () => {
+    return this.pictures.englishOpeningPicture;
+  };
+
+  getCatalanOpeningPicture = () => {
+    return this.pictures.catalanOpeningPicture;
+  };
+
+  getRetiOpeningPicture = () => {
+    return this.pictures.retiOpeningPicture;
+  };
   //#endregion Pictures end
 
   //#region Openings
@@ -351,12 +426,12 @@ class Global extends React.Component {
     return this.pgn.Openings.ItalianGame;
   };
 
-  getScandinavianDefense = () => {
-    return this.pgn.Openings.ScandinavianDefense;
+  getScandinavianDefence = () => {
+    return this.pgn.Openings.ScandinavianDefence;
   };
 
   getPircDefence = () => {
-    return this.pgn.Openings.PircDefense;
+    return this.pgn.Openings.PircDefence;
   };
 
   getScotchGame = () => {
@@ -371,16 +446,16 @@ class Global extends React.Component {
     return this.pgn.Openings.QueensGambit;
   };
 
-  getSlavDefense = () => {
-    return this.pgn.Openings.SlavDefense;
+  getSlavDefence = () => {
+    return this.pgn.Openings.SlavDefence;
   };
 
-  getIndianDefense = () => {
-    return this.pgn.Openings.IndianDefense;
+  getIndianDefence = () => {
+    return this.pgn.Openings.IndianDefence;
   };
 
-  getDutchDefense = () => {
-    return this.pgn.Openings.DutchDefense;
+  getDutchDefence = () => {
+    return this.pgn.Openings.DutchDefence;
   };
 
   getEnglishOpening = () => {
@@ -759,7 +834,22 @@ var g = new Global(
     garryKasparov: garryKasparov,
     hikaruNakamura: hikaruNakamura,
     magnusCarlsen: magnusCarlsen,
-    sicilianDefencePicture: sicilianDefencePicture
+    sicilianDefencePicture: sicilianDefencePicture,
+    frenchDefencePicture: frenchDefencePicture,
+    ruyLopezPicture: ruyLopezPicture,
+    caroKannPicture: caroKannPicture,
+    italianGamePicture: italianGamePicture,
+    scandinavianDefencePicture: scandinavianDefencePicture,
+    pircDefencePicture: pircDefencePicture,
+    scotchGamePicture: scotchGamePicture,
+    viennaGamePicture: viennaGamePicture,
+    queensGambitPicture: queensGambitPicture,
+    slavDefencePicture: slavDefencePicture,
+    indianDefencePicture: indianDefencePicture,
+    dutchDefencePicture: dutchDefencePicture,
+    englishOpeningPicture: englishOpeningPicture,
+    catalanOpeningPicture: catalanOpeningPicture,
+    retiOpeningPicture: retiOpeningPicture,
   },
   {
     Openings: {
@@ -777,10 +867,10 @@ var g = new Global(
       ItalianGame:
         'r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3',
 
-      ScandinavianDefense:
+      ScandinavianDefence:
         'rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2',
 
-      PircDefense:
+      PircDefence:
         'rnbqkb1r/ppp1pp1p/3p1np1/8/3PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 0 4',
 
       ScotchGame:
@@ -792,13 +882,13 @@ var g = new Global(
       QueensGambit:
         'rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2',
 
-      SlavDefense:
+      SlavDefence:
         'rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3',
 
-      IndianDefense:
+      IndianDefence:
         'rnbqkb1r/pppppppp/5n2/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2',
 
-      DutchDefense:
+      DutchDefence:
         'rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2',
 
       EnglishOpening:
@@ -819,52 +909,52 @@ var g = new Global(
   {
     Openings: {
       SicilianDefence:
-        '1. e4 c5',
+        '1. e4 {The moves 1.e4 c5 constitute the Sicilian Defence, a counter-attacking opening in which players typically attack on opposite sides of the board. The Sicilian was introduced to the chess world in 1594 by Polerio, and emerged into the mainstream in the early 20th century as a somewhat tame variation. With the discovery of new attacking ideas, it became Black\'s most feared weapon by the 1950s and is, pound for pound, the most exhaustively analysed of all openings.} c5 {Black\'s move 1...c5 seeks to create a half-open file, controls the important d4 square, and allows the black queen to venture out if desired, while the c-pawn itself is safe from attack, unlike the e-pawn after 1.e4 e5.}',
 
       FrenchDefense:
-        '1. e4 e6',
+        '1. e4 {After 1. e4 Black plays e6 signifying his intent to play the French Defense. The move 1... e6 bolsters support for the coming advance d7-d5, providing Black with a good stake in the center and allowing Black to decline recapturing with the queen after the plausible continuation exd5.} e6 {In most lines White will follow up with 2. d4, with Black\'s only serious reply to this being 2... d5 (over 154 times more popular than 2... c5 in master play.)}',
 
       RuyLopez:
-        '1. e4 e5 2. Nf3 Nc6 3. Bb5',
+        '1. e4 {The essential move marking the Ruy Lopez, or Spanish Game. "It is the double king\'s pawn opening most commonly used in master play; it has been adopted by almost all players at some point in their careers and many play it from both the White and Black sides."} e5 2. Nf3 Nc6 3. Bb5 {White threatens to trade off Black\'s c6-knight, leaving the e5-pawn undefended. It\'s not an immediate threat, because after 4. Bxc6 dxc6 5. Nxe5, Black can win the pawn back with 5... Qd4 or 5... Qg5. Black can respond in a variety of ways. The most common move is the Morphy Defence 3... a6. This forces White to make a decision about the Bishop - retreat or exchange. Many other moves are available, some neglecting completely the protection of the knight and the pawn and continuing development.}',
 
       CaroKann: 
-        '1. e4 c6',
+        '1. e4 {In choosing the Caro-Kann, Black gives up the centre in exchange for easier development. In contrast to the French, the queen\'s bishop is not blocked, but the c6-square is no longer available for the knight. Black often aims to let White\'s pawns overextend, or develop a poor structure, and take advantage in the endgame.} c6 {White\'s natural move is now 2. d4 as nothing prevents them from building a strong center. Bobby Fischer sometimes played 2. Nf3 followed by 3. Nc3.}',
 
       ItalianGame:
-        '1. e4 e5 2. Nf3 Nc6 3. Bc4',
+        '1. e4 e5 2. Nf3 Nc6 3. Bc4 {And so we reach the Italian Game. White takes aim at Black\'s weak f7 pawn. Now there are a number of options for Black. This opening is more reserved than the Ruy Lopez.}',
 
-      ScandinavianDefense:
-        '1. e4 d5',
+      ScandinavianDefence:
+        '1. e4 {When White opens with 1. e4, the pawn on e4 is immediately a big asset, a bulwark in the centre of the board interfering with Black\'s plans.} d5 {Black can either manoeuvre around it, for example by putting a pawn of his own on e5, or he can go after that e4 pawn. There is one move that virtually guarantees the disappearance of White\'s pawn: 1... d5, the Centre Counter or Scandinavian Defence.}',
 
-      PircDefense:
-        '1. e4 d6 2. d4 Nf6 3. Nc3 g6',
+      PircDefence:
+        '1. e4 {In this opening, Black does not immediately fight for the center, but prefers to prepare counter-play while White advances White\'s pawns.} d6 {If White dislikes this opening, White can play 2. Nf3 in order to transpose into the Sicilian Defence (2...c5) or into the Philidor Defence (2...e5).} 2. d4 {If White agrees to play this defence, White has no reason not to build its pawn center with 2. d4.} Nf6 3. Nc3 g6',
 
       ScotchGame:
-        '1. e4 e5 2. Nf3 Nc6 3. d4',
+        '1. e4 e5 2. Nf3 Nc6 3. d4 {This aggressive move practically forces Black to play 3...exd4 which releases central tension very early. This should lead to a very open game with a lot of space for both players. A few tries have been made with 3...d6 but this move is considered inferior because of 4.dxe5 dxe5 5.Qxd8+ Kxd8 6.Bc4. 3...Nxd4 is playable: 4.Nxd4 exd4 5.Qxd4 and some good players believe that black nearly equalizes in this line. Also seen after 3...Nxd4 is 4. Nxe5, after which black will have to move the knight.}',
 
       ViennaGame:
-        '1. e4 e5 2. Nc3',
+        '1. e4 e5 {White\'s wish is to advance the f-pawn two squares to remove Black\'s powerful e5 pawn and strike at the heart of his position.} 2. Nc3 {Now it is possible to play f4 on the second move, for the King\'s Gambit, but when no Black piece has yet declared its intentions is there not a degree of hit-and-hope about such a move? If you have the patience to let Black build his bridge before you blow it up: welcome to the Vienna Game, a poison-tipped opening from the nineteenth century. If you should find yourself up against the Vienna as Black, keep your nerve. The harder White tries to checkmate you, the less time he has to develop naturally and control territory; consequently, if you survive the opening your hand is a little freer than in the Ruy Lopez.}',
 
       QueensGambit:
-        '1. d4 d5 2. c4',
+        '1. d4 d5 2. c4 {2. c4 is the Queen\'s Gambit. White immediately responds to Black\'s attempt to gain a foothold in the center by striking out with their c-pawn. Though this pawn is not defended and Black can capture it with ... dxc4, doing so will remove Black\'s d-pawn from the center and give White more opportunities for central control. Therefore, Black often chooses to decline the gambit, which he can do in several ways.}',
 
-      SlavDefense:
-        '1. d4 d5 2. c4 c6',
+      SlavDefence:
+        '1. d4 {Originally considered a less-orthodox defence in the Queen\'s Gambit, this opening has stood as an entire opening system in its own right for decades.} d5 2. c4 c6 {The idea behind this defence is straightforward: instead of locking in the light squared bishop on c8, why not support the center with the c-pawn instead? Black tends to be more active in this variation than the QGD.}',
 
-      IndianDefense:
-        '1. d4 Nf6',
+      IndianDefence:
+        '1. d4 Nf6 {Black\'s 1...Nf6 in response to 1.d4 is characteristic of the various "Indian" defences. Unlike 1...d5, which fights for the center in traditional fashion by occupying it with pawns, Indian systems reflect the hyper modern approach to opening theory. In such openings, Black often allows White to construct a classical pawn center, but then attempts to attack it with pieces and undermine it with timely pawn advances. By delaying the movement of his own central pawns, Black retains a certain degree of flexibility at the cost of ceding the center to White. It should be noted that while 1...Nf6 often leads to Indian systems, transpositions back into other openings such as the Queen\'s Gambit are not uncommon. As in any opening, both players should remain aware of these possibilities. The main continuation for White is 2.c4. In fact, there are many playable moves at this point, but most of them either transpose back into a typical 2.c4 position or into other more or less orthodox 1.d4 openings. Some lines such as 2.Bg5 may lead to strange positions, but even these may transpose or become similar to other mainstream 1.d4 openings. Hopefully this gives some background as to why 2.c4 is the main move discussed in opening books. Feel free to play 2.Nf3, 2.Nc3, or even 2.c3, 2.Bf4, or 2.Bg5. Even so, learning the main positions (and, more importantly, the strategies) arising from 2.c4 will not be time wasted. Nd2 is a weak move by White where Black can play the Budapest trap (Nd2 - e5, dxe5 - Ng4, h3 - Ne3)}',
 
-      DutchDefense:
-        '1. d4 f5',
+      DutchDefence:
+        '1. d4 f5 {The Dutch Defence has a character all of its own. Black usually plays either for a Classical setup with 2... e6 3... d6 4... Be7, a Stonewall with 2... e6 3... d5 4... c6, or for the Leningrad with 2... g6 3... Bg7 4... d6. White usually plays 2. c4 here, though many moves are playable. One interesting, though often considered dubious, option is to play the Staunton Gambit with 2. e4 leading to more tactical positions rather than the positional grinds and straightforward attacks the Dutch usually provides. This grabs the e4-square without copying moves.}',
 
       EnglishOpening:
-        '1. c4',
+        '1. c4 {This opening is very flexible. It can transpose into many others.}',
 
       CatalanOpening:
-        '1. d4 Nf6 2. c4 e6 3. g3',
+        '1. d4 {This is the Catalan Opening, named after the Spanish region of Catalonia, when Grandmaster Savielly Tartakower was asked, at the Barcelona tournament of 1929, to invent an opening system in honor of the region\'s chess history. } Nf6 2. c4 e6 3. g3 {Usually, the game continues 3...d5 4.Nf3. The Catalan then has two main branches, the Open Variation and the Closed Variation. In the Open Variation, Black takes the pawn on c4. This gives White strong pressure on Black\'s queenside, thanks to the fianchettoed bishop on g2. In the Closed Variation, Black retains his strong-point on d5, attempting to block out the bishop on g2, but stays passive.}',
 
       RetiOpening:
-        '1. c4 d5 2. Nf3',
+        '1. c4 {The Réti Opening is a hypermodern chess opening.} d5 2. Nf3 { White plans to bring the d5-pawn under attack from the flank, or entice it to advance to d4 and undermine it later. White will couple this plan with a Kingside fianchetto (g3 and Bg2) to create pressure on the light squares in the center.}',
     },
     MiddleGame: {},
     EndGame: {},
