@@ -90,8 +90,8 @@ export default class LogicalChessboard extends React.Component {
       position: this.game.position,
       fen: this.game.fen(),
     });
-    this.state.futurMoves.unshift(undoMove);
-    console.log(this.state.futureMoves);
+    this.setState({futurMoves: this.state.futurMoves.unshift()});
+    console.log(this.state.futureMoves.length);
 
     this.setState({moveIndex: this.game.history().length});
 

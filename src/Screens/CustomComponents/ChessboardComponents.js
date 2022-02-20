@@ -111,31 +111,22 @@ export const TablePGNViewer = props => {
 
   console.log({tableData});
 
-  var x = 0;
   var updatePosition = Array();
   if (tableData != null) {
     tableData.forEach(element => {
-      updatePosition.push(x);
-      x++;
-      updatePosition.push(x);
-      x++;
+      updatePosition.push(element[0], element[1]);
     });
   }
 
   const PgnComponents = Array();
   var columnWidth = global.g.getWindowWidth() / 5;
-
+  var positionPointer = 1;
   for (var i = 0; i < tableData.length; i++) {
     console.log('PGN TABLE VIEW RENDERER');
-    var positionValue = 1;
-    var digit1 = (i + 1) * 2 - 1;
-    var digit2 = (i + 1) * 2;
-    console.log(digit1);
-    console.log(digit2);
-    var x = updatePosition[digit1];
-    var y = updatePosition[digit2];
-    console.log(x);
-    console.log(y);
+    var x = positionPointer;
+    positionPointer += 1;
+    var y = positionPointer;
+    positionPointer += 1;
 
     PgnComponents.push(
       <View
@@ -158,8 +149,8 @@ export const TablePGNViewer = props => {
         <TouchableOpacity
           onPress={() => {
             console.log('Clicked: ');
-            console.log(positionValue);
-            updatePGNPosition(positionValue[x]);
+            console.log(updatePosition[x]);
+            updatePGNPosition(x);
           }}>
           <View
             style={{
@@ -176,8 +167,8 @@ export const TablePGNViewer = props => {
           <TouchableOpacity
             onPress={() => {
               console.log('Clicked: ');
-              console.log(positionValue + 1);
-              updatePGNPosition(positionValue[y]);
+              console.log(y);
+              updatePGNPosition(y);
             }}>
             <View
               style={{
@@ -193,7 +184,6 @@ export const TablePGNViewer = props => {
         ) : null}
       </View>,
     );
-    positionValue += 2;
   }
   if (PgnComponents.length > 1) {
     console.log('RETURN PGN TABLE COMPONENT');
