@@ -31,7 +31,10 @@ import {
   PGNViewer,
   TablePGNViewer,
 } from '../CustomComponents/ChessboardComponents';
-import {ExportGameComponent} from '../CustomComponents/GameComponents';
+import {
+  ExportGameComponent,
+  StandardGameComponent,
+} from '../CustomComponents/GameComponents';
 
 export default class LearnToPlay extends React.Component {
   state = {
@@ -693,158 +696,160 @@ export default class LearnToPlay extends React.Component {
                     }>
                     <View style={{flexDirection: 'row'}}>
                       <View>
-                        <ExportGameComponent
+                        <StandardGameComponent
                           picture={global.g.getSicilianDefencePicture()}
                           name={'Sicilian Defence'}
                           ComponentArray={[global.g.getSicilianDefence().PGN]}
-                          NameArray={['Sicilian Defence']}
+                          position={[global.g.getSicilianDefence().position]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                       <View>
-                        <ExportGameComponent
+                        <StandardGameComponent
                           picture={global.g.getFrenchDefencePicture()}
                           name={'French Defence'}
                           ComponentArray={[global.g.getFrenchDefence().PGN]}
-                          NameArray={['French Defence']}
+                          position={[global.g.getFrenchDefence().position]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                       <View>
-                        <ExportGameComponent
+                        <StandardGameComponent
                           picture={global.g.getRuyLopezPicture()}
                           name={'Ruy Lopez'}
                           ComponentArray={[global.g.getRuyLopez().PGN]}
-                          NameArray={['Ruy Lopez']}
+                          position={[global.g.getRuyLopez().position]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                     </View>
                     <View style={{flexDirection: 'row'}}>
                       <View>
-                        <ExportGameComponent
+                        <StandardGameComponent
                           picture={global.g.getCaroKannPicture()}
                           name={'Caro Kann'}
                           ComponentArray={[global.g.getCaroKann().PGN]}
-                          NameArray={['Caro Kann']}
+                          position={[global.g.getCaroKann().position]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                       <View>
-                        <ExportGameComponent
+                        <StandardGameComponent
                           picture={global.g.getItalianGamePicture()}
                           name={'Italian Game'}
                           ComponentArray={[global.g.getItalianGame().PGN]}
-                          NameArray={['Italian Game']}
+                          position={[global.g.getItalianGame().position]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                       <View>
-                        <ExportGameComponent
+                        <StandardGameComponent
                           picture={global.g.getScandinavianDefencePicture()}
                           name={'Scandinavian Defence'}
                           ComponentArray={[
                             global.g.getScandinavianDefence().PGN,
                           ]}
-                          NameArray={['Scandinavian Defence']}
+                          position={[
+                            global.g.getScandinavianDefence().position,
+                          ]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                     </View>
                     <View style={{flexDirection: 'row'}}>
                       <View>
-                        <ExportGameComponent
+                        <StandardGameComponent
                           picture={global.g.getPircDefencePicture()}
                           name={'Pirc Defence'}
                           ComponentArray={[global.g.getPircDefence().PGN]}
-                          NameArray={['Pirc Defence']}
+                          position={[global.g.getPircDefence().position]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                       <View>
-                        <ExportGameComponent
+                        <StandardGameComponent
                           picture={global.g.getScotchGamePicture()}
                           name={'Scotch Game'}
                           ComponentArray={[global.g.getScotchGame().PGN]}
-                          NameArray={['Scotch Game']}
+                          position={[global.g.getScotchGame().position]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                       <View>
-                        <ExportGameComponent
+                        <StandardGameComponent
                           picture={global.g.getViennaGamePicture()}
                           name={'Vienna Game'}
                           ComponentArray={[global.g.getViennaGame().PGN]}
-                          NameArray={['Vienna Game']}
+                          position={[global.g.getViennaGame().position]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                     </View>
                     <View style={{flexDirection: 'row'}}>
                       <View>
-                        <ExportGameComponent
+                        <StandardGameComponent
                           picture={global.g.getQueensGambitPicture()}
                           name={"Queen's Gambit"}
                           ComponentArray={[global.g.getQueensGambit().PGN]}
-                          NameArray={["Queen's Gambit"]}
+                          position={[global.g.getQueensGambit().position]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                       <View>
-                        <ExportGameComponent
+                        <StandardGameComponent
                           picture={global.g.getSlavDefencePicture()}
                           name={'Slav Defence'}
                           ComponentArray={[global.g.getSlavDefence().PGN]}
-                          NameArray={['Slav Defence']}
+                          position={[global.g.getSlavDefence().position]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                       <View>
-                        <ExportGameComponent
+                        <StandardGameComponent
                           picture={global.g.getIndianDefencePicture()}
                           name={'Indian Defence'}
                           ComponentArray={[global.g.getIndianDefence().PGN]}
-                          NameArray={['Indian Defence']}
+                          position={[global.g.getIndianDefence().position]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                     </View>
                     <View style={{flexDirection: 'row'}}>
                       <View>
-                        <ExportGameComponent
+                        <StandardGameComponent
                           picture={global.g.getDutchDefencePicture()}
                           name={'Dutch Defence'}
                           ComponentArray={[global.g.getDutchDefence().PGN]}
-                          NameArray={['Dutch Defence']}
+                          position={[global.g.getDutchDefence().position]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                       <View>
-                        <ExportGameComponent
+                        <StandardGameComponent
                           picture={global.g.getEnglishOpeningPicture()}
                           name={'English Opening'}
                           ComponentArray={[global.g.getEnglishOpening().PGN]}
-                          NameArray={['English Opening']}
+                          position={[global.g.getEnglishOpening().position]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                       <View>
-                        <ExportGameComponent
+                        <StandardGameComponent
                           picture={global.g.getCatalanOpeningPicture()}
                           name={'Catalan Opening'}
                           ComponentArray={[global.g.getCatalanOpening().PGN]}
-                          NameArray={['Catalan Opening']}
+                          position={[global.g.getCatalanOpening().position]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                     </View>
                     <View style={{flexDirection: 'row'}}>
                       <View>
-                        <ExportGameComponent
+                        <StandardGameComponent
                           picture={global.g.getRetiOpeningPicture()}
                           name={'Réti Opening'}
                           ComponentArray={[global.g.getRetiOpening().PGN]}
-                          NameArray={['Réti Opening']}
+                          position={[global.g.getRetiOpening().position]}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>

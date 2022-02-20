@@ -91,6 +91,7 @@ export default class LogicalChessboard extends React.Component {
       fen: this.game.fen(),
     });
     this.state.futurMoves.unshift(undoMove);
+    console.log(this.state.futureMoves);
 
     this.setState({moveIndex: this.game.history().length});
 
@@ -135,15 +136,23 @@ export default class LogicalChessboard extends React.Component {
   };
 
   updateGamePGN = (PGN, position) => {
-    console.log('RESET FUTURE MOVES');
-    //this.setState({futurMoves: []});
-    this.game.clear();
+    console.log('RESET FUTUR MOVES');
+    this.setState({futurMoves: []});
     this.setState({position: this.game.position, fen: this.game.fen()});
-    this.game.load_pgn(PGN);
+
+    console.log('TRY PGN SUCCESSFUL LOADED!');
+    var success = this.game.load_pgn(PGN);
     this.setState({position: this.game.position, fen: this.game.fen()});
     window.scrollTo(0, 0);
 
+    if (success) {
+      console.log('PGN SUCCESSFUL LOADED!');
+    } else {
+      console.log(success);
+    }
+
     var currentPosition = this.game.history().length;
+
     for (let i = currentPosition; i > 0; i--) {
       this.undoMovePGN();
     }
@@ -155,7 +164,6 @@ export default class LogicalChessboard extends React.Component {
   };
 
   generatePGNArray = () => {
-    this.setState({SAN: []});
     var pgnArray = new Array();
     console.log(pgnArray);
 

@@ -185,6 +185,23 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
 
+  GameImageComponentShadow: {
+    width: windowWidth / 8,
+    height: windowWidth / 8,
+    borderRadius: 10,
+    marginTop: -(windowWidth / 16),
+
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+
+    shadowOpacity: 1,
+    shadowRadius: 5,
+    elevation: 4,
+  },
+
   GameInnerComponentShadow: {
     margin: 10,
     padding: 10,
