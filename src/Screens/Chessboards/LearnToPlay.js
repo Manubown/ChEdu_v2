@@ -447,7 +447,7 @@ export default class LearnToPlay extends React.Component {
                               margin: 10,
                               textAlign: 'center',
                             }}>
-                            Chess basics
+                            Chess Basics
                           </Text>
                         </View>
                       </ImageBackground>
