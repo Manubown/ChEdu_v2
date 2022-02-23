@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.d6ae94b7.js",
+    "main.js": "/static/js/main.67f3f1a1.js",
     "static/media/Hikaru_Nakamura.jpg": "/static/media/Hikaru_Nakamura.2f956f9010a8a718bed2.jpg",
     "static/media/expert_modus.jpg": "/static/media/expert_modus.70090dd1cb9df2a01ae7.jpg",
     "static/media/ChEdu_Video.png": "/static/media/ChEdu_Video.a3d61c4c39f6f37e019b.png",
@@ -9,6 +9,21 @@
     "static/media/two_kings.jpg": "/static/media/two_kings.bb72348b4e5f1be7603e.jpg",
     "static/media/textbook_checkmates.jpg": "/static/media/textbook_checkmates.08decc4f4720dd4a0e45.jpg",
     "static/media/Antoly_Karpov.jpg": "/static/media/Antoly_Karpov.f49da44ebc51e7d92a2b.jpg",
+    "static/media/RuyLopez.png": "/static/media/RuyLopez.c02f49b94f3005d6f553.png",
+    "static/media/PircDefence.png": "/static/media/PircDefence.aa38d5560cf808753f37.png",
+    "static/media/ItalianGame.png": "/static/media/ItalianGame.53027edd6ed395650560.png",
+    "static/media/ScotchGame.png": "/static/media/ScotchGame.f2c19940cd6f43859c28.png",
+    "static/media/SlavDefence.png": "/static/media/SlavDefence.56025d8207defd7e8342.png",
+    "static/media/CatalanOpening.png": "/static/media/CatalanOpening.e252eb3dd030d72762ce.png",
+    "static/media/RetiOpening.png": "/static/media/RetiOpening.ff8325a7eb9a42d3404d.png",
+    "static/media/ViennaGame.png": "/static/media/ViennaGame.cc3dcd3769540244f648.png",
+    "static/media/QueensGambit.png": "/static/media/QueensGambit.ca35f116ea44eacd6d81.png",
+    "static/media/SicilianDefence.png": "/static/media/SicilianDefence.e9018a8a2e14ff14afe2.png",
+    "static/media/FrenchDefence.png": "/static/media/FrenchDefence.dd48e476c2c101c94294.png",
+    "static/media/DutchDefence.png": "/static/media/DutchDefence.bd078841102271100993.png",
+    "static/media/EnglishOpening.png": "/static/media/EnglishOpening.26178d8346ad1bd46418.png",
+    "static/media/ScandinavianDefence.png": "/static/media/ScandinavianDefence.581549dfc63016f45596.png",
+    "static/media/IndianDefence.png": "/static/media/IndianDefence.e0ce15c7d334ed1779e1.png",
     "static/media/Anish_giri.jpg": "/static/media/Anish_giri.951a26b476279d77663d.jpg",
     "static/media/Magnus_Carlsen.jpg": "/static/media/Magnus_Carlsen.0ac9b40c64664a2b69e1.jpg",
     "static/media/Alireza_Firouzja .jpg": "/static/media/Alireza_Firouzja .b07e11c8e662bfc65454.jpg",
@@ -35,9 +50,9 @@
     "static/media/white_separator.png": "/static/media/white_separator.324d0381651817550bf4.png",
     "static/media/right-arrow.jpeg": "/static/media/right-arrow.59cc0b60cd4651f1b406.jpeg",
     "index.html": "/index.html",
-    "main.d6ae94b7.js.map": "/static/js/main.d6ae94b7.js.map"
+    "main.67f3f1a1.js.map": "/static/js/main.67f3f1a1.js.map"
   },
   "entrypoints": [
-    "static/js/main.d6ae94b7.js"
+    "static/js/main.67f3f1a1.js"
   ]
 }
