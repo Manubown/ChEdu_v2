@@ -186,10 +186,9 @@ const styles = StyleSheet.create({
   },
 
   GameImageComponentShadow: {
-    width: windowWidth / 8,
-    height: windowWidth / 8,
+    width: windowWidth / 10,
+    height: windowWidth / 10,
     borderRadius: 10,
-    marginTop: -(windowWidth / 16),
 
     shadowColor: '#000',
     shadowOffset: {
@@ -242,7 +241,6 @@ const styles = StyleSheet.create({
     marginTop: windowWidth / 16,
     margin: windowWidth / 30,
     padding: 10,
-    width: windowWidth / 4,
     borderRadius: 20,
     alignItems: 'center',
     shadowColor: '#000',
