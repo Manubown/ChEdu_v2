@@ -95,7 +95,7 @@ export default class Register extends React.Component {
                     style={{
                       textAlign: 'center',
                       color: 'white',
-                      fontSize: 20,
+                      fontSize: global.g.getWindowWidth() / 70,
                       padding: 20,
                     }}>
                     Email Send!

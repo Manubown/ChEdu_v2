@@ -80,7 +80,7 @@ const SANComponent = (updatePGNPosition, SAN, position) => {
             padding: 3,
             borderRadius: 20,
           }}>
-          <Text style={{fontSize: 15}}>
+          <Text style={{fontSize: global.g.getWindowWidth() / 80}}>
             {text}
             {sanElement}
           </Text>
@@ -96,6 +96,7 @@ export const TablePGNViewer = props => {
   console.log('Table View:');
   var SAN = props.SAN;
   var updatePGNPosition = props.updatePGNPosition;
+  var currentPosition = props.currentPosition;
 
   console.log(SAN);
   console.log(updatePGNPosition);
@@ -111,31 +112,21 @@ export const TablePGNViewer = props => {
 
   console.log({tableData});
 
-  var x = 0;
   var updatePosition = Array();
   if (tableData != null) {
-    tableData.forEach(element => {
-      updatePosition.push(x);
-      x++;
-      updatePosition.push(x);
-      x++;
-    });
+    for (var i = 1; i < tableData.length; i++) {
+      updatePosition.push(i);
+    }
   }
 
   const PgnComponents = Array();
   var columnWidth = global.g.getWindowWidth() / 5;
-
-  for (var i = 0; i < tableData.length; i++) {
+  var positionPointer = 1;
+  tableData.forEach(tableDataElement => {
     console.log('PGN TABLE VIEW RENDERER');
-    var positionValue = 1;
-    var digit1 = (i + 1) * 2 - 1;
-    var digit2 = (i + 1) * 2;
-    console.log(digit1);
-    console.log(digit2);
-    var x = updatePosition[digit1];
-    var y = updatePosition[digit2];
-    console.log(x);
-    console.log(y);
+
+    var pointer1 = positionPointer;
+    var pointer2 = positionPointer + 1;
 
     PgnComponents.push(
       <View
@@ -147,56 +138,68 @@ export const TablePGNViewer = props => {
         }}>
         <View
           style={{
-            fontSize: 30,
+            fontSize: global.g.getWindowWidth() / 60,
             padding: 5,
             backgroundColor: '#c4cbcf',
             width: columnWidth / 4,
             alignItems: 'center',
           }}>
-          <Text>{i + 1}.</Text>
+          <Text>{(positionPointer + 1) / 2}.</Text>
         </View>
         <TouchableOpacity
           onPress={() => {
             console.log('Clicked: ');
-            console.log(positionValue);
-            updatePGNPosition(positionValue[x]);
+            console.log(pointer1);
+            updatePGNPosition(pointer1);
           }}>
           <View
             style={{
-              fontSize: 30,
+              fontSize: global.g.getWindowWidth() / 60,
               padding: 5,
               width: columnWidth / 4,
               alignItems: 'center',
               backgroundColor: '#f0d9b5',
             }}>
-            <Text>{tableData[i][0]}</Text>
+            <Text>{tableDataElement[0]}</Text>
           </View>
         </TouchableOpacity>
-        {tableData[i][1] != null ? (
+        {tableDataElement[1] != null ? (
           <TouchableOpacity
             onPress={() => {
               console.log('Clicked: ');
-              console.log(positionValue + 1);
-              updatePGNPosition(positionValue[y]);
+              console.log(pointer2);
+              updatePGNPosition(pointer2);
             }}>
             <View
               style={{
-                fontSize: 30,
+                fontSize: global.g.getWindowWidth() / 60,
                 padding: 5,
                 width: columnWidth / 4,
                 alignItems: 'center',
                 backgroundColor: '#f0d9b5',
               }}>
-              <Text>{tableData[i][1]}</Text>
+              <Text>{tableDataElement[1]}</Text>
             </View>
           </TouchableOpacity>
-        ) : null}
+        ) : (
+          <TouchableOpacity>
+            <View
+              style={{
+                fontSize: global.g.getWindowWidth() / 60,
+                padding: 5,
+                width: columnWidth / 4,
+                alignItems: 'center',
+                backgroundColor: 'white',
+              }}>
+              <Text></Text>
+            </View>
+          </TouchableOpacity>
+        )}
       </View>,
     );
-    positionValue += 2;
-  }
+    positionPointer += 2;
+  });
   if (PgnComponents.length > 1) {
-    console.log('RETURN PGN TABLE COMPONENT');
     return (
       <View style={styles.GameTableComponentShadow}>
         {PgnComponents.map(element => (

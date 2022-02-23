@@ -909,12 +909,12 @@ var g = new Global(
   {
     Openings: {
       SicilianDefence: {
-        PGN: "1. e4 {The moves 1.e4 c5 constitute the Sicilian Defence, a counter-attacking opening in which players typically attack on opposite sides of the board. The Sicilian was introduced to the chess world in 1594 by Polerio, and emerged into the mainstream in the early 20th century as a somewhat tame variation. With the discovery of new attacking ideas, it became Black's most feared weapon by the 1950s and is, pound for pound, the most exhaustively analysed of all openings.} c5 {Black's move 1...c5 seeks to create a half-open file, controls the important d4 square, and allows the black queen to venture out if desired, while the c-pawn itself is safe from attack, unlike the e-pawn after 1.e4 e5.} 1/2-1/2",
+        PGN: '1. e4 {The moves 1.e4 c5 constitute the Sicilian Defence, a counter-attacking opening in which players typically attack on opposite sides of the board. The Sicilian was introduced to the chess world in 1594 by Polerio, and emerged into the mainstream in the early 20th century as a somewhat tame variation. With the discovery of new attacking ideas, it became Blacks most feared weapon by the 1950s and is, pound for pound, the most exhaustively analysed of all openings.} c5 {Blacks move 1...c5 seeks to create a half-open file, controls the important d4 square, and allows the black queen to venture out if desired, while the c-pawn itself is safe from attack, unlike the e-pawn after 1.e4 e5.} 1/2-1/2',
         position: 1,
       },
 
       FrenchDefense: {
-        PGN: "1. e4 {After 1. e4 Black plays e6 signifying his intent to play the French Defense. The move 1... e6 bolsters support for the coming advance d7-d5, providing Black with a good stake in the center and allowing Black to decline recapturing with the queen after the plausible continuation exd5.} e6 {In most lines White will follow up with 2. d4, with Black's only serious reply to this being 2... d5 (over 154 times more popular than 2... c5 in master play.)} 1/2-1/2",
+        PGN: '1. e4 {After 1. e4 Black plays e6 signifying his intent to play the French Defense. The move 1... e6 bolsters support for the coming advance d7-d5, providing Black with a good stake in the center and allowing Black to decline recapturing with the queen after the plausible continuation exd5.} e6 {In most lines White will follow up with 2. d4, with Blacks only serious reply to this being 2... d5 (over 154 times more popular than 2... c5 in master play.)} 1/2-1/2',
         position: 1,
       },
 

@@ -6,7 +6,6 @@ import {
   Animated,
   ScrollView,
   ImageBackground,
-  Image,
 } from 'react-native';
 
 import {
@@ -24,11 +23,8 @@ import Chessboard from 'chessboardjsx';
 //import Resource from "./Resource";
 
 import LogicalChessboard from './LogicalChessboard';
-import MoreLessComponent from '../CustomComponents/MoreLessComponent';
 import {
   CommentBox,
-  FENBox,
-  PGNViewer,
   TablePGNViewer,
 } from '../CustomComponents/ChessboardComponents';
 import {
@@ -203,7 +199,6 @@ export default class LearnToPlay extends React.Component {
       xTabExpertMode,
       xTabTextbookCheckmates,
       translateX,
-      active,
       translateXTabChessBasics,
       translateXTabStrategicConcepts,
       translateXTabOpeningConcepts,
@@ -251,6 +246,8 @@ export default class LearnToPlay extends React.Component {
               updatePGNPosition,
               boardRotateBoard,
               orientation,
+              firstMove,
+              lastMove,
             }) => (
               <View style={{}}>
                 {/*////// Window row Element //////*/}
@@ -290,12 +287,16 @@ export default class LearnToPlay extends React.Component {
                     }}>
                     <View style={{flexDirection: 'row'}}>
                       <View style={styles.ChessBoardButtonShadow}>
-                        <TouchableOpacity style={{width: 50}}>
+                        <TouchableOpacity
+                          style={{width: 50}}
+                          onPress={() => {
+                            //TODO: set on first move
+                            firstMove();
+                          }}>
                           <BackwardFilled
-                            style={{color: '#185a5c', fontSize: 30}}
-                            onPress={() => {
-                              //TODO: set on first move
-                              nextMovePGN();
+                            style={{
+                              color: '#185a5c',
+                              fontSize: global.g.getWindowWidth() / 60,
                             }}
                           />
                         </TouchableOpacity>
@@ -307,7 +308,7 @@ export default class LearnToPlay extends React.Component {
                           }}>
                           <LeftCircleTwoTone
                             twoToneColor={'#185a5c'}
-                            style={{fontSize: 30}}
+                            style={{fontSize: global.g.getWindowWidth() / 60}}
                           />
                         </TouchableOpacity>
                         <TouchableOpacity
@@ -319,17 +320,20 @@ export default class LearnToPlay extends React.Component {
                           }}>
                           <RightCircleTwoTone
                             twoToneColor={'#185a5c'}
-                            style={{fontSize: 30}}
+                            style={{fontSize: global.g.getWindowWidth() / 60}}
                           />
                         </TouchableOpacity>
                         <TouchableOpacity
                           style={{width: 50}}
                           onPress={() => {
                             //TODO: set on last move
-                            nextMovePGN();
+                            lastMove();
                           }}>
                           <ForwardFilled
-                            style={{color: '#185a5c', fontSize: 30}}
+                            style={{
+                              color: '#185a5c',
+                              fontSize: global.g.getWindowWidth() / 60,
+                            }}
                           />
                         </TouchableOpacity>
                         <TouchableOpacity
@@ -339,7 +343,10 @@ export default class LearnToPlay extends React.Component {
                             boardRotateBoard();
                           }}>
                           <UpCircleFilled
-                            style={{color: '#185a5c', fontSize: 30}}
+                            style={{
+                              color: '#185a5c',
+                              fontSize: global.g.getWindowWidth() / 60,
+                            }}
                           />
                         </TouchableOpacity>
                       </View>
@@ -351,11 +358,6 @@ export default class LearnToPlay extends React.Component {
                         {global.g.getOnlyLogo()}
                       </TouchableOpacity>
                     </View>
-
-                    <PGNViewer
-                      SAN={SAN}
-                      updatePGNPosition={updatePGNPosition}
-                    />
 
                     <TablePGNViewer
                       SAN={SAN}
@@ -699,8 +701,8 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getSicilianDefencePicture()}
                           name={'Sicilian Defence'}
-                          ComponentArray={[global.g.getSicilianDefence().PGN]}
-                          position={[global.g.getSicilianDefence().position]}
+                          ComponentArray={global.g.getSicilianDefence().PGN}
+                          position={global.g.getSicilianDefence().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -708,8 +710,8 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getFrenchDefencePicture()}
                           name={'French Defence'}
-                          ComponentArray={[global.g.getFrenchDefence().PGN]}
-                          position={[global.g.getFrenchDefence().position]}
+                          ComponentArray={global.g.getFrenchDefence().PGN}
+                          position={global.g.getFrenchDefence().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -717,8 +719,8 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getRuyLopezPicture()}
                           name={'Ruy Lopez'}
-                          ComponentArray={[global.g.getRuyLopez().PGN]}
-                          position={[global.g.getRuyLopez().position]}
+                          ComponentArray={global.g.getRuyLopez().PGN}
+                          position={global.g.getRuyLopez().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -728,8 +730,8 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getCaroKannPicture()}
                           name={'Caro Kann'}
-                          ComponentArray={[global.g.getCaroKann().PGN]}
-                          position={[global.g.getCaroKann().position]}
+                          ComponentArray={global.g.getCaroKann().PGN}
+                          position={global.g.getCaroKann().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -737,8 +739,8 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getItalianGamePicture()}
                           name={'Italian Game'}
-                          ComponentArray={[global.g.getItalianGame().PGN]}
-                          position={[global.g.getItalianGame().position]}
+                          ComponentArray={global.g.getItalianGame().PGN}
+                          position={global.g.getItalianGame().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -746,12 +748,8 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getScandinavianDefencePicture()}
                           name={'Scandinavian Defence'}
-                          ComponentArray={[
-                            global.g.getScandinavianDefence().PGN,
-                          ]}
-                          position={[
-                            global.g.getScandinavianDefence().position,
-                          ]}
+                          ComponentArray={global.g.getScandinavianDefence().PGN}
+                          position={global.g.getScandinavianDefence().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -761,8 +759,8 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getPircDefencePicture()}
                           name={'Pirc Defence'}
-                          ComponentArray={[global.g.getPircDefence().PGN]}
-                          position={[global.g.getPircDefence().position]}
+                          ComponentArray={global.g.getPircDefence().PGN}
+                          position={global.g.getPircDefence().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -770,8 +768,8 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getScotchGamePicture()}
                           name={'Scotch Game'}
-                          ComponentArray={[global.g.getScotchGame().PGN]}
-                          position={[global.g.getScotchGame().position]}
+                          ComponentArray={global.g.getScotchGame().PGN}
+                          position={global.g.getScotchGame().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -779,8 +777,8 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getViennaGamePicture()}
                           name={'Vienna Game'}
-                          ComponentArray={[global.g.getViennaGame().PGN]}
-                          position={[global.g.getViennaGame().position]}
+                          ComponentArray={global.g.getViennaGame().PGN}
+                          position={global.g.getViennaGame().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -790,8 +788,8 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getQueensGambitPicture()}
                           name={"Queen's Gambit"}
-                          ComponentArray={[global.g.getQueensGambit().PGN]}
-                          position={[global.g.getQueensGambit().position]}
+                          ComponentArray={global.g.getQueensGambit().PGN}
+                          position={global.g.getQueensGambit().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -799,8 +797,8 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getSlavDefencePicture()}
                           name={'Slav Defence'}
-                          ComponentArray={[global.g.getSlavDefence().PGN]}
-                          position={[global.g.getSlavDefence().position]}
+                          ComponentArray={global.g.getSlavDefence().PGN}
+                          position={global.g.getSlavDefence().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -808,8 +806,8 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getIndianDefencePicture()}
                           name={'Indian Defence'}
-                          ComponentArray={[global.g.getIndianDefence().PGN]}
-                          position={[global.g.getIndianDefence().position]}
+                          ComponentArray={global.g.getIndianDefence().PGN}
+                          position={global.g.getIndianDefence().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -819,8 +817,8 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getDutchDefencePicture()}
                           name={'Dutch Defence'}
-                          ComponentArray={[global.g.getDutchDefence().PGN]}
-                          position={[global.g.getDutchDefence().position]}
+                          ComponentArray={global.g.getDutchDefence().PGN}
+                          position={global.g.getDutchDefence().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -828,8 +826,8 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getEnglishOpeningPicture()}
                           name={'English Opening'}
-                          ComponentArray={[global.g.getEnglishOpening().PGN]}
-                          position={[global.g.getEnglishOpening().position]}
+                          ComponentArray={global.g.getEnglishOpening().PGN}
+                          position={global.g.getEnglishOpening().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -837,8 +835,8 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getCatalanOpeningPicture()}
                           name={'Catalan Opening'}
-                          ComponentArray={[global.g.getCatalanOpening().PGN]}
-                          position={[global.g.getCatalanOpening().position]}
+                          ComponentArray={global.g.getCatalanOpening().PGN}
+                          position={global.g.getCatalanOpening().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -848,8 +846,8 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getRetiOpeningPicture()}
                           name={'Réti Opening'}
-                          ComponentArray={[global.g.getRetiOpening().PGN]}
-                          position={[global.g.getRetiOpening().position]}
+                          ComponentArray={global.g.getRetiOpening().PGN}
+                          position={global.g.getRetiOpening().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -904,6 +902,7 @@ export default class LearnToPlay extends React.Component {
                             'Carlsen vs Kasparov',
                           ]}
                           updateGamePGNMethode={updateGamePGN}
+                          currentPosition={moveIndex}
                         />
                       </View>
                       <View>
@@ -933,6 +932,7 @@ export default class LearnToPlay extends React.Component {
                             'Kasparov vs Karpov Second',
                           ]}
                           updateGamePGNMethode={updateGamePGN}
+                          currentPosition={moveIndex}
                         />
                       </View>
                       <View>
@@ -958,6 +958,7 @@ export default class LearnToPlay extends React.Component {
                             'Crafty AI vs Nakamura 2007',
                           ]}
                           updateGamePGNMethode={updateGamePGN}
+                          currentPosition={moveIndex}
                         />
                       </View>
                     </View>
@@ -981,6 +982,7 @@ export default class LearnToPlay extends React.Component {
                             'Giri vs Harikrishna 2019',
                           ]}
                           updateGamePGNMethode={updateGamePGN}
+                          currentPosition={moveIndex}
                         />
                       </View>
                       <View>
@@ -1006,6 +1008,7 @@ export default class LearnToPlay extends React.Component {
                             'Karpov vs Spassky 1979',
                           ]}
                           updateGamePGNMethode={updateGamePGN}
+                          currentPosition={moveIndex}
                         />
                       </View>
                       <View>
@@ -1031,6 +1034,7 @@ export default class LearnToPlay extends React.Component {
                             'Spassky vs Fischer 1972',
                           ]}
                           updateGamePGNMethode={updateGamePGN}
+                          currentPosition={moveIndex}
                         />
                       </View>
                     </View>
