@@ -248,6 +248,7 @@ export default class LearnToPlay extends React.Component {
               orientation,
               firstMove,
               lastMove,
+              resetGame,
             }) => (
               <View style={{}}>
                 {/*////// Window row Element //////*/}
@@ -696,7 +697,7 @@ export default class LearnToPlay extends React.Component {
                           event.nativeEvent.layout.height,
                       })
                     }>
-                    <View style={{flexDirection: 'row',}}>
+                    <View style={{flexDirection: 'row'}}>
                       <View>
                         <StandardGameComponent
                           picture={global.g.getSicilianDefencePicture()}

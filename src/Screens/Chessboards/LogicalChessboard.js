@@ -172,9 +172,21 @@ export default class LogicalChessboard extends React.Component {
     console.log('Last Move:');
     console.log(this.state.futurMoves.length);
     var lastMove = this.state.futurMoves.length;
-    for (let i = 0; i < lastMove; i++) {
+    for (let i = 1; i < lastMove; i++) {
       this.nextMovePGN();
     }
+  };
+
+  resetGame = () => {
+    this.game.reset();
+    this.setState({
+      futurMoves: [],
+      moveIndex: 0,
+      SAN: '',
+      position: this.game.position,
+      fen: this.game.fen(),
+      pgnComment: '',
+    });
   };
 
   boardRotateBoard = () => {
@@ -563,6 +575,7 @@ export default class LogicalChessboard extends React.Component {
       boardRotateBoard: this.boardRotateBoard,
       firstMove: this.firstMove,
       lastMove: this.lastMove,
+      resetGame: this.resetGame,
       gameOver: this.state.gameOver,
     });
   }
