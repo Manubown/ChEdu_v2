@@ -96,7 +96,6 @@ export default class Online extends React.Component {
                         <TouchableOpacity
                           style={{width: 50}}
                           onPress={() => {
-                            //TODO: routate Board
                             boardRotateBoard();
                           }}>
                           <UpCircleFilled
@@ -109,7 +108,7 @@ export default class Online extends React.Component {
                         <TouchableOpacity
                           style={{width: 50}}
                           onPress={() => {
-                            //TODO: reset
+                            //TODO: flag
                             boardRotateBoard();
                           }}>
                           <FlagFilled

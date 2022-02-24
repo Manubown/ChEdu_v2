@@ -248,7 +248,6 @@ export default class LearnToPlay extends React.Component {
               orientation,
               firstMove,
               lastMove,
-              resetGame,
             }) => (
               <View style={{}}>
                 {/*////// Window row Element //////*/}
@@ -291,7 +290,6 @@ export default class LearnToPlay extends React.Component {
                         <TouchableOpacity
                           style={{width: 50}}
                           onPress={() => {
-                            //TODO: set on first move
                             firstMove();
                           }}>
                           <BackwardFilled
@@ -327,7 +325,6 @@ export default class LearnToPlay extends React.Component {
                         <TouchableOpacity
                           style={{width: 50}}
                           onPress={() => {
-                            //TODO: set on last move
                             lastMove();
                           }}>
                           <ForwardFilled
@@ -340,7 +337,6 @@ export default class LearnToPlay extends React.Component {
                         <TouchableOpacity
                           style={{width: 50}}
                           onPress={() => {
-                            //TODO: routate Board
                             boardRotateBoard();
                           }}>
                           <UpCircleFilled
@@ -1046,7 +1042,6 @@ export default class LearnToPlay extends React.Component {
                     style={{
                       justifyContent: 'center',
                       alignItems: 'center',
-                      //TODO: Transform
                       transform: [
                         {
                           translateX: translateXTabTextbookCheckmates,
