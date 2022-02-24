@@ -10,7 +10,7 @@ export const StandardGameComponent = props => {
   return (
     <TouchableOpacity
       style={{
-        backgroundColor: 'white',
+        backgroundColor: global.g.getBackgroundColor(),
       }}
       onPress={() => {
         props.updateGamePGNMethode(props.ComponentArray, 1);
