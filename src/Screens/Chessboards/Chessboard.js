@@ -1,11 +1,9 @@
 import React from 'react';
 import {View, TouchableOpacity, Text, Image} from 'react-native';
 import {
-  RightCircleTwoTone,
-  LeftCircleTwoTone,
-  ForwardFilled,
-  BackwardFilled,
+  RollbackOutlined,
   UpCircleFilled,
+  FlagFilled,
 } from '@ant-design/icons';
 
 import Chessboard from 'chessboardjsx';
@@ -100,6 +98,32 @@ export default class ChessBoard extends React.Component {
                             boardRotateBoard();
                           }}>
                           <UpCircleFilled
+                            style={{
+                              color: '#185a5c',
+                              fontSize: global.g.getWindowWidth() / 60,
+                            }}
+                          />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          style={{width: 50}}
+                          onPress={() => {
+                            //TODO: reset
+                            boardRotateBoard();
+                          }}>
+                          <RollbackOutlined
+                            style={{
+                              color: '#185a5c',
+                              fontSize: global.g.getWindowWidth() / 60,
+                            }}
+                          />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          style={{width: 50}}
+                          onPress={() => {
+                            //TODO: reset
+                            boardRotateBoard();
+                          }}>
+                          <FlagFilled
                             style={{
                               color: '#185a5c',
                               fontSize: global.g.getWindowWidth() / 60,

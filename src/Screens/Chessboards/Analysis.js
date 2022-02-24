@@ -6,6 +6,7 @@ import {
   ForwardFilled,
   BackwardFilled,
   UpCircleFilled,
+  RollbackOutlined,
 } from '@ant-design/icons';
 
 import Chessboard from 'chessboardjsx';
@@ -148,6 +149,19 @@ export default class Analysis extends React.Component {
                             boardRotateBoard();
                           }}>
                           <UpCircleFilled
+                            style={{
+                              color: '#185a5c',
+                              fontSize: global.g.getWindowWidth() / 60,
+                            }}
+                          />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          style={{width: 50}}
+                          onPress={() => {
+                            //TODO: reset
+                            boardRotateBoard();
+                          }}>
+                          <RollbackOutlined
                             style={{
                               color: '#185a5c',
                               fontSize: global.g.getWindowWidth() / 60,
