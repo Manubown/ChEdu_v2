@@ -163,7 +163,7 @@ export default class LogicalChessboard extends React.Component {
     console.log('First Move:');
     console.log(this.game.history().length);
     var currentPosition = this.game.history().length;
-    for (let i = currentPosition; i > 0; i--) {
+    for (let i = currentPosition; i > 1; i--) {
       this.undoMovePGN();
     }
   };
@@ -172,7 +172,7 @@ export default class LogicalChessboard extends React.Component {
     console.log('Last Move:');
     console.log(this.state.futurMoves.length);
     var lastMove = this.state.futurMoves.length;
-    for (let i = 1; i < lastMove; i++) {
+    for (let i = 0; i < lastMove; i++) {
       this.nextMovePGN();
     }
   };
