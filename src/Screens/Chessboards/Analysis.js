@@ -3,7 +3,9 @@ import {View, TouchableOpacity, Text, Image} from 'react-native';
 import {
   RightCircleTwoTone,
   LeftCircleTwoTone,
-  TrophyFilled,
+  ForwardFilled,
+  BackwardFilled,
+  UpCircleFilled,
 } from '@ant-design/icons';
 
 import Chessboard from 'chessboardjsx';
@@ -47,7 +49,10 @@ export default class Analysis extends React.Component {
               chessBoardMoves,
               gameOver,
               pgnComment,
-              moveIndex,
+              boardRotateBoard,
+              orientation,
+              firstMove,
+              lastMove,
             }) => (
               <View style={{}}>
                 {/*////// Window row Element //////*/}
@@ -73,7 +78,7 @@ export default class Analysis extends React.Component {
                       onDragOverSquare={onDragOverSquare}
                       onSquareClick={onSquareClick}
                       onSquareRightClick={onSquareRightClick}
-                      orientation="white"
+                      orientation={orientation}
                     />
                   </View>
 
@@ -85,53 +90,81 @@ export default class Analysis extends React.Component {
                         (global.g.getWindowHeight() -
                           global.g.getWindowHeight() / 30),
                     }}>
-                    <TouchableOpacity
-                      onPress={() => {
-                        //RequestLogin(this.state.Username, this.state.Password);
-                        this.props.navigation.navigate('Home');
-                      }}>
-                      {global.g.getOnlyLogo()}
-                    </TouchableOpacity>
-                    <View style={styles.ChessBoardButtonShadow}>
+                    <View style={{flexDirection: 'row'}}>
+                      <View style={styles.ChessBoardButtonShadow}>
+                        <TouchableOpacity
+                          style={{width: 50}}
+                          onPress={() => {
+                            //TODO: set on first move
+                            firstMove();
+                          }}>
+                          <BackwardFilled
+                            style={{
+                              color: '#185a5c',
+                              fontSize: global.g.getWindowWidth() / 60,
+                            }}
+                          />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          style={{width: 50}}
+                          onPress={() => {
+                            //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                            undoMovePGN();
+                          }}>
+                          <LeftCircleTwoTone
+                            twoToneColor={'#185a5c'}
+                            style={{fontSize: global.g.getWindowWidth() / 60}}
+                          />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          style={{width: 50}}
+                          onPress={() => {
+                            //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
+                            //nextMove();
+                            nextMovePGN();
+                          }}>
+                          <RightCircleTwoTone
+                            twoToneColor={'#185a5c'}
+                            style={{fontSize: global.g.getWindowWidth() / 60}}
+                          />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          style={{width: 50}}
+                          onPress={() => {
+                            //TODO: set on last move
+                            lastMove();
+                          }}>
+                          <ForwardFilled
+                            style={{
+                              color: '#185a5c',
+                              fontSize: global.g.getWindowWidth() / 60,
+                            }}
+                          />
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          style={{width: 50}}
+                          onPress={() => {
+                            //TODO: routate Board
+                            boardRotateBoard();
+                          }}>
+                          <UpCircleFilled
+                            style={{
+                              color: '#185a5c',
+                              fontSize: global.g.getWindowWidth() / 60,
+                            }}
+                          />
+                        </TouchableOpacity>
+                      </View>
                       <TouchableOpacity
-                        style={{width: 100}}
                         onPress={() => {
-                          //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                          undoMovePGN();
+                          //RequestLogin(this.state.Username, this.state.Password);
+                          this.props.navigation.navigate('Home');
                         }}>
-                        <LeftCircleTwoTone
-                          twoToneColor={'#185a5c'}
-                          style={{fontSize: 30}}
-                        />
-                      </TouchableOpacity>
-                      <TouchableOpacity
-                        style={{width: 100}}
-                        onPress={() => {
-                          //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                          //nextMove();
-                          nextMovePGN();
-                        }}>
-                        <RightCircleTwoTone
-                          twoToneColor={'#185a5c'}
-                          style={{fontSize: 30}}
-                        />
+                        {global.g.getOnlyLogo()}
                       </TouchableOpacity>
                     </View>
 
                     <FENBox FEN={position} />
-                    <View style={styles.ChessBoardButtonShadow}>
-                      <TouchableOpacity
-                        style={{
-                          backgroundColor: 'white',
-                        }}
-                        onPress={() => {
-                          //STARTPOSITION : ENDPOSITION , STARTPOSITION : ENDPOSITION, Number//
-                          //updateGameBGN(global.g.getFIDE2021_Game6(), 0);
-                          updateGamePGN(global.g.getSomeCarlsenGame(), 1);
-                        }}>
-                        <Text>Testgame</Text>
-                      </TouchableOpacity>
-                    </View>
                   </View>
                 </View>
 

@@ -189,7 +189,8 @@ export const TablePGNViewer = props => {
                 padding: 5,
                 width: columnWidth / 4,
                 alignItems: 'center',
-                backgroundColor: 'white',
+                backgroundColor: global.g.getBackgroundColor(),
+                opacity: 1,
               }}>
               <Text></Text>
             </View>
