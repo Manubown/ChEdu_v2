@@ -20,7 +20,7 @@ export default class LogicalChessboard extends React.Component {
     history: [], //PGN
 
     // saves last position of unduing
-    futurMoves: [],
+    futurMoves: Array(),
     //chessboardMoves: '',
     // chessboard move Index bgn
     pgnComment: '',
@@ -84,14 +84,54 @@ export default class LogicalChessboard extends React.Component {
     this.setState({position: this.game.position, fen: this.game.fen()});
   };
 
+  updateGamePGN = (PGN, position) => {
+    console.log('RESET FUTUR MOVES');
+    this.state.futurMoves.length = 0;
+    this.setState({SAN: [], moveIndex: position, history: []});
+
+    console.log('TRY PGN SUCCESSFUL LOADED!');
+    this.game.clear();
+    var success = this.game.load_pgn(PGN);
+    this.setState({position: this.game.position, fen: this.game.fen()});
+    window.scrollTo(0, 0);
+
+    if (success) {
+      console.log('PGN SUCCESSFUL LOADED!');
+    } else {
+      console.log(success);
+    }
+
+    var currentPosition = this.game.history().length;
+    for (let i = currentPosition; i > 0; i--) {
+      this.undoMovePGN();
+    }
+    console.log('Undo move PGN Component:');
+    console.log(this.state.futurMoves);
+    /*
+    
+
+    console.log('FUTURE MOVES: ');
+    console.log(this.state.futurMoves);
+
+    this.generatePGNArray();
+  */
+    this.generatePGNArray();
+    this.updatePGNPosition(position);
+    this.updatePGNComment();
+  };
+
   undoMovePGN = () => {
+    const {futurMoves} = this.state;
     var undoMove = this.game.undo();
+    this.setState({futurMoves: futurMoves.unshift(undoMove)});
+
+    console.log(this.state.futurMoves);
+
     this.setState({
       position: this.game.position,
       fen: this.game.fen(),
+      futurMoves: this.state.futurMoves,
     });
-    this.state.futurMoves.unshift(undoMove);
-    console.log(this.state.futureMoves);
 
     this.setState({moveIndex: this.game.history().length});
 
@@ -99,10 +139,15 @@ export default class LogicalChessboard extends React.Component {
   };
 
   nextMovePGN = () => {
-    var move = this.state.futurMoves.shift();
-    if (this.game.move({from: move.from, to: move.to}) === null) {
-      console.log('invalid move');
-    }
+    const {futurMoves} = this.state;
+
+    var move = futurMoves.shift();
+    this.game.move({from: move.from, to: move.to});
+    this.setState({futurMoves: futurMoves});
+    console.log(this.state.futurMoves);
+    console.log('Next move PGN: ');
+    console.log(this.state.futurMoves);
+    console.log(move);
 
     this.setState({
       position: this.game.position,
@@ -115,9 +160,20 @@ export default class LogicalChessboard extends React.Component {
   };
 
   firstMove = () => {
+    console.log('First Move:');
+    console.log(this.game.history().length);
     var currentPosition = this.game.history().length;
     for (let i = currentPosition; i > 0; i--) {
       this.undoMovePGN();
+    }
+  };
+
+  lastMove = () => {
+    console.log('Last Move:');
+    console.log(this.state.futurMoves.length);
+    var lastMove = this.state.futurMoves.length;
+    for (let i = 0; i < lastMove; i++) {
+      this.nextMovePGN();
     }
   };
 
@@ -133,34 +189,6 @@ export default class LogicalChessboard extends React.Component {
     if (this.state.autoplay == true) {
       setTimeout(this.autoplayM, 3000);
     }
-  };
-
-  updateGamePGN = (PGN, position) => {
-    console.log('RESET FUTUR MOVES');
-    this.setState({futurMoves: []});
-    this.setState({position: this.game.position, fen: this.game.fen()});
-
-    console.log('TRY PGN SUCCESSFUL LOADED!');
-    var success = this.game.load_pgn(PGN);
-    this.setState({position: this.game.position, fen: this.game.fen()});
-    window.scrollTo(0, 0);
-
-    if (success) {
-      console.log('PGN SUCCESSFUL LOADED!');
-    } else {
-      console.log(success);
-    }
-
-    var currentPosition = this.game.history().length;
-
-    for (let i = currentPosition; i > 0; i--) {
-      this.undoMovePGN();
-    }
-
-    this.generatePGNArray();
-
-    this.updatePGNPosition(position);
-    this.updatePGNComment();
   };
 
   generatePGNArray = () => {
@@ -533,6 +561,8 @@ export default class LogicalChessboard extends React.Component {
       nextMovePGN: this.nextMovePGN,
       updatePGNPosition: this.updatePGNPosition,
       boardRotateBoard: this.boardRotateBoard,
+      firstMove: this.firstMove,
+      lastMove: this.lastMove,
       gameOver: this.state.gameOver,
     });
   }

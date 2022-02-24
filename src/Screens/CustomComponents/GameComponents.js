@@ -5,6 +5,7 @@ import styles from '../../styles';
 export const StandardGameComponent = props => {
   //name, picture, PGN, updateGamePGN
   console.log('Standart game component REndering:');
+  var updateGamePGN = props.updateGamePGNMethode;
   console.log(props.ComponentArray);
   console.log(props.position);
   return (
@@ -13,19 +14,28 @@ export const StandardGameComponent = props => {
         backgroundColor: global.g.getBackgroundColor(),
       }}
       onPress={() => {
-        props.updateGamePGNMethode(props.ComponentArray, 1);
+        console.log(props.ComponentArray);
+        updateGamePGN(props.ComponentArray, props.position);
       }}>
       <View style={styles.GameComponentShadow}>
-        <Image style={styles.GameImageComponentShadow} source={props.picture} />
-        <Text
-          style={{
-            fontSize: 38,
-            color: global.g.getTextColor(),
-            fontWeight: 'bold',
-            textAlign: 'center',
-          }}>
-          {props.name}
-        </Text>
+        <View style={{flexDirection: 'row'}}>
+          <Image
+            style={styles.GameImageComponentShadow}
+            source={props.picture}
+          />
+          <Text
+            style={{
+              padding: 10,
+              fontSize: global.g.getWindowWidth() / 50,
+              width: global.g.getWindowWidth() / 7,
+              color: global.g.getTextColor(),
+              fontWeight: 'bold',
+              textAlign: 'center',
+              justifyContent: 'center',
+            }}>
+            {props.name}
+          </Text>
+        </View>
       </View>
     </TouchableOpacity>
   );
@@ -39,7 +49,7 @@ export const ExportGameComponent = props => {
       <Image style={styles.GameComponentImage} source={props.picture} />
       <Text
         style={{
-          fontSize: 38,
+          fontSize: global.g.getWindowWidth() / 50,
           color: global.g.getTextColor(),
           fontWeight: 'bold',
           textAlign: 'center',
@@ -50,7 +60,7 @@ export const ExportGameComponent = props => {
         <View style={styles.GameInnerComponentShadow}>
           <Text
             style={{
-              fontSize: 25,
+              fontSize: global.g.getWindowWidth() / 70,
               color: global.g.getTextColor(),
               textAlign: 'center',
               margin: 10,
@@ -64,7 +74,7 @@ export const ExportGameComponent = props => {
         <View style={styles.GameInnerComponentShadow}>
           <Text
             style={{
-              fontSize: 25,
+              fontSize: global.g.getWindowWidth() / 70,
               color: global.g.getTextColor(),
               textAlign: 'center',
               margin: 10,
@@ -91,7 +101,7 @@ export const ExportGameComponent = props => {
         <View style={styles.GameShowMoreComponentShadow}>
           <Text
             style={{
-              fontSize: 25,
+              fontSize: global.g.getWindowWidth() / 70,
               color: 'white',
               textAlign: 'center',
               margin: 20,
@@ -122,7 +132,7 @@ const renderElements = (pgnArray, nameArray, updateGamePGN, isClosed) => {
       finalArray.push(element);
     });
   }
-  console.log('Final Array:');
+  console.log('Elements:');
   console.log(finalArray);
 
   var i = 0;

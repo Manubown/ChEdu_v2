@@ -101,7 +101,7 @@ export default class ChessBoard extends React.Component {
                         }}>
                         <LeftCircleTwoTone
                           twoToneColor={'#185a5c'}
-                          style={{fontSize: 30}}
+                          style={{fontSize: global.g.getWindowWidth() / 60}}
                         />
                       </TouchableOpacity>
                       <TouchableOpacity
@@ -113,7 +113,7 @@ export default class ChessBoard extends React.Component {
                         }}>
                         <RightCircleTwoTone
                           twoToneColor={'#185a5c'}
-                          style={{fontSize: 30}}
+                          style={{fontSize: global.g.getWindowWidth() / 60}}
                         />
                       </TouchableOpacity>
                     </View>
@@ -154,16 +154,27 @@ export default class ChessBoard extends React.Component {
                   </View>
                 ) : null}
 
-                <Text style={{fontSize: 20, textAlign: 'center'}}>
+                <Text
+                  style={{
+                    fontSize: global.g.getWindowWidth() / 70,
+                    textAlign: 'center',
+                  }}>
                   FEN: {position}
                 </Text>
 
-                <Text style={{fontSize: 20, textAlign: 'center'}}>
+                <Text
+                  style={{
+                    fontSize: global.g.getWindowWidth() / 70,
+                    textAlign: 'center',
+                  }}>
                   Move: {moveIndex}
                 </Text>
 
                 <Text
-                  style={{fontSize: 20, color: 'green'}}
+                  style={{
+                    fontSize: global.g.getWindowWidth() / 70,
+                    color: 'green',
+                  }}
                   Text={chessBoardMoves}
                 />
               </View>

@@ -109,7 +109,7 @@ export default class Login extends React.Component {
                     style={{
                       textAlign: 'center',
                       color: 'white',
-                      fontSize: 20,
+                      fontSize: global.g.getWindowWidth() / 70,
                       padding: 20,
                     }}>
                     Login Successfull!
