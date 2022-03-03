@@ -61,6 +61,14 @@ import dutchDefencePicture from './Pictures/DutchDefence.png';
 import englishOpeningPicture from './Pictures/EnglishOpening.png';
 import catalanOpeningPicture from './Pictures/CatalanOpening.png';
 import retiOpeningPicture from './Pictures/RetiOpening.png';
+import centralPawnsPicture from './Pictures/central_pawns.png';
+import developPiecesPicture from './Pictures/develop_pieces.png';
+import castlingPicture from './Pictures/castling.png';
+import influenceCentrePicture from './Pictures/influence_centre.png';
+import repeatMovesPicture from './Pictures/repeat_moves.png';
+import earlyQueenPicture from './Pictures/early_queen.png';
+import threatsPicture from './Pictures/threats.png';
+import parryPicture from './Pictures/parry.png';
 
 /*styles*/
 import styles from './styles';
@@ -403,6 +411,38 @@ class Global extends React.Component {
   getRetiOpeningPicture = () => {
     return this.pictures.retiOpeningPicture;
   };
+
+  getCentralPawnsPicture = () => {
+    return this.pictures.centralPawnsPicture;
+  };
+
+  getDevelopPiecesPicture = () => {
+    return this. pictures.developPiecesPicture;
+  };
+
+  getCastlingPicture = () => {
+    return this.pictures.castlingPicture;
+  };
+
+  getInfluenceCentrePicture = () => {
+    return this.pictures.influenceCentrePicture;
+  };
+
+  getRepeatMovesPicture = () => {
+    return this.pictures.repeatMovesPicture;
+  };
+
+  getEarlyQueenPicture = () => {
+    return this.pictures.earlyQueenPicture;
+  };
+
+  getThreatsPicture = () => {
+    return this.pictures.threatsPicture;
+  };
+
+  getParryPicture = () => {
+    return this.pictures.parryPicture;
+  };
   //#endregion Pictures end
 
   //#region Openings
@@ -589,6 +629,18 @@ class Global extends React.Component {
   getKarpov_vs_Spassky1979 = () => {
     return this.pgn.Karpov.Karpov_vs_Spassky1979;
   };
+  //#endregion
+
+  //#region StrategicConcepts
+  getOpnings = () => {
+    return this.pgn.Openings;
+  }
+  getMiddleGames = () => {
+    return this.pgn.MiddleGame; 
+  }
+  getEndGames = () => {
+    return this.pgn.EndGame;
+  }
   //#endregion
 
   //#endregion Getter
@@ -850,6 +902,14 @@ var g = new Global(
     englishOpeningPicture: englishOpeningPicture,
     catalanOpeningPicture: catalanOpeningPicture,
     retiOpeningPicture: retiOpeningPicture,
+    centralPawnsPicture: centralPawnsPicture,
+    developPiecesPicture: developPiecesPicture,
+    castlingPicture: castlingPicture,
+    influenceCentrePicture: influenceCentrePicture,
+    repeatMovesPicture: repeatMovesPicture,
+    earlyQueenPicture: earlyQueenPicture,
+    threatsPicture: threatsPicture,
+    parryPicture: parryPicture,
   },
   {
     Openings: {
@@ -908,7 +968,7 @@ var g = new Global(
   },
   /*
         [
-          '[SetUp "1"]',
+          '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
           '[FEN "rnb1kbnr/pp1pp2p/1qp5/3Pp1p1/5B2/3RN3/PPP3PP/RNBQ2K1 w Qkq - 0 1"]',
           '',
           '1. c4 Qxe3+',
@@ -996,7 +1056,16 @@ var g = new Global(
         position: 1,
       },
     },
-    MiddleGame: {},
+    MiddleGame: {
+      Lul:
+        [
+          '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+          '[FEN "1kr4r/1pp1qppp/p1n1pn2/3p2B1/3PP1bP/P1N2NP1/1PP1QP2/1KR4R w Kk - 0 1"]', //FEN
+          '',
+          '', //PGN
+        ],
+      
+    },
     EndGame: {},
     Carlsen: {
       World_Chess_Championship_2021_Game6: {

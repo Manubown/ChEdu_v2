@@ -525,6 +525,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
   },
+
+  StrategicConceptText:{
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: windowWidth/20,
+  },
 });
 
 export default styles;

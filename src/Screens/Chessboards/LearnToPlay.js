@@ -6,6 +6,7 @@ import {
   Animated,
   ScrollView,
   ImageBackground,
+  Image,
 } from 'react-native';
 
 import {
@@ -666,9 +667,322 @@ export default class LearnToPlay extends React.Component {
                           event.nativeEvent.layout.height,
                       })
                     }>
-                    <Text style={{color: global.g.getTextColor()}}>
-                      Tab Two
-                    </Text>
+                    <View>
+                      <Text style={styles.StrategicConceptText}>
+                        Opening
+                      </Text>
+                      <View style = {{flexDirection: "row"}}>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getCentralPawnsPicture()}
+                            name={'Occupy the Centre with Pawns'}
+                            bio={
+                              'The most common move at the beginning of a game of chess is e4. The queen as well as the bishop can move and the pawn in the centre controls important squares. Besides e4 there is also d4. Here the black bishop has the opportunity to develop and the pawn controls important squares. Black usually responds to e4 with e5, especially in amateur play.'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getDevelopPiecesPicture()}
+                            name={'Develop minor Pieces'}
+                            bio={
+                              'These include the bishops and the knights. However, the piece that moves one square diagonally and one straight should not be on the edge, i.e. on the H and the A line, because it controls more squares in the centre.'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getCastlingPicture()}
+                            name={'Castle early'}
+                            bio={
+                              'The king must be brought to safety, otherwise there could be a quick checkmate.'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                      </View>
+                      <View style = {{flexDirection: 'row'}}>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getInfluenceCentrePicture()}
+                            name={'Exert influence on the Centre'}
+                            bio={
+                              'The more figures there are here, the better you stand with your figures.'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getRepeatMovesPicture()}
+                            name={'Don\'t move the same Piece repeatendly'}
+                            bio={
+                              'Think of the pieces to be like an army which fights together. Every piece is important.'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getEarlyQueenPicture()}
+                            name={'Don\'t develop the Queen too early'}
+                            bio={
+                              'It is the strongest piece in the game with the most possibilities of squares. Therefore, when they are being attacked Time is an important factor, as is space, and this is gained by getting the pieces into play quickly. So bringing a queen into play early means losing time.'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                      </View>
+                      <View style={{flexDirection: 'row'}}>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getThreatsPicture()}
+                            name={'Watch out for Threats'}
+                            bio={
+                              'As soon as pieces are attacked, there are four ways to react, depending on the situation: 1. cover the piece, 2. make a counter-threat, 3. interrupt connections to the attacked piece with another piece or 4. simply move the piece out of the attack.'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                      </View>
+
+                      <Text style={styles.StrategicConceptText}>
+                        Middlegame
+                      </Text>
+                      <View style = {{flexDirection: "row"}}>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getParryPicture()}
+                            name={'Watch out for Threats and parry them'}
+                            bio={
+                              'Recognising these is not always easy and beginners usually need longer. But the more you practise them, the faster you recognise them.'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getHikaruNakamura()}
+                            name={'Recognise Attack Markers and exploit them'}
+                            bio={
+                              'Attack markers are by definition pawns that you can attack with your own pawns. As a rule, for black pieces they are the 5th and 6th row and in the white camp they are the 3rd and 4th row.'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getHikaruNakamura()}
+                            name={'Pay attention to Pawn Structures'}
+                            bio={
+                              'Observe pawn structures. Keeping the pawns together in chains and not interrupting them is the basic rule. Even though pawns are the most worthless pieces on the board, they are very strong as a unit. If the structure is destroyed, the opponent can take advantage of this and the danger arises that consequently attacks arise.'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                      </View>
+                      <View style = {{flexDirection: 'row'}}>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getHikaruNakamura()}
+                            name={'Identify and exploit strong and weak Squares'}
+                            bio={
+                              'A strong square means: If you control a square of the opponent\'s camp with your own pawns (i.e. the rows 7 - 5 or 2 - 4) and the opponent can only cover it with pieces and not with his own pawns. Conversely, weak squares are the exact opposite. On the edge (H and A line), however, these squares are not so important.'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getHikaruNakamura()}
+                            name={'Improve Pieces'}
+                            bio={
+                              'In a game, individual pieces are often in a bad position and therefore, as a player, you have to think about how you can improve them. A prime example is the knight on the edge. A well-known saying in the chess scene is: "A knight on the rim is grim". Bishops are often blocked by chains of pawns. You should therefore activate a bishop here if possible. Queens do not need to be activated often, as they are generally in a good position. Rooks can usually be activated by doubling them. That is, if they are on the same line and thus exert more pressure on it. Routing knights is also a way to improve your position.'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                      </View>
+                      
+                      <Text style={styles.StrategicConceptText}>
+                        Endgame
+                      </Text>
+                      <View style = {{flexDirection: "row"}}>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getHikaruNakamura()}
+                            name={'Activate the King'}
+                            bio={
+                              'In the endgame the king is an extremely strong piece. This is because the queens and also many other pieces have left the field.'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getHikaruNakamura()}
+                            name={'Use forcing Moves as a sharp Weapon'}
+                            bio={
+                              'If there is a danger (e.g. pawn promotion) you can force your opponent to make a move by forcing him to make bad moves (e.g. sacrifice a piece).'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getHikaruNakamura()}
+                            name={'Play patiently when it isn\'t a race'}
+                            bio={
+                              'One of the reasons why this game can take a long time to play is that slow moves are also important. So strong and patient nerves are a prerequisite for a successful game.'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                      </View>
+                      <View style = {{flexDirection: 'row'}}>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getHikaruNakamura()}
+                            name={'As a Defender, exchange Pawns'}
+                            bio={
+                              'If you find yourself in a situation where you can no longer win, but only draw, pawn sacrifices are a necessity. Activity is of course also active momentum.'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                        <View>
+                          <ExportGameComponent
+                            picture={global.g.getHikaruNakamura()}
+                            name={'Actively defending rook games'}
+                            bio={
+                              'Here, too, activity is a momentum. Rooks are the centre here and should therefore not be blocked or prevented. Passivity is a big mistake!'
+                            }
+                            ComponentArray={[
+                              global.g.getMiddleGames().Lul.join("\n"),
+                            ]}
+                            NameArray={[
+                              'Lul',
+                            ]}
+                            updateGamePGNMethode={updateGamePGN}
+                            currentPosition={moveIndex}
+                          />
+                        </View>
+                      </View>
+                    </View>
                   </Animated.View>
 
                   {/*Opening Concepts*/}
