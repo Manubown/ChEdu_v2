@@ -668,7 +668,12 @@ export default class LearnToPlay extends React.Component {
                       })
                     }>
                     <View>
-                      <Text style={styles.StrategicConceptText}>
+                      <Text style={{
+                        textAlign: 'center',
+                        fontWeight: 'bold',
+                        fontSize: global.g.getWindowWidth()/20,
+                        color: global.g.getTextColor()}}
+                      >
                         Opening
                       </Text>
                       <View style = {{flexDirection: "row"}}>
@@ -797,7 +802,12 @@ export default class LearnToPlay extends React.Component {
                         </View>
                       </View>
 
-                      <Text style={styles.StrategicConceptText}>
+                      <Text style={{
+                        textAlign: 'center',
+                        fontWeight: 'bold',
+                        fontSize: global.g.getWindowWidth()/20,
+                        color: global.g.getTextColor()}}
+                      >
                         Middlegame
                       </Text>
                       <View style = {{flexDirection: "row"}}>
@@ -890,7 +900,12 @@ export default class LearnToPlay extends React.Component {
                         </View>
                       </View>
                       
-                      <Text style={styles.StrategicConceptText}>
+                      <Text style={{
+                        textAlign: 'center',
+                        fontWeight: 'bold',
+                        fontSize: global.g.getWindowWidth()/20,
+                        color: global.g.getTextColor()}}
+                      >
                         Endgame
                       </Text>
                       <View style = {{flexDirection: "row"}}>
