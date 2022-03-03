@@ -53,6 +53,7 @@ export const ExportGameComponent = props => {
           color: global.g.getTextColor(),
           fontWeight: 'bold',
           textAlign: 'center',
+          width: global.g.getWindowWidth() / 5,
         }}>
         {props.name}
       </Text>
