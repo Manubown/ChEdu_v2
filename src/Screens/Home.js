@@ -714,28 +714,26 @@ export default class Home extends React.Component {
                         (styles.ContentText, {color: global.g.getTextColor()})
                       }>
                       <MoreLessComponent
-                        truncatedText="EduBoard"
-                        fullText="EduBoard sit amet, consetetur sadipscing elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                        magna aliquyam erat, sed diam voluptua. At vero eos et
-                        accusam et justo duo dolores Lorem ipsum dolor sit amet,
-                        consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                        invidunt ut labore et dolore magna aliquyam erat, sed diam
-                        voluptua. At vero eos et accusam et justo dWuo dolores
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                        magna aliquyam erat, sed diam voluptua. At vero eos et
-                        accusam et justo duo dolores Lorem ipsum dolor sit amet,
-                        consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                        invidunt ut labore et dolore magna aliquyam erat, sed diam
-                        voluptua. At vero eos et accusam et justo duo dolores
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                        magna aliquyam erat, sed diam voluptua. At vero eos et
-                        accusam et justo duo dolores Lorem ipsum dolor sit amet,
-                        consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                        invidunt ut labore et dolore magna aliquyam erat, sed diam
-                        voluptua. At vero eos et accusam et justo duWo dolores"
+                        truncatedText="The initial idea of ChEdu was to offer chess beginners a 
+                                      way to get in touch with the white and the black pieces 
+                                      and improving their gaming."
+                        fullText="The initial idea of ChEdu was to offer chess beginners a 
+                                  way to get in touch with the white and the black pieces 
+                                  and improving their gaming. As the team has years of 
+                                  experience in the board game, it was easy to build a set 
+                                  of rules and tactics behind each move. But even a 
+                                  grandmaster can still learn. That’s why research is the 
+                                  be-all and end-all when it comes to chess. David Shenk, 
+                                  writer of the book “The Immortal Game”, who is known for 
+                                  delighting his readers, says “Chess will never be 
+                                  played out. Even by a computer. So, even someone as great 
+                                  as Carlsen play thousands of chess games and study 
+                                  thousands of other chess games and have a computer analyze 
+                                  a millions of possible chess positions and no one is ever 
+                                  gonna perfectly perfect chess or understand all the 
+                                  different possibilities. All they can do is kinda come 
+                                  closer and closer and closer to really like mastering the 
+                                  game perfectly.”"
                       />
                     </Text>
                   </View>
@@ -779,28 +777,19 @@ export default class Home extends React.Component {
                         (styles.ContentText, {color: global.g.getTextColor()})
                       }>
                       <MoreLessComponent
-                        truncatedText="EduBoard 2"
-                        fullText="EduBoard 2 sit amet, consetetur sadipscing elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                        magna aliquyam erat, sed diam voluptua. At vero eos et
-                        accusam et justo duo dolores Lorem ipsum dolor sit amet,
-                        consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                        invidunt ut labore et dolore magna aliquyam erat, sed diam
-                        voluptua. At vero eos et accusam et justo dWuo dolores
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                        magna aliquyam erat, sed diam voluptua. At vero eos et
-                        accusam et justo duo dolores Lorem ipsum dolor sit amet,
-                        consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                        invidunt ut labore et dolore magna aliquyam erat, sed diam
-                        voluptua. At vero eos et accusam et justo duo dolores
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                        magna aliquyam erat, sed diam voluptua. At vero eos et
-                        accusam et justo duo dolores Lorem ipsum dolor sit amet,
-                        consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                        invidunt ut labore et dolore magna aliquyam erat, sed diam
-                        voluptua. At vero eos et accusam et justo duWo dolores"
+                        truncatedText="The main function of this board is text explanation. Using 
+                                      PGN allows to"
+                        fullText="The main function of this board is text explanation. Using PGN 
+                                  allows to comment between individual moves. Various 
+                                  complexities of the game are explained here, or the thought 
+                                  behind each move. The EduBoard serves an environment that offers 
+                                  five courses. These were made on the basis of Bobby Fischer’s 
+                                  book “Bobby Fischer Teaches Chess”. They are as follows:
+                                  •	Chess Basics
+                                  •	Strategic Concepts
+                                  •	Opening Concepts
+                                  •	Expert Mode
+                                  •	Textbook Checkmates"
                       />
                     </Text>
                   </View>
