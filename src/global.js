@@ -906,6 +906,14 @@ var g = new Global(
       Start: 'start',
     },
   },
+  /*
+        [
+          '[SetUp "1"]',
+          '[FEN "rnb1kbnr/pp1pp2p/1qp5/3Pp1p1/5B2/3RN3/PPP3PP/RNBQ2K1 w Qkq - 0 1"]',
+          '',
+          '1. c4 Qxe3+',
+        ],
+*/
   {
     Openings: {
       SicilianDefence: {

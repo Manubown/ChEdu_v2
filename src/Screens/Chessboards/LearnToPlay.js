@@ -698,7 +698,7 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getSicilianDefencePicture()}
                           name={'Sicilian Defence'}
-                          ComponentArray={global.g.getSicilianDefence().PGN}
+                          ComponentArray={global.g.getSicilianDefence().PGN} //.join('\n')
                           position={global.g.getSicilianDefence().position}
                           updateGamePGNMethode={updateGamePGN}
                         />

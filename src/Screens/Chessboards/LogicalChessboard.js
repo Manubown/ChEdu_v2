@@ -197,12 +197,6 @@ export default class LogicalChessboard extends React.Component {
     }
   };
 
-  autoplayM = () => {
-    if (this.state.autoplay == true) {
-      setTimeout(this.autoplayM, 3000);
-    }
-  };
-
   generatePGNArray = () => {
     var pgnArray = new Array();
     console.log(pgnArray);
