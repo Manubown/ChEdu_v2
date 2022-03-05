@@ -686,9 +686,13 @@ export default class LearnToPlay extends React.Component {
                             }
                             ComponentArray={[
                               global.g.getOpenings().E4.join("\n"),
+                              global.g.getOpenings().D4.join("\n"),
+                              global.g.getOpenings().C4.join("\n"),
                             ]}
                             NameArray={[
                               'E4',
+                              'D4',
+                              'C4',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={-1}
@@ -702,10 +706,12 @@ export default class LearnToPlay extends React.Component {
                               'These include the bishops and the knights. However, the piece that moves one square diagonally and one straight should not be on the edge, i.e. on the H and the A line, because it controls more squares in the centre.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getOpenings().ItalianGame.join("\n"),
+                              global.g.getOpenings().SpanishGame.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'Italian Game',
+                              'Spanish Game',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
@@ -719,10 +725,10 @@ export default class LearnToPlay extends React.Component {
                               'The king must be brought to safety, otherwise there could be a quick checkmate.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getOpenings().Castling.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'Castling',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
@@ -738,10 +744,10 @@ export default class LearnToPlay extends React.Component {
                               'The more figures there are here, the better you stand with your figures.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getOpenings().Centre.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'Develop towards the Centre',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
@@ -755,10 +761,10 @@ export default class LearnToPlay extends React.Component {
                               'Think of the pieces to be like an army which fights together. Every piece is important.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getOpenings().Blundering_due_to_a_repeated_move.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'Blundering due to repeated Move',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
@@ -772,10 +778,12 @@ export default class LearnToPlay extends React.Component {
                               'It is the strongest piece in the game with the most possibilities of squares. Therefore, when they are being attacked Time is an important factor, as is space, and this is gained by getting the pieces into play quickly. So bringing a queen into play early means losing time.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getOpenings().Early_Queen.join("\n"),
+                              global.g.getOpenings().Parham_Attack.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'Early Queen',
+                              'Parham Attack',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
@@ -791,10 +799,14 @@ export default class LearnToPlay extends React.Component {
                               'As soon as pieces are attacked, there are four ways to react, depending on the situation: 1. cover the piece, 2. make a counter-threat, 3. interrupt connections to the attacked piece with another piece or 4. simply move the piece out of the attack.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getOpenings().Two_Knights_Defence_Pawn.join("\n"),
+                              global.g.getOpenings().Traxler_Variation.join("\n"),
+                              global.g.getOpenings().Queens_Gambit.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'Two Knights Defence',
+                              'Traxler Variation',
+                              'Queen\'s Gambit',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}

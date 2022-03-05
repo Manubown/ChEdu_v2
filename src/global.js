@@ -1118,12 +1118,100 @@ var g = new Global(
           '{e2 on e4: This is the most frequent move in a game of chess. White occupies the centre and opens squares for the queen and bishop. Moreover, the pawn controls very important squares: d5 and f5. => Press the green arrow to show the next move} 1... e5 {Most of the time Black responds with the move e5. That is the classic. Black basically does the same as white: clear the squares for the bishop and the queen, and control the squares d4 and f4.}', //PGN
         ],
 
-      E5:
+      D4:
       [
         '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
-        '[FEN "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"]', //FEN
+        '[FEN "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1"]', //FEN
         '',
-        '1. e4 e5', //PGN
+        '{d2 on d4: This is the little brother of e4. White gives space for the bishop on e1 and controls two important squares: e5 and c5.} 1... Nf6 {The opponent responds here with the King\'s Indian Defence} 2. c4 {The opponent responds here with the King\'s Indian Defence} g6 {The opponent responds here with the King\'s Indian Defence}', //PGN
+      ],
+
+      C4:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq - 0 1"]', //FEN
+        '',
+        '{c2 on c4: This is the English game. It is a full opening, but is not played as often as e4 or d4. With c4, for example, white exerts influence on the square e5 => b5, on the other hand, is not quite as important.} 1... e5 {This is a reverse Sicialian Defence} 2. Nc3 {white prepares for the Four Knights English} Nf6 3. Nf3 Nc6 {This is the four knights English}', //PGN
+      ],
+
+      ItalianGame:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"]', //FEN
+        '',
+        '{It is important to develop the light pieces at the beginning of a game. These include the knights and the bishops.} 2. Nf3 {Knight f3 is the main move here. The bishops, as long-stepping pieces, already have an effect from their basic position (here it is the bishop on f1). Another lesson in the Eduboard also shows how important it is to occupy the centre (see "Exert influence on the Centre"). Knights on the edge, for example, do not exert influence on the centre. On f3, however, it exerts influence on 8 squares.} Nc6 {Black\'s response move here is knight to c6. The threat (see: "Watch out for Threats") is blocked here by developing the knight on c6.} 3. Bc4 {White develops a bishop and attacks the pawn on f7. This is the Italian Game.} Bc5 {Black also wants to develop a piece and here there are 2 strong moves: bishop c5 and knight f6.}', //PGN
+      ],
+
+      SpanishGame:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"]', //FEN
+        '',
+        '{It is important to develop the light pieces at the beginning of a game. These include the knights and the bishops.} 2. Nf3 {Knight f3 is the main move here. The bishops, as long-stepping pieces, already have an effect from their basic position (here it is the bishop on f1). Another lesson in the Eduboard also shows how important it is to occupy the centre (see "Exert influence on the Centre"). Knights on the edge, for example, do not exert influence on the centre. On f3, however, it exerts influence on 8 squares.} Nc6 {Black\'s response move here is knight to c6. The threat (see: "Watch out for Threats") is blocked here by developing the knight on c6.} 3. Bb5 {This is the Spanish Game. In the history of chess, for example, it has been played more often than the Italian game.}', //PGN
+      ],
+
+      Castling:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"]', //FEN
+        '',
+        '{It is important in the early opening phase to bring the king to safety and this is done with castling.} 4. O-O {The king moves two squares to the side and the rook is placed above it. In the opening this is the most important development move. The king is brought to safety and at the same time the rook is led to the centre. On g1 the king is safer because it is protected by several pawns and it is much more difficult to attack there.}', //PGN
+      ],
+
+      Centre:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4"]', //FEN
+        '',
+        '{It is important to develop the figures towards the centre. Here the white and black minor pieces are placed centrally. Knights should not be moved to the edge (A or H line) because they have less influence there. There are exceptions, of course, but beginners in particular should stick to this rule.} 4... Nf6 {It is important to develop the figures towards the centre. The knight attacks the pawn on e4.} 5. Nc3 {It is important to develop the figures towards the centre. The knight defends the pawn on e4.} d6 6. Re1 {The rook moves to the E line and consolidates the e4 pawn.}', //PGN
+      ],
+
+      Blundering_due_to_a_repeated_move:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4"]', //FEN
+        '',
+        '{Black\'s turn. In this position it makes sense to develop a piece.} 4... Nd4 {This is a blunder. It is because you have to develop your pieces before you move with the same one more often. You have to look at your pieces like an army. It makes no sense to play with 1-2 pieces. Therefore, do not make this move!}', //PGN
+      ],
+
+      Early_Queen:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4"]', //FEN
+        '',
+        '{Black\'s turn. In this position it makes sense to develop a piece.} 4... Qf6 {This is a blunder. Queens are the strongest piece on the board and therefore it makes little sense to bring them into play early. They can be attacked and usually have to move away because they are too valuable. That costs time. Time is gained by bringing the pieces into play quickly and not wasting time.} 5. d3 {After pawn d3, bishop g5 threatens. With bishop g5 the queen would have to move away.} Nge7 {Another blunder!} 6. Bg5 {Now the bishop threatens to take the queen and the queen must move away.}', //PGN
+      ],
+
+      Parham_Attack:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "rnbqkbnr/pppp1ppp/8/4p2Q/4P3/8/PPPP1PPP/RNB1KBNR b KQkq - 1 2"]', //FEN
+        '',
+        '{This is a well-known opening: The Parham Attack. This is the attempt of the so-called "scholar\'s mate. The pawn on E5 is attacked."} 2... Nc6 {Black must move with the knight to c6, otherwise the pawn will be taken.} 3. Bc4 {Bishop moves to c4 and queen f7 threatens checkmate. That is a foolish threat because the queen is open.} g6 {With pawn to g6 black wins time and chases away the queen.} 4. Qf3 {Queen on f3 threatens checkmate again. But the next black move shows that that doesn\'t help either.} Nf6 {Black parries the threat with knight f6. The queen has now made two moves and white is at a developmental drawback. In addition, the queen in this position takes the white knight\'s square f3.}', //PGN
+      ],
+
+      Two_Knights_Defence_Pawn:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"]', //FEN
+        '',
+        '{This is the "Two Knights Defence" This is the two knights defence. The black knight on f6 poses the threat of taking the pawn on e4. This threat must be responded to!} 4. d3 {A logical move is pawn on d3 to cover the pawn on e4. This parries the threat.}', //PGN
+      ],
+
+      Traxler_Variation:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"]', //FEN
+        '',
+        '{This is the "Two Knights Defence" This is the two knights defence. The black knight on f6 poses the threat of taking the pawn on e4. This threat must be responded to!} 4. Ng5 {Knight g5 contradicts the rule that you should not move a piece more often in the opening. But: White sets up a threat with the next move: knight to f7 or bishop to f7. This is a risky game, the so-called "Traxler Variation". Here black must parry this threat.} d5 {That is the only reasonable move. It cuts the connection from the bishop on c4 to the pawn on f7.} 5. exd5 {If white takes here, then a double-edged position emerges. Either the knight on f6 can take d5 or the knight on c6 moves to a5.}', //PGN
+      ],
+
+      Queens_Gambit:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 2"]', //FEN
+        '',
+        '{This is the Queen\'s Gambit. Most of the time you should rather reject it with the black move e6.} 2... e6 {This is the declined Queen\'s Gambit. The downside of the move, however, is that the black bishop on c8 is locked in.} 3. Nc3 {White develops further and brings a minor piece into play.} Nf6 {Black also brings a minor piece into play.} 4. Nf3 {White brings a minor piece into play.} Be7 {Black brings a minor piece into play. Black has developed his kingside, while white has brought his queenside into play.} 5. Bg5 {The bishop on c1 has developed on g5. It would be inaccurate here to place the pawn on e3 on the last move, as the bishop on c1 would be locked up.} Bg5 O-O {Black makes the castling here (see: "Castle early").} 6. e3 {White plays e3 and makes room for the bishop on f1. Should the bishop develop, the castling can be carried out and the king brought to safety.}', //PGN
       ],
     },
     MiddleGame: {
@@ -1132,7 +1220,7 @@ var g = new Global(
           '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
           '[FEN "5R2/5p1k/5P1p/4K3/4P1r1/8/8/8 w - - 0 1"]', //FEN
           '',
-          '{dlskfjlsdjk}', //PGN
+          '', //PGN
         ],
       
     },
