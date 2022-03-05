@@ -691,7 +691,7 @@ export default class LearnToPlay extends React.Component {
                               'E4',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
-                            currentPosition={moveIndex}
+                            currentPosition={-1}
                           />
                         </View>
                         <View>

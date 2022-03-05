@@ -145,7 +145,7 @@ const renderElements = (pgnArray, nameArray, updateGamePGN, isClosed) => {
           backgroundColor: 'white',
         }}
         onPress={() => {
-          updateGamePGN(element, 1);
+          updateGamePGN(element, 0);
         }}>
         <View style={styles.GameInnerComponentShadow}>
           <Text
