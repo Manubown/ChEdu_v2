@@ -1115,7 +1115,7 @@ var g = new Global(
           '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
           '[FEN "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1"]', //FEN
           '',
-          '1... e5 {Most of the time Black responds with the move e5. That is the classic. Black basically does the same as white: clear the squares for the bishop and the queen, and control the squares d4 and f4.}', //PGN
+          '{e2 on e4: This is the most frequent move in a game of chess. White occupies the centre and opens squares for the queen and bishop. Moreover, the pawn controls very important squares: d5 and f5. => Press the green arrow to show the next move} 1... e5 {Most of the time Black responds with the move e5. That is the classic. Black basically does the same as white: clear the squares for the bishop and the queen, and control the squares d4 and f4.}', //PGN
         ],
 
       E5:
@@ -1132,7 +1132,7 @@ var g = new Global(
           '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
           '[FEN "5R2/5p1k/5P1p/4K3/4P1r1/8/8/8 w - - 0 1"]', //FEN
           '',
-          '', //PGN
+          '{dlskfjlsdjk}', //PGN
         ],
       
     },
