@@ -685,10 +685,10 @@ export default class LearnToPlay extends React.Component {
                               'The most common move at the beginning of a game of chess is e4. The queen as well as the bishop can move and the pawn in the centre controls important squares. Besides e4 there is also d4. Here the black bishop has the opportunity to develop and the pawn controls important squares. Black usually responds to e4 with e5, especially in amateur play.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getOpenings().E4.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'E4',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}

@@ -677,7 +677,7 @@ class Global extends React.Component {
   //#endregion
 
   //#region StrategicConcepts
-  getOpnings = () => {
+  getOpenings = () => {
     return this.pgn.Openings;
   }
   getMiddleGames = () => {
@@ -1109,6 +1109,22 @@ var g = new Global(
         PGN: '1. c4 {The Réti Opening is a hypermodern chess opening.} d5 2. Nf3 { White plans to bring the d5-pawn under attack from the flank, or entice it to advance to d4 and undermine it later. White will couple this plan with a Kingside fianchetto (g3 and Bg2) to create pressure on the light squares in the center.}',
         position: 1,
       },
+
+      E4:
+        [
+          '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+          '[FEN "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1"]', //FEN
+          '',
+          '{e2 on e4: This is the most frequent move in a game of chess. White occupies the centre and opens squares for the queen and bishop. Moreover, the pawn controls very important squares: d5 and f5. => Press the green arrow to show the next move} 1... e5 {Most of the time Black responds with the move e5. That is the classic. Black basically does the same as white: clear the squares for the bishop and the queen, and control the squares d4 and f4.}', //PGN
+        ],
+
+      E4:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"]', //FEN
+        '',
+        '1. e4 e5', //PGN
+      ],
     },
     MiddleGame: {
       Lul:
