@@ -830,7 +830,7 @@ export default class LearnToPlay extends React.Component {
                         </View>
                         <View>
                           <ExportGameComponent
-                            picture={global.g.getHikaruNakamura()}
+                            picture={global.g.getAttackMarkers()}
                             name={'Recognise Attack Markers and exploit them'}
                             bio={
                               'Attack markers are by definition pawns that you can attack with your own pawns. As a rule, for black pieces they are the 5th and 6th row and in the white camp they are the 3rd and 4th row.'
@@ -847,7 +847,7 @@ export default class LearnToPlay extends React.Component {
                         </View>
                         <View>
                           <ExportGameComponent
-                            picture={global.g.getHikaruNakamura()}
+                            picture={global.g.getPawnStructure()}
                             name={'Pay attention to Pawn Structures'}
                             bio={
                               'Observe pawn structures. Keeping the pawns together in chains and not interrupting them is the basic rule. Even though pawns are the most worthless pieces on the board, they are very strong as a unit. If the structure is destroyed, the opponent can take advantage of this and the danger arises that consequently attacks arise.'
@@ -866,7 +866,7 @@ export default class LearnToPlay extends React.Component {
                       <View style = {{flexDirection: 'row'}}>
                         <View>
                           <ExportGameComponent
-                            picture={global.g.getHikaruNakamura()}
+                            picture={global.g.getStrongWeakSquares()}
                             name={'Identify and exploit strong and weak Squares'}
                             bio={
                               'A strong square means: If you control a square of the opponent\'s camp with your own pawns (i.e. the rows 7 - 5 or 2 - 4) and the opponent can only cover it with pieces and not with his own pawns. Conversely, weak squares are the exact opposite. On the edge (H and A line), however, these squares are not so important.'
@@ -883,7 +883,7 @@ export default class LearnToPlay extends React.Component {
                         </View>
                         <View>
                           <ExportGameComponent
-                            picture={global.g.getHikaruNakamura()}
+                            picture={global.g.getImprovePieces()}
                             name={'Improve Pieces'}
                             bio={
                               'In a game, individual pieces are often in a bad position and therefore, as a player, you have to think about how you can improve them. A prime example is the knight on the edge. A well-known saying in the chess scene is: "A knight on the rim is grim". Bishops are often blocked by chains of pawns. You should therefore activate a bishop here if possible. Queens do not need to be activated often, as they are generally in a good position. Rooks can usually be activated by doubling them. That is, if they are on the same line and thus exert more pressure on it. Routing knights is also a way to improve your position.'
@@ -911,7 +911,7 @@ export default class LearnToPlay extends React.Component {
                       <View style = {{flexDirection: "row"}}>
                         <View>
                           <ExportGameComponent
-                            picture={global.g.getHikaruNakamura()}
+                            picture={global.g.getActivateKing()}
                             name={'Activate the King'}
                             bio={
                               'In the endgame the king is an extremely strong piece. This is because the queens and also many other pieces have left the field.'
@@ -928,7 +928,7 @@ export default class LearnToPlay extends React.Component {
                         </View>
                         <View>
                           <ExportGameComponent
-                            picture={global.g.getHikaruNakamura()}
+                            picture={global.g.getForcingMoves()}
                             name={'Use forcing Moves as a sharp Weapon'}
                             bio={
                               'If there is a danger (e.g. pawn promotion) you can force your opponent to make a move by forcing him to make bad moves (e.g. sacrifice a piece).'
@@ -945,8 +945,8 @@ export default class LearnToPlay extends React.Component {
                         </View>
                         <View>
                           <ExportGameComponent
-                            picture={global.g.getHikaruNakamura()}
-                            name={'Play patiently when it isn\'t a race'}
+                            picture={global.g.getNotRush()}
+                            name={'Do not rush'}
                             bio={
                               'One of the reasons why this game can take a long time to play is that slow moves are also important. So strong and patient nerves are a prerequisite for a successful game.'
                             }
@@ -964,7 +964,7 @@ export default class LearnToPlay extends React.Component {
                       <View style = {{flexDirection: 'row'}}>
                         <View>
                           <ExportGameComponent
-                            picture={global.g.getHikaruNakamura()}
+                            picture={global.g.getExchangePawns()}
                             name={'As a Defender, exchange Pawns'}
                             bio={
                               'If you find yourself in a situation where you can no longer win, but only draw, pawn sacrifices are a necessity. Activity is of course also active momentum.'
@@ -981,7 +981,7 @@ export default class LearnToPlay extends React.Component {
                         </View>
                         <View>
                           <ExportGameComponent
-                            picture={global.g.getHikaruNakamura()}
+                            picture={global.g.getDefendRookGames()}
                             name={'Actively defending rook games'}
                             bio={
                               'Here, too, activity is a momentum. Rooks are the centre here and should therefore not be blocked or prevented. Passivity is a big mistake!'

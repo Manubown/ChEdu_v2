@@ -69,6 +69,15 @@ import repeatMovesPicture from './Pictures/repeat_moves.png';
 import earlyQueenPicture from './Pictures/early_queen.png';
 import threatsPicture from './Pictures/threats.png';
 import parryPicture from './Pictures/parry.png';
+import attackMarkers from './Pictures/attack_markers.png';
+import pawnStructure from './Pictures/pawn_structure.png';
+import strongWeakSquares from './Pictures/strong_weak_squares.png';
+import improvePieces from './Pictures/improve_pieces.png';
+import activateKing from './Pictures/activate_king.png';
+import forcingMoves from './Pictures/forcing_moves.png';
+import notRush from './Pictures/not_rush.png';
+import exchangePawns from './Pictures/exchange_pawns.png';
+import defendRookGames from './Pictures/defend_rook_games.png';
 
 /*styles*/
 import styles from './styles';
@@ -442,6 +451,42 @@ class Global extends React.Component {
 
   getParryPicture = () => {
     return this.pictures.parryPicture;
+  };
+
+  getAttackMarkers = () => {
+    return this.pictures.attackMarkers;
+  };
+
+  getPawnStructure = () => {
+    return this.pictures.pawnStructure;
+  };
+
+  getStrongWeakSquares = () => {
+    return this.pictures.strongWeakSquares;
+  };
+
+  getImprovePieces = () => {
+    return this.pictures.improvePieces;
+  };
+
+  getActivateKing = () => {
+    return this.pictures.activateKing;
+  };
+
+  getForcingMoves = () => {
+    return this.pictures.forcingMoves;
+  };
+
+  getNotRush = () => {
+    return this.pictures.notRush;
+  };
+
+  getExchangePawns = () => {
+    return this.pictures.exchangePawns;
+  };
+
+  getDefendRookGames = () => {
+    return this.pictures.defendRookGames;
   };
   //#endregion Pictures end
 
@@ -910,6 +955,15 @@ var g = new Global(
     earlyQueenPicture: earlyQueenPicture,
     threatsPicture: threatsPicture,
     parryPicture: parryPicture,
+    attackMarkers: attackMarkers,
+    pawnStructure: pawnStructure,
+    strongWeakSquares: strongWeakSquares,
+    improvePieces: improvePieces,
+    activateKing: activateKing,
+    forcingMoves: forcingMoves,
+    notRush: notRush,
+    exchangePawns: exchangePawns,
+    defendRookGames: defendRookGames,
   },
   {
     Openings: {
@@ -1060,7 +1114,7 @@ var g = new Global(
       Lul:
         [
           '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
-          '[FEN "1kr4r/1pp1qppp/p1n1pn2/3p2B1/3PP1bP/P1N2NP1/1PP1QP2/1KR4R w Kk - 0 1"]', //FEN
+          '[FEN "5R2/5p1k/5P1p/4K3/4P1r1/8/8/8 w - - 0 1"]', //FEN
           '',
           '', //PGN
         ],
