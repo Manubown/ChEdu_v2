@@ -1134,7 +1134,7 @@ var g = new Global(
         '{c2 on c4: This is the English game. It is a full opening, but is not played as often as e4 or d4. With c4, for example, white exerts influence on the square e5 => b5, on the other hand, is not quite as important.} 1... e5 {This is a reverse Sicialian Defence} 2. Nc3 {white prepares for the Four Knights English} Nf6 3. Nf3 Nc6 {This is the four knights English}', //PGN
       ],
 
-      ItalianGame:
+      Italian_Game:
       [
         '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
         '[FEN "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"]', //FEN
@@ -1142,7 +1142,7 @@ var g = new Global(
         '{It is important to develop the light pieces at the beginning of a game. These include the knights and the bishops.} 2. Nf3 {Knight f3 is the main move here. The bishops, as long-stepping pieces, already have an effect from their basic position (here it is the bishop on f1). Another lesson in the Eduboard also shows how important it is to occupy the centre (see "Exert influence on the Centre"). Knights on the edge, for example, do not exert influence on the centre. On f3, however, it exerts influence on 8 squares.} Nc6 {Black\'s response move here is knight to c6. The threat (see: "Watch out for Threats") is blocked here by developing the knight on c6.} 3. Bc4 {White develops a bishop and attacks the pawn on f7. This is the Italian Game.} Bc5 {Black also wants to develop a piece and here there are 2 strong moves: bishop c5 and knight f6.}', //PGN
       ],
 
-      SpanishGame:
+      Spanish_Game:
       [
         '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
         '[FEN "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"]', //FEN

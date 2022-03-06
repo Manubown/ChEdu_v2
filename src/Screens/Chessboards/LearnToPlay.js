@@ -706,8 +706,8 @@ export default class LearnToPlay extends React.Component {
                               'These include the bishops and the knights. However, the piece that moves one square diagonally and one straight should not be on the edge, i.e. on the H and the A line, because it controls more squares in the centre.'
                             }
                             ComponentArray={[
-                              global.g.getOpenings().ItalianGame.join("\n"),
-                              global.g.getOpenings().SpanishGame.join("\n"),
+                              global.g.getOpenings().Italian_Game.join("\n"),
+                              global.g.getOpenings().Spanish_Game.join("\n"),
                             ]}
                             NameArray={[
                               'Italian Game',
