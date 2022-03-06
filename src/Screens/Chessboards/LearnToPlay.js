@@ -963,10 +963,12 @@ export default class LearnToPlay extends React.Component {
                               'In the endgame the king is an extremely strong piece. This is because the queens and also many other pieces have left the field.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getEndGames().ActivateKing1.join("\n"),
+                              global.g.getEndGames().ActivateKing2.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'ActivateKing 1',
+                              'ActivateKing 2',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
@@ -980,10 +982,14 @@ export default class LearnToPlay extends React.Component {
                               'If there is a danger (e.g. pawn promotion) you can force your opponent to make a move by forcing him to make bad moves (e.g. sacrifice a piece).'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getEndGames().ForcingMove1.join("\n"),
+                              global.g.getEndGames().ForcingMove2.join("\n"),
+                              global.g.getEndGames().ForcingMove3.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'Forcing Move 1',
+                              'Forcing Move 2',
+                              'Forcing Move 3',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
@@ -997,10 +1003,14 @@ export default class LearnToPlay extends React.Component {
                               'One of the reasons why this game can take a long time to play is that slow moves are also important. So strong and patient nerves are a prerequisite for a successful game.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getEndGames().NotRush1.join("\n"),
+                              global.g.getEndGames().NotRush1_Variation.join("\n"),
+                              global.g.getEndGames().NotRush2.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'Do not rush 1!',
+                              'Do not rush 1 Variation!',
+                              'Do not rush 2!',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
@@ -1016,10 +1026,12 @@ export default class LearnToPlay extends React.Component {
                               'If you find yourself in a situation where you can no longer win, but only draw, pawn sacrifices are a necessity. Activity is of course also active momentum.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getEndGames().ExchangePawns1.join("\n"),
+                              global.g.getEndGames().ExchangePawns2.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'Exchange Pawns 1',
+                              'Exchange Pawns 2',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
@@ -1033,10 +1045,12 @@ export default class LearnToPlay extends React.Component {
                               'Here, too, activity is a momentum. Rooks are the centre here and should therefore not be blocked or prevented. Passivity is a big mistake!'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getEndGames().RookEndgame1.join("\n"),
+                              global.g.getEndGames().RookEndgame2.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'Rook Endgame 1',
+                              'Rook Endgame 2',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}

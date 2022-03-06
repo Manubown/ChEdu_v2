@@ -1215,14 +1215,6 @@ var g = new Global(
       ],
     },
     MiddleGame: {
-      Lul:
-        [
-          '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
-          '[FEN "5R2/5p1k/5P1p/4K3/4P1r1/8/8/8 w - - 0 1"]', //FEN
-          '',
-          '', //PGN
-        ],
-
       Threat1_misplayed:
       [
         '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
@@ -1386,7 +1378,103 @@ var g = new Global(
         '{White to play. This position goes into the complex area. It is not obvious now which piece is in a bad position with white. One could define that the bishop on e3 is bad, but the knight on f3 doesn\'t do much either. If you look at the opponent\'s position, you see that the square c5 is weak.} 1. Ne1 {The square c5 wants to be attacked from white\'s point of view. That is why knight e1 comes here. The idea is to position the knight on c5 via e3. All of black\'s minor pieces are not particularly strong in this position either.} b4 {Because black\'s minor pieces are not well positioned, pawn b4 comes. Black wants to exchange the bishop on d7 over b5.} 2. Nd3 Bb5 3. Nc5 {Now the knight has positioned itself on c5.} Nb7 {Now black wants to exchange the knight.} 4. Rxa8 Rxa8 5. Bxb5 Qxb5 {Here black must take the bishop with the queen. If black had taken the knight on c5 first, then white wins a pawn.} 6. Qd3 Qc6 7. Na4 Nd8 8. Rc1 Qb7 9. Qc2 f6 10. f4 Bh6 11. g3 fxe5 12. dxe5 Ne6 13. Qc6 Qxc6 14. Rxc6', //PGN
       ],
     },
-    EndGame: {},
+    EndGame: {
+      ActivateKing1:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "3r1r1k/1p1bR1pp/3p4/p2P1p2/2P2p2/3B4/PP4PP/4R1K1 w - - 0 1"]', //FEN
+        '',
+        '{White to move. In this position Black has one more pawn. But White has active rooks on the e-line.} 1. Kf2 {White activates its king.} Kg8 2. Kf3 {White attacks the pawn on f4 and here the next logical move for Black would be f5 to cover the pawn.} Rf7 {Black plays inaccurately here and does not cover the pawn on f4.} 3. Kxf4 Rxe7 4. Rxe7 Kf8 {Black wants to go for a draw here by exchanging everything.} 5. Re3 g6 6. Kg5 {White penetrates deep into the black camp with his king. That\'s what makes it so special and shows how strong a king can be in the endgame.} Kf7 7. Kh6 {The king goes even further and attacks the black pawn on h7.} Kf6 {Black thinks that before the rook is passive on h8, Black would rather give up his pawn.} 8. h4 a4 9. Kxh7 {White has now won a pawn.} Rf8 {Black now wants to attack the king, but the white king is not badly placed there => see following moves.} 10. Rf3 {Strong move! Threatens to capture the pawn on f5} Rf7+ 11. Kg8 Rg7+ 12. Kh8 {That\'s a nice picture and shows that you can penetrate very deeply into the opponent\'s camp with your king in the endgame. The white king is not threatened by anything here.}', //PGN
+      ],
+      ActivateKing2:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "2Q5/4q2p/4pkp1/2p5/5P2/8/1P5P/6K1 w - - 0 1"]', //FEN
+        '',
+        '{White to play. Here you can see a queen\'s end game. Black has a pawn more here.} 1. Qh8+ Qg7 2. Qc8 Qe7 3. Qh8+ {It looks like a draw will come out of this.} Kf5 {Black decides to win the game by activating the king.} 4. Qe5+ Kg4 5. b3 {That is a bad move by white. On the other hand, white should have played queen on e4.} Qd7 6. Qxc5 Qd1+ 7. Kg2 Qf3+ {That is a mistake, Black could have won the game with e2.} 8. Kg1 Qd1+ 9. Kg2 Qf3+ 10. Kg1 Kh3 {Black threatens mate.} 11. Qg5 {White covers mate with queen g5.} Qe3+ 12. Kf1 Qf3+ 13. Kg1 Qd1+ 14. Kf2 Qc2+ 15. Kg1 {This is a blunder. Now the queen can take the pawn on h2.} Qxh2+ 16. Kf1 Qd2 {Black is now on a win.} 17. b4 e5 {A very nice winning move by black. The pawn on f4 cannot capture the pawn on e5, because the queen is tied and the black pawn on e5 threatens to pass through on the e-file.} 18. Qxe5 Kg3 {There is a threat of mate on f2. Here you can see how much influence an active king can have in the endgame.} 19. Qc5 {Queen c5 covers mate.} Qd1# {But queen d1 is also mate.}', //PGN
+      ],
+
+      ForcingMove1:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "8/8/8/5K2/P5N1/1P5p/3b2k1/8 b - - 0 1"]', //FEN
+        '',
+        '{Black to move. Black has a strong passed pawn on the h-file. The white knight tries to stop this pawn. On the other side white has 2 passed pawns. The only problem for white is that the black bishop on d2 prevents the white passed pawns from moving on, and on the other diagonal, the black king is denied the squares f4 and g5. The way to win here is to force moves.} 1... Kg3 {A strong move. White must now move, but has no useful squares.} 2. a5 {White sacrifices a pawn.} Bxa5 3. Ne3 {Black has to be careful. Black is not yet winning with pawn h2, because of knight f1.} Kf2 4. Ng4+ Kf3 {Here, white is forced to move again. White has no reasonable moves.} 5. Kg5 Kg3 6. Kh5 Bd2 {Here, white is forced to move again. White has no reasonable moves.} 7. b4 {White desperately sacrifices his last pawn.} Bxb4 8. Ne3 Bd2 9. Nf1+ Kg2 10. Kg4 {The final trick of white.} Bg5 {White\'s last trick, however, was crushed with bishop g5. Again a forced move for white.}', //PGN
+      ],
+      ForcingMove2:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "8/3kP3/1p1P2B1/1p2r3/8/6p1/P5K1/8 w - - 0 1"]', //FEN
+        '',
+        '{White to move. White has less piece quality here, but two incredibly strong pawns on d6 and e7 supported by the g6 bishop. Here white wins by forcing the move.} 1. Bf7 {This is forcing black to move while black has hardly any squares.} Re3 2. Kh3 {This puts black in a forced move again.}', //PGN
+      ],
+      ForcingMove3:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "8/2kb2p1/2p1pp1p/2K5/1P3P2/4P3/2B3PP/8 w - - 0 1"]', //FEN
+        '',
+        '{White to move. A bishop endgame. Black has a passive bishop, whereas white\'s is very active, and black has the problem that two pawns are on white squares, which pleases the white pawn. In addition, white has an active king, whereas black\'s is in its own ranks.} 1. Bg6 {This move activates the bishop and takes away the square e8 from the black bishop. Black does not have many options now.} e5 {This move is reasonable to activate the black bishop.} 2. f5 {Black is forced into a move here. The pieces have hardly any squares to move. The black king must remain standing so that the white king does not move to b6 or d6. In this position, black is on loss.} Bc8 3. Be8 {Strong move! Attacks the pawn on c6.} Bxf5 4. Bxc6 {Now the pawn on the b-file is very strong, it will pass through quite easily.}', //PGN
+      ],
+
+      NotRush1:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "8/1p3p2/8/2PbP1p1/6k1/3KB3/6r1/5R2 w - - 0 1"]', //FEN
+        '',
+        '{White to play. This is an endgame with two unequally colored bishops. This is an endgame with two unequally colored bishops. In such a case, the defender (white) desperately wants to play rook g1. But that doesn\'t work here, because in the following moves the black king can be activated.} 1. Rg1 Rxg1 2. Bxg1 Kf3 {Black wins here with this move, because the g pawn is free to move.}', //PGN
+      ],
+      NotRush1_Variation:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "8/1p3p2/8/2PbP1p1/6k1/3KB3/6r1/5R2 w - - 0 1"]', //FEN
+        '',
+        '{White to play. This is an endgame with two unequally colored bishops. This is an endgame with two unequally colored bishops. In such a case, the defender (white) desperately wants to play rook g1. But that doesn\'t work here, because in the following moves the black king can be activated.} 1. Kd4 {Instead of placing the rook on g1, white correctly activates the king here. The black bishop is attacked and has to go.} Be6 2. Ke4 {Now the white king comes into play, especially to cover the square f3.} Rg3 3. Kd4 Bf5 4. Rf2 Rg1 5. Rxf5 Rd1+ 6. Ke4', //PGN
+      ],
+      NotRush2:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "3r4/1pr2pk1/1p2b2p/3p2p1/1N1Pn3/1B5P/PP2RPP1/4R1K1 w - - 0 1"]', //FEN
+        '',
+        '{White to play. In this position white is better. White has two active minor pieces and black has problems with his pawn structure. White has nicely positioned rooks, but the knight on e4 is in the way. White would like to get rid of the knight.But again: Do not rush!} 1. g4 {A nice move. This one makes room for the king.} Nf6 2. Kg2 Rd6 3. f3 {A nice move. This further restricts the black pieces.} Bd7 4. Kg3 Kf8 5. h4 {As you can see, the white king is playing very actively, which is good.} Bb5 6. Re5 gxh4+ 7. Kxh4 Bc4 {Black tries to get rid of his weak bishop.} 8. Bc2 Bb5 9. a3 {A very patient move. This one does not rush anything.} Rd8 10. Kg3 Kg7 11. Bf5 Kf8 12. Rh1 Kg7 13. Nc2 {Now the knight is rotated.} Re8 14. Ne3 Rce7 15. Kf4 {White is very compact here with all the pieces, which is good.} Bc6 16. Bc2 {Knight f5 check is threatened.} Bd7 17. g5 {White has improved his position every single move up to this point and will win the game because of it.}', //PGN
+      ],
+
+      ExchangePawns1:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "3r4/1pr2pk1/1p2b2p/3p2p1/1N1Pn3/1B5P/PP2RPP1/4R1K1 w - - 0 1"]', //FEN
+        '',
+        '{White to play. Here black has one more pawn in the rook endgame. In addition, both white pawns are isolated. That means white is trying to get a draw here.} 1. h5 {White offers a free pawn.} Rd7+ 2. Ke3 gxh5 {Black accepts the sacrifice.} 3. e5 {The next pawn sacrifice. But White finds a concrete way to justify it.} fxe5 4. Ke4 {Here white has a very active king attacking the pawn and white has the possibility to attack the h-pawns with rook h6.} Re7 5. Rh6 Kg7 6. Rxh5 {This position is now suddenly a draw. There is so little material on the board and white is extremely active.} Kg6 7. Rh1 h5 8. Rg1+ Kh6 9. Kf5 Rf7+ 10. Kxe5 {This is now a draw. Theoretically, it is well known that nothing can be achieved in this position with only one edge pawn.}', //PGN
+      ],
+      ExchangePawns2:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "8/1R4pk/5p1p/p3pP2/6P1/4PK1P/8/r7 w - - 0 1"]', //FEN
+        '',
+        '{White to play. White is a pawn down in rook endgame and black has a dangerous pawn on the a-file.} 1. h4 {This is the best move. It is immediately stormed off on the kingside.} a4 2. g5 hxg5 3. hxg5 fxg5 {Black wins a pawn here, but weaknesses arise: the e5 and g5 pawns are isolated and the f5 pawn is free to move because the pawn on g7 is pinned.} 4. Ra7 a3 5. f6 a2 {Rook f1 threatens check with promotion a1} 6. f7 {White keeps things tight with f7.} Rf1+ 7. Kg4 Kg6 8. f8=Q Rxf8 9. Rxa2 {Here a position is created which black can no longer win. This is because the white king is very active and the black pawns are very weak.}', //PGN
+      ],
+
+      RookEndgame1:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "5R2/5p1k/5P1p/4K3/4P1r1/8/8/8 b - - 0 1"]', //FEN
+        '',
+        '{Black to move. A position with few pieces on the board. The pawn on f7 is under attack and black has to play very actively here.} 1... Rg5+ 2. Kd6 {The pawn is still under attack, but you must not cling to the f7 pawn.} Kg6 {This is a blunder! Because => See next few moves.} 3. e5 Rh5 {Too passive move!} 4. Rg8+ Kf5 5. e6 {Very strong move from white. One pawn doesn\'t matter, the other wants to become a queen.} Kxf6 6. e7 Re5 7. e8=Q Rxe8 8. Rxe8 {Black loses in this position.}', //PGN
+      ],
+      RookEndgame1_Variation:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "5R2/5p1k/5P1p/4K3/4P1r1/8/8/8 b - - 0 1"]', //FEN
+        '',
+        '{Black to move. A position with few pieces on the board. The pawn on f7 is under attack and black has to play very actively here.} 1... Rg5+ 2. Kd6 {The pawn is still under attack, but you must not cling to the f7 pawn.} Ra5 {A very active move, which is good.} 3. Rxf7+ Kg6 4. Rf8 {Now black has a very active king attacking the pawn on f6 and on the next move, black simply gives check with rook a6 and white cannot escape.} Ra6+ 5. Ke5 Ra5+ 6. Kf4 Ra4 {The pawn on e4 is captured and that\'s a draw.} 7. f7 Kg7', //PGN
+      ],
+      RookEndgame2:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "3r4/pp5p/6p1/1P3k2/3p1P2/3K3P/PP6/3R4 w - - 0 1"]', //FEN
+        '',
+        '{White to move. Here again actively defend the rook ending! The black king attacks the f4 pawn and the white king attacks the d4 pawn. The white rook is a bit passive and so is the black one. Here it is very important not to play passively. So don\'t play rook f1!} 1. Re1 {White wants to activate the rook and place it on the 7th rank.} Kxf4 {This is a crucial mistake. Rook d5 would have been better. Actively place the rook.} 2. Re7 {Very strong train! Places the rook actively and now it becomes difficult for black.} h5 3. Rxb7 g5 {Black desperately wants to win with his passed pawn, but things turn out quite differently.} 4. Rxa7 Kg3 5. Rg7 Rd5 6. a4 {Now the white passed pawns suddenly start running.} Kxh3 7. b6 g4 8. b7 Rd8 9. a5 g3 10. a6 {At this point, you can see that black has no chance to turn this game around.}', //PGN
+      ],
+    },
     Carlsen: {
       World_Chess_Championship_2021_Game6: {
         PGN: '1. d4 Nf6 2. Nf3 d5 3. g3 e6 4. Bg2 Be7 5. O-O O-O 6. b3 c5 7. dxc5 Bxc5 8. c4 dxc4 9. Qc2 Qe7 10. Nbd2 Nc6 11. Nxc4 b5 12. Nce5 Nb4 13. Qb2 Bb7 14. a3 Nc6 15. Nd3 Bb6 16. Bg5 Rfd8 17. Bxf6 gxf6 18. Rac1 Nd4 19. Nxd4 Bxd4 20. Qa2 Bxg2 21. Kxg2 Qb7+ 22. Kg1 Qe4 23. Qc2 a5 24. Rfd1 Kg7 25. Rd2 Rac8 26. Qxc8 Rxc8 27. Rxc8 Qd5 28. b4 a4 29. e3 Be5 30. h4 h5 31. Kh2 Bb2 32. Rc5 Qd6 33. Rd1 Bxa3 34. Rxb5 Qd7 35. Rc5 e5 36. Rc2 Qd5 37. Rdd2 Qb3 38. Ra2 e4 39. Nc5 Qxb4 40. Nxe4 Qb3 41. Rac2 Bf8 42. Nc5 Qb5 43. Nd3 a3 44. Nf4 Qa5 45. Ra2 Bb4 46. Rd3 Kh6 47. Rd1 Qa4 48. Rda1 Bd6 49. Kg1 Qb3 50. Ne2 Qd3 51. Nd4 Kh7 52. Kh2 Qe4 53. Rxa3 Qxh4+ 54. Kg1 Qe4 55. Ra4 Be5 56. Ne2 Qc2 57. R1a2 Qb3 58. Kg2 Qd5+ 59. f3 Qd1 60. f4 Bc7 61. Kf2 Bb6 62. Ra1 Qb3 63. Re4 Kg7 64. Re8 f5 65. Raa8 Qb4 66. Rac8 Ba5 67. Rc1 Bb6 68. Re5 Qb3 69. Re8 Qd5 70. Rcc8 Qh1  71. Rc1 Qd5 72. Rb1 Ba7 73. Re7 Bc5 74. Re5 Qd3 75. Rb7 Qc2 76. Rb5 Ba7 77. Ra5 Bb6 78. Rab5 Ba7 79. Rxf5  Qd3 80. Rxf7+ Kxf7 81. Rb7+ Kg6 82. Rxa7 Qd5 83. Ra6+ Kh7 84. Ra1 Kg6 85. Nd4 Qb7 86. Ra2 Qh1 87. Ra6+ Kf7 88. Nf3 Qb1 89. Rd6 Kg7 90. Rd5 Qa2+ 91. Rd2 Qb1 92. Re2 Qb6 93. Rc2 Qb1 94. Nd4 Qh1 95. Rc7+ Kf6 96. Rc6+ Kf7 97. Nf3 Qb1 98. Ng5+ Kg7 99. Ne6+ Kf7 100. Nd4 Qh1 101. Rc7+ Kf6 102. Nf3 Qb1 103. Rd7 Qb2+ 104. Rd2 Qb1 105. Ng1 Qb4 106. Rd1 Qb3 107. Rd6+ Kg7 108. Rd4 Qb2+ 109. Ne2 Qb1 110. e4 Qh1 111. Rd7+ Kg8 112. Rd4 Qh2+ 113. Ke3 h4 114. gxh4 Qh3+ 115. Kd2 Qxh4 116. Rd3 Kf8 117. Rf3 Qd8+ 118. Ke3 Qa5 119. Kf2 Qa7+ 120. Re3 Qd7 121. Ng3 Qd2+ 122. Kf3 Qd1+ 123. Re2 Qb3+ 124. Kg2 Qb7 125. Rd2 Qb3 126. Rd5 Ke7 127. Re5+ Kf7 128. Rf5+ Ke8 129. e5 Qa2+ 130. Kh3 Qe6 131. Kh4 Qh6+ 132. Nh5 Qh7 133. e6 Qg6 134. Rf7 Kd8 135. f5 Qg1 136. Ng7 1-0',
