@@ -1222,7 +1222,169 @@ var g = new Global(
           '',
           '', //PGN
         ],
+
+      Threat1_misplayed:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "1kr4r/1pp1qppp/p1n1pn2/3p2B1/3PP1bP/P1N2NP1/1PP1QP2/1KR4R w Kk - 0 1"]', //FEN
+        '',
+        '{It is White\'s move. Recognising threats in the middlegame is not always easy. Especially here. In this position the threat is knight takes d4. The reason for this is that the black bishop on g4 ties up the white knight on f3 because the queen is behind it. That is a very concrete threat and must be reacted to immediately.} 1. e5 {This is a blunder. The following steps show that Black gains material by taking the d4-pawn.} Nxd4 2. exf6 Nxe2 3. fxe7 Nxc3+ 4. bxc3 Bxf3 {In the end, black is left with a pawn more and has a much better position than white.}', //PGN
+      ],
+      Threat1_parried:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "1kr4r/1pp1qppp/p1n1pn2/3p2B1/3PP1bP/P1N2NP1/1PP1QP2/1KR4R w Kk - 0 1"]', //FEN
+        '',
+        '{It is White\'s move. Recognising threats in the middlegame is not always easy. Especially here. In this position the threat is knight takes d4. The reason for this is that the black bishop on g4 ties up the white knight on f3 because the queen is behind it. That is a very concrete threat and must be reacted to immediately.} 1. Qd3 {Even though rook d1 is an option, queen d3 is the best move. The pawn on d4 is covered and the queen goes out of the pin.}', //PGN
+      ],
+      Threat2:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "rnbqk2r/ppp2ppp/4pn2/3p2B1/1b1PP3/2N5/PPP2PPP/R2QKBNR w KQkq - 4 5"]', //FEN
+        '',
+        '{It is White\'s move. It looks here as if pawn on e5 is a threat. However, it is not. => See the move after next.} 5. e5 {At the latest when the move e5 occurs, one should consider how to react to it.} h6 {With pawn h6 Black makes a counter-threat. In this case it is the only move, since the knight on f6 cannot be moved away because of the pin to queen.} 6. exf6 {Should the exchange occur, then a balanced situation will arise. => see last move.} hxg5 7. fxg7 Rg8', //PGN
+      ],
+      Threat2_Variation:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "rnbqk2r/ppp2ppp/4pn2/3p2B1/1b1PP3/2N5/PPP2PPP/R2QKBNR w KQkq - 4 5"]', //FEN
+        '',
+        '{It is White\'s move. It looks here as if pawn on e5 is a threat. However, it is not. => See the move after next.} 5. e5 {At the latest when the move e5 occurs, one should consider how to react to it.} h6 {With pawn h6 Black makes a counter-threat. In this case it is the only move, since the knight on f6 cannot be moved away because of the pin to queen.} 6. Bh4 {What is often considered the best idea is bishop h4 to maintain the pin.} g5 {Now, at the latest, the pin is broken.} 7. exf6 {Now comes the exchange. If white captures, the pawn on g5 also captures the bishop on h4. => see next move} gxh4', //PGN
+      ],
+      Threat3:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "r1b1kb1r/3p1ppp/p3p3/1p6/2q1PP2/2N1B3/PPPQ2PP/1K1R3R w Kkq - 0 2"]', //FEN
+        '',
+        '{It is white\'s move. White is clearly better developed and the king is safe. Black has only the queen developed. In such a case it is a clear developmental advantage for white. Black would like to develop further here.} 1. Bd4 {Bishop d4 (a fantastic move) prevents the black bishop on f8 from developing. The pawn on g7 is attacked and since the bishop on f8 covers it, it cannot develop. At the same time, the black queen\'s connection to the pawn on e4 is also broken.} f6 {Black blocks the bishop on d4 and wants to develop with his black bishop on f8.}', //PGN
+      ],
+
+      AttackMarker1:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "r1b1kb1r/3p2pp/p3pp2/1p6/2qBPP2/2N5/PPPQ2PP/1K1R3R w Kkq - 0 2"]', //FEN
+        '',
+        '{White to play. The pawn on f6 is an attack marker. A pawn that white can attack. This does not have to happen immediately, in 2, 3 or 4 moves. The important thing is first to find pawns in the opponent\'s camp that can be attacked.} 2. g4 {The pawn can be attacked with the idea of g4. Moving the pawn on e4 to e5 would be somewhat inaccurate, since the black pawn on e6 could simply move out to e5 and the wise bishop on d4 would be somewhat trapped. The idea of g4 is the following move g4 to g5.} Be7 {The next few moves are not analysed. Sometimes in chess it is not only important to analyse every move, but especially for beginners watching is usually worth its weight in gold.} 3. g5 O-O 4. b3 Qc6 5. gxf6 Bxf6 6. Rhg1 b4 7. Nd5 exd5 8. e5 Be7 9. e6 Rf6 10. f5 dxe6 11. Rxg7+ Kxg7 12. Qg5+ Kf7 13. Rg1 Bf8 14. Qxf6+ Ke8 15. Rg8 Qd6 16. fxe6 Bxe6 17. Rxf8+ Qxf8 18. Qxe6+ Kd8 19. Bb6# {Checkmate}', //PGN
+      ],
+
+      AttackMarker2:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "rnbq1rk1/p3bppp/3p1n2/1p1Pp3/2p1P3/2P2N2/PPB2PPP/RNBQR1K1 w Qq - 0 1"]', //FEN
+        '',
+        '{It is white\'s move. Two pawns black pawns can be attacked here immediately: On b5 and c4.} 1. a4 {This move is good because you need to create space for pieces and because the pawn on b5 cannot be well covered. => see next few moves.} a6 2. axb5 {Covering the black pawn on b5 with the pawn on a6 does not work for black, since the pawn on a6 is pinned.} axb5 3. Rxa8', //PGN
+      ],
+
+      AttackMarker2_Variation:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "rnbq1rk1/p3bppp/3p1n2/1p1Pp3/2p1P3/2P2N2/PPB2PPP/RNBQR1K1 w Qq - 0 1"]', //FEN
+        '',
+        '{It is white\'s move. Two pawns black pawns can be attacked here immediately: On b5 and c4.} 1. a4 {This move is good because you need to create space for pieces and because the pawn on b5 cannot be well covered. => see next few moves.} Ba6 2. axb5 Bxb5 {The pawn on c4 is now a weakness.}', //PGN
+      ],
       
+      PawnStructure1:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "3q4/1pp1rk2/p1b2npp/5p2/2P5/PP1P1N1P/5KPQ/3R4 w - - 0 1"]', //FEN
+        '',
+        '{It is white\'s move. Keeping pawns together in chains and not isolating them is a basic rule in successful chess. In this position white has a move that can weaken the opponent\'s pawn structure.} 1. Ne5+ {Knight e5 attacks the king and bishop here. This is also called a "knight fork".} Kg7 {The king must move away.} Nxc6 bxc6 {Even though the material is balanced, white has managed to destroy the pawn chain. Black now has so-called doubled pawns on c7 and c6 and an isolated pawn on a6. These are weak pawns and white will in all probability be able to attack these pawns in the endgame.}', //PGN
+      ],
+      PawnStructure2:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "1r3rk1/2pbqpp1/1p1p3p/p3n3/4P3/2P2N2/PPB1QPPP/R3R1K1 b - - 0 1"]', //FEN
+        '',
+        '{Black to move. Black can destroy white\'s pawn structure here.} 1... Bg4 {By pinning the knight on f3, the bishop can destroy the pawn structure. No matter what white does, there is no way he can keep the pawns together in front of his king.} 2. Qe3 Bxf3 3. gxf3 {White must now play on with doubled pawns and an isolated pawn.} g5 {White must now play on with a double pawn and an isolated pawn.}', //PGN
+      ],
+      PawnStructure3:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "1r3rk1/2pbqppp/1p1p4/p3n3/4P3/2P2N2/PPB1QPPP/R3R1K1 w Qq - 0 1"]', //FEN
+        '',
+        '{White to play. White must prevent the capture of the following move, bishop g4. There is a move with which white can do this.} 1. Nd4 {By moving the knight away, white prevents black from placing his bishop on g4. But a pawn on h3 would also have been possible.}', //PGN
+      ],
+      PawnStructure4:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "r1b2rk1/pp1p1ppp/8/2q1n3/5B2/2P1P3/PP1QBPPP/R4RK1 w Qq - 0 1"]', //FEN
+        '',
+        '{White to play. White has 2 isolated pawns in this position (a2 and c3).  Black also has an isolated pawn on d7. There is a move with which White can improve his pawn structure.} 1. Qd4 {The knight is now attacked twice and the queen is also attacked once. Black has no choice but to exchange queens, because otherwise the knight on e5 will be lost.} Qxd4 2. cxd4 {White has managed to improve his pawn structure with a tactically considered move. At the same time, the knight on e5 is attacked again.}', //PGN
+      ],
+      PawnStructure5:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "r2qkb1r/1bpn1ppp/p3pn2/1p6/3P4/P1N1PN2/1P2BPPP/R1BQ1RK1 b Qkq - 0 1"]', //FEN
+        '',
+        '{Black to move. An important motive can be seen in this position for black. The pawn on c7 is lagging behind. It is very weak and can no longer be covered by its own pawns. The aim in this case is to get rid of this pawn. This structure is typical for a Queen\'s Gambit. Often the mistake is made that the knight on d7, which was previously on b8, was developed on c6. Thus the knight blocks the pawn and that is bad for black.} 1... c5 {The pawn can create space with this move. In addition, the centre is attacked.} 2. dxc5 {The central white pawn was removed and falls on the next move.} Bxc5 {The bishop develops here at the same time.}', //PGN
+      ],
+
+      Strong_Weak1:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "r2qk2r/1bpn1ppp/p2bpn2/1p6/3P4/P1N1PN2/1P2BPPP/R1BQ1RK1 w Qkq - 0 1"]', //FEN
+        '',
+        '{White to play. White can make a strong move in this position so that he controls important squares.} 1. b4 {With this move the pawn on c7 cannot be resolved. White has control over the square c5 with 2 pawns. a5 is also a weak square from white\'s point of view. But on the edge, weak squares are not so relevant. The centre is more important.}', //PGN
+      ],
+
+      Strong_Weak2:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "r2qk2r/1bpn1ppp/p2bpn2/1p6/3P4/P1N1PN2/1P2BPPP/R1BQ1RK1 w Qkq - 0 1"]', //FEN
+        '',
+        '{White to move. White can claim a strong square here for himself and for a minor piece.} 1. Bxb6 {By taking the knight on b6, Black is forced to take the c7 pawn.} cxb6 2. Ne3 {The white knight wants to move to the square d5, since the piece is centrally placed here and can have a strong effect on the black position.} b5 3. Nd5 {Now the knight controls into the black position and is optimally placed. At the same time, the black pawn on d6 is lagging behind and there are double pawns on the b-line.}', //PGN
+      ],
+      Strong_Weak3:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "r2qr1k1/1b1n1pp1/1ppb1n1p/p2p4/P2P3B/2NBP2P/1PQ1NPP1/R4RK1 b Qq - 0 1"]', //FEN
+        '',
+        '{Black to move. This position is a good example of recognising a weak square from white\'s point of view and then trying to place a piece on it. The square is b4. It is controlled by the a5 pawn.} 1... Nb8 {With the rotation of the knight on b8, Black wants to land on the square b4 via a6 in the next moves. It looks unusual, but often it simply takes time to implement plans. Sometimes you just have to take time for restructuring.}', //PGN
+      ],
+      Strong_Weak4:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "2rq1rk1/1bp1bppp/4p3/pp1nN3/1P1P4/P3P1P1/2QN1PBP/R4RK1 w Q - 0 1"]', //FEN
+        '',
+        '{White to play. Here there are weak squares on the black side. These include c5, c6, and the pawn on a5. There is also a threat here. Black attacks the white pawn on b4 with 3 pieces. However, the knight on d5 is pinned.} 1. Nb3 {Knight b3 is exploiting black\'s weaknesses. The pawn on a5 is attacked.} axb4 2. Na5 {Knight a5 attacks the bishop.} Ba8 {The bishop must move backwards.} 3. Nac6 {Knight c6 is a fork on queen and bishop.} Bxc6 {The knight is taken.} 4. Nxc6 {Another fork follows.} Qd7 {The queen must move out.} 5. Bxd5 {That is the punch line. Black must now capture the bishop with the pawn, because otherwise the bishop hangs on e7.} exd5 {White has now got his pawn back after this long forced variation and has a monstrous knight on c6. Black now has many weaknesses: The backward pawn on c7, the pawn on b5 and the square c5.} 6. axb4 {Now the square c5 can no longer be defended.}', //PGN
+      ],
+
+      ImprovePieces1:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "2r1r2k/pp4p1/n1pq3p/4p3/1P2Pp2/P1RP1P2/2Q1BP1P/6RK b - - 0 1"]', //FEN
+        '',
+        '{Black to play. The knight on a6 is depositioned. There is also a proverb that says: "A knight on the rim is dim." In addition, white has many weaknesses. He has a double pawn on the f-file, a backward pawn on d3 and a weak square on d4. So the black knight wants to move exactly to the square d4.} 1... Nc7 {This knight now goes on a journey and will eventually land on d4.} 2. Bf1 Nb5 {The knight attacks the rook.} 3. Rc5 Nd4 {Now the black knight has done it. The piece is in the centre and feels most comfortable here.}', //PGN
+      ],
+
+      ImprovePieces2:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "2r2rk1/p1qbn1pp/1p2p3/1P1pPp2/P1pP1P2/2P1BNP1/2Q4P/R4RK1 w Q - 0 1"]', //FEN
+        '',
+        '{White to play. Here white has a piece in a bad position. It is the bishop on e3. The piece is inside the pawn chain. That is bad. Bishops like to be outside the pawn chain.} 1. Bc1 {With the rotation of the bishop on c1, the piece has a future over the square a3.}', //PGN
+      ],
+      ImprovePieces3:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "2r2rk1/p1qbn1pp/1p2p3/1P1pPp2/P1pP1P2/2P1BNP1/2Q4P/R4RK1 w Q - 0 1"]', //FEN
+        '',
+        '{White to play. The piece with the worst position is the rook on a1.} 1. Re3 {White prepares to double the rooks on the e-file.} Rfe8 2. Rae1 {With the doubling of the rooks on the e-file, the pawn on e4 is attacked 3 times and the rook has been activated.}', //PGN
+      ],
+      ImprovePieces4:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "1k1b2rr/3b1p2/p2ppp2/1pq2P2/4PN1p/3B1Q2/PPP3PP/1K1RR3 w k - 0 1"]', //FEN
+        '',
+        '{White to play. The bishop on d3 is badly positioned. He only looks at his pawns. In addition, the knight on f4 and the pawn on f5 put enormous pressure on the pawn on e6.} 1. c3 {A simple move. The pawn creates space for the bishop and the idea is that the bishop comes to b3 via c2 and puts even more pressure on the e6-pawn.}', //PGN
+      ],
+      ImprovePieces5:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "r4rk1/3bppbp/1q4p1/np1pP3/3P4/1P2BN2/4BPPP/R2Q1RK1 w Qq - 0 1"]', //FEN
+        '',
+        '{White to play. This position goes into the complex area. It is not obvious now which piece is in a bad position with white. One could define that the bishop on e3 is bad, but the knight on f3 doesn\'t do much either. If you look at the opponent\'s position, you see that the square c5 is weak.} 1. Ne1 {The square c5 wants to be attacked from white\'s point of view. That is why knight e1 comes here. The idea is to position the knight on c5 via e3. All of black\'s minor pieces are not particularly strong in this position either.} b4 {Because black\'s minor pieces are not well positioned, pawn b4 comes. Black wants to exchange the bishop on d7 over b5.} 2. Nd3 Bb5 3. Nc5 {Now the knight has positioned itself on c5.} Nb7 {Now black wants to exchange the knight.} 4. Rxa8 Rxa8 5. Bxb5 Qxb5 {Here black must take the bishop with the queen. If black had taken the knight on c5 first, then white wins a pawn.} 6. Qd3 Qc6 7. Na4 Nd8 8. Rc1 Qb7 9. Qc2 f6 10. f4 Bh6 11. g3 fxe5 12. dxe5 Ne6 13. Qc6 Qxc6 14. Rxc6', //PGN
+      ],
     },
     EndGame: {},
     Carlsen: {

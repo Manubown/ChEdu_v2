@@ -831,10 +831,18 @@ export default class LearnToPlay extends React.Component {
                               'Recognising these is not always easy and beginners usually need longer. But the more you practise them, the faster you recognise them.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getMiddleGames().Threat1_misplayed.join("\n"),
+                              global.g.getMiddleGames().Threat1_parried.join("\n"),
+                              global.g.getMiddleGames().Threat2.join("\n"),
+                              global.g.getMiddleGames().Threat2_Variation.join("\n"),
+                              global.g.getMiddleGames().Threat3.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'Threat 1 misplayed',
+                              'Threat 1 parried',
+                              'Threat 2',
+                              'Threat 2 Variation',
+                              'Threat 3',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
@@ -848,10 +856,14 @@ export default class LearnToPlay extends React.Component {
                               'Attack markers are by definition pawns that you can attack with your own pawns. As a rule, for black pieces they are the 5th and 6th row and in the white camp they are the 3rd and 4th row.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getMiddleGames().AttackMarker1.join("\n"),
+                              global.g.getMiddleGames().AttackMarker2.join("\n"),
+                              global.g.getMiddleGames().AttackMarker2_Variation.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'Attack Marker 1',
+                              'AttackMarker 2',
+                              'AttackMarker 2 Variation',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
@@ -865,10 +877,18 @@ export default class LearnToPlay extends React.Component {
                               'Observe pawn structures. Keeping the pawns together in chains and not interrupting them is the basic rule. Even though pawns are the most worthless pieces on the board, they are very strong as a unit. If the structure is destroyed, the opponent can take advantage of this and the danger arises that consequently attacks arise.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getMiddleGames().PawnStructure1.join("\n"),
+                              global.g.getMiddleGames().PawnStructure2.join("\n"),
+                              global.g.getMiddleGames().PawnStructure3.join("\n"),
+                              global.g.getMiddleGames().PawnStructure4.join("\n"),
+                              global.g.getMiddleGames().PawnStructure5.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'PawnStructure 1',
+                              'PawnStructure 2',
+                              'PawnStructure 3',
+                              'PawnStructure 4',
+                              'PawnStructure 5',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
@@ -884,10 +904,16 @@ export default class LearnToPlay extends React.Component {
                               'A strong square means: If you control a square of the opponent\'s camp with your own pawns (i.e. the rows 7 - 5 or 2 - 4) and the opponent can only cover it with pieces and not with his own pawns. Conversely, weak squares are the exact opposite. On the edge (H and A line), however, these squares are not so important.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getMiddleGames().Strong_Weak1.join("\n"),
+                              global.g.getMiddleGames().Strong_Weak2.join("\n"),
+                              global.g.getMiddleGames().Strong_Weak3.join("\n"),
+                              global.g.getMiddleGames().Strong_Weak4.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'Strong and Weak Squares 1',
+                              'Strong and Weak Squares 2',
+                              'Strong and Weak Squares 3',
+                              'Strong and Weak Squares 4',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
@@ -901,10 +927,18 @@ export default class LearnToPlay extends React.Component {
                               'In a game, individual pieces are often in a bad position and therefore, as a player, you have to think about how you can improve them. A prime example is the knight on the edge. A well-known saying in the chess scene is: "A knight on the rim is grim". Bishops are often blocked by chains of pawns. You should therefore activate a bishop here if possible. Queens do not need to be activated often, as they are generally in a good position. Rooks can usually be activated by doubling them. That is, if they are on the same line and thus exert more pressure on it. Routing knights is also a way to improve your position.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Lul.join("\n"),
+                              global.g.getMiddleGames().ImprovePieces1.join("\n"),
+                              global.g.getMiddleGames().ImprovePieces2.join("\n"),
+                              global.g.getMiddleGames().ImprovePieces3.join("\n"),
+                              global.g.getMiddleGames().ImprovePieces4.join("\n"),
+                              global.g.getMiddleGames().ImprovePieces5.join("\n"),
                             ]}
                             NameArray={[
-                              'Lul',
+                              'Improve Pieces 1',
+                              'Improve Pieces 2',
+                              'Improve Pieces 3',
+                              'Improve Pieces 4',
+                              'Improve Pieces 5',
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
