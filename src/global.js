@@ -686,6 +686,9 @@ class Global extends React.Component {
   getEndGames = () => {
     return this.pgn.EndGame;
   }
+  getBasics = () => {
+    return this.pgn.Basics;
+  }
   //#endregion
 
   //#endregion Getter
@@ -1473,6 +1476,15 @@ var g = new Global(
         '[FEN "3r4/pp5p/6p1/1P3k2/3p1P2/3K3P/PP6/3R4 w - - 0 1"]', //FEN
         '',
         '{White to move. Here again actively defend the rook ending! The black king attacks the f4 pawn and the white king attacks the d4 pawn. The white rook is a bit passive and so is the black one. Here it is very important not to play passively. So don\'t play rook f1!} 1. Re1 {White wants to activate the rook and place it on the 7th rank.} Kxf4 {This is a crucial mistake. Rook d5 would have been better. Actively place the rook.} 2. Re7 {Very strong train! Places the rook actively and now it becomes difficult for black.} h5 3. Rxb7 g5 {Black desperately wants to win with his passed pawn, but things turn out quite differently.} 4. Rxa7 Kg3 5. Rg7 Rd5 6. a4 {Now the white passed pawns suddenly start running.} Kxh3 7. b6 g4 8. b7 Rd8 9. a5 g3 10. a6 {At this point, you can see that black has no chance to turn this game around.}', //PGN
+      ],
+    },
+    Basics: {
+      Queen:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "8/8/8/4Q3/8/8/8/8 w - - 0 1"]', //FEN
+        '',
+        '{Hover over the piece to see how it moves. The queen is the strongest piece in chess. It can move diagonally and horizontally in all directions. Each chess piece has a relative value. This allows to assess which piece should be exchanged for another and how to evaluate a position. The queen has a value of 9. Therefore, you should only sacrifice the queen if you get pieces worth 9 in return.}', //PGN
       ],
     },
     Carlsen: {

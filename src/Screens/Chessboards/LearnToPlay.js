@@ -641,9 +641,93 @@ export default class LearnToPlay extends React.Component {
                         translateYChessBasics: event.nativeEvent.layout.height,
                       })
                     }>
-                    <Text style={{color: global.g.getTextColor()}}>
-                      Tab One
-                    </Text>
+                    <View style={{flexDirection: 'row'}}>
+                      <View>
+                        <StandardGameComponent
+                          picture={global.g.getSicilianDefencePicture()}
+                          name={'Goal of the game'}
+                          ComponentArray={global.g.getSicilianDefence().PGN.join} //.join('\n')
+                          position={global.g.getSicilianDefence().position}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <StandardGameComponent
+                          picture={global.g.getFrenchDefencePicture()}
+                          name={'King'}
+                          ComponentArray={global.g.getFrenchDefence().PGN}
+                          position={global.g.getFrenchDefence().position}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <StandardGameComponent
+                          picture={global.g.getRuyLopezPicture()}
+                          name={'Pawn'}
+                          ComponentArray={global.g.getRuyLopez().PGN}
+                          position={global.g.getRuyLopez().position}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                      <View>
+                        <StandardGameComponent
+                          picture={global.g.getSicilianDefencePicture()}
+                          name={'Knight'}
+                          ComponentArray={global.g.getSicilianDefence().PGN} //.join('\n')
+                          position={global.g.getSicilianDefence().position}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <StandardGameComponent
+                          picture={global.g.getFrenchDefencePicture()}
+                          name={'Bishop'}
+                          ComponentArray={global.g.getFrenchDefence().PGN}
+                          position={global.g.getFrenchDefence().position}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <StandardGameComponent
+                          picture={global.g.getRuyLopezPicture()}
+                          name={'Rook'}
+                          ComponentArray={global.g.getRuyLopez().PGN}
+                          position={global.g.getRuyLopez().position}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                      <View>
+                        <StandardGameComponent
+                          picture={global.g.getSicilianDefencePicture()}
+                          name={'Queen'}
+                          ComponentArray={global.g.getBasics().Queen.join("\n")} //.join('\n')
+                          position={0}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <StandardGameComponent
+                          picture={global.g.getFrenchDefencePicture()}
+                          name={'Castling'}
+                          ComponentArray={global.g.getFrenchDefence().PGN}
+                          position={global.g.getFrenchDefence().position}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <StandardGameComponent
+                          picture={global.g.getRuyLopezPicture()}
+                          name={'En Passant'}
+                          ComponentArray={global.g.getRuyLopez().PGN}
+                          position={global.g.getRuyLopez().position}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
                   </Animated.View>
 
                   {/*Strategic Concepts*/}
