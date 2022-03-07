@@ -646,7 +646,9 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getSicilianDefencePicture()}
                           name={'Goal of the game'}
-                          ComponentArray={global.g.getSicilianDefence().PGN.join} //.join('\n')
+                          ComponentArray={
+                            global.g.getSicilianDefence().PGN.join
+                          } //.join('\n')
                           position={global.g.getSicilianDefence().position}
                           updateGamePGNMethode={updateGamePGN}
                         />
@@ -704,7 +706,7 @@ export default class LearnToPlay extends React.Component {
                         <StandardGameComponent
                           picture={global.g.getSicilianDefencePicture()}
                           name={'Queen'}
-                          ComponentArray={global.g.getBasics().Queen.join("\n")} //.join('\n')
+                          ComponentArray={global.g.getBasics().Queen.join('\n')} //.join('\n')
                           position={0}
                           updateGamePGNMethode={updateGamePGN}
                         />
@@ -752,15 +754,16 @@ export default class LearnToPlay extends React.Component {
                       })
                     }>
                     <View>
-                      <Text style={{
-                        textAlign: 'center',
-                        fontWeight: 'bold',
-                        fontSize: global.g.getWindowWidth()/20,
-                        color: global.g.getTextColor()}}
-                      >
+                      <Text
+                        style={{
+                          textAlign: 'center',
+                          fontWeight: 'bold',
+                          fontSize: global.g.getWindowWidth() / 20,
+                          color: global.g.getTextColor(),
+                        }}>
                         Opening
                       </Text>
-                      <View style = {{flexDirection: "row"}}>
+                      <View style={{flexDirection: 'row'}}>
                         <View>
                           <ExportGameComponent
                             picture={global.g.getCentralPawnsPicture()}
@@ -769,15 +772,11 @@ export default class LearnToPlay extends React.Component {
                               'The most common move at the beginning of a game of chess is e4. The queen as well as the bishop can move and the pawn in the centre controls important squares. Besides e4 there is also d4. Here the black bishop has the opportunity to develop and the pawn controls important squares. Black usually responds to e4 with e5, especially in amateur play.'
                             }
                             ComponentArray={[
-                              global.g.getOpenings().E4.join("\n"),
-                              global.g.getOpenings().D4.join("\n"),
-                              global.g.getOpenings().C4.join("\n"),
+                              global.g.getOpenings().E4.join('\n'),
+                              global.g.getOpenings().D4.join('\n'),
+                              global.g.getOpenings().C4.join('\n'),
                             ]}
-                            NameArray={[
-                              'E4',
-                              'D4',
-                              'C4',
-                            ]}
+                            NameArray={['E4', 'D4', 'C4']}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={-1}
                           />
@@ -790,13 +789,10 @@ export default class LearnToPlay extends React.Component {
                               'These include the bishops and the knights. However, the piece that moves one square diagonally and one straight should not be on the edge, i.e. on the H and the A line, because it controls more squares in the centre.'
                             }
                             ComponentArray={[
-                              global.g.getOpenings().Italian_Game.join("\n"),
-                              global.g.getOpenings().Spanish_Game.join("\n"),
+                              global.g.getOpenings().Italian_Game.join('\n'),
+                              global.g.getOpenings().Spanish_Game.join('\n'),
                             ]}
-                            NameArray={[
-                              'Italian Game',
-                              'Spanish Game',
-                            ]}
+                            NameArray={['Italian Game', 'Spanish Game']}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
                           />
@@ -809,17 +805,15 @@ export default class LearnToPlay extends React.Component {
                               'The king must be brought to safety, otherwise there could be a quick checkmate.'
                             }
                             ComponentArray={[
-                              global.g.getOpenings().Castling.join("\n"),
+                              global.g.getOpenings().Castling.join('\n'),
                             ]}
-                            NameArray={[
-                              'Castling',
-                            ]}
+                            NameArray={['Castling']}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
                           />
                         </View>
                       </View>
-                      <View style = {{flexDirection: 'row'}}>
+                      <View style={{flexDirection: 'row'}}>
                         <View>
                           <ExportGameComponent
                             picture={global.g.getInfluenceCentrePicture()}
@@ -828,11 +822,9 @@ export default class LearnToPlay extends React.Component {
                               'The more figures there are here, the better you stand with your figures.'
                             }
                             ComponentArray={[
-                              global.g.getOpenings().Centre.join("\n"),
+                              global.g.getOpenings().Centre.join('\n'),
                             ]}
-                            NameArray={[
-                              'Develop towards the Centre',
-                            ]}
+                            NameArray={['Develop towards the Centre']}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
                           />
@@ -840,16 +832,16 @@ export default class LearnToPlay extends React.Component {
                         <View>
                           <ExportGameComponent
                             picture={global.g.getRepeatMovesPicture()}
-                            name={'Don\'t move the same Piece repeatendly'}
+                            name={"Don't move the same Piece repeatendly"}
                             bio={
                               'Think of the pieces to be like an army which fights together. Every piece is important.'
                             }
                             ComponentArray={[
-                              global.g.getOpenings().Blundering_due_to_a_repeated_move.join("\n"),
+                              global.g
+                                .getOpenings()
+                                .Blundering_due_to_a_repeated_move.join('\n'),
                             ]}
-                            NameArray={[
-                              'Blundering due to repeated Move',
-                            ]}
+                            NameArray={['Blundering due to repeated Move']}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
                           />
@@ -857,18 +849,15 @@ export default class LearnToPlay extends React.Component {
                         <View>
                           <ExportGameComponent
                             picture={global.g.getEarlyQueenPicture()}
-                            name={'Don\'t develop the Queen too early'}
+                            name={"Don't develop the Queen too early"}
                             bio={
                               'It is the strongest piece in the game with the most possibilities of squares. Therefore, when they are being attacked Time is an important factor, as is space, and this is gained by getting the pieces into play quickly. So bringing a queen into play early means losing time.'
                             }
                             ComponentArray={[
-                              global.g.getOpenings().Early_Queen.join("\n"),
-                              global.g.getOpenings().Parham_Attack.join("\n"),
+                              global.g.getOpenings().Early_Queen.join('\n'),
+                              global.g.getOpenings().Parham_Attack.join('\n'),
                             ]}
-                            NameArray={[
-                              'Early Queen',
-                              'Parham Attack',
-                            ]}
+                            NameArray={['Early Queen', 'Parham Attack']}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
                           />
@@ -883,14 +872,18 @@ export default class LearnToPlay extends React.Component {
                               'As soon as pieces are attacked, there are four ways to react, depending on the situation: 1. cover the piece, 2. make a counter-threat, 3. interrupt connections to the attacked piece with another piece or 4. simply move the piece out of the attack.'
                             }
                             ComponentArray={[
-                              global.g.getOpenings().Two_Knights_Defence_Pawn.join("\n"),
-                              global.g.getOpenings().Traxler_Variation.join("\n"),
-                              global.g.getOpenings().Queens_Gambit.join("\n"),
+                              global.g
+                                .getOpenings()
+                                .Two_Knights_Defence_Pawn.join('\n'),
+                              global.g
+                                .getOpenings()
+                                .Traxler_Variation.join('\n'),
+                              global.g.getOpenings().Queens_Gambit.join('\n'),
                             ]}
                             NameArray={[
                               'Two Knights Defence',
                               'Traxler Variation',
-                              'Queen\'s Gambit',
+                              "Queen's Gambit",
                             ]}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
@@ -898,15 +891,16 @@ export default class LearnToPlay extends React.Component {
                         </View>
                       </View>
 
-                      <Text style={{
-                        textAlign: 'center',
-                        fontWeight: 'bold',
-                        fontSize: global.g.getWindowWidth()/20,
-                        color: global.g.getTextColor()}}
-                      >
+                      <Text
+                        style={{
+                          textAlign: 'center',
+                          fontWeight: 'bold',
+                          fontSize: global.g.getWindowWidth() / 20,
+                          color: global.g.getTextColor(),
+                        }}>
                         Middlegame
                       </Text>
-                      <View style = {{flexDirection: "row"}}>
+                      <View style={{flexDirection: 'row'}}>
                         <View>
                           <ExportGameComponent
                             picture={global.g.getParryPicture()}
@@ -915,11 +909,17 @@ export default class LearnToPlay extends React.Component {
                               'Recognising these is not always easy and beginners usually need longer. But the more you practise them, the faster you recognise them.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Threat1_misplayed.join("\n"),
-                              global.g.getMiddleGames().Threat1_parried.join("\n"),
-                              global.g.getMiddleGames().Threat2.join("\n"),
-                              global.g.getMiddleGames().Threat2_Variation.join("\n"),
-                              global.g.getMiddleGames().Threat3.join("\n"),
+                              global.g
+                                .getMiddleGames()
+                                .Threat1_misplayed.join('\n'),
+                              global.g
+                                .getMiddleGames()
+                                .Threat1_parried.join('\n'),
+                              global.g.getMiddleGames().Threat2.join('\n'),
+                              global.g
+                                .getMiddleGames()
+                                .Threat2_Variation.join('\n'),
+                              global.g.getMiddleGames().Threat3.join('\n'),
                             ]}
                             NameArray={[
                               'Threat 1 misplayed',
@@ -940,9 +940,15 @@ export default class LearnToPlay extends React.Component {
                               'Attack markers are by definition pawns that you can attack with your own pawns. As a rule, for black pieces they are the 5th and 6th row and in the white camp they are the 3rd and 4th row.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().AttackMarker1.join("\n"),
-                              global.g.getMiddleGames().AttackMarker2.join("\n"),
-                              global.g.getMiddleGames().AttackMarker2_Variation.join("\n"),
+                              global.g
+                                .getMiddleGames()
+                                .AttackMarker1.join('\n'),
+                              global.g
+                                .getMiddleGames()
+                                .AttackMarker2.join('\n'),
+                              global.g
+                                .getMiddleGames()
+                                .AttackMarker2_Variation.join('\n'),
                             ]}
                             NameArray={[
                               'Attack Marker 1',
@@ -961,11 +967,21 @@ export default class LearnToPlay extends React.Component {
                               'Observe pawn structures. Keeping the pawns together in chains and not interrupting them is the basic rule. Even though pawns are the most worthless pieces on the board, they are very strong as a unit. If the structure is destroyed, the opponent can take advantage of this and the danger arises that consequently attacks arise.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().PawnStructure1.join("\n"),
-                              global.g.getMiddleGames().PawnStructure2.join("\n"),
-                              global.g.getMiddleGames().PawnStructure3.join("\n"),
-                              global.g.getMiddleGames().PawnStructure4.join("\n"),
-                              global.g.getMiddleGames().PawnStructure5.join("\n"),
+                              global.g
+                                .getMiddleGames()
+                                .PawnStructure1.join('\n'),
+                              global.g
+                                .getMiddleGames()
+                                .PawnStructure2.join('\n'),
+                              global.g
+                                .getMiddleGames()
+                                .PawnStructure3.join('\n'),
+                              global.g
+                                .getMiddleGames()
+                                .PawnStructure4.join('\n'),
+                              global.g
+                                .getMiddleGames()
+                                .PawnStructure5.join('\n'),
                             ]}
                             NameArray={[
                               'PawnStructure 1',
@@ -979,19 +995,21 @@ export default class LearnToPlay extends React.Component {
                           />
                         </View>
                       </View>
-                      <View style = {{flexDirection: 'row'}}>
+                      <View style={{flexDirection: 'row'}}>
                         <View>
                           <ExportGameComponent
                             picture={global.g.getStrongWeakSquares()}
-                            name={'Identify and exploit strong and weak Squares'}
+                            name={
+                              'Identify and exploit strong and weak Squares'
+                            }
                             bio={
-                              'A strong square means: If you control a square of the opponent\'s camp with your own pawns (i.e. the rows 7 - 5 or 2 - 4) and the opponent can only cover it with pieces and not with his own pawns. Conversely, weak squares are the exact opposite. On the edge (H and A line), however, these squares are not so important.'
+                              "A strong square means: If you control a square of the opponent's camp with your own pawns (i.e. the rows 7 - 5 or 2 - 4) and the opponent can only cover it with pieces and not with his own pawns. Conversely, weak squares are the exact opposite. On the edge (H and A line), however, these squares are not so important."
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().Strong_Weak1.join("\n"),
-                              global.g.getMiddleGames().Strong_Weak2.join("\n"),
-                              global.g.getMiddleGames().Strong_Weak3.join("\n"),
-                              global.g.getMiddleGames().Strong_Weak4.join("\n"),
+                              global.g.getMiddleGames().Strong_Weak1.join('\n'),
+                              global.g.getMiddleGames().Strong_Weak2.join('\n'),
+                              global.g.getMiddleGames().Strong_Weak3.join('\n'),
+                              global.g.getMiddleGames().Strong_Weak4.join('\n'),
                             ]}
                             NameArray={[
                               'Strong and Weak Squares 1',
@@ -1011,11 +1029,21 @@ export default class LearnToPlay extends React.Component {
                               'In a game, individual pieces are often in a bad position and therefore, as a player, you have to think about how you can improve them. A prime example is the knight on the edge. A well-known saying in the chess scene is: "A knight on the rim is grim". Bishops are often blocked by chains of pawns. You should therefore activate a bishop here if possible. Queens do not need to be activated often, as they are generally in a good position. Rooks can usually be activated by doubling them. That is, if they are on the same line and thus exert more pressure on it. Routing knights is also a way to improve your position.'
                             }
                             ComponentArray={[
-                              global.g.getMiddleGames().ImprovePieces1.join("\n"),
-                              global.g.getMiddleGames().ImprovePieces2.join("\n"),
-                              global.g.getMiddleGames().ImprovePieces3.join("\n"),
-                              global.g.getMiddleGames().ImprovePieces4.join("\n"),
-                              global.g.getMiddleGames().ImprovePieces5.join("\n"),
+                              global.g
+                                .getMiddleGames()
+                                .ImprovePieces1.join('\n'),
+                              global.g
+                                .getMiddleGames()
+                                .ImprovePieces2.join('\n'),
+                              global.g
+                                .getMiddleGames()
+                                .ImprovePieces3.join('\n'),
+                              global.g
+                                .getMiddleGames()
+                                .ImprovePieces4.join('\n'),
+                              global.g
+                                .getMiddleGames()
+                                .ImprovePieces5.join('\n'),
                             ]}
                             NameArray={[
                               'Improve Pieces 1',
@@ -1029,16 +1057,17 @@ export default class LearnToPlay extends React.Component {
                           />
                         </View>
                       </View>
-                      
-                      <Text style={{
-                        textAlign: 'center',
-                        fontWeight: 'bold',
-                        fontSize: global.g.getWindowWidth()/20,
-                        color: global.g.getTextColor()}}
-                      >
+
+                      <Text
+                        style={{
+                          textAlign: 'center',
+                          fontWeight: 'bold',
+                          fontSize: global.g.getWindowWidth() / 20,
+                          color: global.g.getTextColor(),
+                        }}>
                         Endgame
                       </Text>
-                      <View style = {{flexDirection: "row"}}>
+                      <View style={{flexDirection: 'row'}}>
                         <View>
                           <ExportGameComponent
                             picture={global.g.getActivateKing()}
@@ -1047,13 +1076,10 @@ export default class LearnToPlay extends React.Component {
                               'In the endgame the king is an extremely strong piece. This is because the queens and also many other pieces have left the field.'
                             }
                             ComponentArray={[
-                              global.g.getEndGames().ActivateKing1.join("\n"),
-                              global.g.getEndGames().ActivateKing2.join("\n"),
+                              global.g.getEndGames().ActivateKing1.join('\n'),
+                              global.g.getEndGames().ActivateKing2.join('\n'),
                             ]}
-                            NameArray={[
-                              'ActivateKing 1',
-                              'ActivateKing 2',
-                            ]}
+                            NameArray={['ActivateKing 1', 'ActivateKing 2']}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
                           />
@@ -1066,9 +1092,9 @@ export default class LearnToPlay extends React.Component {
                               'If there is a danger (e.g. pawn promotion) you can force your opponent to make a move by forcing him to make bad moves (e.g. sacrifice a piece).'
                             }
                             ComponentArray={[
-                              global.g.getEndGames().ForcingMove1.join("\n"),
-                              global.g.getEndGames().ForcingMove2.join("\n"),
-                              global.g.getEndGames().ForcingMove3.join("\n"),
+                              global.g.getEndGames().ForcingMove1.join('\n'),
+                              global.g.getEndGames().ForcingMove2.join('\n'),
+                              global.g.getEndGames().ForcingMove3.join('\n'),
                             ]}
                             NameArray={[
                               'Forcing Move 1',
@@ -1087,9 +1113,11 @@ export default class LearnToPlay extends React.Component {
                               'One of the reasons why this game can take a long time to play is that slow moves are also important. So strong and patient nerves are a prerequisite for a successful game.'
                             }
                             ComponentArray={[
-                              global.g.getEndGames().NotRush1.join("\n"),
-                              global.g.getEndGames().NotRush1_Variation.join("\n"),
-                              global.g.getEndGames().NotRush2.join("\n"),
+                              global.g.getEndGames().NotRush1.join('\n'),
+                              global.g
+                                .getEndGames()
+                                .NotRush1_Variation.join('\n'),
+                              global.g.getEndGames().NotRush2.join('\n'),
                             ]}
                             NameArray={[
                               'Do not rush 1!',
@@ -1101,7 +1129,7 @@ export default class LearnToPlay extends React.Component {
                           />
                         </View>
                       </View>
-                      <View style = {{flexDirection: 'row'}}>
+                      <View style={{flexDirection: 'row'}}>
                         <View>
                           <ExportGameComponent
                             picture={global.g.getExchangePawns()}
@@ -1110,13 +1138,10 @@ export default class LearnToPlay extends React.Component {
                               'If you find yourself in a situation where you can no longer win, but only draw, pawn sacrifices are a necessity. Activity is of course also active momentum.'
                             }
                             ComponentArray={[
-                              global.g.getEndGames().ExchangePawns1.join("\n"),
-                              global.g.getEndGames().ExchangePawns2.join("\n"),
+                              global.g.getEndGames().ExchangePawns1.join('\n'),
+                              global.g.getEndGames().ExchangePawns2.join('\n'),
                             ]}
-                            NameArray={[
-                              'Exchange Pawns 1',
-                              'Exchange Pawns 2',
-                            ]}
+                            NameArray={['Exchange Pawns 1', 'Exchange Pawns 2']}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
                           />
@@ -1129,13 +1154,10 @@ export default class LearnToPlay extends React.Component {
                               'Here, too, activity is a momentum. Rooks are the centre here and should therefore not be blocked or prevented. Passivity is a big mistake!'
                             }
                             ComponentArray={[
-                              global.g.getEndGames().RookEndgame1.join("\n"),
-                              global.g.getEndGames().RookEndgame2.join("\n"),
+                              global.g.getEndGames().RookEndgame1.join('\n'),
+                              global.g.getEndGames().RookEndgame2.join('\n'),
                             ]}
-                            NameArray={[
-                              'Rook Endgame 1',
-                              'Rook Endgame 2',
-                            ]}
+                            NameArray={['Rook Endgame 1', 'Rook Endgame 2']}
                             updateGamePGNMethode={updateGamePGN}
                             currentPosition={moveIndex}
                           />
