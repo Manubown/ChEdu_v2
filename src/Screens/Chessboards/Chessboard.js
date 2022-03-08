@@ -12,7 +12,7 @@ import Chessboard from 'chessboardjsx';
 import LogicalChessboard from './LogicalChessboard';
 
 import styles from '../../styles';
-import {CommentBox, FENBox} from '../CustomComponents/ChessboardComponents';
+import {CommentBox} from '../CustomComponents/ChessboardComponents';
 
 export default class ChessBoard extends React.Component {
   render() {
@@ -138,8 +138,6 @@ export default class ChessBoard extends React.Component {
                         {global.g.getOnlyLogo()}
                       </TouchableOpacity>
                     </View>
-
-                    <FENBox FEN={position} />
                   </View>
                 </View>
 
@@ -162,13 +160,6 @@ export default class ChessBoard extends React.Component {
                   </View>
                 ) : null}
 
-                <Text
-                  style={{
-                    fontSize: global.g.getWindowWidth() / 70,
-                    textAlign: 'center',
-                  }}>
-                  FEN: {position}
-                </Text>
 
                 <Text
                   style={{
