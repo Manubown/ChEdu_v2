@@ -644,30 +644,30 @@ export default class LearnToPlay extends React.Component {
                     <View style={{flexDirection: 'row'}}>
                       <View>
                         <StandardGameComponent
-                          picture={global.g.getSicilianDefencePicture()}
-                          name={'Goal of the game'}
+                          picture={global.g.getBoard()}
+                          name={'Board Arrangement'}
                           ComponentArray={
-                            global.g.getSicilianDefence().PGN.join
+                            global.g.getBasics().Board.join("\n")
                           } //.join('\n')
-                          position={global.g.getSicilianDefence().position}
+                          position={0}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                       <View>
                         <StandardGameComponent
-                          picture={global.g.getFrenchDefencePicture()}
+                          picture={global.g.getKing()}
                           name={'King'}
-                          ComponentArray={global.g.getFrenchDefence().PGN}
-                          position={global.g.getFrenchDefence().position}
+                          ComponentArray={global.g.getBasics().King.join("\n")}
+                          position={0}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                       <View>
                         <StandardGameComponent
-                          picture={global.g.getRuyLopezPicture()}
+                          picture={global.g.getPawn()}
                           name={'Pawn'}
-                          ComponentArray={global.g.getRuyLopez().PGN}
-                          position={global.g.getRuyLopez().position}
+                          ComponentArray={global.g.getBasics().Pawn.join("\n")}
+                          position={0}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -675,28 +675,28 @@ export default class LearnToPlay extends React.Component {
                     <View style={{flexDirection: 'row'}}>
                       <View>
                         <StandardGameComponent
-                          picture={global.g.getSicilianDefencePicture()}
+                          picture={global.g.getKnight()}
                           name={'Knight'}
-                          ComponentArray={global.g.getSicilianDefence().PGN} //.join('\n')
-                          position={global.g.getSicilianDefence().position}
+                          ComponentArray={global.g.getBasics().Knight.join("\n")} //.join('\n')
+                          position={0}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                       <View>
                         <StandardGameComponent
-                          picture={global.g.getFrenchDefencePicture()}
+                          picture={global.g.getBishop()}
                           name={'Bishop'}
-                          ComponentArray={global.g.getFrenchDefence().PGN}
-                          position={global.g.getFrenchDefence().position}
+                          ComponentArray={global.g.getBasics().Bishop.join("\n")}
+                          position={0}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                       <View>
                         <StandardGameComponent
-                          picture={global.g.getRuyLopezPicture()}
+                          picture={global.g.getRook()}
                           name={'Rook'}
-                          ComponentArray={global.g.getRuyLopez().PGN}
-                          position={global.g.getRuyLopez().position}
+                          ComponentArray={global.g.getBasics().Rook.join("\n")}
+                          position={0}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
@@ -704,7 +704,7 @@ export default class LearnToPlay extends React.Component {
                     <View style={{flexDirection: 'row'}}>
                       <View>
                         <StandardGameComponent
-                          picture={global.g.getSicilianDefencePicture()}
+                          picture={global.g.getQueen()}
                           name={'Queen'}
                           ComponentArray={global.g.getBasics().Queen.join('\n')} //.join('\n')
                           position={0}
@@ -713,19 +713,77 @@ export default class LearnToPlay extends React.Component {
                       </View>
                       <View>
                         <StandardGameComponent
-                          picture={global.g.getFrenchDefencePicture()}
-                          name={'Castling'}
-                          ComponentArray={global.g.getFrenchDefence().PGN}
-                          position={global.g.getFrenchDefence().position}
+                          picture={global.g.getBoard()}
+                          name={'Starting'}
+                          ComponentArray={global.g.getBasics().Starting.join("\n")}
+                          position={0}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>
                       <View>
                         <StandardGameComponent
-                          picture={global.g.getRuyLopezPicture()}
+                          picture={global.g.getPromoting()}
+                          name={'Promoting'}
+                          ComponentArray={global.g.getBasics().Promoting.join("\n")}
+                          position={0}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                      <View>
+                        <StandardGameComponent
+                          picture={global.g.getEnPassant()}
                           name={'En Passant'}
-                          ComponentArray={global.g.getRuyLopez().PGN}
-                          position={global.g.getRuyLopez().position}
+                          ComponentArray={global.g.getBasics().En_Passant.join('\n')} //.join('\n')
+                          position={0}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <StandardGameComponent
+                          picture={global.g.getCastlingPicture()}
+                          name={'Castling'}
+                          ComponentArray={global.g.getBasics().Castling.join("\n")}
+                          position={0}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <StandardGameComponent
+                          picture={global.g.getCapturing()}
+                          name={'Capturing'}
+                          ComponentArray={global.g.getBasics().Capturing.join("\n")}
+                          position={0}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                      <View>
+                        <StandardGameComponent
+                          picture={global.g.getChecking()}
+                          name={'Checking'}
+                          ComponentArray={global.g.getBasics().Checking.join('\n')} //.join('\n')
+                          position={0}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <StandardGameComponent
+                          picture={global.g.getCheckmate()}
+                          name={'Checkmate'}
+                          ComponentArray={global.g.getBasics().Checkmate.join('\n')} //.join('\n')
+                          position={0}
+                          updateGamePGNMethode={updateGamePGN}
+                        />
+                      </View>
+                      <View>
+                        <StandardGameComponent
+                          picture={global.g.getDraw()}
+                          name={'Draw'}
+                          ComponentArray={global.g.getBasics().Draw.join('\n')} //.join('\n')
+                          position={0}
                           updateGamePGNMethode={updateGamePGN}
                         />
                       </View>

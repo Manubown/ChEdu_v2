@@ -78,6 +78,19 @@ import forcingMoves from './Pictures/forcing_moves.png';
 import notRush from './Pictures/not_rush.png';
 import exchangePawns from './Pictures/exchange_pawns.png';
 import defendRookGames from './Pictures/defend_rook_games.png';
+import board from './Pictures/Board.png';
+import king from './Pictures/King.png';
+import pawn from './Pictures/Pawn.png';
+import knight from './Pictures/knight.png';
+import bishop from './Pictures/bishop.png';
+import rook from './Pictures/rook.png';
+import queen from './Pictures/queen.png';
+import promoting from './Pictures/Promoting.png';
+import enPassant from './Pictures/En_Passant.png';
+import capturing from './Pictures/capturing.png';
+import checking from './Pictures/checking.png';
+import checkmate from './Pictures/checkmate.png';
+import draw from './Pictures/draw.png';
 
 /*styles*/
 import styles from './styles';
@@ -487,6 +500,58 @@ class Global extends React.Component {
 
   getDefendRookGames = () => {
     return this.pictures.defendRookGames;
+  };
+
+  getBoard = () => {
+    return this.pictures.board;
+  };
+
+  getKing = () => {
+    return this.pictures.king;
+  };
+
+  getPawn = () => {
+    return this.pictures.pawn;
+  };
+
+  getKnight = () => {
+    return this.pictures.knight;
+  };
+
+  getBishop = () => {
+    return this.pictures.bishop;
+  };
+
+  getRook = () => {
+    return this.pictures.rook;
+  };
+
+  getQueen = () => {
+    return this.pictures.queen;
+  };
+
+  getPromoting = () => {
+    return this.pictures.promoting;
+  };
+
+  getEnPassant = () => {
+    return this.pictures.enPassant;
+  };
+
+  getCapturing = () => {
+    return this.pictures.capturing;
+  };
+
+  getChecking = () => {
+    return this.pictures.checking;
+  };
+
+  getCheckmate = () => {
+    return this.pictures.checkmate;
+  };
+
+  getDraw = () => {
+    return this.pictures.draw;
   };
   //#endregion Pictures end
 
@@ -967,6 +1032,19 @@ var g = new Global(
     notRush: notRush,
     exchangePawns: exchangePawns,
     defendRookGames: defendRookGames,
+    board: board,
+    king: king,
+    pawn: pawn,
+    knight: knight,
+    bishop: bishop,
+    rook: rook,
+    queen: queen,
+    promoting: promoting,
+    enPassant: enPassant,
+    capturing: capturing,
+    checking: checking,
+    checkmate: checkmate,
+    draw: draw,
   },
   {
     Openings: {
@@ -1479,12 +1557,110 @@ var g = new Global(
       ],
     },
     Basics: {
+      Board:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"]', //FEN
+        '',
+        '{At the beginning of the game the chessboard is laid out so that each player has the white (or light) color square in the bottom right-hand side. The chess pieces are then arranged the same way each time. The second row (or rank) is filled with pawns. The rooks go in the corners, then the knights next to them, followed by the bishops, and finally the queen, who always goes on her own matching color (white queen on white, black queen on black), and the king on the remaining square. To see how the figures move, hover over them. Now do the next exercises looking at each figure individually.} 1. e4', //PGN
+      ],
+      King:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "4k3/8/8/8/3Q4/8/8/4K3 w - - 0 1"]', //FEN
+        '',
+        '{Hover over the white piece on the edge to see how it moves. This is the king. The king is the most important piece, but is one of the weakest. The king can only move one square in any direction - up, down, to the sides, and diagonally. The king may never move himself into check (where he could be captured). When the king is attacked by another piece this is called "check".} 1. Ke2 {The king is the most important piece, but is one of the weakest. The king can only move one square in any direction - up, down, to the sides, and diagonally. The king may never move himself into check (where he could be captured). When the king is attacked by another piece this is called "check".} Kf7 {The king is the most important piece, but is one of the weakest. The king can only move one square in any direction - up, down, to the sides, and diagonally. The king may never move himself into check (where he could be captured). When the king is attacked by another piece this is called "check".} 2. Kf2 {The king is the most important piece, but is one of the weakest. The king can only move one square in any direction - up, down, to the sides, and diagonally. The king may never move himself into check (where he could be captured). When the king is attacked by another piece this is called "check".} Kf8 {The king is the most important piece, but is one of the weakest. The king can only move one square in any direction - up, down, to the sides, and diagonally. The king may never move himself into check (where he could be captured). When the king is attacked by another piece this is called "check".} 3. Ke1 {The king is the most important piece, but is one of the weakest. The king can only move one square in any direction - up, down, to the sides, and diagonally. The king may never move himself into check (where he could be captured). When the king is attacked by another piece this is called "check".} Ke8 {The king is the most important piece, but is one of the weakest. The king can only move one square in any direction - up, down, to the sides, and diagonally. The king may never move himself into check (where he could be captured). When the king is attacked by another piece this is called "check".} 4. Kd1 {The king is the most important piece, but is one of the weakest. The king can only move one square in any direction - up, down, to the sides, and diagonally. The king may never move himself into check (where he could be captured). When the king is attacked by another piece this is called "check".}', //PGN
+      ],
+      Pawn:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "4k3/pppppppp/8/8/8/8/PPPPPPPP/4K3 w - - 0 1"]', //FEN
+        '',
+        '{Hover over the pieces infront of the white king to see how they move. Those are the pawns. Pawns are unusual because they move and capture in different ways: they move forward but capture diagonally. Pawns can only move forward one square at a time, except for their very first move where they can move forward two squares. Pawns can only capture one square diagonally in front of them. They can never move or capture backward. If there is another piece directly in front of a pawn he cannot move past or capture that piece.} 1. e4 {Pawns are unusual because they move and capture in different ways: they move forward but capture diagonally. Pawns can only move forward one square at a time, except for their very first move where they can move forward two squares. Pawns can only capture one square diagonally in front of them. They can never move or capture backward. If there is another piece directly in front of a pawn he cannot move past or capture that piece.} d5 {Pawns are unusual because they move and capture in different ways: they move forward but capture diagonally. Pawns can only move forward one square at a time, except for their very first move where they can move forward two squares. Pawns can only capture one square diagonally in front of them. They can never move or capture backward. If there is another piece directly in front of a pawn he cannot move past or capture that piece.} 2. exd5 {Pawns are unusual because they move and capture in different ways: they move forward but capture diagonally. Pawns can only move forward one square at a time, except for their very first move where they can move forward two squares. Pawns can only capture one square diagonally in front of them. They can never move or capture backward. If there is another piece directly in front of a pawn he cannot move past or capture that piece.} c6 {Pawns are unusual because they move and capture in different ways: they move forward but capture diagonally. Pawns can only move forward one square at a time, except for their very first move where they can move forward two squares. Pawns can only capture one square diagonally in front of them. They can never move or capture backward. If there is another piece directly in front of a pawn he cannot move past or capture that piece.}', //PGN
+      ],
+      Knight:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "1n2k1n1/8/8/8/8/8/8/1N2K1N1 w - - 0 1"]', //FEN
+        '',
+        '{Hover over the white pieces which look alike to see how they move. Those are the knights. Knights move in a very different way from the other pieces – going two squares in one direction, and then one more move at a 90-degree angle, just like the shape of an “L”. Knights are also the only pieces that can move over other pieces.} 1. Nc3 {Knights move in a very different way from the other pieces – going two squares in one direction, and then one more move at a 90-degree angle, just like the shape of an “L”. Knights are also the only pieces that can move over other pieces.} Nf6 {Knights move in a very different way from the other pieces – going two squares in one direction, and then one more move at a 90-degree angle, just like the shape of an “L”. Knights are also the only pieces that can move over other pieces.} 2. Nge2 {Knights move in a very different way from the other pieces – going two squares in one direction, and then one more move at a 90-degree angle, just like the shape of an “L”. Knights are also the only pieces that can move over other pieces.} Nd5 {Knights move in a very different way from the other pieces – going two squares in one direction, and then one more move at a 90-degree angle, just like the shape of an “L”. Knights are also the only pieces that can move over other pieces.} 3. Ne4 {Knights move in a very different way from the other pieces – going two squares in one direction, and then one more move at a 90-degree angle, just like the shape of an “L”. Knights are also the only pieces that can move over other pieces.} Nc6 {Knights move in a very different way from the other pieces – going two squares in one direction, and then one more move at a 90-degree angle, just like the shape of an “L”. Knights are also the only pieces that can move over other pieces.} 4. Nd4 {Knights move in a very different way from the other pieces – going two squares in one direction, and then one more move at a 90-degree angle, just like the shape of an “L”. Knights are also the only pieces that can move over other pieces.} Ne3 {Knights move in a very different way from the other pieces – going two squares in one direction, and then one more move at a 90-degree angle, just like the shape of an “L”. Knights are also the only pieces that can move over other pieces.}', //PGN
+      ],
+      Bishop:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "2b1kb2/8/8/8/8/8/8/2B1KB2 b - - 0 1"]', //FEN
+        '',
+        '{Hover over the black pieces which look alike to see how they move. Those are the bishops. The bishop may move as far as it wants, but only diagonally. Each bishop starts on one color (light or dark) and must always stay on that color.} 1... Bh3 {The bishop may move as far as it wants, but only diagonally. Each bishop starts on one color (light or dark) and must always stay on that color.} 2. Bd3 {The bishop may move as far as it wants, but only diagonally. Each bishop starts on one color (light or dark) and must always stay on that color.} Bg7 {The bishop may move as far as it wants, but only diagonally. Each bishop starts on one color (light or dark) and must always stay on that color.} 3. Ba3 {The bishop may move as far as it wants, but only diagonally. Each bishop starts on one color (light or dark) and must always stay on that color.} Bh8 {The bishop may move as far as it wants, but only diagonally. Each bishop starts on one color (light or dark) and must always stay on that color.} 4. Bd6 {The bishop may move as far as it wants, but only diagonally. Each bishop starts on one color (light or dark) and must always stay on that color.}', //PGN
+      ],
+      Rook:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "4k3/8/2r5/8/8/8/6r1/R3K2R b - - 0 1"]', //FEN
+        '',
+        '{Hover over the black pieces which look alike to see how they move. Those are the rooks. The rook may move as far as it wants, but only forward, backward, and to the sides.} 1... Rg7 {The rook may move as far as it wants, but only forward, backward, and to the sides.} 2. Ra7 {The rook may move as far as it wants, but only forward, backward, and to the sides.} Rf6 {The rook may move as far as it wants, but only forward, backward, and to the sides.} 3. Rf1 {The rook may move as far as it wants, but only forward, backward, and to the sides.}', //PGN
+      ],
       Queen:
       [
         '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
-        '[FEN "8/8/8/4Q3/8/8/8/8 w - - 0 1"]', //FEN
+        '[FEN "4k3/8/8/8/3Q4/8/8/4K3 w - - 0 1"]', //FEN
         '',
-        '{Hover over the piece to see how it moves. The queen is the strongest piece in chess. It can move diagonally and horizontally in all directions. Each chess piece has a relative value. This allows to assess which piece should be exchanged for another and how to evaluate a position. The queen has a value of 9. Therefore, you should only sacrifice the queen if you get pieces worth 9 in return.}', //PGN
+        '{Hover over the piece in the middle to see how it moves. This is the queen. The queen is the most powerful piece. She can move in any one straight direction - forward, backward, sideways, or diagonally - as far as possible as long as she does not move through any of her own pieces.} 1. Qh4 {The queen is the most powerful piece. She can move in any one straight direction - forward, backward, sideways, or diagonally - as far as possible as long as she does not move through any of her own pieces.} Kf8 {The queen is the most powerful piece. She can move in any one straight direction - forward, backward, sideways, or diagonally - as far as possible as long as she does not move through any of her own pieces.} 2. Qh1 {The queen is the most powerful piece. She can move in any one straight direction - forward, backward, sideways, or diagonally - as far as possible as long as she does not move through any of her own pieces.} Kg8 {The queen is the most powerful piece. She can move in any one straight direction - forward, backward, sideways, or diagonally - as far as possible as long as she does not move through any of her own pieces.} 3. Qb7 {The queen is the most powerful piece. She can move in any one straight direction - forward, backward, sideways, or diagonally - as far as possible as long as she does not move through any of her own pieces.} Kh8 {The queen is the most powerful piece. She can move in any one straight direction - forward, backward, sideways, or diagonally - as far as possible as long as she does not move through any of her own pieces.} 4. Qa6 {The queen is the most powerful piece. She can move in any one straight direction - forward, backward, sideways, or diagonally - as far as possible as long as she does not move through any of her own pieces.} Kg8 {The queen is the most powerful piece. She can move in any one straight direction - forward, backward, sideways, or diagonally - as far as possible as long as she does not move through any of her own pieces.} 5. Qa8+ {The queen is the most powerful piece. She can move in any one straight direction - forward, backward, sideways, or diagonally - as far as possible as long as she does not move through any of her own pieces.}', //PGN
+      ],
+      Starting:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "4k3/pppppppp/8/8/8/8/PPPPPPPP/4K3 w - - 0 1"]', //FEN
+        '',
+        '{The player with the white pieces always moves first. Therefore, players generally decide who will get to be white by chance or luck such as flipping a coin. White then makes a move, followed by black, then white again, then black, and so on until the end of the game. Being able to move first is a tiny advantage that gives the white player an opportunity to attack right away.} 1. e4 {The player with the white pieces always moves first. Therefore, players generally decide who will get to be white by chance or luck such as flipping a coin. White then makes a move, followed by black, then white again, then black, and so on until the end of the game. Being able to move first is a tiny advantage that gives the white player an opportunity to attack right away.} e5 {The player with the white pieces always moves first. Therefore, players generally decide who will get to be white by chance or luck such as flipping a coin. White then makes a move, followed by black, then white again, then black, and so on until the end of the game. Being able to move first is a tiny advantage that gives the white player an opportunity to attack right away.} 2. Nf3 {The player with the white pieces always moves first. Therefore, players generally decide who will get to be white by chance or luck such as flipping a coin. White then makes a move, followed by black, then white again, then black, and so on until the end of the game. Being able to move first is a tiny advantage that gives the white player an opportunity to attack right away.} Nc6 {The player with the white pieces always moves first. Therefore, players generally decide who will get to be white by chance or luck such as flipping a coin. White then makes a move, followed by black, then white again, then black, and so on until the end of the game. Being able to move first is a tiny advantage that gives the white player an opportunity to attack right away.}', //PGN
+      ],
+      Promoting:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "4k3/PP4PP/8/8/8/8/pp4pp/4K3 w - - 0 1"]', //FEN
+        '',
+        '{Pawns have another special ability and that is that if a pawn reaches the other side of the board it can become any other chess piece (called promotion) excluding a king (or pawn, for that matter).} 1. g8=N {A pawn may be promoted to a knight, bishop, rook, or queen. A common misconception is that pawns may only be exchanged for a piece that has been captured. That is NOT true. A pawn is usually promoted to a queen. Only pawns may be promoted.} g1=B {A pawn may be promoted to a knight, bishop, rook, or queen. A common misconception is that pawns may only be exchanged for a piece that has been captured. That is NOT true. A pawn is usually promoted to a queen. Only pawns may be promoted.} 2. b8=B {A pawn may be promoted to a knight, bishop, rook, or queen. A common misconception is that pawns may only be exchanged for a piece that has been captured. That is NOT true. A pawn is usually promoted to a queen. Only pawns may be promoted.} b1=N {A pawn may be promoted to a knight, bishop, rook, or queen. A common misconception is that pawns may only be exchanged for a piece that has been captured. That is NOT true. A pawn is usually promoted to a queen. Only pawns may be promoted.} 3. h8=R {A pawn may be promoted to a knight, bishop, rook, or queen. A common misconception is that pawns may only be exchanged for a piece that has been captured. That is NOT true. A pawn is usually promoted to a queen. Only pawns may be promoted.} a1=R {A pawn may be promoted to a knight, bishop, rook, or queen. A common misconception is that pawns may only be exchanged for a piece that has been captured. That is NOT true. A pawn is usually promoted to a queen. Only pawns may be promoted.} 4. a8=Q {A pawn may be promoted to a knight, bishop, rook, or queen. A common misconception is that pawns may only be exchanged for a piece that has been captured. That is NOT true. A pawn is usually promoted to a queen. Only pawns may be promoted.} h1=R {A pawn may be promoted to a knight, bishop, rook, or queen. A common misconception is that pawns may only be exchanged for a piece that has been captured. That is NOT true. A pawn is usually promoted to a queen. Only pawns may be promoted.}', //PGN
+      ],
+      En_Passant:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "4k3/2p5/8/3P4/8/8/8/4K3 b - - 0 1"]', //FEN
+        '',
+        '{The last rule about pawns is called “en passant,” which is French for “in passing”. If a pawn moves out two squares on its first move, and by doing so lands to the side of an opponent\'s pawn (effectively jumping past the other pawn\'s ability to capture it), that other pawn has the option of capturing the first pawn as it passes by.} 1... c5 {This special move must be done immediately after the first pawn has moved past, otherwise the option to capture it is no longer available.} 2. dxc6 {This special move must be done immediately after the first pawn has moved past, otherwise the option to capture it is no longer available.}', //PGN
+      ],
+      Castling:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "r3kbnr/pppq1ppp/2np4/1B2p3/4P1b1/3PBN2/PPP2PPP/RN1QK2R w KQkq - 0 1"]', //FEN
+        '',
+        '{One other special chess rule is called castling. This move allows you to do two important things all in one move: get your king to safety (hopefully), and get your rook out of the corner and into the game. On a player\'s turn he may move his king two squares over to one side and then move the rook from that side\'s corner to right next to the king on the opposite side.} 1. O-O {However, in order to castle, the following conditions must be met: it must be that king\'s very first move it must be that rook\'s very first move there cannot be any pieces between the king and rook to move the king may not be in check or pass through check} O-O-O {Notice that when you castle one direction the king is closer to the side of the board. That is called castling "kingside". Castling to the other side, through where the queen sat, is called castling "queenside". Regardless of which side, the king always moves only two squares when castling.}', //PGN
+      ],
+      Capturing:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "rnbqkb1r/ppp1pppp/5n2/3p4/3PP1Q1/8/PPP2PPP/RNB1KBNR b KQkq - 0 1"]', //FEN
+        '',
+        '{Pieces are generally moved into positions where they can capture other pieces (by landing on their square and then replacing them), defend their own pieces in case of capture, or control important squares in the game.} 1... Bxg4 {Pieces are generally moved into positions where they can capture other pieces (by landing on their square and then replacing them), defend their own pieces in case of capture, or control important squares in the game.} 2. exd5 {Pieces are generally moved into positions where they can capture other pieces (by landing on their square and then replacing them), defend their own pieces in case of capture, or control important squares in the game.} Nxd5 {Pieces are generally moved into positions where they can capture other pieces (by landing on their square and then replacing them), defend their own pieces in case of capture, or control important squares in the game.}', //PGN
+      ],
+      Checking:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "3k4/8/1Q6/8/3K4/8/8/8 b - - 0 1"]', //FEN
+        '',
+        '{The king may never move himself into check (where he could be captured). When the king is attacked by another piece this is called "check".} 1... Ke8 {The king may never move himself into check (where he could be captured). When the king is attacked by another piece this is called "check".} 2. Qe6+ {The king may never move himself into check (where he could be captured). When the king is attacked by another piece this is called "check".} Kf8 {The king may never move himself into check (where he could be captured). When the king is attacked by another piece this is called "check".} 3. Qd6+ {The king may never move himself into check (where he could be captured). When the king is attacked by another piece this is called "check".}', //PGN
+      ],
+      Checkmate:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "8/8/8/8/3k4/3q4/8/4K3 b - - 0 1"]', //FEN
+        '',
+        '{The purpose of the game is to checkmate the opponent\'s king. This happens when the king is put into check and cannot get out of check.} 1... Qc2 {There are only three ways a king can get out of check: move out of the way (though he cannot castle!) block the check with another piece or capture the piece threatening the king.} 2. Kf1 {There are only three ways a king can get out of check: move out of the way (though he cannot castle!) block the check with another piece or capture the piece threatening the king.} Ke3 {There are only three ways a king can get out of check: move out of the way (though he cannot castle!) block the check with another piece or capture the piece threatening the king.} 3. Kg1 {There are only three ways a king can get out of check: move out of the way (though he cannot castle!) block the check with another piece or capture the piece threatening the king.} Kf3 {There are only three ways a king can get out of check: move out of the way (though he cannot castle!) block the check with another piece or capture the piece threatening the king.} 4. Kh1 {There are only three ways a king can get out of check: move out of the way (though he cannot castle!) block the check with another piece or capture the piece threatening the king.} Kg3 {There are only three ways a king can get out of check: move out of the way (though he cannot castle!) block the check with another piece or capture the piece threatening the king.} 5. Kg1 {If a king cannot escape checkmate then the game is over. Customarily the king is not captured or removed from the board, the game is simply declared over.} Qg2# {If a king cannot escape checkmate then the game is over. Customarily the king is not captured or removed from the board, the game is simply declared over.}', //PGN
+      ],
+      Draw:
+      [
+        '[SetUp "1"]', //SetUp "0" = 'start'; SetUp "1" = 'custom position'
+        '[FEN "k7/8/8/8/2Q1K3/8/8/8 w - - 0 1"]', //FEN
+        '',
+        '{Occasionally chess games do not end with a winner, but with a draw. There are 5 reasons why a chess game may end in a draw. => See next move!} 1. Qc7 {The position reaches a stalemate where it is one player\'s turn to move, but his king is NOT in check and yet he does not have another legal move. The players may simply agree to a draw and stop playing There are not enough pieces on the board to force a checkmate (example: a king and a bishop vs. a king) A player declares a draw if the same exact position is repeated three times (though not necessarily three times in a row) Fifty consecutive moves have been played where neither player has moved a pawn or captured a piece}', //PGN
       ],
     },
     Carlsen: {
