@@ -4,10 +4,7 @@ import styles from '../../styles';
 
 export const StandardGameComponent = props => {
   //name, picture, PGN, updateGamePGN
-  console.log('Standart game component REndering:');
   var updateGamePGN = props.updateGamePGNMethode;
-  console.log(props.ComponentArray);
-  console.log(props.position);
   return (
     <TouchableOpacity
       style={{
@@ -85,8 +82,7 @@ export const ExportGameComponent = props => {
           </Text>
         </View>
       ) : null}
-      {console.log('Render Component:')}
-      {console.log(props.NameArray)}
+
       {renderElements(
         props.ComponentArray,
         props.NameArray,
@@ -117,7 +113,6 @@ export const ExportGameComponent = props => {
 
 const renderElements = (pgnArray, nameArray, updateGamePGN, isClosed) => {
   var GameComponenets = Array();
-  console.log('Is CLosed:' + isClosed);
 
   //Set how many games get Showen
   var ShowGames = 0;
@@ -133,12 +128,9 @@ const renderElements = (pgnArray, nameArray, updateGamePGN, isClosed) => {
       finalArray.push(element);
     });
   }
-  console.log('Elements:');
-  console.log(finalArray);
 
   var i = 0;
   finalArray.forEach(element => {
-    console.log(pgnArray[i]);
     GameComponenets.push(
       <TouchableOpacity
         style={{

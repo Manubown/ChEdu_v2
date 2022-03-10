@@ -32,6 +32,7 @@ export default class LogicalChessboard extends React.Component {
     moveIndex: 0,
     gameOver: false,
     autoplay: false,
+    currentTurn: 'w',
   };
 
   componentDidMount() {
@@ -115,17 +116,16 @@ export default class LogicalChessboard extends React.Component {
 
     this.generatePGNArray();
   */
-    this.generatePGNArray();
     this.updatePGNPosition(position);
     this.updatePGNComment();
+
+    this.generatePGNArray();
   };
 
   undoMovePGN = () => {
     const {futurMoves} = this.state;
     var undoMove = this.game.undo();
     this.setState({futurMoves: futurMoves.unshift(undoMove)});
-
-    console.log(this.state.futurMoves);
 
     this.setState({
       position: this.game.position,
@@ -136,6 +136,8 @@ export default class LogicalChessboard extends React.Component {
     this.setState({moveIndex: this.game.history().length});
 
     this.updatePGNComment();
+
+    this.generatePGNArray();
   };
 
   nextMovePGN = () => {
@@ -144,10 +146,6 @@ export default class LogicalChessboard extends React.Component {
     var move = futurMoves.shift();
     this.game.move({from: move.from, to: move.to});
     this.setState({futurMoves: futurMoves});
-    console.log(this.state.futurMoves);
-    console.log('Next move PGN: ');
-    console.log(this.state.futurMoves);
-    console.log(move);
 
     this.setState({
       position: this.game.position,
@@ -157,6 +155,8 @@ export default class LogicalChessboard extends React.Component {
     this.setState({moveIndex: this.game.history().length});
 
     this.updatePGNComment();
+
+    this.generatePGNArray();
   };
 
   firstMove = () => {
@@ -186,6 +186,7 @@ export default class LogicalChessboard extends React.Component {
       position: this.game.position,
       fen: this.game.fen(),
       pgnComment: '',
+      gameOver: false,
     });
   };
 
@@ -199,14 +200,11 @@ export default class LogicalChessboard extends React.Component {
 
   generatePGNArray = () => {
     var pgnArray = new Array();
-    console.log(pgnArray);
 
-    this.state.futurMoves.forEach(element => {
-      pgnArray.push(element.san);
+    this.game.history().forEach(element => {
+      pgnArray.push(element);
     });
     this.setState({SAN: pgnArray});
-    console.log('PGN ARRAY:');
-    console.log(pgnArray);
   };
 
   updatePGNPosition = position => {
@@ -222,6 +220,8 @@ export default class LogicalChessboard extends React.Component {
         }
       }
     }
+
+    this.generatePGNArray();
   };
 
   // BGN
@@ -393,7 +393,9 @@ export default class LogicalChessboard extends React.Component {
 
   isGameOver = game => {
     //Game Over
+
     let possibleMoves = game.moves();
+    this.setState({currentTurn: this.game.turn()});
     if (
       game.game_over() === true ||
       game.in_draw() === true ||
@@ -460,6 +462,8 @@ export default class LogicalChessboard extends React.Component {
       history: this.game.history({verbose: true}),
       squareStyles: squareStyling({pieceSquare, history}),
     }));
+
+    this.generatePGNArray();
   };
 
   onMouseOverSquare = square => {
@@ -515,6 +519,8 @@ export default class LogicalChessboard extends React.Component {
       history: this.game.history({verbose: true}),
       pieceSquare: '',
     });
+
+    this.generatePGNArray();
   };
 
   onSquareRightClick = square => {
@@ -537,9 +543,6 @@ export default class LogicalChessboard extends React.Component {
       SAN,
       orientation,
     } = this.state;
-
-    console.log('############################');
-    console.log();
 
     //Output Values
     return this.props.children({
@@ -571,6 +574,7 @@ export default class LogicalChessboard extends React.Component {
       lastMove: this.lastMove,
       resetGame: this.resetGame,
       gameOver: this.state.gameOver,
+      currentTurn: this.state.currentTurn,
     });
   }
 }

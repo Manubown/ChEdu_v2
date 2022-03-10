@@ -45,8 +45,6 @@ export const PGNViewer = props => {
 };
 
 const SANComponent = (updatePGNPosition, SAN, position) => {
-  console.log('San:');
-  console.log(SAN);
   const [currentBackgroundColor, setCurrentBackgroundColor] =
     useState('#e0e0e0');
 
@@ -93,29 +91,18 @@ const SANComponent = (updatePGNPosition, SAN, position) => {
 };
 
 export const TablePGNViewer = props => {
-  console.log('Table View:');
   var SAN = props.SAN;
   var updatePGNPosition = props.updatePGNPosition;
   var currentPosition = props.currentPosition;
-
-  console.log(SAN);
-  console.log(updatePGNPosition);
 
   //Create Table Array
   var tableData = new Array();
 
   for (var i = 0; i <= SAN.length - 1; i += 2) {
-    tableData.push([SAN[i], SAN[i + 1]]);
-  }
-
-  console.log('Table Array:');
-
-  console.log({tableData});
-
-  var updatePosition = Array();
-  if (tableData != null) {
-    for (var i = 1; i < tableData.length; i++) {
-      updatePosition.push(i);
+    if (SAN[i + 1] != null) {
+      tableData.push([SAN[i], SAN[i + 1]]);
+    } else {
+      tableData.push([SAN[i], null]);
     }
   }
 
@@ -123,8 +110,6 @@ export const TablePGNViewer = props => {
   var columnWidth = global.g.getWindowWidth() / 5;
   var positionPointer = 1;
   tableData.forEach(tableDataElement => {
-    console.log('PGN TABLE VIEW RENDERER');
-
     var pointer1 = positionPointer;
     var pointer2 = positionPointer + 1;
 
@@ -149,7 +134,7 @@ export const TablePGNViewer = props => {
         <TouchableOpacity
           onPress={() => {
             console.log('Clicked: ');
-            console.log(pointer1);
+            console.log(tableDataElement[0]);
             updatePGNPosition(pointer1);
           }}>
           <View
@@ -167,7 +152,7 @@ export const TablePGNViewer = props => {
           <TouchableOpacity
             onPress={() => {
               console.log('Clicked: ');
-              console.log(pointer2);
+              console.log(tableDataElement[1]);
               updatePGNPosition(pointer2);
             }}>
             <View
@@ -190,7 +175,7 @@ export const TablePGNViewer = props => {
                 width: columnWidth / 4,
                 alignItems: 'center',
                 backgroundColor: global.g.getBackgroundColor(),
-                opacity: 1,
+                opacity: 0,
               }}>
               <Text></Text>
             </View>
@@ -200,7 +185,7 @@ export const TablePGNViewer = props => {
     );
     positionPointer += 2;
   });
-  if (PgnComponents.length > 1) {
+  if (PgnComponents.length >= 1) {
     return (
       <View style={styles.GameTableComponentShadow}>
         {PgnComponents.map(element => (

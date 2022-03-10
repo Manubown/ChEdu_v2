@@ -1,10 +1,6 @@
 import React from 'react';
 import {View, TouchableOpacity, Text, Image} from 'react-native';
-import {
-  RollbackOutlined,
-  UpCircleFilled,
-  FlagFilled,
-} from '@ant-design/icons';
+import {RollbackOutlined, UpCircleFilled, FlagFilled} from '@ant-design/icons';
 
 import Chessboard from 'chessboardjsx';
 //import Resource from "./Resource";
@@ -46,6 +42,7 @@ export default class ChessBoard extends React.Component {
               nextMovePGN,
               chessBoardMoves,
               gameOver,
+              currentTurn,
               pgnComment,
               moveIndex,
               boardRotateBoard,
@@ -159,6 +156,11 @@ export default class ChessBoard extends React.Component {
                       opacity: 1,
                     }}>
                     <Text style={{textAlign: 'center'}}>GAME OVER!</Text>
+                    {currentTurn == 'w' ? (
+                      <Text>Black has won!</Text>
+                    ) : (
+                      <Text>White has won!</Text>
+                    )}
                   </View>
                 ) : null}
 

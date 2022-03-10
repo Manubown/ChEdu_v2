@@ -241,6 +241,7 @@ export default class LearnToPlay extends React.Component {
               nextMovePGN,
               chessBoardMoves,
               gameOver,
+              currentTurn,
               pgnComment,
               moveIndex,
               SAN,
@@ -380,6 +381,11 @@ export default class LearnToPlay extends React.Component {
                       opacity: 1,
                     }}>
                     <Text style={{textAlign: 'center'}}>GAME OVER!</Text>
+                    {currentTurn == 'w' ? (
+                      <Text>Black has won!</Text>
+                    ) : (
+                      <Text>White has won!</Text>
+                    )}
                   </View>
                 ) : null}
 
