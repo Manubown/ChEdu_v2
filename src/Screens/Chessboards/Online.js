@@ -12,7 +12,7 @@ import LogicalChessboard from './LogicalChessboard';
 import styles from '../../styles';
 import MoreLessComponent from '../CustomComponents/MoreLessComponent';
 
-import {CommentBox, FENBox} from '../CustomComponents/ChessboardComponents';
+import {CommentBox} from '../CustomComponents/ChessboardComponents';
 
 export default class Online extends React.Component {
   render() {
@@ -127,8 +127,6 @@ export default class Online extends React.Component {
                         {global.g.getOnlyLogo()}
                       </TouchableOpacity>
                     </View>
-
-                    <FENBox FEN={position} />
                   </View>
                 </View>
 
