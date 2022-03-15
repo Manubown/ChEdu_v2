@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.cf5f47cb.js",
+    "main.js": "/static/js/main.144663a0.js",
     "static/media/Hikaru_Nakamura.jpg": "/static/media/Hikaru_Nakamura.2f956f9010a8a718bed2.jpg",
     "static/media/expert_modus.jpg": "/static/media/expert_modus.70090dd1cb9df2a01ae7.jpg",
     "static/media/ChEdu_Video.png": "/static/media/ChEdu_Video.a3d61c4c39f6f37e019b.png",
@@ -10,6 +10,7 @@
     "static/media/textbook_checkmates.jpg": "/static/media/textbook_checkmates.08decc4f4720dd4a0e45.jpg",
     "static/media/Antoly_Karpov.jpg": "/static/media/Antoly_Karpov.f49da44ebc51e7d92a2b.jpg",
     "static/media/strong_weak_squares.png": "/static/media/strong_weak_squares.45eb304daa97344c4f87.png",
+    "static/media/capturing.png": "/static/media/capturing.974acdffb4ea1fb400d5.png",
     "static/media/parry.png": "/static/media/parry.a639813b2bf60cdfb7bd.png",
     "static/media/RuyLopez.png": "/static/media/RuyLopez.c02f49b94f3005d6f553.png",
     "static/media/PircDefence.png": "/static/media/PircDefence.aa38d5560cf808753f37.png",
@@ -19,7 +20,7 @@
     "static/media/SlavDefence.png": "/static/media/SlavDefence.56025d8207defd7e8342.png",
     "static/media/CatalanOpening.png": "/static/media/CatalanOpening.e252eb3dd030d72762ce.png",
     "static/media/RetiOpening.png": "/static/media/RetiOpening.ff8325a7eb9a42d3404d.png",
-    "static/media/castling.png": "/static/media/castling.52551ab11d5bbade6ef0.png",
+    "static/media/castling.png": "/static/media/castling.140bf6f1e33e0dadf60b.png",
     "static/media/ViennaGame.png": "/static/media/ViennaGame.cc3dcd3769540244f648.png",
     "static/media/QueensGambit.png": "/static/media/QueensGambit.ca35f116ea44eacd6d81.png",
     "static/media/SicilianDefence.png": "/static/media/SicilianDefence.e9018a8a2e14ff14afe2.png",
@@ -33,6 +34,7 @@
     "static/media/early_queen.png": "/static/media/early_queen.1f689d3be988a6bcfc1d.png",
     "static/media/attack_markers.png": "/static/media/attack_markers.dd4abc89b7dadc959980.png",
     "static/media/threats.png": "/static/media/threats.4bdb41654ee61e7e0c8b.png",
+    "static/media/Board.png": "/static/media/Board.baf5e8f09641378963b2.png",
     "static/media/central_pawns.png": "/static/media/central_pawns.f683e040cc1536a0a0c2.png",
     "static/media/Anish_giri.jpg": "/static/media/Anish_giri.951a26b476279d77663d.jpg",
     "static/media/improve_pieces.png": "/static/media/improve_pieces.557dc6c4204aa0596a5d.png",
@@ -43,11 +45,16 @@
     "static/media/not_rush.png": "/static/media/not_rush.05f50aa3282d947901db.png",
     "static/media/Poster_Schachbrett.png": "/static/media/Poster_Schachbrett.23bac3067f452e962bd4.png",
     "static/media/chess_basics.jpg": "/static/media/chess_basics.60ee2097d22ca843828d.jpg",
+    "static/media/Promoting.png": "/static/media/Promoting.d1de03edb86adc2e97da.png",
     "static/media/forcing_moves.png": "/static/media/forcing_moves.4aaa51cab611742cb950.png",
     "static/media/exchange_pawns.png": "/static/media/exchange_pawns.877d071319cfe65bb412.png",
     "static/media/Bobby_Fischer.jpg": "/static/media/Bobby_Fischer.0409d55f04543e1aac56.jpg",
     "static/media/defend_rook_games.png": "/static/media/defend_rook_games.2db7101f572de2790540.png",
     "static/media/register.png": "/static/media/register.269f3a23c158b2a9b4b4.png",
+    "static/media/En_Passant.png": "/static/media/En_Passant.ae3c999faca7f0524de6.png",
+    "static/media/draw.png": "/static/media/draw.cc01e3ef9bb1fade7f10.png",
+    "static/media/checking.png": "/static/media/checking.bb5caebdbc5eab07e61d.png",
+    "static/media/checkmate.png": "/static/media/checkmate.9970fe5cd8414aee1973.png",
     "static/media/register_white.png": "/static/media/register_white.9181a7700c27192d0f49.png",
     "static/media/opening_concepts.jpg": "/static/media/opening_concepts.cc3364cd5f9943d916c2.jpg",
     "static/media/user.png": "/static/media/user.1f63c5443df010d2f158.png",
@@ -66,10 +73,12 @@
     "static/media/login_white.png": "/static/media/login_white.6784ec2276e47760d08d.png",
     "static/media/white_separator.png": "/static/media/white_separator.324d0381651817550bf4.png",
     "static/media/right-arrow.jpeg": "/static/media/right-arrow.59cc0b60cd4651f1b406.jpeg",
+    "static/media/queen.png": "/static/media/queen.3afd02d48e29d34a1045.png",
+    "static/media/King.png": "/static/media/King.0b4e9a5843726f4079a7.png",
     "index.html": "/index.html",
-    "main.cf5f47cb.js.map": "/static/js/main.cf5f47cb.js.map"
+    "main.144663a0.js.map": "/static/js/main.144663a0.js.map"
   },
   "entrypoints": [
-    "static/js/main.cf5f47cb.js"
+    "static/js/main.144663a0.js"
   ]
 }
