@@ -86,36 +86,14 @@ export default class LogicalChessboard extends React.Component {
   };
 
   updateGamePGN = (PGN, position) => {
-    console.log('RESET FUTUR MOVES');
     this.state.futurMoves.length = 0;
     this.setState({SAN: [], moveIndex: position, history: []});
 
-    console.log('TRY PGN SUCCESSFUL LOADED!');
     this.game.clear();
-    var success = this.game.load_pgn(PGN);
+    this.game.load_pgn(PGN);
     this.setState({position: this.game.position, fen: this.game.fen()});
     window.scrollTo(0, 0);
 
-    if (success) {
-      console.log('PGN SUCCESSFUL LOADED!');
-    } else {
-      console.log(success);
-    }
-
-    var currentPosition = this.game.history().length;
-    for (let i = currentPosition; i > 0; i--) {
-      this.undoMovePGN();
-    }
-    console.log('Undo move PGN Component:');
-    console.log(this.state.futurMoves);
-    /*
-    
-
-    console.log('FUTURE MOVES: ');
-    console.log(this.state.futurMoves);
-
-    this.generatePGNArray();
-  */
     this.updatePGNPosition(position);
     this.updatePGNComment();
 
